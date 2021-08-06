@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+
+h1 {
+    color: black;
+    text-decoration: none;
+}
+
+p {
+    text-align: justify;
+}
+
+.container{
+    width: 100%;
+    background-color: #FEFEFE;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.content{
+    padding:  10px 100px;
+    width: 60%;
+    float: left;
+    border-left-color: #FFF;
+    border-right-color: #FFF;
+}
+.content h1 {
+    text-decoration: none;
+}
+.readbtn {
+    transition: all linear 0.2s;
+    background: #66ad44;
+    border: none;
+    font-size: 13px;
+    line-height: 22px;
+    border-radius: 0;
+    padding: 6px 14px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 2px;
+    color: white;
+}
+
+.readbtn a {
+    text-decoration: none;
+    color: #FEFEFE;
+}
+
+.message {
+    color: red;
+    font-family: arial;
+    margin-left: 500px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+.editbtn{
+    transition: all linear 0.2s;
+    background: #66ad44;
+    border: none;
+    line-height: 22px;
+    font-size: 13px;
+    border-radius: 2;
+    padding: 6px 14px;
+    font-family: 'Montserrat' sans-serif;
+    color: white;
+}
+
+.editbtn a{
+    text-decoration: none;
+    color: #FEFEFE;
+}
+
+.delbtn {
+    transition: all linear 0.2s;
+    background: #FC0527;
+    border: none;
+    line-height: 22px;
+    font-size: 13px;
+    border-radius: 2;
+    padding: 6px 14px;
+    font-family: 'Montserrat' sans-serif;
+    color: white;
+}
+.delbtn a{
+    text-decoration: none;
+    color: #FEFEFE;
+}
+
+.subbtn {
+    transition: all linear 0.2s;
+    background: #66ad44;
+    border: none;
+    line-height: 22px;
+    font-size: 13px;
+    border-radius: 2;
+    padding: 6px 14px;
+    font-family: 'Montserrat' sans-serif;
+    color: white;
+}
+
+.subbtn a{
+    text-decoration: none;
+    color: #FEFEFE;
+}
+
+.ulclass {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
