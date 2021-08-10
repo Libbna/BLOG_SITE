@@ -15,10 +15,6 @@ include("../header.php");
 
 
 <div class="content">
-
-
-    <h2>Register</h2>
-
     <?php
 
     //if form has been submitted process it
@@ -70,28 +66,35 @@ include("../header.php");
         }
     }
     ?>
+    <div class="container">
+        <form action="" method="post">
+            <h3 class="text-center text-info clr1">Register</h3>
+            <div class="form-group">
+                <label class="clr1">Username:</label><br>
+                <input class="form-control" type="text" name="username" value="<?php if (isset($error)) {
+                                                                                    echo $_POST['username'];
+                                                                                } ?>">
 
-    <form action="" method="post">
+            </div>
+            <div class="form-group">
+                <label class="clr1">Password:</label><br>
+                <input class="form-control" type="password" name="password" value="<?php if (isset($error)) {
+                                                                                        echo $_POST['password'];
+                                                                                    } ?>">
+            </div>
 
-        <p><label>Username</label><br>
-            <input type="text" name="username" value="<?php if (isset($error)) {
-                                                            echo $_POST['username'];
-                                                        } ?>">
-        </p>
+            <div class="form-group">
+                <label class="clr1">Email:</label><br>
+                <input class="form-control" type="text" name="email" value="<?php if (isset($error)) {
+                                                                                echo $_POST['email'];
+                                                                            } ?>">
+            </div>
 
-        <p><label>Password</label><br>
-            <input type="password" name="password" value="<?php if (isset($error)) {
-                                                                echo $_POST['password'];
-                                                            } ?>">
-        </p>
+            <input type="submit" name="submit" class="btn btn-md btn-danger" value="Register">
 
-        <p><label>Email</label><br>
-            <input type="text" name="email" value="<?php if (isset($error)) {
-                                                        echo $_POST['email'];
-                                                    } ?>">
-        </p>
 
-        <button name="submit" class="subbtn">Register</button>
+    </div>
+
 
 
 

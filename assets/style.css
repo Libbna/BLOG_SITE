@@ -12,22 +12,21 @@ p {
     text-align: justify;
 }
 
+form {
+    margin: auto;
+    width: 25%;
+}
+.content {
+    background-color: antiquewhite;
+    padding-bottom: 15px;
+}
 .container{
-    width: 100%;
-    background-color: #FEFEFE;
-    margin: 0 auto;
-    overflow: hidden;
+    margin-top: 5%;
+    width: 85%;
 }
-.content{
-    padding:  10px 100px;
-    width: 60%;
-    float: left;
-    border-left-color: #FFF;
-    border-right-color: #FFF;
-}
-.content h1 {
-    text-decoration: none;
-}
+
+
+
 .readbtn {
     transition: all linear 0.2s;
     background: #66ad44;
@@ -64,23 +63,6 @@ th, td {
     padding: 8px;
 }
 
-.editbtn{
-    transition: all linear 0.2s;
-    background: #66ad44;
-    border: none;
-    line-height: 22px;
-    font-size: 13px;
-    border-radius: 2;
-    padding: 6px 14px;
-    font-family: 'Montserrat' sans-serif;
-    color: white;
-}
-
-.editbtn a{
-    text-decoration: none;
-    color: #FEFEFE;
-}
-
 .delbtn {
     transition: all linear 0.2s;
     background: #FC0527;
@@ -113,4 +95,84 @@ th, td {
     text-decoration: none;
     color: #FEFEFE;
 }
+.clr1{
+    color: hsl(5deg 71% 55%);
+}
+
+/* Header CSS */
+
+.navbar-default {
+    background-color: #DE4839;
+    border-bottom: 1px solid lightgrey;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.head {
+    padding: 6px;
+    color: white;
+    font-size: 24px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    border: 1px solid white;
+}
+
+.navbar-header {
+    margin-top: 5px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 18px;
+}
+
+.nav>li {
+    position: relative;
+    display: block;
+    padding-left: 25px;
+    padding-top: 5px;
+}
+
+.nav_toggle {
+    margin: -60px 40px 0 0;
+    display: block;
+    font-size: 30px;
+    float: right;
+}
+#nav_checkbox {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .head {
+        width: 130px;
+        margin-left: 15px;
+    }
+    .nav_toggle {
+       display: block;
+       cursor: pointer;
+    }
+    .navbar-nav{
+        text-align: center;
+        width: 100%;
+        display: none ;
+    }
+    .navbar-nav li  {
+        display: block;
+        border-bottom: 1px solid wheat;
+        margin: 0;
+    }
+    .nav_checkbox:checked ~ ul.navbar-nav li {
+        display: block;
+    }
+
+
+}
+
+
+
+
 

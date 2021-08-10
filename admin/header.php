@@ -14,39 +14,7 @@
 </head>
 
 <style>
-    .navbar-default {
-        background-color: #DE4839;
-    }
-
-    .navbar-default .navbar-brand {
-        color: white;
-        font-family: "Lucida Console", "Courier New", monospace;
-    }
-
-    .head {
-        padding: 6px;
-        color: white;
-        font-size: 24px;
-        font-family: "Lucida Console", "Courier New", monospace;
-        border: 1px solid white;
-    }
-
-    .navbar-header {
-        margin-top: 5px;
-    }
-
-    .navbar-default .navbar-nav>li>a {
-        color: white;
-        font-family: "Lucida Console", "Courier New", monospace;
-        font-size: 18px;
-    }
-
-    .nav>li {
-        position: relative;
-        display: block;
-        padding-left: 25px;
-        padding-top: 5px;
-    }
+    
 </style>
 
 <body>

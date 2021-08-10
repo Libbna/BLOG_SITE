@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    height: 100vh;
+  }
+  .content {
+    background-color: antiquewhite;
+    padding-bottom: 48px;
+}
+.container{
+  margin-top: 5%;
+  width: 85%;
+}
+
+  form {
+    margin: auto;
+    width: 25%;
+}
+  
+.clr1{
+    color: hsl(5deg 71% 55%);
+}
+#register-link {
+  margin-top: -75px;
+}
+
+#register-link :hover {
+  color: hsl(5deg 71% 55%);
+  
+}

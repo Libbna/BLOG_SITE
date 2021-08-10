@@ -17,41 +17,58 @@ include("../header.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link rel="stylesheet" href="http://localhost/blog/admin/assets/login.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="assets/style.css"> -->
 
     <title>Admin Login</title>
+
 </head>
 
 <body>
-
-    <?php
-    if (isset($_POST['submit'])) {
-        $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
-        if ($user->login($username, $password)) {
-            header('location: index.php');
-            exit;
-        } else {
-            $message = '<p class="invalid">Invalid username or password</p>';
+    <div class="content">
+        <?php
+        if (isset($_POST['submit'])) {
+            $username = trim($_POST['username']);
+            $password = trim($_POST['password']);
+            if ($user->login($username, $password)) {
+                header('location: index.php');
+                exit;
+            } else {
+                $message = '<p class="invalid">Invalid username or password</p>';
+            }
         }
-    }
 
-    if (isset($message)) {
-        echo $message;
-    }
-    ?>
-    <form action="" method="post" class="form">
+        if (isset($message)) {
+            echo $message;
+        }
+        ?>
+
         <div class="container">
-            <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" value="" required>
+            <form action="" method="post">
+                <h3 class="text-center text-info clr1">Login</h3>
+                <div class="form-group">
+                    <label class="clr1">Username:</label><br>
+                    <input class="form-control" type="text" name="username" value="">
 
-            <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" value="" required>
+                </div>
+                <div class="form-group">
+                    <label class="clr1">Password:</label><br>
+                    <input class="form-control" type="password" name="password" value="">
+                </div>
+                <div class="form-group">
+                    <label for="remember-me" class="clr1"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                    <input type="submit" name="submit" class="btn btn-danger btn-md" value="submit">
+                </div>
+                <div id="register-link" class="text-right">
+                    <a href="http://localhost/blog/admin/register.php" class="text-info">Don't Have an Account?</a>
+                </div>
 
-            <p><a href="http://localhost/blog/admin/register.php">New User?</a></p>
 
-            <button type="submit" name="submit">SignIn</button>
-    </form>
+        </div>
+
+    </div>
+
 
 </body>
 

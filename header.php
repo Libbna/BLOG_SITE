@@ -13,56 +13,18 @@
     <title>Document</title>
 </head>
 
-<style>
-    .navbar-default {
-        background-color: #DE4839;
-    }
-
-    .navbar-default .navbar-brand {
-        color: white;
-        font-family: "Lucida Console", "Courier New", monospace;
-    }
-
-    .head {
-        padding: 6px;
-        color: white;
-        font-size: 24px;
-        font-family: "Lucida Console", "Courier New", monospace;
-        border: 1px solid white;
-    }
-
-    .navbar-header {
-        margin-top: 5px;
-    }
-
-    .navbar-default .navbar-nav>li>a {
-        color: white;
-        font-family: "Lucida Console", "Courier New", monospace;
-        font-size: 18px;
-    }
-
-    .nav>li {
-        position: relative;
-        display: block;
-        padding-left: 25px;
-        padding-top: 5px;
-    }
-</style>
-
-<!-- <body>
-    <ul class="ulclass">
-        <li><a href="http://localhost/blog/">Home</a></li>
-        <li><a href="http://localhost/blog/admin/login.php">Login</a></li>
-        <li><a href="http://localhost/blog/admin/register.php">Register</a></li>
-    </ul>
-</body> -->
 
 <body>
-    <nav class=" navbar-default">
+    <nav class="navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
                 <p class="head">BlogSite</p>
             </div>
+            <input type="checkbox" id="nav_checkbox" class="nav_checkbox">
+            <label for="nav_checkbox" class="nav_toggle">
+                <img class=" menu" src="https://img.icons8.com/material-outlined/24/000000/menu--v1.png" />
+            </label>
+            <!-- navbar_nav == menu -->
             <ul class="nav navbar-nav">
                 <li><a href="http://localhost/blog/">Home</a></li>
                 <li><a href="http://localhost/blog/admin/login.php">Login</a></li>
