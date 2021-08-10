@@ -5,8 +5,11 @@ require_once("includes/config.php");
 
 <title>Blog Site</title>
 <?php
-include("header.php");
+include("./header.php");
+
 ?>
+<link href="http://localhost/blog/assets/style.css" rel="stylesheet" type="text/css">
+
 <div class="container">
     <div class="content">
         <?php

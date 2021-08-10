@@ -4,7 +4,14 @@ if ($user->is_logged_in()) {
     header('location:index.php');
 }
 
+// if (isset($_POST['submit'])) {
+//     // $username = mysqli_real_escape_string($_POST['username']);
+//     // $password = mysqli_real_escape_string($_POST['password']);
+// }
+
+
 include("../header.php");
+
 
 ?>
 
@@ -17,7 +24,7 @@ include("../header.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="http://localhost/blog/admin/assets/login.css">
+    <link href="http://localhost/blog/assets/style.css" rel="stylesheet" type="text/css">
 
     <!-- <link rel="stylesheet" type="text/css" href="assets/style.css"> -->
 
@@ -31,7 +38,14 @@ include("../header.php");
         if (isset($_POST['submit'])) {
             $username = trim($_POST['username']);
             $password = trim($_POST['password']);
+            $checkbox = isset($_POST['remember-me']);
+
             if ($user->login($username, $password)) {
+                $_SESSION['username'] = $username;
+
+                if ($checkbox == "on") {
+                    setcookie("username", $username, time() + 3600);
+                }
                 header('location: index.php');
                 exit;
             } else {
@@ -57,7 +71,9 @@ include("../header.php");
                     <input class="form-control" type="password" name="password" value="">
                 </div>
                 <div class="form-group">
-                    <label for="remember-me" class="clr1"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                    <label for="remember-me" class="clr1"><span>Remember me</span>
+                        <input type="checkbox" id="remember-me" name="remember-me">
+                    </label><br>
                     <input type="submit" name="submit" class="btn btn-danger btn-md" value="submit">
                 </div>
                 <div id="register-link" class="text-right">

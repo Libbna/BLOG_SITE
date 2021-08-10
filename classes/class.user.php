@@ -9,7 +9,7 @@ class User
 
     public function is_logged_in()
     {
-        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true || isset($_COOKIE['username'])) {
             return true;
         }
     }
@@ -49,5 +49,6 @@ class User
     public function logout()
     {
         session_destroy();
+        setcookie("username", '', time() - 3600);
     }
 }

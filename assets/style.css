@@ -165,7 +165,7 @@ th, td {
         border-bottom: 1px solid wheat;
         margin: 0;
     }
-    .nav_checkbox:checked ~ ul.navbar-nav li {
+    #nav_checkbox:checked ~ .navbar-nav li {
         display: block;
     }
 
