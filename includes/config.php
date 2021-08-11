@@ -31,4 +31,53 @@ function __autoload($class)
     }
 }
 
+// add-blog-article ---> create new blog
+if (isset($_POST['submit'])) {
+    extract($_POST);
+    if ($articleTitle == '') {
+        $error[] = 'Please enter Title';
+    }
+    if ($articleDesc == '') {
+        $error[] = 'Please enter Description';
+    }
+    if ($articleContent == '') {
+        $error[] = 'Please enter Content';
+    }
+    if ($articleAuthor == '') {
+        $error[] = 'Please enter Author Name';
+    }
+
+    if (!isset($error)) {
+        try {
+            $stmt = $db->prepare('INSERT INTO article (articleTitle, articleDesc, articleContent, articleAuthor) VALUES (:articleTitle, :articleDesc, :articleContent, :articleAuthor)');
+            $stmt->execute(array(
+                ':articleTitle' => $articleTitle,
+                ':articleDesc' => $articleDesc,
+                ':articleContent' => $articleContent,
+                ':articleAuthor' => $articleAuthor,
+            ));
+
+            header('location:index.php?action=added');
+            exit;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+}
+
+if (isset($error)) {
+    foreach ($error as $error) {
+        echo '<p class="message>' . $error . '</p>';
+    }
+}
+
+// admin/index --> dashboard --> to delete a blog
+if (isset($_GET['delpost'])) {
+    $stmt = $db->prepare('DELETE FROM article WHERE articleID=:articleID');
+    $stmt->execute(array(':articleID' => $_GET['delpost']));
+    header('location:index.php ? action=deleted');
+    exit;
+}
+
+
 $user = new User($db);

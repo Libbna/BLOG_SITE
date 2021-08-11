@@ -67,27 +67,27 @@ include("../header.php");
     }
     ?>
     <div class="container">
-        <form action="" method="post">
+        <form action="" method="post" autocomplete="off">
             <h3 class="text-center text-info clr1">Register</h3>
             <div class="form-group">
                 <label class="clr1">Username:</label><br>
                 <input class="form-control" type="text" name="username" value="<?php if (isset($error)) {
                                                                                     echo $_POST['username'];
-                                                                                } ?>">
+                                                                                } ?>" autocomplete="off">
 
             </div>
             <div class="form-group">
                 <label class="clr1">Password:</label><br>
-                <input class="form-control" type="password" name="password" value="<?php if (isset($error)) {
-                                                                                        echo $_POST['password'];
-                                                                                    } ?>">
+                <input class="form-control" id="password" type="password" name="password" value="<?php if (isset($error)) {
+                                                                                                        echo $_POST['password'];
+                                                                                                    } ?>" autocomplete="new-password">
             </div>
 
             <div class="form-group">
                 <label class="clr1">Email:</label><br>
-                <input class="form-control" type="text" name="email" value="<?php if (isset($error)) {
-                                                                                echo $_POST['email'];
-                                                                            } ?>">
+                <input class="form-control" id="email" type="text" name="email" value="<?php if (isset($error)) {
+                                                                                            echo $_POST['email'];
+                                                                                        } ?>" autocomplete="new_email">
             </div>
 
             <input type="submit" name="submit" class="btn btn-md btn-danger" value="Register">
@@ -100,3 +100,7 @@ include("../header.php");
 
 
 </div>
+
+<script>
+
+</script>

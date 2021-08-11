@@ -4,11 +4,6 @@ if ($user->is_logged_in()) {
     header('location:index.php');
 }
 
-// if (isset($_POST['submit'])) {
-//     // $username = mysqli_real_escape_string($_POST['username']);
-//     // $password = mysqli_real_escape_string($_POST['password']);
-// }
-
 
 include("../header.php");
 
@@ -59,7 +54,7 @@ include("../header.php");
         ?>
 
         <div class="container">
-            <form action="" method="post">
+            <form action="" method="post" autocomplete="off">
                 <h3 class="text-center text-info clr1">Login</h3>
                 <div class="form-group">
                     <label class="clr1">Username:</label><br>

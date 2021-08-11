@@ -5,13 +5,6 @@ require_once('../includes/config.php');
 if (!$user->is_logged_in()) {
     header('location: login.php');
 }
-
-if (isset($_GET['delpost'])) {
-    $stmt = $db->prepare('DELETE FROM article WHERE articleID=:articleID');
-    $stmt->execute(array(':articleID' => $_GET['delpost']));
-    header('location:index.php ? action=deleted');
-    exit;
-}
 ?>
 
 <title> Admin Page </title>
@@ -54,6 +47,25 @@ if (isset($_GET['delpost'])) {
 <?php include("header.php"); ?>
 <div class="content1">
 
+    <?php if (isset($_REQUEST['action'])) { ?>
+        <?php if ($_REQUEST['action'] == "added") { ?>
+            <div class="alert alert-success" role="alert">
+                Article has been added successfuly!
+            </div>
+
+        <?php } ?>
+    <?php } ?>
+
+    <?php if (isset($_REQUEST['action'])) { ?>
+        <?php if ($_REQUEST['action'] == "deleted") { ?>
+            <div class="alert alert-danger" role="alert">
+                Article has been deleted successfuly!
+            </div>
+
+        <?php } ?>
+    <?php } ?>
+
+
     <table class="table">
         <thead>
             <tr>
@@ -70,8 +82,8 @@ if (isset($_GET['delpost'])) {
             while ($row = $stmt->fetch()) {
                 echo '<tbody>';
                 echo '<tr>';
-                echo '<td>' . $row['articleTitle'] . '</td>';
-                echo '<td>' . $row['articleAuthor'] . '</td>';
+                echo '<td class="text-uppercase">' . $row['articleTitle'] . '</td>';
+                echo '<td class="text-uppercase">' . $row['articleAuthor'] . '</td>';
         ?>
 
                 <td>

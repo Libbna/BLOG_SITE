@@ -16,13 +16,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
     <title>Document</title>
-    <!-- <script type="text/javascript">
-        $(document).ready(function() {
-            $("#toggle").click(function() {
-                $('span').toggleClass('active')
-            })
-        })
-    </script> -->
+    
 
 </head>
 
