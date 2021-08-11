@@ -51,11 +51,12 @@ form {
     margin-left: 500px;
 }
 
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    border: 1px solid #ddd;
+.table {
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 90%;
+    /* max-width: 100%; */
+    margin-bottom: 20px;
 }
 
 th, td {
@@ -63,20 +64,8 @@ th, td {
     padding: 8px;
 }
 
-.delbtn {
-    transition: all linear 0.2s;
-    background: #FC0527;
-    border: none;
-    line-height: 22px;
-    font-size: 13px;
-    border-radius: 2;
-    padding: 6px 14px;
-    font-family: 'Montserrat' sans-serif;
-    color: white;
-}
-.delbtn a{
-    text-decoration: none;
-    color: #FEFEFE;
+.btn-group a {
+    margin-bottom: 5px;
 }
 
 .subbtn {
@@ -94,9 +83,25 @@ th, td {
     text-decoration: none;
     color: #FEFEFE;
 }
+
+#add {
+    margin-left: 5%;
+}
+#mybtn {
+    display: none;
+}
+
+#mybtn #edit {
+    margin-left: -3%;
+}
+#mybtn #trash {
+    margin-left: 5%;
+}
+
 .clr1{
     color: hsl(5deg 71% 55%);
 }
+
 
 /* Header CSS */
 
