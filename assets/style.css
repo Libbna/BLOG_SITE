@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: "Lato", sans-serif;
+    
 }
 
 h1 {
@@ -158,6 +159,115 @@ th, td {
 /* #toggle a span:active{
     transform: translateY(-100%);
 } */
+
+/* view page */
+.blockquote {
+    padding: 10px 20px;
+    margin: 0px 0 14px;
+    font-size: 17.5px;
+    border-left: 5px dotted #f5a8a0;
+}
+.blockquote h2 {
+    background-color: antiquewhite;
+    color: #de4839;
+    text-transform: uppercase;
+    width: 60%;
+    text-align: center;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+}
+.blockquote h3 {
+    font-size: 23px;
+    text-align: justify;
+    font-family: Garamond, serif;
+}
+
+.blockquote-footer {
+    font-size: 24px;
+    letter-spacing: 3px;
+    /* color: #de4839; */
+    color: #de4839;
+    font-family: "Brush Script MT", cursive;
+    text-transform: uppercase;
+
+}
+.container__body{
+    border: 2px solid #dabfbc;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 10px 10px #f5a8a0;
+}
+.container__title {
+    width: 60%;
+    height: 10%;
+    margin-bottom: 15px;
+    margin-left: 7px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #de4839;
+    
+    border-radius: 5px;
+    text-align: center;
+}
+.container__title h1 {
+    color: white;
+    font-size: 36px;
+    font-family: Georgia, serif;
+    padding-top: 12px;
+}
+
+/* home page css */
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+.card-header {
+    color:#de4839;
+    font-size: 25px;
+    font-family: Garamond, serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgb(255 233 230);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.card-body {
+    padding: 1.25rem;
+}
+.card-body__blackquote{
+    margin-bottom: 0;
+}
+.card-body__blackquote p {
+    font-size: 25px;
+    color: grey;
+    text-transform: uppercase;
+    font-family: Garamond, serif;
+    letter-spacing: 2px;
+    text-decoration: underline;
+
+}
+.footer {
+    font-size: 15px;
+    color: grey;
+    text-transform: uppercase;
+    font-family: Garamond, serif;
+}
+/* .banner {
+background-image: url("https://i.pinimg.com/originals/ea/1d/c3/ea1dc3a5754dd9297c756535c53010e6.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+} */
+
+
 
 
 @media only screen and (max-width: 768px) {

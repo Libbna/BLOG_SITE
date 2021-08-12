@@ -77,9 +77,11 @@ if (!$user->is_logged_in()) {
                     <a id="trash" type="button" class="btn btn-danger" role="button" href="javascript:delpost('<?php echo $row['articleID']; ?>','<?php echo $row['articleTitle']; ?>')">
                         <i class="fa fa-trash"></i>
                     </a>
-                    <a id="eye" type="button" class="btn btn-primary" role="button" href="view-article.php?id = <?php echo $row['articleID']; ?>">
-                        <i class="fa fa-eye"></i>
-                    </a>
+                    <?php
+                    echo '<a type="button" class="btn btn-primary" id="eye" href="http://localhost/blog/admin/view-article.php?id=' . $row['articleID'] . '"><i class="fa fa-eye"></i></a></button></p>';
+
+                    ?>
+                   
                 </div>
             </td>
 

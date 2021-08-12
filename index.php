@@ -1,5 +1,7 @@
 <?php
 require_once("includes/config.php");
+$stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
+
 
 ?>
 
@@ -10,24 +12,35 @@ include("./header.php");
 ?>
 <link href="http://localhost/blog/assets/style.css" rel="stylesheet" type="text/css">
 
-<div class="container">
-    <div class="content">
-        <?php
-        try {
-            //selecting data through ID
-            $stmt = $db->query('SELECT articleID, articleTitle, articleDesc, articleAuthor
-            FROM article ORDER BY articleID DESC');
+<!-- <div class="banner"></div> -->
+<div class="container mt-5">
 
-            while ($row = $stmt->fetch()) {
-                echo '<h1?><a href="show.php?id=' . $row['articleID'] . '">' . $row['articleTitle'] . '</a></h1>';
-                // display the data
-                echo '<p>' . $row['articleDesc'] . '</p>';
-                echo '<p>' . $row['articleAuthor'] . '</p>';
-                echo '<p><button class="readbtn"><a href="show.php?id=' . $row['articleID'] . '">Read More </a></button></p>';
-            }
-        } catch (PDOException $e) {
-            echo $e->getMessage();
+    <?php
+    try {
+        //selecting data through ID
+        while ($row = $stmt->fetch()) { ?>
+            <div class="card">
+                <div class="card-header">
+                    <?php echo $row['articleTitle']; ?>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote card-body__blackquote mb-0">
+                        <p><?php echo $row['articleDesc']; ?></p>
+                        <footer class="footer">
+                            <?php echo $row['articleAuthor']; ?>
+                        </footer>
+
+                        <?php
+                        echo '<a href="http://localhost/blog/admin/view-article.php?id=' . $row['articleID'] . '">Read More </a>';
+                        ?>
+
+                    </blockquote>
+                </div>
+            </div>
+    <?php
         }
-        ?>
-    </div>
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+    ?>
 </div>

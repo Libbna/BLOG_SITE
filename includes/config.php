@@ -39,8 +39,13 @@ if (isset($_GET['delpost'])) {
     $stmt = $db->prepare('DELETE FROM article WHERE articleID=:articleID');
     $stmt->execute(array(':articleID' => $_GET['delpost']));
     header('location:index.php ? action=deleted');
-    exit;
+    exit();
 }
+
+
+
+
+
 
 
 $user = new User($db);

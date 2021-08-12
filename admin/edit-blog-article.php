@@ -2,6 +2,8 @@
 
 if (!$user->is_logged_in()) {
     header('Location: login.php');
+
+    
 }
 ?>
 <title>Update Article</title>
@@ -45,7 +47,7 @@ if (!$user->is_logged_in()) {
                 $stmt = $db->prepare('UPDATE article SET articleTitle = :articleTitle,  articleDesc = :articleDesc, articleContent = :articleContent WHERE articleID= :articleID');
                 $stmt->execute(array(
                     ':articleTitle' => $articleTitle,
-                    ':articleDescrip' => $articleDescrip,
+                    ':articleDescrip' => $articleDesc,
                     ':articleContent' => $articleContent,
                     ':articleID' => $articleID,
 
@@ -82,7 +84,7 @@ if (!$user->is_logged_in()) {
 
     ?>
 
-    <form action='' method='post'>
+    <form method='post'>
         <input type='hidden' name='articleID' value="<?php echo $row['articleID']; ?>">
 
         <h2><label>Article Title</label><br>
