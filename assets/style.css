@@ -84,25 +84,14 @@ th, td {
     color: #FEFEFE;
 }
 
+#mybtn {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 #add {
     margin-left: 5%;
 }
-#mybtn {
-    display: none;
-}
-
-#mybtn #edit {
-    margin-left: -3%;
-}
-#mybtn #trash {
-    margin-left: 5%;
-}
-
-.clr1{
-    color: hsl(5deg 71% 55%);
-}
-
-
 /* Header CSS */
 
 .navbar-default {

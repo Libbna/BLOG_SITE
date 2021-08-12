@@ -54,7 +54,7 @@ if (!$user->is_logged_in()) {
             <th>Title</th>
             <th>Description</th>
             <th>Author</th>
-            <th>Actions</th>
+
         </tr>
     </thead>
     <?php
@@ -77,6 +77,9 @@ if (!$user->is_logged_in()) {
                     <a id="trash" type="button" class="btn btn-danger" role="button" href="javascript:delpost('<?php echo $row['articleID']; ?>','<?php echo $row['articleTitle']; ?>')">
                         <i class="fa fa-trash"></i>
                     </a>
+                    <a id="eye" type="button" class="btn btn-primary" role="button" href="view-article.php?id = <?php echo $row['articleID']; ?>">
+                        <i class="fa fa-eye"></i>
+                    </a>
                 </div>
             </td>
 
@@ -95,15 +98,15 @@ if (!$user->is_logged_in()) {
 
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     var row = document.getElementById("row");
     var mybtn = document.getElementById("mybtn");
 
     row.onmouseover = function() {
-        mybtn.style.display = "block";
+        mybtn.style.display = "flex";
     }
 
     row.onmouseout = function() {
         mybtn.style.display = "none";
     }
-</script>
+</script> -->
