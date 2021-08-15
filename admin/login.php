@@ -2,6 +2,7 @@
 require_once('../includes/config.php');
 if ($user->is_logged_in()) {
     header('location:index.php');
+    
 }
 
 
@@ -19,7 +20,9 @@ include("../header.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="http://localhost/blog/assets/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/style.css" rel="stylesheet" type="text/css">
+
+    <!-- <link href="./assets/style.css" rel="stylesheet" type="text/css"> -->
 
     <!-- <link rel="stylesheet" type="text/css" href="assets/style.css"> -->
 
@@ -72,7 +75,7 @@ include("../header.php");
                     <input type="submit" name="submit" class="btn btn-danger btn-md" value="submit">
                 </div>
                 <div id="register-link" class="text-right">
-                    <a href="http://localhost/blog/admin/register.php" class="text-info">Don't Have an Account?</a>
+                    <a href="http://blogsite.com/admin/register.php" class="text-info">Don't Have an Account?</a>
                 </div>
 
 

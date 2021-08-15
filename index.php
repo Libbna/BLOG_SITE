@@ -10,7 +10,7 @@ $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
 include("./header.php");
 
 ?>
-<link href="http://localhost/blog/assets/style.css" rel="stylesheet" type="text/css">
+<link href="./assets/style.css" rel="stylesheet" type="text/css">
 
 <!-- <div class="banner"></div> -->
 <div class="container mt-5">
@@ -31,7 +31,7 @@ include("./header.php");
                         </footer>
 
                         <?php
-                        echo '<a href="http://localhost/blog/admin/view-article.php?id=' . $row['articleID'] . '">Read More </a>';
+                        echo '<a href="http://blogsite.com//admin/view-article.php?id=' . $row['articleID'] . '">Read More </a>';
                         ?>
 
                     </blockquote>

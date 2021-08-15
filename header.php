@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="http://localhost/blog/assets/style.css" rel="stylesheet" type="text/css">
+    <!-- <link href="http://blogsite.com/assets/style.css" rel="stylesheet" type="text/css"> -->
+    <link href="./assets/style.css" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -16,7 +17,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
     <title>Document</title>
-    
+
 
 </head>
 
@@ -36,9 +37,9 @@
             </div>
             <!-- navbar_nav == menu -->
             <ul class="nav navbar-nav" id="navbar-nav">
-                <li><a href="http://localhost/blog/">Home</a></li>
-                <li><a href="http://localhost/blog/admin/login.php">Login</a></li>
-                <li><a href="http://localhost/blog/admin/register.php">Register</a></li>
+                <li><a href="http://blogsite.com/index.php">Home</a></li>
+                <li><a href="http://blogsite.com/admin/login.php">Login</a></li>
+                <li><a href="http://blogsite.com/admin/register.php">Register</a></li>
             </ul>
         </div>
     </nav>

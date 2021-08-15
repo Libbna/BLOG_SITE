@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="http://localhost/blog/assets/style.css" rel="stylesheet" type="text/css">
+    <!-- <link href="http://localhost/blog/assets/style.css" rel="stylesheet" type="text/css"> -->
+    <link href="/assets/style.css" rel="stylesheet" type="text/css">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -17,9 +19,9 @@
     <title>Document</title>
 </head>
 
-<style>
+<!-- <style>
 
-</style>
+</style> -->
 
 <body>
     <nav class=" navbar-default">
@@ -45,14 +47,15 @@
             var x = document.getElementById("navbar-nav");
             var cross = document.getElementById("cross");
             var bar = document.getElementById("bar");
+
             if (x.style.display === "block") {
                 x.style.display = "none";
                 bar.style.display = "block";
-                cross.style.display = "none"
+                // cross.style.display = "none"
 
             } else {
                 x.style.display = "block";
-                bar.style.display = "none";
+                // bar.style.display = "none";
                 cross.style.display = "block"
             }
         }

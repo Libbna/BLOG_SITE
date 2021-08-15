@@ -10,7 +10,7 @@ if (!$user->is_logged_in()) {
 <title> Admin Page </title>
 
 <head>
-    <link rel="stylesheet" href="http://localhost/blog/assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -71,17 +71,18 @@ if (!$user->is_logged_in()) {
     ?>
             <td>
                 <div id="mybtn" class="btn-group btn-group-md">
-                    <a id="edit" type="button" class="btn btn-success" role="button" href="edit-blog-article.php?id = <?php echo $row['articleID']; ?>">
-                        <i class="fa fa-edit"></i>
+                    <?php
+                    echo '<a type="button" class="btn btn-success" id="edit" href="http://blogsite.com/admin/edit-blog-article.php?id=' . $row['articleID'] . '"><i class="fa fa-edit"></i></a>';
+                    ?>
+
                     </a>
                     <a id="trash" type="button" class="btn btn-danger" role="button" href="javascript:delpost('<?php echo $row['articleID']; ?>','<?php echo $row['articleTitle']; ?>')">
                         <i class="fa fa-trash"></i>
                     </a>
                     <?php
-                    echo '<a type="button" class="btn btn-primary" id="eye" href="http://localhost/blog/admin/view-article.php?id=' . $row['articleID'] . '"><i class="fa fa-eye"></i></a></button></p>';
-
+                    echo '<a type="button" class="btn btn-primary" id="eye" href="http://blogsite.com/admin/view-article.php?id=' . $row['articleID'] . '"><i class="fa fa-eye"></i></a>';
                     ?>
-                   
+
                 </div>
             </td>
 

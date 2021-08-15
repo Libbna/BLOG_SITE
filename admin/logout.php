@@ -2,4 +2,4 @@
 require_once('../includes/config.php');
 
 $user->logout();
-header('Location: index.php');
+header('Location: http://blogsite.com/index.php');

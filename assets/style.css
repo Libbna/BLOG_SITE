@@ -1,7 +1,7 @@
 body {
     margin: 0;
-    font-family: "Lato", sans-serif;
-    
+    height: 100%;
+    /* overflow: hidden; */
 }
 
 h1 {
@@ -117,6 +117,13 @@ th, td {
     margin-top: 5px;
 }
 
+.navbar-nav {
+    display: block;
+}
+.navbar-nav li {
+    display: block;
+}
+
 .navbar-default .navbar-nav>li>a {
     color: white;
     font-family: "Lucida Console", "Courier New", monospace;
@@ -147,7 +154,7 @@ th, td {
     overflow: hidden;
 }
 #toggle a span {
-    display: block;
+    /* display: block; */
     width: 100%;
     height: 100%;
     text-align: center;
@@ -171,7 +178,6 @@ th, td {
     background-color: antiquewhite;
     color: #de4839;
     text-transform: uppercase;
-    width: 60%;
     text-align: center;
     border-radius: 5px;
     font-family: Georgia, serif;
@@ -266,6 +272,14 @@ background-image: url("https://i.pinimg.com/originals/ea/1d/c3/ea1dc3a5754dd9297
   background-size: cover;
   position: relative;
 } */
+
+.edit_textarea {
+        margin-bottom: 24px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        color: #555;
+    
+}
 
 
 

@@ -11,7 +11,8 @@ include("../header.php");
 ?>
 
 <title>Register</title>
-<link href="http://localhost/blog/assets/style.css" rel="stylesheet" type="text/css">
+<link href="/assets/style.css" rel="stylesheet" type="text/css">
+
 
 
 <div class="content">
@@ -87,7 +88,7 @@ include("../header.php");
                 <label class="clr1">Email:</label><br>
                 <input class="form-control" id="email" type="text" name="email" value="<?php if (isset($error)) {
                                                                                             echo $_POST['email'];
-                                                                                        } ?>" autocomplete="new_email">
+                                                                                        } ?>" autocomplete="off">
             </div>
 
             <input type="submit" name="submit" class="btn btn-md btn-danger" value="Register">
