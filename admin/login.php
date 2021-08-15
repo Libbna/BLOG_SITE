@@ -2,7 +2,6 @@
 require_once('../includes/config.php');
 if ($user->is_logged_in()) {
     header('location:index.php');
-    
 }
 
 
@@ -66,7 +65,8 @@ include("../header.php");
                 </div>
                 <div class="form-group">
                     <label class="clr1">Password:</label><br>
-                    <input class="form-control" type="password" name="password" value="">
+                    <input id="password" class="form-control" type="password" name="password" value="">
+                    <span id="eye"><i class="fa fa-eye" aria-hidden="true" onclick="toggle()"></i></span>
                 </div>
                 <div class="form-group">
                     <label for="remember-me" class="clr1"><span>Remember me</span>
@@ -83,7 +83,7 @@ include("../header.php");
 
     </div>
 
-
+    <script src="/assets/app.js"></script>
 </body>
 
 </html>
