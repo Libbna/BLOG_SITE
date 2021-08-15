@@ -12,7 +12,10 @@ include("./header.php");
 ?>
 <link href="./assets/style.css" rel="stylesheet" type="text/css">
 
-<!-- <div class="banner"></div> -->
+<!-- Banner Section -->
+<?php include('banner.php') ?>
+
+<!--Main Section  -->
 <div class="container mt-5">
 
     <?php
