@@ -2,6 +2,8 @@ let slidePosition = 0;
 const slides = document.getElementsByClassName('carousel__item');
 const totalSlides = slides.length;  //3
 
+let translateX = 0;
+
 document.
     getElementById('carousel__button--next')
     .addEventListener("click", function() {
@@ -21,6 +23,7 @@ document.
         }
 
         slides[slidePosition].classList.add('carousel__item--visible');
+                
     }
 
     function moveToNextSlide() {
@@ -39,6 +42,7 @@ document.
         }
         else {
               slidePosition--;
+
         }
         updateSlidePosition();
     }

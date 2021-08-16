@@ -80,7 +80,7 @@ if (!$user->is_logged_in()) {
                         <i class="fa fa-trash"></i>
                     </a>
                     <?php
-                    echo '<a type="button" class="btn btn-primary" id="eye" href="http://blogsite.com/admin/view-article.php?id=' . $row['articleID'] . '"><i class="fa fa-eye"></i></a>';
+                    echo '<a type="button" class="btn btn-primary" href="http://blogsite.com/admin/view-article.php?id=' . $row['articleID'] . '"><i class="fa fa-eye"></i></a>';
                     ?>
 
                 </div>
