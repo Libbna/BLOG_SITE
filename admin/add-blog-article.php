@@ -48,12 +48,11 @@ if (isset($error)) {
 
 
 
-<!-- <link href="http://localhost/blog/admin/assets/style.css" rel="stylesheet" type="text/css"> -->
 <link rel="stylesheet" href="./assets/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
 
 <title>Add new Article</title>
 <?php
@@ -63,25 +62,25 @@ include("header.php");
 <div class=" container mt-5">
     <form action="" method="post">
 
-        <input type="text" name="articleTitle" class="input bg-dark text-white my-3 " placeholder="Title" autocomplete="off" value="<?php if (isset($error)) {
-                                                                                                                                        echo $_POST['articleTitle'];
-                                                                                                                                    } ?>">
+        <input type="text" name="articleTitle" class="input text-white my-3" placeholder="Title" autocomplete="off" value="<?php if (isset($error)) {
+                                                                                                                                echo $_POST['articleTitle'];
+                                                                                                                            } ?>">
 
 
-        <textarea name="articleDesc" class="input bg-dark text-white my-3 " placeholder="Description"><?php if (isset($error)) {
-                                                                                                            echo $_POST['articleDesc'];
+        <textarea name="articleDesc" class="input text-white my-3 " placeholder="Description"><?php if (isset($error)) {
+                                                                                                    echo $_POST['articleDesc'];
+                                                                                                } ?></textarea>
+
+
+        <textarea name="articleContent" class=" input body_content text-white " placeholder="Content"><?php if (isset($error)) {
+                                                                                                            echo $_POST['articleContent'];
                                                                                                         } ?></textarea>
 
+        <input type="text" name="articleAuthor" class="input text-white my-3 author" placeholder="Author" autocomplete="off" value="<?php if (isset($error)) {
+                                                                                                                                        echo $_POST['articleAuthor'];
+                                                                                                                                    } ?>">
 
-        <textarea name="articleContent" class=" input body_content bg-dark text-white my-3 ml-2 " placeholder="Content"><?php if (isset($error)) {
-                                                                                                                            echo $_POST['articleContent'];
-                                                                                                                        } ?></textarea>
-
-        <input type="text" name="articleAuthor" class="input bg-dark text-white my-3" placeholder="Author" autocomplete="off" value="<?php if (isset($error)) {
-                                                                                                                                            echo $_POST['articleAuthor'];
-                                                                                                                                        } ?>">
-
-        <button name="submit" class="subbtn">+ Add Article</button>
+        <button name="submit" class="subbtn btn-success">+ Add Article</button>
 
 
     </form>
@@ -89,3 +88,12 @@ include("header.php");
 
 
 </div>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

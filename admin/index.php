@@ -10,12 +10,10 @@ if (!$user->is_logged_in()) {
 <title> Admin Page </title>
 
 <head>
-    <link rel="stylesheet" href="/assets/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <script type="text/javascript">
@@ -42,6 +40,14 @@ if (!$user->is_logged_in()) {
     <?php if ($_REQUEST['action'] == "deleted") { ?>
         <div class="alert alert-danger" role="alert">
             Article has been deleted successfuly!
+        </div>
+
+    <?php } ?>
+<?php } ?>
+<?php if (isset($_REQUEST['action'])) { ?>
+    <?php if ($_REQUEST['action'] == "updated") { ?>
+        <div class="alert alert-primary" role="alert">
+            Article has been updated successfuly!
         </div>
 
     <?php } ?>
@@ -97,7 +103,9 @@ if (!$user->is_logged_in()) {
     ?>
 </table>
 
-<a id="add" class="btn btn-success" role="button" href="add-blog-article.php">Add New Article</a>
+<a id="add" class="btn btn-success" role="button" href="add-blog-article.php">Add Article</a>
+<a id="add_banner" class="btn btn-primary" role="button" href="add_view-banner.php">Add / View Banner</a>
+
 
 
 
@@ -113,3 +121,12 @@ if (!$user->is_logged_in()) {
         mybtn.style.display = "none";
     }
 </script> -->
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -1,7 +1,9 @@
 body {
     margin: 0;
     height: 100%;
-    /* overflow: hidden; */
+    /* overflow: y-auto; */
+    overflow-y: auto;
+
 }
 
 h1 {
@@ -95,56 +97,32 @@ th, td {
 }
 /* Header CSS */
 
-.navbar-default {
-    background-color: #DE4839;
-    border-bottom: 1px solid lightgrey;
-    padding: 4px 0 0 0;
-}
-
-.navbar-default .navbar-brand {
-    color: white;
-    font-family: "Lucida Console", "Courier New", monospace;
-}
-
-.head {
-    padding: 6px;
-    color: white;
-    font-size: 24px;
-    font-family: "Lucida Console", "Courier New", monospace;
+.navbar-brand {
+    margin-left: 20px;
+    font-weight: bold;
     border: 1px solid white;
+    padding: 8px;
 }
 
-.navbar-header {
-    margin-top: 5px;
+.navbar-nav .nav-item {
+    padding-left: 25px;
 }
 
-/* .navbar-nav {
-    display: flex;
-    flex-direction: row;
-} */
-
-#navbar-nav {
-    display: flex;
-    flex-direction: row;
-}
-.navbar-nav li {
-    display: block;
-}
-
-.navbar-default .navbar-nav>li>a {
-    color: white;
-    font-family: "Lucida Console", "Courier New", monospace;
+.nav-link {
+    color: white !important;
     font-size: 18px;
 }
 
-.nav>li {
-    position: relative;
-    display: block;
-    padding-left: 25px;
-    padding-top: 5px;
+.nav-link:hover {
+    color: wheat !important;
 }
 
-#toggle {
+.navbar-toggler {
+    margin-right: 15px;
+    margin-top: -18px;
+}
+
+/* #toggle {
     display: none;
 }
 
@@ -168,8 +146,10 @@ th, td {
     transition: .5s;
     font-size: 30px;
     line-height: 43px;
-    /* transition: .5s; */
-}
+    /* transition: .5s; 
+    
+}*/
+
 /* #toggle a span:active{
     transform: translateY(-100%);
 } */
@@ -279,68 +259,31 @@ th, td {
         color: #555;
 }
 
-/* Carousel ~ banner Styling */
-.carousel {
-    position: relative;
-    overflow: hidden;
-    max-width: 100%;
-}
-.carousel .carousel__item,
-.carousel .carousel__item--hidden {
-    display: none;
-} 
-.carousel .carousel__item img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-}
-.carousel .carousel__item--visible {
-    display: block;
-    opacity: 0.8;
-    transform: translateX(0);
-    transition: transform 0.25s;
-}
-.carousel .carousel__actions {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-} 
-
-.carousel .carousel__actions a {
-    font-weight: bold;
-    font-size: 25px;
-    cursor: pointer;
-}
-.carousel .carousel__actions #carousel__button--prev {
-    margin-left: 20px;
-}
-.carousel .carousel__actions #carousel__button--next {
-    margin-right: 20px;
-}
-.carousel .carousel__item--visible:hover {
-    opacity: 1;
-}
 
 #eye {
     font-size: 20px;
     position: absolute;
-    top: 293px;
-    left: 795px;
+    top: 303px;
+    left: 790px;
     color: #31708f;
 }
 /* .slide-out {
     animation:0.5s forwards;
 } */
 
+.carousel-item img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 50%;
+}
 
 
 
 
 
-@media only screen and (max-width: 768px) {
+
+/* @media only screen and (max-width: 768px) {
     .head {
         width: 130px;
         margin-left: 15px;
@@ -360,8 +303,8 @@ th, td {
         margin: 0;
     }
     
+ */
 
-}
 
 
 

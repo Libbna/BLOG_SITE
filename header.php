@@ -5,63 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
 
-    <!-- <link href="http://blogsite.com/assets/style.css" rel="stylesheet" type="text/css"> -->
-    <link href="./assets/style.css" rel="stylesheet" type="text/css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
-    <title>Document</title>
-
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./admin/assets/style.css">
 </head>
 
-
 <body>
-    <nav class="navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <p class="head">BlogSite</p>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <p class="navbar-brand">BlogSite</p>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://blogsite.com/index.php">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://blogsite.com/admin/login.php">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://blogsite.com/admin/register.php">Register</a>
+                </li>
 
-            <div id="toggle">
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <span id="bar"><i class="fa fa-bars" aria-hidden="true"></i></span>
-                    <span id="cross"><i class="fa fa-times" aria-hidden="true"></i></span>
-                </a>
-            </div>
-            <!-- navbar_nav == menu -->
-            <ul class="nav navbar-nav" id="navbar-nav">
-                <li><a href="http://blogsite.com/index.php">Home</a></li>
-                <li><a href="http://blogsite.com/admin/login.php">Login</a></li>
-                <li><a href="http://blogsite.com/admin/register.php">Register</a></li>
             </ul>
         </div>
     </nav>
 
-    <script type="text/javascript">
-        function myFunction() {
-            var x = document.getElementById("navbar-nav");
-            var cross = document.getElementById("cross");
-            var bar = document.getElementById("bar");
-            if (x.style.display === "block") {
-                x.style.display = "none";
-                bar.style.display = "block";
-                cross.style.display = "none"
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-            } else {
-                x.style.display = "block";
-                bar.style.display = "none";
-                cross.style.display = "block"
-            }
-        }
-    </script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 
 </html>

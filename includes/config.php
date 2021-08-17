@@ -42,8 +42,29 @@ if (isset($_GET['delpost'])) {
     exit();
 }
 
+//image uplaod
+$msg = '';
+if (isset($_POST['upload'])) {
+    $image = $_FILES['image']['name'];
+    $path = '../assets/images/' . $image;
 
+    $stmt = $db->query("INSERT INTO banners (banner_path) VALUES ('$path')");
+    if ($stmt) {
+        move_uploaded_file($_FILES['image']['tmp_name'], $path);
+        $msg = 'Image uploaded Successfully!';
+    } else {
+        $msg = 'Image Uplaod Failed!';
+    }
+}
 
+//delete image
+if (isset($_GET['delimg'])) {
+    $stmt = $db->prepare('DELETE FROM banners WHERE banner_id=:banner_id');
+    $stmt->execute(array(':banner_id' => $_GET['delimg']));
+    header('location:add_view-banner.php ? action=deleted');
+
+    exit();
+}
 
 
 

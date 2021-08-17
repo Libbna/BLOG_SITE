@@ -10,11 +10,11 @@ if (!$user->is_logged_in()) {
 <head>
 
     <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+
 </head>
 
 <?php include("header.php");  ?>
@@ -95,11 +95,11 @@ if (!$user->is_logged_in()) {
 
     <form action="" method="post">
 
-        <input type='hidden' name='articleID' autocomplete="off" value="<?php echo $row['articleID']; ?>">
-        <input type="text" name="articleTitle" class="input" value="<?php echo $row['articleTitle']; ?>">
-        <textarea class="edit_textarea" name='articleDesc' cols='60' rows='5'><?php echo $row['articleDesc']; ?></textarea>
-        <textarea class="edit_textarea" name='articleContent' id='textarea1' cols='70' rows='10'><?php echo $row['articleContent']; ?></textarea>
-        <button name="submit" class="subbtn">Update</button>
+        <input class="input" type='hidden' name='articleID' autocomplete="off" value="<?php echo $row['articleID']; ?>">
+        <input type="text" name="articleTitle" class="input my-3" value="<?php echo $row['articleTitle']; ?>">
+        <textarea class="input my-3 articleDesc" name='articleDesc'><?php echo $row['articleDesc']; ?></textarea>
+        <textarea class="input edit_textarea" name='articleContent' id='textarea1' cols='70' rows='10'><?php echo $row['articleContent']; ?></textarea>
+        <button name="submit" class="subbtn btn-primary">Update</button>
     </form>
 
 
@@ -108,3 +108,13 @@ if (!$user->is_logged_in()) {
 
 
 </div>
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
