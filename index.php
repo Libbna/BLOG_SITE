@@ -10,7 +10,7 @@ $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
 include("./header.php");
 
 ?>
-<link href="./assets/style.css" rel="stylesheet" type="text/css">
+<link href="./assets/main.css" rel="stylesheet" type="text/css">
 
 <!-- Banner Section -->
 <?php include('banner.php') ?>
@@ -28,7 +28,7 @@ include("./header.php");
                     <?php echo $row['articleTitle']; ?>
                 </div>
                 <div class="card-body">
-                    <blockquote class="blockquote card-body__blackquote mb-0">
+                    <blockquote class="blockquote mb-0">
                         <p><?php echo $row['articleDesc']; ?></p>
                         <footer class="footer">
                             <?php echo $row['articleAuthor']; ?>

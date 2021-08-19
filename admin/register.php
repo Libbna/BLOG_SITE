@@ -11,7 +11,9 @@ include("../header.php");
 ?>
 
 <title>Register</title>
-<link href="/assets/style.css" rel="stylesheet" type="text/css">
+<!-- <link href="/assets/style.css" rel="stylesheet" type="text/css"> -->
+<link rel="stylesheet" href="/assets/main.css">
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 
@@ -69,9 +71,9 @@ include("../header.php");
         }
     }
     ?>
-    <div class="container">
+    <div class="container mt-5">
         <form action="" method="post" autocomplete="off">
-            <h3 class="text-center text-info clr1">Register</h3>
+            <h3>Register</h3>
             <div class="form-group">
                 <label class="clr1">Username:</label><br>
                 <input class="form-control" type="text" name="username" value="<?php if (isset($error)) {

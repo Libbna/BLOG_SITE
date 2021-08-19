@@ -1,0 +1,80 @@
+nav p {
+  margin-left: 20px;
+  font-weight: bold;
+  border: 1px solid white;
+  padding: 8px;
+}
+
+nav div ul li {
+  padding-left: 25px;
+}
+
+nav div ul li a {
+  color: white !important;
+  font-size: 18px;
+}
+
+nav div ul li a:hover {
+  color: wheat !important;
+}
+
+.content {
+  background-color: antiquewhite;
+  padding-bottom: 48px;
+}
+
+.content .container form {
+  margin: auto;
+  width: 30%;
+}
+
+.content .container form h3 {
+  color: #de4839 !important;
+  margin-left: 100px;
+}
+
+.content .container form div input {
+  width: 95%;
+}
+
+.content .container form div #eye {
+  font-size: 20px;
+  position: absolute;
+  top: 284px;
+  left: 58%;
+  color: #31708f;
+}
+
+.content .container form div #remember {
+  margin: auto;
+  width: 86%;
+}
+
+.content .container form div #remember input {
+  width: 9%;
+}
+
+.card .card-header {
+  color: #de4839;
+  font-size: 25px;
+  font-family: Garamond, serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card .card-body blockquote p {
+  font-size: 25px;
+  color: grey;
+  text-transform: uppercase;
+  font-family: Garamond, serif;
+  letter-spacing: 2px;
+  text-decoration: underline;
+}
+
+.card .card-body blockquote footer {
+  font-size: 15px;
+  color: grey;
+  text-transform: uppercase;
+  font-family: Garamond, serif;
+}
+/*# sourceMappingURL=main.css.map */

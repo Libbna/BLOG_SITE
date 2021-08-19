@@ -4,7 +4,92 @@ require_once('../includes/config.php');
 if (!$user->is_logged_in()) {
     header('location: login.php');
 }
+
+if (isset($_POST['upload'])) {
+    // getting file name
+    $filename = $_FILES['image']['name'];
+
+    // valid extension
+    $valid_ext = array('png', 'jpeg', 'jpg');
+
+    $photoExt1 = @end(explode('.', $filename));
+    $phototest1 = strtolower($photoExt1);
+
+    // creating new image name of numbers
+    $new_img = time() . '.' . $phototest1;
+    // location
+    $location = '../assets/images/' . $new_img;
+
+    // file extension
+    $file_extension = pathinfo($location, PATHINFO_EXTENSION);
+    $file_extension = strtolower($file_extension);
+
+    // check extension
+    if (in_array($file_extension, $valid_ext)) {
+
+        // compress Image function declare
+        // compressedImage($_FILES['image']['tmp_name'], $location, 50);
+
+        resize_image($_FILES['image']['tmp_name'], $location, "500");
+
+        // Insert query
+        // $stmt = $db->query("INSERT INTO banners (banner_path) VALUES ':$new_img'");
+        $stmt = $db->query("INSERT INTO banners (banner_path) VALUES ('$new_img')");
+
+        // move_uploaded_file($_FILES['image']['tmp_name'], $location);
+        if ($stmt) {
+            echo "Image uploaded successfully";
+        } else {
+            echo "Image Uplaod Failed!";
+        }
+    } else {
+        echo "File format is not correct!";
+    }
+}
+
+// compress Image function definition
+function resize_image($source, $path, $max_res)
+{
+    $info = getimagesize($source);
+
+    if ($info['mime'] == 'image/jpeg')
+        $image = imagecreatefromjpeg($source);
+    elseif ($info['mime'] == 'image/gif')
+        $image = imagecreatefromgif($source);
+    elseif ($info['mime'] == 'image/png')
+        $image = imagecreatefrompng($source);
+
+    //resolution
+    $original_width = imagesx($image);
+    $original_height = imagesy($image);
+
+    //width
+    $ratio = $max_res / $original_width;
+    $new_width = $max_res;
+    $new_height = $original_height * $ratio;
+
+    // if that didn't work
+    if ($new_height > $max_res) {
+        $ratio = $max_res / $original_height;
+        $new_height = $max_res;
+        $new_width = $original_width * $ratio;
+    }
+
+    if ($image) {
+        $new_image = imagecreatetruecolor($new_width, $new_height);
+        imagecopyresampled($new_image, $image, 0, 0, 0, 0, $new_width, $new_height, $original_width, $original_height);
+    }
+
+    imagejpeg($new_image, $path, 90);
+
+    // echo "<img src = '$new_image'>" ;
+}
+
+
+
+
 ?>
+<?php include("./header.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +109,7 @@ if (!$user->is_logged_in()) {
 <script type="text/javascript">
     function delimg(id, path) {
         if (confirm("Are you sure you want to delete an image?")) {
-            window.location.href = 'add_view-banner.php ? delimg' + id;
+            window.location.href = 'add_view-banner.php ? delimg=' + id;
         }
     }
 </script>
@@ -36,7 +121,10 @@ if (!$user->is_logged_in()) {
 </style>
 
 <body>
-    <?php include("./header.php"); ?>
+
+
+
+    <!-- to delete image -->
     <?php if (isset($_REQUEST['action'])) { ?>
         <?php if ($_REQUEST['action'] == "deleted") { ?>
             <div class="alert alert-danger" role="alert">
@@ -59,9 +147,9 @@ if (!$user->is_logged_in()) {
                     <div class="form-group">
                         <input type="submit" name="upload" class="btn btn-warning btn-block" value="Upload Image">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <h5 class="text-center text-white"><?php echo $msg; ?></h5>
-                    </div>
+                    </div> -->
                 </form>
             </div>
         </div>
@@ -77,11 +165,12 @@ if (!$user->is_logged_in()) {
             <?php
             $result = $db->query("SELECT banner_id, banner_path FROM banners ORDER BY banner_id DESC");
             while ($row = $result->fetch()) {
+                $img = $row['banner_path'];
             ?>
                 <tr>
                     <td>
-                        <img src="<?= $row['banner_path'] ?>" alt="image" style="width: 31%">
-                        <a id="trash" type="button" class="btn btn-danger ml-5" role="button" href="javascript:delimg('<?php echo $row['banner_id']; ?>','<?php echo $row['banner_path']; ?>')">
+                        <img src="<?= $img; ?>" alt="image">
+                        <a id="trash" type="button" class="btn btn-danger ml-5" role="button" href="javascript:delimg('<?php echo $row['banner_id']; ?>','<?php echo $img; ?>')">
                             <i class="fa fa-trash"></i>
                         </a>
                     </td>

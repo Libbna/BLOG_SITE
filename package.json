@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "blog site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass -watch scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Libbna/BLOG_php_mysql_qed42.git"
+  },
+  "author": "libbna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Libbna/BLOG_php_mysql_qed42/issues"
+  },
+  "homepage": "https://github.com/Libbna/BLOG_php_mysql_qed42#readme",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
