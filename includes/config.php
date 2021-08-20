@@ -48,43 +48,7 @@ if (isset($_GET['delpost'])) {
 //     //getiing file name
 //     $image = $_FILES['image']['name'];
 
-//     // valid extension
-//     $valid_ext = array('png', 'jpeg', 'jpg');
-//     $photoExt = @end(explode('.', $image));
-//     $photoExt1 = strtolower($photoExt);
-
-//     $new_img = time() . '.' . $photoExt1;
-
-//     //location where image will be stored
-//     $location = '../assets/images/' . $new_img;
-
-//     // file extension
-//     $file_extension = pathinfo($location, PATHINFO_EXTENSION);
-//     $file_extension = strtolower($file_extension);
-
-//     // check extension
-//     if (in_array($file_extension, $valid_ext)) {
-
-//         // compress image function call
-//         compressedImage($_FILES['image']['tmp_name'], $location, 30);
-//     } else {
-//         echo "File format is not correct!";
-//     }
-// }
-// // Compress Image function
-// function compressedImage($source, $path, $quality)
-// {
-//     $info = getimagesize($source);
-
-//     if ($info['mime'] == 'image/jpeg')
-//         $image = imagecreatefromjpeg($source);
-//     elseif ($info['mime'] == 'image/gif')
-//         $image = imagecreatefromgif($source);
-//     elseif ($info['mime'] == 'image/png')
-//         $image = imagecreatefrompng($source);
-
-//     imagejpeg($image, $path, $quality);
-// }
+//    
 
 // $stmt = $db->query("INSERT INTO banners (banner_path) VALUES ("$new_img")");
 // if ($stmt) {

@@ -43,7 +43,9 @@ $result = $db->query("SELECT banner_path FROM banners");
                 if ($i == 0) {
                     $actives = 'active';
                 }
-                $img = $row['banner_path'];
+                $img = "http://blogsite.com/assets/images/" . $row['banner_path'];
+
+                // $img = $row['banner_path'];
             ?>
 
                 <div class="carousel-item <?= $actives; ?>">

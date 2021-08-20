@@ -18,7 +18,7 @@ if (isset($_POST['upload'])) {
     // creating new image name of numbers
     $new_img = time() . '.' . $phototest1;
     // location
-    $location = '../assets/images/' . $new_img;
+    $location = '../assets/upload/' . $new_img;
 
     // file extension
     $file_extension = pathinfo($location, PATHINFO_EXTENSION);
@@ -34,14 +34,14 @@ if (isset($_POST['upload'])) {
 
         // Insert query
         // $stmt = $db->query("INSERT INTO banners (banner_path) VALUES ':$new_img'");
-        $stmt = $db->query("INSERT INTO banners (banner_path) VALUES ('$new_img')");
+        // $stmt = $db->query("INSERT INTO banners (banner_path) VALUES ('$new_img')");
 
         // move_uploaded_file($_FILES['image']['tmp_name'], $location);
-        if ($stmt) {
-            echo "Image uploaded successfully";
-        } else {
-            echo "Image Uplaod Failed!";
-        }
+        // if ($stmt) {
+        //     echo "Image uploaded successfully";
+        // } else {
+        //     echo "Image Uplaod Failed!";
+        // }
     } else {
         echo "File format is not correct!";
     }
@@ -84,7 +84,6 @@ function resize_image($source, $path, $max_res)
 
     // echo "<img src = '$new_image'>" ;
 }
-
 
 
 
@@ -155,6 +154,7 @@ function resize_image($source, $path, $max_res)
         </div>
     </div>
 
+    <!-- fetching from databse -->
     <form class="ml-5 mt-3" action="" method="POST" enctype="multipart/form-data">
         <table>
             <thead>
@@ -162,23 +162,39 @@ function resize_image($source, $path, $max_res)
                     <th>IMAGE</th>
                 </tr>
             </thead>
+            <!-- <img src="/assets/images/1629385034.jpg" alt=""> -->
             <?php
-            $result = $db->query("SELECT banner_id, banner_path FROM banners ORDER BY banner_id DESC");
-            while ($row = $result->fetch()) {
-                $img = $row['banner_path'];
+            // $result = $db->query("SELECT banner_id, banner_path FROM banners ORDER BY banner_id DESC");
+            // while ($row = $result->fetch()) {
+            // $imgs = "../assets/upload/";
+            // $img = $row['banner_path'];
+            // echo $img;
             ?>
-                <tr>
-                    <td>
-                        <img src="<?= $img; ?>" alt="image">
-                        <a id="trash" type="button" class="btn btn-danger ml-5" role="button" href="javascript:delimg('<?php echo $row['banner_id']; ?>','<?php echo $img; ?>')">
-                            <i class="fa fa-trash"></i>
-                        </a>
-                    </td>
+            <!-- <tr>
+                <td>
+                    <img src="<?= $img; ?>" alt="image">
+                    <a id="trash" type="button" class="btn btn-danger ml-5" role="button" href="javascript:delimg('<?php echo $row['banner_id']; ?>','<?php echo $img; ?>')">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
 
-                </tr>
+            </tr> -->
+            <?php
+            $files = scandir("../assets/upload/");
+            echo "<div class='row'>";
+            foreach ($files as $file) {
+                if ($file !== "." && $file !== "..") {
+                    // Give Image source -- src='folder-name/$file'
+                    echo "<div class=' col-6 col-sm-4 col-md-3 mt-3 mb-3'>
+                          <img src='../assets/upload/$file' alt='image'/></div>";
+                }
+            }
+            echo "</div>";
+            ?>
+
 
             <?php
-            }
+            // }
             ?>
         </table>
     </form>
