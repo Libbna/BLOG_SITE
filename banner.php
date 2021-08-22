@@ -2,6 +2,7 @@
 require_once("includes/config.php");
 
 $result = $db->query("SELECT banner_path FROM banners");
+
 ?>
 
 
@@ -25,7 +26,7 @@ $result = $db->query("SELECT banner_path FROM banners");
 
 <body>
 
-    <div id="demo" class="carousel slide" data-ride="carousel">
+    <div id="demo" class="carousel slide mt-5" data-ride="carousel">
 
         <!-- Indicators
         <ul class="carousel-indicators">
@@ -43,8 +44,7 @@ $result = $db->query("SELECT banner_path FROM banners");
                 if ($i == 0) {
                     $actives = 'active';
                 }
-                $img = "http://blogsite.com/assets/images/" . $row['banner_path'];
-
+                $img = "../assets/images/" . $row['banner_path'];
                 // $img = $row['banner_path'];
             ?>
 

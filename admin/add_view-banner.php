@@ -1,94 +1,12 @@
+<?php include("./header.php"); ?>
 <?php
 require_once('../includes/config.php');
 
 if (!$user->is_logged_in()) {
     header('location: login.php');
 }
-
-if (isset($_POST['upload'])) {
-    // getting file name
-    $filename = $_FILES['image']['name'];
-
-    // valid extension
-    $valid_ext = array('png', 'jpeg', 'jpg');
-
-    $photoExt1 = @end(explode('.', $filename));
-    $phototest1 = strtolower($photoExt1);
-
-    // creating new image name of numbers
-    $new_img = time() . '.' . $phototest1;
-    // location
-    $location = '../assets/upload/' . $new_img;
-
-    // file extension
-    $file_extension = pathinfo($location, PATHINFO_EXTENSION);
-    $file_extension = strtolower($file_extension);
-
-    // check extension
-    if (in_array($file_extension, $valid_ext)) {
-
-        // compress Image function declare
-        // compressedImage($_FILES['image']['tmp_name'], $location, 50);
-
-        resize_image($_FILES['image']['tmp_name'], $location, "500");
-
-        // Insert query
-        // $stmt = $db->query("INSERT INTO banners (banner_path) VALUES ':$new_img'");
-        // $stmt = $db->query("INSERT INTO banners (banner_path) VALUES ('$new_img')");
-
-        // move_uploaded_file($_FILES['image']['tmp_name'], $location);
-        // if ($stmt) {
-        //     echo "Image uploaded successfully";
-        // } else {
-        //     echo "Image Uplaod Failed!";
-        // }
-    } else {
-        echo "File format is not correct!";
-    }
-}
-
-// compress Image function definition
-function resize_image($source, $path, $max_res)
-{
-    $info = getimagesize($source);
-
-    if ($info['mime'] == 'image/jpeg')
-        $image = imagecreatefromjpeg($source);
-    elseif ($info['mime'] == 'image/gif')
-        $image = imagecreatefromgif($source);
-    elseif ($info['mime'] == 'image/png')
-        $image = imagecreatefrompng($source);
-
-    //resolution
-    $original_width = imagesx($image);
-    $original_height = imagesy($image);
-
-    //width
-    $ratio = $max_res / $original_width;
-    $new_width = $max_res;
-    $new_height = $original_height * $ratio;
-
-    // if that didn't work
-    if ($new_height > $max_res) {
-        $ratio = $max_res / $original_height;
-        $new_height = $max_res;
-        $new_width = $original_width * $ratio;
-    }
-
-    if ($image) {
-        $new_image = imagecreatetruecolor($new_width, $new_height);
-        imagecopyresampled($new_image, $image, 0, 0, 0, 0, $new_width, $new_height, $original_width, $original_height);
-    }
-
-    imagejpeg($new_image, $path, 90);
-
-    // echo "<img src = '$new_image'>" ;
-}
-
-
-
 ?>
-<?php include("./header.php"); ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -99,7 +17,7 @@ function resize_image($source, $path, $max_res)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="/assets/main.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -120,9 +38,6 @@ function resize_image($source, $path, $max_res)
 </style>
 
 <body>
-
-
-
     <!-- to delete image -->
     <?php if (isset($_REQUEST['action'])) { ?>
         <?php if ($_REQUEST['action'] == "deleted") { ?>
@@ -155,59 +70,36 @@ function resize_image($source, $path, $max_res)
     </div>
 
     <!-- fetching from databse -->
-    <form class="ml-5 mt-3" action="" method="POST" enctype="multipart/form-data">
-        <table>
-            <thead>
-                <tr>
-                    <th>IMAGE</th>
-                </tr>
-            </thead>
+    <div class="row mt-5">
+        <div class="col">
             <!-- <img src="/assets/images/1629385034.jpg" alt=""> -->
             <?php
-            // $result = $db->query("SELECT banner_id, banner_path FROM banners ORDER BY banner_id DESC");
-            // while ($row = $result->fetch()) {
-            // $imgs = "../assets/upload/";
-            // $img = $row['banner_path'];
-            // echo $img;
+            $result = $db->query("SELECT banner_id, banner_path FROM banners ORDER BY banner_id DESC");
+            while ($row = $result->fetch()) {
+                $img = "../assets/images/" . $row['banner_path'];
+                // $img = $row['banner_path'];
+                // echo $img;
             ?>
-            <!-- <tr>
-                <td>
+                <picture>
+                    <source srcset="<?= $img; ?>" media="(min-width: 768px)">
                     <img src="<?= $img; ?>" alt="image">
                     <a id="trash" type="button" class="btn btn-danger ml-5" role="button" href="javascript:delimg('<?php echo $row['banner_id']; ?>','<?php echo $img; ?>')">
                         <i class="fa fa-trash"></i>
                     </a>
-                </td>
+                </picture>
 
-            </tr> -->
+
+
             <?php
-            $files = scandir("../assets/upload/");
-            echo "<div class='row'>";
-            foreach ($files as $file) {
-                if ($file !== "." && $file !== "..") {
-                    // Give Image source -- src='folder-name/$file'
-                    echo "<div class=' col-6 col-sm-4 col-md-3 mt-3 mb-3'>
-                          <img src='../assets/upload/$file' alt='image'/></div>";
-                }
             }
-            echo "</div>";
             ?>
-
-
-            <?php
-            // }
-            ?>
-        </table>
-    </form>
-
-
-
-
-    <!-- <div class="card" style="width: 22rem;">
-        <img style="height: 150px;" class="card-img-top" src="/assets/images/samosa.png" alt="Card image cap">
+        </div>
     </div>
-    <div class="card" style="width: 22rem;">
-        <img style="height: 150px;" class="card-img-top" src="/assets/images/samosa.png" alt="Card image cap">
-    </div> -->
+
+
+
+
+
 
 
 

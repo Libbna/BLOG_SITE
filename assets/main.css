@@ -1,7 +1,6 @@
 nav p {
-  margin-left: 20px;
   font-weight: bold;
-  border: 1px solid white;
+  border: 1px solid #fff;
   padding: 8px;
 }
 
@@ -10,12 +9,17 @@ nav div ul li {
 }
 
 nav div ul li a {
-  color: white !important;
+  color: #fff !important;
   font-size: 18px;
 }
 
 nav div ul li a:hover {
   color: wheat !important;
+}
+
+nav button {
+  margin-left: 15px;
+  margin-top: -18px;
 }
 
 .content {
@@ -76,5 +80,41 @@ nav div ul li a:hover {
   color: grey;
   text-transform: uppercase;
   font-family: Garamond, serif;
+}
+
+.row {
+  margin-left: 10% !important;
+}
+
+.row .col picture img {
+  margin-bottom: 36px;
+  border-radius: 10px;
+  opacity: 1;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.row .col picture a {
+  opacity: 0;
+  position: relative;
+  right: 25%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.row .col picture a:hover {
+  opacity: 1;
+}
+
+.row .col picture a i {
+  font-size: 20px;
 }
 /*# sourceMappingURL=main.css.map */

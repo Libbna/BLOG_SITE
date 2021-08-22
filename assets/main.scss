@@ -32,3 +32,37 @@ $main-color: #de4839;
     }
     
 }
+
+// add_view-banner.php
+.row {
+    margin-left: 10% !important;
+    .col {
+       picture {
+        img {
+            margin-bottom: 36px;
+            border-radius: 10px;
+            opacity: 1;
+            transition: .5s ease;
+            backface-visibility: hidden;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+        a {
+            opacity: 0;
+            position: relative;
+            right: 25%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+            transition: .5s ease;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            i {
+                font-size: 20px;
+            }
+          }
+       }
+    }
+}
