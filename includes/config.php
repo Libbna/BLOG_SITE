@@ -48,6 +48,7 @@ if (isset($_GET['delpost'])) {
 if (isset($_POST['upload'])) {
     // getting file name
     $filename = $_FILES['image']['name'];
+    echo $filename;
 
     // valid extension
     $valid_ext = array('png', 'jpeg', 'jpg');
@@ -59,6 +60,8 @@ if (isset($_POST['upload'])) {
     $new_img = time() . '.' . $phototest1;
     // location
     $location = '../assets/images/' . $new_img;
+    // $resized_loc = '../assets/images/' . $new_img_resize;
+    $resized_loc = '../assets/images/resized_' . $new_img;
 
     // file extension
     $file_extension = pathinfo($location, PATHINFO_EXTENSION);
@@ -69,27 +72,25 @@ if (isset($_POST['upload'])) {
 
         // compress Image function declare
         // compressedImage($_FILES['image']['tmp_name'], $location, 50);
+        move_uploaded_file($_FILES['image']['tmp_name'], $location);
+
+        resize_image($location, $resized_loc, "500");
+        // Insert query
+
         $stmt = $db->query("INSERT INTO banners (banner_path) VALUES ('$new_img')");
         if ($stmt) {
-            echo "<div class='alert alert-info' role='alert'>
-            Image has been uploaded successfuly! </div>";
+
+            header('location:add_view-banner.php?action=added');
+            // echo "<script>alert('Image Uplaoded Successfully!')</script>";
         } else {
             echo "<div class='alert alert-danger' role='alert'>
             Image upload failed! </div>";
         }
-
-
-        resize_image($_FILES['image']['tmp_name'], $location, "500");
-        // Insert query
-        // $stmt = $db->query("INSERT INTO banners (banner_path) VALUES ':$new_img'");
-        // $stmt = $db->query("INSERT INTO banners (banner_path) VALUES ('$new_img')");
-
-        // move_uploaded_file($_FILES['image']['tmp_name'], $location);
-
-
     } else {
         echo "File format is not correct!";
     }
+
+    // header("Location: add_view-banner.php");
 }
 
 // compress Image function definition
@@ -129,6 +130,7 @@ function resize_image($source, $path, $max_res)
 
     // echo "<img src = '$new_image'>" ;
 }
+
 
 
 

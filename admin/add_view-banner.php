@@ -76,7 +76,7 @@ if (!$user->is_logged_in()) {
             <?php
             $result = $db->query("SELECT banner_id, banner_path FROM banners ORDER BY banner_id DESC");
             while ($row = $result->fetch()) {
-                $img = "../assets/images/" . $row['banner_path'];
+                $img = "../assets/images/resized_" . $row['banner_path'];
                 // $img = $row['banner_path'];
                 // echo $img;
             ?>

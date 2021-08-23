@@ -26,7 +26,7 @@ $result = $db->query("SELECT banner_path FROM banners");
 
 <body>
 
-    <div id="demo" class="carousel slide mt-5" data-ride="carousel">
+    <div id="demo" class="carousel slide" data-ride="carousel">
 
         <!-- Indicators
         <ul class="carousel-indicators">
