@@ -6,7 +6,8 @@ define('DBUSER', 'root');
 define('DBPASS', '');
 define('DBNAME', 'blogdb');
 
-$db = new PDO("mysql:host=" . DBHOST . ";dbname=" . DBNAME, DBUSER, DBPASS);
+$db = new PDO($database['DBHOST'], $database['DBUSER'], $database['DBPASS'], $database['DBNAME']);
+// $db = new PDO("mysql:host=" . DBHOST . ";dbname=" . DBNAME, DBUSER, DBPASS);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // date_default_timezone_set('Asia/Kolkata');
@@ -31,7 +32,6 @@ function __autoload($class)
     }
 }
 
-// add-blog-article ---> create new blog
 
 
 // admin/index --> dashboard --> to delete a blog

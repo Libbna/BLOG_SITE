@@ -16,9 +16,7 @@ $result = $db->query("SELECT banner_path FROM banners");
     <title>Document</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-
-
+    <link rel="stylesheet" href="/assets/main.css">
 </head>
 <style>
 
@@ -36,6 +34,7 @@ $result = $db->query("SELECT banner_path FROM banners");
         </ul> -->
 
         <!-- The slideshow -->
+
         <div class="carousel-inner">
             <?php
             $i = 0;
@@ -65,6 +64,7 @@ $result = $db->query("SELECT banner_path FROM banners");
         </a>
 
     </div>
+
 
 
     <!-- <script src="./assets/app.js"></script> -->

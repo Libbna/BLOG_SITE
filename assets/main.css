@@ -86,7 +86,7 @@ nav button {
   margin-left: 10% !important;
 }
 
-.row .col picture img {
+.row .col img {
   margin-bottom: 36px;
   border-radius: 10px;
   opacity: 1;
@@ -94,11 +94,11 @@ nav button {
   transition: .5s ease;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  -webkit-box-shadow: rgba(80, 59, 59, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          box-shadow: rgba(80, 59, 59, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-.row .col picture a {
+.row .col a {
   opacity: 0;
   position: relative;
   right: 25%;
@@ -110,11 +110,35 @@ nav button {
   transition: .5s ease;
 }
 
-.row .col picture a:hover {
+.row .col a:hover {
   opacity: 1;
 }
 
-.row .col picture a i {
+.row .col a i {
   font-size: 20px;
+}
+
+#demo .carousel-inner {
+  position: relative;
+  width: 94%;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-left: 40px;
+  margin-top: 30px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+#demo .carousel-inner .carousel-item {
+  width: 100%;
+}
+
+#demo .carousel-inner .carousel-item img {
+  width: 100%;
+  height: 550px;
+}
+
+.draggable .dragging {
+  opacity: 0.5;
 }
 /*# sourceMappingURL=main.css.map */

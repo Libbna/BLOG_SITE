@@ -5,8 +5,8 @@ require_once('../includes/config.php');
 if (!$user->is_logged_in()) {
     header('location: login.php');
 }
-?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +21,7 @@ if (!$user->is_logged_in()) {
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <script type="text/javascript">
@@ -34,6 +35,11 @@ if (!$user->is_logged_in()) {
 <style>
     body {
         overflow-y: auto;
+    }
+
+    .container {
+        width: 600px;
+        margin: 20px auto;
     }
 </style>
 
@@ -61,6 +67,7 @@ if (!$user->is_logged_in()) {
                     <div class="form-group">
                         <input type="submit" name="upload" class="btn btn-warning btn-block" value="Upload Image">
                     </div>
+
                     <!-- <div class="form-group">
                         <h5 class="text-center text-white"><?php echo $msg; ?></h5>
                     </div> -->
@@ -69,24 +76,25 @@ if (!$user->is_logged_in()) {
         </div>
     </div>
 
+
+
     <!-- fetching from databse -->
+    <!-- <div class="rg_btn w3-button w3-indigo" data-rg="btnsr">Shuffle</div> -->
     <div class="row mt-5">
-        <div class="col">
-            <!-- <img src="/assets/images/1629385034.jpg" alt=""> -->
+        <div class="col droppable-area1 connected-sortable">
             <?php
             $result = $db->query("SELECT banner_id, banner_path FROM banners ORDER BY banner_id DESC");
             while ($row = $result->fetch()) {
+
                 $img = "../assets/images/resized_" . $row['banner_path'];
                 // $img = $row['banner_path'];
                 // echo $img;
             ?>
-                <picture>
-                    <source srcset="<?= $img; ?>" media="(min-width: 768px)">
-                    <img src="<?= $img; ?>" alt="image">
-                    <a id="trash" type="button" class="btn btn-danger ml-5" role="button" href="javascript:delimg('<?php echo $row['banner_id']; ?>','<?php echo $img; ?>')">
-                        <i class="fa fa-trash"></i>
-                    </a>
-                </picture>
+
+                <img class="draggable-item" src="<?= $img; ?>" alt="image">
+                <a id="trash" type="button" class="btn btn-danger ml-5" role="button" href="javascript:delimg('<?php echo $row['banner_id']; ?>','<?php echo $img; ?>')">
+                    <i class="fa fa-trash"></i>
+                </a>
 
 
 
@@ -95,6 +103,19 @@ if (!$user->is_logged_in()) {
             ?>
         </div>
     </div>
+
+    <script>
+        $(init);
+
+        function init() {
+            $(".droppable-area1").sortable({
+                connectWith: ".connected-sortable",
+                stack: '.connected-sortable .col'
+            }).disableSelection();
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
 
 
