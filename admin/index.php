@@ -60,21 +60,24 @@ if (!$user->is_logged_in()) {
             <th>Title</th>
             <th>Description</th>
             <th>Author</th>
+            <th>Profile</th>
 
         </tr>
     </thead>
     <?php
 
     try {
-        $stmt = $db->query('SELECT articleID, articleTitle, articleDesc, articleAuthor FROM article ORDER BY articleID DESC');
+        $stmt = $db->query('SELECT articleID, articleTitle, articleDesc, articleAuthor, profile_img FROM article ORDER BY articleID DESC');
         while ($row = $stmt->fetch()) {
 
             echo '<tbody>';
             echo '<tr id="row">';
-            echo '<td class="text-uppercase">' . $row['articleTitle'] . '</td>';
-            echo '<td class="text-uppercase">' . $row['articleDesc'] . '</td>';
-            echo '<td class="text-uppercase">' . $row['articleAuthor'] . '</td>';
+            echo '<td class="text-uppercase w-25">' . $row['articleTitle'] . '</td>';
+            echo '<td class="text-uppercase w-25">' . $row['articleDesc'] . '</td>';
+            echo '<td class="text-uppercase" style="width: 15%;">' . $row['articleAuthor'] . '</td>';
+            // echo '<td class="w-25"><img src="$row["profile_img"]" height="100px" width="100px"></td>';
     ?>
+            <td class="w-25"><img src="<?php echo $row['profile_img'] ?>" alt="" height="100px" width="100px"></td>
             <td>
                 <div id="mybtn" class="btn-group btn-group-md">
                     <?php

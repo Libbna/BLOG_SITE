@@ -52,12 +52,13 @@ if (!$user->is_logged_in()) {
         if (!isset($error)) {
             try {
                 //insert into database
-                $stmt = $db->prepare('UPDATE article SET articleTitle = :articleTitle,  articleDesc = :articleDesc, articleContent = :articleContent WHERE articleID= :articleID');
+                $stmt = $db->prepare('UPDATE article SET articleTitle = :articleTitle,  articleDesc = :articleDesc, articleContent = :articleContent =  WHERE articleID= :articleID');
                 $stmt->execute(array(
                     ':articleTitle' => $articleTitle,
                     ':articleDesc' => $articleDesc,
                     ':articleContent' => $articleContent,
                     ':articleID' => $articleID,
+
 
                 ));
 
@@ -83,7 +84,7 @@ if (!$user->is_logged_in()) {
 
     try {
 
-        $stmt = $db->prepare('SELECT articleID, articleTitle, articleDesc, articleContent FROM article WHERE articleID = :articleID');
+        $stmt = $db->prepare('SELECT articleID, articleTitle, articleDesc, articleContent, profile_img FROM article WHERE articleID = :articleID');
         $stmt->execute(array(':articleID' => $_GET['id']));
         $row = $stmt->fetch();
     } catch (PDOException $e) {

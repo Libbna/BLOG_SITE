@@ -7,6 +7,22 @@ if (!$user->is_logged_in()) {
 };
 
 if (isset($_POST['submit'])) {
+    $profile_img = $_FILES['profile_img'];
+
+    $filename =  $profile_img['name'];
+    $filename_tmp =  $profile_img['tmp_name'];
+
+    $profile_ext = explode('.',  $filename);
+    $filecheck = strtolower(end($profile_ext));
+
+    $file_ext_stored = array('jpeg', 'png', 'jpg');
+
+    if (in_array($filecheck, $file_ext_stored)) {
+        $destinationFile = '../assets/uploads/' . $filename;
+        move_uploaded_file($filename_tmp, $destinationFile);
+        // $stmt = $db->prepare('INSERT INTO article (profile_img) VALUES ($destinationFile)');
+    }
+
     extract($_POST);
     if ($articleTitle == '') {
         $error[] = 'Please enter Title';
@@ -23,13 +39,15 @@ if (isset($_POST['submit'])) {
 
     if (!isset($error)) {
         try {
-            $stmt = $db->prepare('INSERT INTO article (articleTitle, articleDesc, articleContent, articleAuthor) VALUES (:articleTitle, :articleDesc, :articleContent, :articleAuthor)');
-            $stmt->execute(array(
-                ':articleTitle' => $articleTitle,
-                ':articleDesc' => $articleDesc,
-                ':articleContent' => $articleContent,
-                ':articleAuthor' => $articleAuthor,
-            ));
+            $stmt = $db->query("INSERT INTO article (articleTitle, articleDesc, articleContent, articleAuthor, profile_img) VALUES ('$articleTitle', '$articleDesc', '$articleContent', '$articleAuthor', '$destinationFile')");
+            // $stmt->execute(array(
+            //     ':articleTitle' => $articleTitle,
+            //     ':articleDesc' => $articleDesc,
+            //     ':articleContent' => $articleContent,
+            //     ':articleAuthor' => $articleAuthor,
+            //     '$profile_img' => $destinationFile,
+
+            // ));
 
             header('location:index.php?action=added');
             exit;
@@ -60,25 +78,26 @@ include("header.php");
 ?>
 
 <div class=" container mt-5">
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
 
-        <input type="text" name="articleTitle" class="input text-white my-3" placeholder="Title" autocomplete="off" value="<?php if (isset($error)) {
-                                                                                                                                echo $_POST['articleTitle'];
+        <input type="text" name="articleTitle" class="input my-3" placeholder="Title" autocomplete="off" value="<?php if (isset($error)) {
+                                                                                                                    echo $_POST['articleTitle'];
+                                                                                                                } ?>">
+
+
+        <textarea name="articleDesc" class="input my-3 " placeholder="Description"><?php if (isset($error)) {
+                                                                                        echo $_POST['articleDesc'];
+                                                                                    } ?></textarea>
+
+
+        <textarea name="articleContent" class=" input body_content " placeholder="Content"><?php if (isset($error)) {
+                                                                                                echo $_POST['articleContent'];
+                                                                                            } ?></textarea>
+
+        <input type="text" name="articleAuthor" class="input my-3 author" placeholder="Author" autocomplete="off" value="<?php if (isset($error)) {
+                                                                                                                                echo $_POST['articleAuthor'];
                                                                                                                             } ?>">
-
-
-        <textarea name="articleDesc" class="input text-white my-3 " placeholder="Description"><?php if (isset($error)) {
-                                                                                                    echo $_POST['articleDesc'];
-                                                                                                } ?></textarea>
-
-
-        <textarea name="articleContent" class=" input body_content text-white " placeholder="Content"><?php if (isset($error)) {
-                                                                                                            echo $_POST['articleContent'];
-                                                                                                        } ?></textarea>
-
-        <input type="text" name="articleAuthor" class="input text-white my-3 author" placeholder="Author" autocomplete="off" value="<?php if (isset($error)) {
-                                                                                                                                        echo $_POST['articleAuthor'];
-                                                                                                                                    } ?>">
+        <input type="file" name="profile_img" class="input my-3" value="<?php echo $_POST['profile_img']; ?>">
 
         <button name="submit" class="subbtn btn-success">+ Add Article</button>
 
