@@ -48,3 +48,7 @@ include("./header.php");
     }
     ?>
 </div>
+
+<?php
+include('comment-section.php')
+?>

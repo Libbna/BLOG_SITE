@@ -26,8 +26,6 @@ function __autoload($class)
     }
 }
 
-
-
 // admin/index --> dashboard --> to delete a blog
 if (isset($_GET['delpost'])) {
     $stmt = $db->prepare('DELETE FROM article WHERE articleID=:articleID');
@@ -35,8 +33,6 @@ if (isset($_GET['delpost'])) {
     header('location:index.php ? action=deleted');
     exit();
 }
-
-
 
 // upload resize image
 if (isset($_POST['upload'])) {
@@ -125,20 +121,38 @@ function resize_image($source, $path, $max_res)
     // echo "<img src = '$new_image'>" ;
 }
 
-
-
-
-
-
 //delete image
 if (isset($_GET['delimg'])) {
     $stmt = $db->prepare('DELETE FROM banners WHERE banner_id=:banner_id');
     $stmt->execute(array(':banner_id' => $_GET['delimg']));
     header('location:add_view-banner.php ? action=deleted');
-
     exit();
 }
 
+// add comments in db
+
+$msg = "";
+
+if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $comment = $_POST['comment'];
+    $date = date("Y-m-d");
+
+    $stmt = $db->prepare('INSERT INTO comments (name, comment, date) VALUES (:name, :comment, :date)');
+    $stmt->execute(array(
+        ':name' => $name,
+        ':comment' => $comment,
+        ':date' => $date
+    ));
+
+    if ($stmt) {
+        $msg = "Posted Successfully!";
+    } else {
+        $msg = "Failed to post comment!";
+    }
+
+    header('Location: index.php');
+}
 
 
 
