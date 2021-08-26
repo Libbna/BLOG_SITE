@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-5 bg-light rounded mt-2">
-                <h4 class="text-center p-2">Comments</h4>
+                <h4 class="text-center p-2">Write your comment.</h4>
                 <form action="" method="POST" class="p-2">
                     <div class="form-group">
                         <input type="text" name="name" class="form-control rounder-0" placeholder="Enter your name" required>
