@@ -1,0 +1,20 @@
+.container {
+    .row {
+        margin-left: -17% !important;
+        width: 133%; 
+        .col-xl-5 {
+            form {
+                width: 71%;
+                margin-left: 15%;
+                .form-group {
+                    .btn {
+                        border-radius: 5px;
+                    }
+                }
+            }
+            
+        }
+
+    }
+    
+}

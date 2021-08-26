@@ -41,8 +41,8 @@ if (isset($_POST['submit'])) {
 <body>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-5 bg-light rounded mt-2">
-                <h4 class="text-center p-2">Write your comment.</h4>
+            <div class="col-xl-5 bg-light rounded mt-2">
+                <h4 class="text-center p-2">Comments</h4>
                 <form action="" method="POST" class="p-2">
                     <div class="form-group">
                         <input type="text" name="name" class="form-control rounder-0" placeholder="Enter your name" required>
@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
                         <textarea name="comment" class="form-control rounded-0" placeholder="Write your comment here." required></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="submit" name="submit" class="btn btn-primary rounded-0" value="Comment">
+                        <input type="submit" name="submit" class="btn btn-primary" value="Post Comment">
                         <h5 class="float-right text-success p-2"><?= $msg; ?></h5>
                     </div>
                 </form>
@@ -66,7 +66,7 @@ if (isset($_POST['submit'])) {
                 ?>
                     <div class="card mb-2 border-secondary">
                         <div class="card-header bg-secondary py-1 text-light">
-                            <span class="font-italc">Posted By : <?= $row['cname']; ?></span>
+                            <span class="font-italc"><?= $row['cname']; ?></span>
                             <span class="float-right font-italic"><?= $row['cdate'] ?></span>
                         </div>
                         <div class="card-body py-2">
