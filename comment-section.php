@@ -26,6 +26,7 @@ if (isset($_POST['submit'])) {
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,8 +90,8 @@ if (isset($_POST['submit'])) {
             jQuery('#like_loop_' + cid).html(curr_count);
             jQuery.ajax({
                 url: 'update_count.php',
-                type: 'post',
-                data: 'type = like&cid=' + cid,
+                type: 'POST',
+                data: 'type=like&cid=' + cid,
                 success: function(result) {
 
                 }
