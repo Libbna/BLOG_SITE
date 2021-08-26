@@ -72,10 +72,9 @@ if (!$user->is_logged_in()) {
 
             echo '<tbody>';
             echo '<tr id="row">';
-            echo '<td class="text-uppercase w-25">' . $row['articleTitle'] . '</td>';
-            echo '<td class="text-uppercase w-25">' . $row['articleDesc'] . '</td>';
-            echo '<td class="text-uppercase" style="width: 15%;">' . $row['articleAuthor'] . '</td>';
-            // echo '<td class="w-25"><img src="$row["profile_img"]" height="100px" width="100px"></td>';
+            echo '<td class="w-25">' . $row['articleTitle'] . '</td>';
+            echo '<td class="w-25">' . $row['articleDesc'] . '</td>';
+            echo '<td class=" style="width: 15%;">' . $row['articleAuthor'] . '</td>';
     ?>
             <td class="w-25"><img src="<?php echo $row['profile_img'] ?>" alt="" height="100px" width="100px"></td>
             <td>

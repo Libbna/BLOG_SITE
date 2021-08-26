@@ -37,17 +37,19 @@ if (isset($_POST['submit'])) {
         $error[] = 'Please enter Author Name';
     }
 
+
+
     if (!isset($error)) {
         try {
             $stmt = $db->query("INSERT INTO article (articleTitle, articleDesc, articleContent, articleAuthor, profile_img) VALUES ('$articleTitle', '$articleDesc', '$articleContent', '$articleAuthor', '$destinationFile')");
-            // $stmt->execute(array(
-            //     ':articleTitle' => $articleTitle,
-            //     ':articleDesc' => $articleDesc,
-            //     ':articleContent' => $articleContent,
-            //     ':articleAuthor' => $articleAuthor,
-            //     '$profile_img' => $destinationFile,
+            $stmt->execute(array(
+                ':articleTitle' => $articleTitle,
+                ':articleDesc' => $articleDesc,
+                ':articleContent' => $articleContent,
+                ':articleAuthor' => $articleAuthor,
+                '$profile_img' => $destinationFile,
 
-            // ));
+            ));
 
             header('location:index.php?action=added');
             exit;

@@ -129,31 +129,6 @@ if (isset($_GET['delimg'])) {
     exit();
 }
 
-// add comments in db
-
-$msg = "";
-
-if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $comment = $_POST['comment'];
-    $date = date("Y-m-d");
-
-    $stmt = $db->prepare('INSERT INTO comments (name, comment, date) VALUES (:name, :comment, :date)');
-    $stmt->execute(array(
-        ':name' => $name,
-        ':comment' => $comment,
-        ':date' => $date
-    ));
-
-    if ($stmt) {
-        $msg = "Posted Successfully!";
-    } else {
-        $msg = "Failed to post comment!";
-    }
-
-    header('Location: index.php');
-}
-
 
 
 $user = new User($db);

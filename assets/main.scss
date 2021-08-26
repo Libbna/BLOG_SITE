@@ -5,6 +5,7 @@
 
 $main-color: #de4839;
 
+
 .card {
     .card-header {
         color: $main-color;
@@ -18,7 +19,7 @@ $main-color: #de4839;
             p {
                 font-size: 25px;
                 color: grey;
-                text-transform: uppercase;
+                // text-transform: uppercase;
                 font-family: Garamond, serif;
                 letter-spacing: 2px;
                 text-decoration: underline;

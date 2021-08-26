@@ -1,6 +1,29 @@
 <?php
 require_once("includes/config.php");
 ?>
+<?php
+// add comments in db
+
+$msg = "";
+
+if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $comment = $_POST['comment'];
+    $date = date("Y-m-d");
+
+    $stmt = $db->query("INSERT INTO comments (cname, comment, cdate) VALUES ('$name', '$comment', '$date')");
+
+
+    if ($stmt) {
+        $msg = "Posted Successfully!";
+    } else {
+        $msg = "Failed to post comment!";
+    }
+
+    header('Location: index.php');
+}
+
+?>
 
 
 <!DOCTYPE html>
@@ -8,6 +31,7 @@ require_once("includes/config.php");
 
 <head>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/main.css">
 
@@ -41,13 +65,15 @@ require_once("includes/config.php");
                 ?>
                     <div class="card mb-2 border-secondary">
                         <div class="card-header bg-secondary py-1 text-light">
-                            <span class="font-italc">Posted By : <?= $row['name']; ?></span>
-                            <span class="float-right font-italic"><?= $row['date'] ?></span>
+                            <span class="font-italc">Posted By : <?= $row['cname']; ?></span>
+                            <span class="float-right font-italic"><?= $row['cdate'] ?></span>
                         </div>
                         <div class="card-body py-2">
                             <p class="card-text"><?= $row['comment'] ?></p>
+                            <a href="javascript:void(0)" class="btn btn-info btn-sm float-right">
+                                <span class="fa fa-thumbs-up" onclick="like_update('<?php echo $row['cid']; ?>')"> (<span id="like_loop_<?php echo $row['cid']; ?>"><?php echo $row['like_count'] ?></span>)</span>
+                            </a>
                         </div>
-                        <!-- <div class="card-footer float-right"></div> -->
                     </div>
                 <?php
                 }
@@ -56,15 +82,23 @@ require_once("includes/config.php");
         </div>
     </div>
 
+    <script>
+        function like_update(cid) {
+            var curr_count = jQuery('#like_loop_' + cid).html();
+            curr_count++;
+            jQuery('#like_loop_' + cid).html(curr_count);
+            jQuery.ajax({
+                url: 'update_count.php',
+                type: 'post',
+                data: 'type = like&cid=' + cid,
+                success: function(result) {
+
+                }
+            })
 
 
-
-
-
-
-
-
-
+        }
+    </script>
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
