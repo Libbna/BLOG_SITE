@@ -41,6 +41,9 @@ include("./header.php");
                         <?php
                         echo '<a href="http://blogsite.com//admin/view-article.php?id=' . $row['articleID'] . '">Read More </a>';
                         ?>
+                        <a href="javascript:void(0)" class="btn btn-info btn-sm float-right">
+                            <span class="fa fa-thumbs-up" onclick="likes_update('<?php echo $row['articleID']; ?>')"> (<span id="like_count<?php echo $row['articleID']; ?>"><?php echo $row['likes'] ?></span>)</span>
+                        </a>
                     </blockquote>
                 </div>
             </div>
@@ -55,6 +58,24 @@ include("./header.php");
 <?php
 include('comment-section.php')
 ?>
+
+<script>
+    function likes_update(articleID) {
+        var curr_count = jQuery('#like_count' + articleID).html();
+        curr_count++;
+        jQuery('#like_count' + articleID).html(curr_count);
+        jQuery.ajax({
+            url: 'update_count_post.php',
+            type: 'POST',
+            data: 'type=like&articleID=' + articleID,
+            success: function(result) {
+
+            }
+        })
+
+
+    }
+</script>
 
 
 
