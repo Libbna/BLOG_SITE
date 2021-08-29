@@ -1,25 +1,96 @@
-nav p {
-  font-weight: bold;
-  border: 1px solid #fff;
-  padding: 8px;
+a {
+  text-decoration: none;
+  background: transparent;
+  color: #f76a8c;
 }
 
-nav div ul li {
-  padding-left: 25px;
+a:hover {
+  text-decoration: none;
 }
 
-nav div ul li a {
-  color: #fff !important;
+header {
+  background-color: #f76a8c;
+  padding: 15px 0;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .container .navbar .navbar-brand {
+  padding: 0;
+  font-size: 36px;
+  text-transform: capitalize;
+  color: #fff;
+  margin: 0;
+  z-index: 1;
+  font-weight: 700;
+}
+
+header .container .navbar .navbar-collapse .navbar-nav .nav-item {
+  padding: 0 10px;
+  position: relative;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+header .container .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
+  text-transform: capitalize;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  padding: 10px 0 10px;
   font-size: 18px;
+  font-weight: 700;
 }
 
-nav div ul li a:hover {
-  color: wheat !important;
+header .container .navbar .navbar-collapse .navbar-nav .nav-item .caret-off::after {
+  display: none;
 }
 
-nav button {
-  margin-left: 15px;
-  margin-top: -18px;
+header .container .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-item {
+  font-weight: 600;
+  font-size: 17px;
+  color: #444;
+}
+
+header .container .navbar .navbar-collapse .search-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .container .navbar .navbar-collapse .search-right .theme-button {
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0px;
+  border-radius: 6px;
+}
+
+header .container .navbar .navbar-collapse .search-right .domain .hamburger1 {
+  width: 30px;
+  float: left;
+  cursor: pointer;
+  background: transparent;
+}
+
+header .container .navbar .navbar-collapse .search-right .domain .hamburger1 div {
+  height: 3px;
+  width: 24px;
+  background: #ffffff;
+  margin: 5px 0px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border-radius: 0;
+  text-align: center;
 }
 
 .content {
@@ -70,6 +141,18 @@ nav button {
 
 .container .row .col-xl-5 form .form-group .btn {
   border-radius: 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #292922;
 }
 
 .card .card-header {

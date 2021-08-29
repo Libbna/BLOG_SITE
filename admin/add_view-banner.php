@@ -80,8 +80,8 @@ if (!$user->is_logged_in()) {
 
     <!-- fetching from databse -->
     <!-- <div class="rg_btn w3-button w3-indigo" data-rg="btnsr">Shuffle</div> -->
-    <div class="row mt-5">
-        <div class="col droppable-area1 connected-sortable">
+    <div class="row mt-5 gallery">
+        <div class="col recorder-gallery">
             <?php
             $result = $db->query("SELECT banner_id, banner_path FROM banners ORDER BY banner_id DESC");
             while ($row = $result->fetch()) {
@@ -92,6 +92,7 @@ if (!$user->is_logged_in()) {
             ?>
 
                 <img class="draggable-item" src="<?= $img; ?>" alt="image">
+                
                 <a id="trash" type="button" class="btn btn-danger ml-5" role="button" href="javascript:delimg('<?php echo $row['banner_id']; ?>','<?php echo $img; ?>')">
                     <i class="fa fa-trash"></i>
                 </a>
@@ -105,14 +106,7 @@ if (!$user->is_logged_in()) {
     </div>
 
     <script>
-        $(init);
 
-        function init() {
-            $(".droppable-area1").sortable({
-                connectWith: ".connected-sortable",
-                stack: '.connected-sortable .col'
-            }).disableSelection();
-        }
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>

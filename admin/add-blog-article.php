@@ -41,13 +41,14 @@ if (isset($_POST['submit'])) {
 
     if (!isset($error)) {
         try {
-            $stmt = $db->query("INSERT INTO article (articleTitle, articleDesc, articleContent, articleAuthor, profile_img) VALUES ('$articleTitle', '$articleDesc', '$articleContent', '$articleAuthor', '$destinationFile')");
+            // $stmt = $db->query("INSERT INTO article (articleTitle, articleDesc, articleContent, articleAuthor, profile_img) VALUES ('$articleTitle', '$articleDesc', '$articleContent', '$articleAuthor', '$destinationFile')");
+            $stmt = $db->prepare('INSERT INTO article (articleTitle, articleDesc, articleContent, articleAuthor, profile_img,) VALUES (:articleTitle, :articleDesc, :articleContent, :articleAuthor, :destinationFile)');
             $stmt->execute(array(
                 ':articleTitle' => $articleTitle,
                 ':articleDesc' => $articleDesc,
                 ':articleContent' => $articleContent,
                 ':articleAuthor' => $articleAuthor,
-                '$profile_img' => $destinationFile,
+                ':profile_img' => $destinationFile,
 
             ));
 

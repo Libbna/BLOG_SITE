@@ -1,35 +1,97 @@
-$white: #fff;
+$white: #ffffff;
 $main-color: #de4839;
 $font-fam: san-serif;
+$header-bg-color: #f76a8c;
 
-
-nav {
-    p {
-       
-        font-weight: bold;
-        border: 1px solid $white ;
-        padding: 8px;
-       
+a {
+    text-decoration: none;
+    background: transparent;
+    color: $header-bg-color;
+    &:hover {
+        text-decoration: none;
     }
+}
 
-    div {
-        ul {
-            li {
-                padding-left: 25px;
-                a {
-                    color: $white !important;
-                    font-size: 18px;
+header {
+    background-color: $header-bg-color;
+    padding: 15px 0;
+    transition: all 0.4s ease 0s;
+    display: grid;
+    align-items: center;
 
-                    &:hover {
-                        color: wheat !important;
+    .container {
+        .navbar {
+            .navbar-brand {  //<a>
+                padding: 0;
+                font-size: 36px;
+                text-transform: capitalize;
+                color: #fff;
+                margin: 0;
+                z-index: 1;
+                font-weight: 700;
+            }
+            .navbar-collapse {
+            .navbar-nav {
+                .nav-item {
+                    padding: 0 10px;
+                    position: relative;
+                    transition: all 0.5s ease;
+                
+                   .nav-link {
+                        text-transform: capitalize;
+                        transition: all 0.5s ease;
+                        padding: 10px 0 10px;
+                        font-size: 18px;
+                        font-weight: 700;
+                    }
+                    .caret-off::after {
+                        display: none;
+                    }
+                    .dropdown-item {
+                        font-weight: 600;
+                        font-size: 17px;
+                        color: #444;
+                    }
+                }
+            }
+            .search-right {
+                display: flex;
+                align-items: center;
+
+                .theme-button {
+                    transition: 0.3s ease-out;
+                    display: inline-block;
+                    font-weight: 700;
+                    font-size: 16px;
+                    margin: 0px;
+                    border-radius: 6px;
+                }
+
+                .domain {
+                    .hamburger1 {
+                        width: 30px;
+                        float: left;
+                        cursor: pointer;
+                        background: transparent;
+
+                        div {
+                            height: 3px;
+                            width: 24px;
+                            background: $white;
+                            margin: 5px 0px;
+                            transition: all 0.5s;
+                            border-radius: 0;
+                            text-align: center;
+
+                            // &:nth-child(1) :hover  {
+                            //     width: 12px;
+                            //     transition: all 0.5s;
+                            // }
+                        }
                     }
                 }
             }
         }
     }
-
-    button {
-        margin-left: 15px;
-        margin-top: -18px;
-    }
+}
 }
