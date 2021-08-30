@@ -81,12 +81,23 @@ header {
                             margin: 5px 0px;
                             transition: all 0.5s;
                             border-radius: 0;
-                            text-align: center;
+                            text-align: center;        
+                        }
 
-                            // &:nth-child(1) :hover  {
-                            //     width: 12px;
-                            //     transition: all 0.5s;
-                            // }
+                                    transition: all 0.5s;
+                        &:hover {
+                            .d1 {
+                                width: 12px;
+                                transition: all 0.5s;
+                            }
+                            .d2 {
+                                width: 20px;
+                                transition: all 0.5s;
+                            }
+                            .d3 {
+                                width: 30px;
+                                transition: all 0.5s;
+                            }
                         }
                     }
                 }

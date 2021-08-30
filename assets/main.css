@@ -80,6 +80,8 @@ header .container .navbar .navbar-collapse .search-right .domain .hamburger1 {
   float: left;
   cursor: pointer;
   background: transparent;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 header .container .navbar .navbar-collapse .search-right .domain .hamburger1 div {
@@ -91,6 +93,24 @@ header .container .navbar .navbar-collapse .search-right .domain .hamburger1 div
   transition: all 0.5s;
   border-radius: 0;
   text-align: center;
+}
+
+header .container .navbar .navbar-collapse .search-right .domain .hamburger1:hover .d1 {
+  width: 12px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+header .container .navbar .navbar-collapse .search-right .domain .hamburger1:hover .d2 {
+  width: 20px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+header .container .navbar .navbar-collapse .search-right .domain .hamburger1:hover .d3 {
+  width: 30px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .content {
@@ -141,6 +161,111 @@ header .container .navbar .navbar-collapse .search-right .domain .hamburger1 div
 
 .container .row .col-xl-5 form .form-group .btn {
   border-radius: 5px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 24.5px;
+  font-weight: 300;
+  color: #696969;
+}
+
+li {
+  list-style: none;
+}
+
+#DomainModal {
+  display: none;
+  padding: 17px;
+}
+
+#DomainModal .modal-dialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: auto;
+  max-width: 400px;
+  width: 400px;
+  height: 100%;
+  -webkit-transform: translate3d(0%, 0, 0);
+          transform: translate3d(0%, 0, 0);
+}
+
+#DomainModal .modal-dialog .modal-content {
+  border-radius: 0;
+  border: none;
+  padding: 50px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+#DomainModal .modal-dialog .modal-content .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 1;
+  z-index: 9;
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+}
+
+#DomainModal .modal-dialog .modal-content .close span {
+  font-size: 25px;
+  color: #333;
+  margin-top: 20px;
+  margin-right: 15px;
+  background: #eee;
+  width: 50px;
+  height: 50px;
+  line-height: 47px;
+  border-radius: 30px;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  opacity: 1;
+  display: block;
+}
+
+#DomainModal .modal-dialog .modal-content .modal-body .modal__content .logo a {
+  color: var(--heading-color);
+  font-weight: 600;
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+#DomainModal .modal-dialog .modal-content .modal-body .modal__content .widget-menu-items .navbar-nav .nav-item .nav-link {
+  color: #696969;
+}
+
+#DomainModal .modal-dialog .modal-content .modal-body .modal__content .widget-menu-items .navbar-nav .nav-item .nav-link:hover {
+  color: #f76a8c;
+}
+
+#DomainModal .modal-dialog .modal-content .modal-body .modal__content .widget-social-icons ul li {
+  display: inline-block;
+}
+
+#DomainModal .modal-dialog .modal-content .modal-body .modal__content .widget-social-icons ul li p span {
+  color: #ddd;
+  width: 16px;
+  margin-right: 5px;
+}
+
+#DomainModal .modal-dialog .modal-content .modal-body .modal__content .widget-social-icons ul li p a {
+  font-weight: 600;
+  color: #696969;
+}
+
+#DomainModal .modal-dialog .modal-content .modal-body .modal__content .widget-social-icons ul li p a:hover {
+  color: #f76a8c;
+}
+
+#DomainModal .modal-dialog .right-toggle-bg {
+  background-color: #fff;
 }
 
 * {
