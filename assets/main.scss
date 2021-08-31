@@ -2,6 +2,8 @@
 @import "./login";
 @import "./comment";
 @import "./domain-modal";
+@import "./footer";
+
 
 // color-codes
 $main-color: #de4839;
@@ -22,6 +24,8 @@ h1, h2, h3, h4, h5, h6 {
     
     color: $heading-color;
 }
+
+
 
 .card {
     .card-header {

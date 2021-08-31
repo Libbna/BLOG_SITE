@@ -268,6 +268,89 @@ li {
   background-color: #fff;
 }
 
+footer .footer-inner-main {
+  background-color: #fff;
+}
+
+footer .footer-inner-main .footer-grids .container .text-txt .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -40px !important;
+}
+
+footer .footer-inner-main .footer-grids .container .text-txt .footer-about {
+  border-bottom: 1px solid #ddd;
+}
+
+footer .footer-inner-main .footer-grids .container .text-txt .footer-about .footer-about-links .header-section h3 {
+  color: #292922;
+  font-size: 46px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+footer .footer-inner-main .footer-grids .container .text-txt .footer-about .footer-about-links .header-section p {
+  color: #696969;
+  font-size: 22px;
+  line-height: 32.5px;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+footer .footer-inner-main .footer-grids .container .text-txt .footer-about .footer-about-links .social-links ul li {
+  margin-right: 0px;
+  display: inline-block;
+}
+
+footer .footer-inner-main .footer-grids .container .text-txt .footer-about .footer-about-links .social-links ul li a {
+  background: transparent;
+  display: inline-block;
+  text-align: center;
+  font-size: 18px;
+  color: #696969;
+  width: 32px;
+}
+
+footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-two-right h6 {
+  color: #292922;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: capitalize;
+  margin-bottom: 28px;
+  font-weight: 700;
+}
+
+footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-two-right ul li {
+  list-style: none;
+  padding-left: 15px;
+  position: relative;
+}
+
+footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-two-right ul li ::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 100px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: #292922;
+}
+
+footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-two-right ul li a {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24.5px;
+  color: #696969;
+  margin: 0 0 10px 0;
+  display: block;
+}
+
 * {
   margin: 0;
   padding: 0;

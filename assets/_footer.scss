@@ -1,0 +1,96 @@
+footer {
+    .footer-inner-main {
+        background-color: #fff;
+        .footer-grids {
+            .container {
+                .text-txt {
+                    .row {
+                            display: flex;
+                            flex-wrap: wrap;
+                            margin-right: -15px;
+                            margin-left: -40px !important;
+                        }
+                    .footer-about {
+                        border-bottom: 1px solid #ddd;
+
+                        .footer-about-links {
+                            .header-section {
+                                h3 {
+                                    color: #292922;
+                                    font-size: 46px;
+                                    line-height: 1;
+                                    font-weight: 700;
+                                }
+                                p {
+                                    color: #696969;
+                                    font-size: 22px;
+                                    line-height: 32.5px;
+                                    font-weight: 300;
+                                    margin-top: 5px;
+                                }
+                            }
+
+                            .social-links {
+                                ul {
+                                    li {
+                                        margin-right: 0px;
+                                        display: inline-block;
+
+                                        a{
+                                            background: transparent;
+                                            display: inline-block;
+                                            text-align: center;
+                                            font-size: 18px;
+                                            color: #696969;
+                                            width: 32px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .footer-links {
+                        .sub-two-right {
+                            h6 {
+                                color: #292922;
+                                font-size: 20px;
+                                line-height: 20px;
+                                text-transform: capitalize;
+                                margin-bottom: 28px;
+                                font-weight: 700;
+                            }
+                            ul {
+                                li {
+                                    list-style: none;
+                                    padding-left: 15px;
+                                    position: relative;
+
+                                    ::before {
+                                        content: "";
+                                        width: 5px;
+                                        height: 5px;
+                                        border-radius: 100px;
+                                        position: absolute;
+                                        top: 10px;
+                                        left: 0;
+                                        background: #292922 ;
+                                    }
+                                    a {
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 16px;
+                                        line-height: 24.5px;
+                                        color: #696969;
+                                        margin: 0 0 10px 0;
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

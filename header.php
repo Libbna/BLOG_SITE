@@ -20,7 +20,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark stroke p-0">
                 <h1>
-                    <a class="navbar-brand" href="">BlogSite</a>
+                    <a class="navbar-brand" href="">Publication</a>
                 </h1>
                 <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse" data-target="navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
