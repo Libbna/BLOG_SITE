@@ -75,6 +75,103 @@ header .container .navbar .navbar-collapse .search-right .theme-button {
   border-radius: 6px;
 }
 
+header .container .navbar .navbar-collapse .search-right .pop-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+  -webkit-transition: opacity 0ms;
+  transition: opacity 0ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.93);
+  height: 100vh;
+}
+
+header .container .navbar .navbar-collapse .search-right .pop-overlay .popup {
+  padding: 40px 50px;
+  border-radius: 0px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+header .container .navbar .navbar-collapse .search-right .pop-overlay .popup form {
+  margin: 0rem auto;
+  max-width: 600px;
+  display: block;
+  position: relative;
+}
+
+header .container .navbar .navbar-collapse .search-right .pop-overlay .popup form input[type="search"] {
+  padding: 15px 45px 15px 15px;
+  border: none;
+  background: #fff;
+  color: #292922;
+  font-size: 16px;
+  border-radius: 6px;
+  margin: 0;
+  text-align: left;
+  height: 60px;
+  width: 100%;
+}
+
+header .container .navbar .navbar-collapse .search-right .pop-overlay .popup form button {
+  font-size: 18px;
+  font-weight: 600;
+  display: block;
+  color: #f76a8c;
+  position: absolute;
+  right: 0;
+  top: 13px;
+}
+
+header .container .navbar .navbar-collapse .search-right .pop-overlay .popup .browse-items h3 {
+  color: #fff;
+  margin-bottom: 26px;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+header .container .navbar .navbar-collapse .search-right .pop-overlay .popup .browse-items .search-items {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+header .container .navbar .navbar-collapse .search-right .pop-overlay .popup .browse-items .search-items li {
+  margin: 10px;
+  display: inline-block;
+}
+
+header .container .navbar .navbar-collapse .search-right .pop-overlay .popup .browse-items .search-items li a {
+  font-size: 16px;
+  color: #eee;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+header .container .navbar .navbar-collapse .search-right .pop-overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+  font-size: 40px;
+  text-decoration: none;
+  color: #fff;
+  opacity: 1;
+  background: none;
+}
+
+header .container .navbar .navbar-collapse .search-right .pop-overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
 header .container .navbar .navbar-collapse .search-right .domain .hamburger1 {
   width: 30px;
   float: left;

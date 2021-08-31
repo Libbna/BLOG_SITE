@@ -56,7 +56,7 @@ include("./header.php");
 </div>
 
 <?php
-include('comment-section.php');
+// include('comment-section.php');
 include('footer.php');
 ?>
 

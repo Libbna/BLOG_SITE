@@ -60,16 +60,47 @@
                             <a class="nav-link" href="#">Contact </a>
                         </li>
                     </ul>
+                    <!-- search right -->
                     <div class="search-right">
                         <a href="#search" class="btn btn-light theme-button mr-lg-3 mt-lg-0 mt-4" title="search">
                             <span class="fa fa-search" aria-hidden="true"></span> Topics
                         </a>
-                        <!-- search popup TODO: -->
+                        <!-- search popup -->
                         <div id="search" class="pop-overlay">
                             <div class="popup">
+                                <!-- <form action="search-results.php" method="GET" class="search-box"> -->
+                                <form action="search-results.php" method="GET" class="search-box">
+                                    <input type="search" name="search" required autofocus="" placeholder="Search your Keyword">
+                                    <button name="submit-search" type="submit" class="btn"><span class="fa fa-search" aria-hidden="true"></span></button>
 
+                                </form>
+                                <!-- search -> browser - items -->
+                                <div class="browse-items">
+                                    <h3 class="title two mt-md-5 mt-4">Browse all topics:</h3>
+                                    <ul class="search-items">
+                                        <li><a href="#">Design Patterns</a></li>
+                                        <li><a href="#">Performace</a></li>
+                                        <li><a href="#">Photoshop</a></li>
+                                        <li><a href="#">User Experience</a></li>
+                                        <li><a href="#">Typography</a></li>
+                                        <li><a href="#">E-commerce</a></li>
+                                        <li><a href="#">HTML</a></li>
+                                        <li><a href="#">Illustration</a></li>
+                                        <li><a href="#">Design Patterns</a></li>
+                                        <li><a href="#">Performace</a></li>
+                                        <li><a href="#">Photoshop</a></li>
+                                        <li><a href="#">User Experience</a></li>
+                                        <li><a href="#">Typography</a></li>
+                                        <li><a href="#">E-commerce</a></li>
+                                        <li><a href="#">HTML</a></li>
+                                        <li><a href="#">Illustration</a></li>
+
+                                    </ul>
+                                </div>
                             </div>
+                            <a class="close" href="#close">×</a>
                         </div>
+                        <!-- /search popup -->
                         <a href="#domain" class="domain" data-toggle="modal" data-target="#DomainModal">
                             <div class="hamburger1">
                                 <div class="d1"></div>
@@ -78,6 +109,7 @@
                             </div>
                         </a>
                     </div>
+                    <!-- /search right -->
 
                 </div>
             </nav>
