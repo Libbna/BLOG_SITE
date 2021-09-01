@@ -3,6 +3,7 @@
 @import "./comment";
 @import "./domain-modal";
 @import "./footer";
+@import "./search-results";
 
 
 // color-codes
@@ -16,6 +17,10 @@ $heading-color: #292922;
     padding: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 

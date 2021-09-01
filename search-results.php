@@ -5,47 +5,77 @@ $stmt = $db->query('SELECT * FROM article');
 
 ?>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
-<!-- Main CSS -->
-<link rel="stylesheet" href="/assets/main.css">
-
+<title>Blog Site</title>
 <?php
-// include("./header.php");
-
+include("./header.php");
 ?>
 
-<h1>Search Page</h1>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="container">
-    <?php
-    if (isset($_GET['submit-search'])) {
-        $search = $_GET['search'];
-        // $search = mysqli_real_escape_string($db, $_POST['search']);  //escapes special characters in a string for use in an SQL query
-        // $search = PDO::quote($db, $_POST['search']);
 
-        // $result = $db->query("SELECT * FROM article WHERE articleTitle LIKE '%$search%' OR articleDesc LIKE '%$search%' OR articleContent LIKE '%$search%' 
-        //         OR articleAuthor LIKE '%$search%'");
-        $result = $db->query("SELECT * FROM article WHERE articleTitle LIKE '%" . $search . "%' OR articleDesc LIKE '%" . $search . "%' OR articleContent LIKE '%" . $search . "%' 
+<link href="./assets/main.css" rel="stylesheet" type="text/css">
+
+<div id="self-space"></div>
+<section class="auhtors1 py-5">
+    <div class="container py-lg-3">
+        <div class="row">
+            <?php
+            if (isset($_GET['submit-search'])) {
+                $search = $_GET['search'];
+                $result = $db->query("SELECT * FROM article WHERE articleTitle LIKE '%" . $search . "%' OR articleDesc LIKE '%" . $search . "%' OR articleContent LIKE '%" . $search . "%' 
                 OR articleAuthor LIKE '%" . $search . "%'");
+                if ($result) {
+                    while ($row = $result->fetch()) { ?>
+                        <article class="mt-5 col-lg-6 pr-lg-5">
+
+                            <div class="slider-info">
+                                <div class="img-circle">
+                                    <a href="#">
+                                        <img src="<?php echo $row['profile_img']; ?>" alt="">
+                                    </a>
+                                </div>
+                                <div class="message">
+                                    <ul class="blog-single-author-date d-flex align-items-center flex-wrap">
+                                        <li>
+                                            <span class="fa fa-clock-o" aria-hidden="true"> Mar 16, 2021</span>
+                                        </li>
+                                        <li>
+                                            <span class="fa fa-commenting-o" aria-hidden="true">
+                                                <a href="#url">Comment</a>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="fa fa-clock-o" aria-hidden="true"> 8 min read</span>
+                                        </li>
+                                    </ul>
+                                    <a class="author-book-title" href="#">
+                                        <?php echo $row['articleTitle']; ?>
+                                    </a>
+                                    <p>
+                                        <?php echo $row['articleDesc']; ?>
+                                    </p>
+                                    <a href="#url" class="read-button mt-4 d-inline-block">Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>
+                                </div>
+                            </div>
+                        </article>
+            <?php }
+                }
+            } ?>
+        </div>
 
 
-        if ($result) {
-            while ($row = $result->fetch()) {
-                echo "<div class='container'>
-                <h3>" . $row['articleTitle'] . "</h3>
-                <h5>" . $row['articleDesc'] . "</h5>
-                <p>" . $row['articleContent'] . "</p>
-                <p>" . $row['articleAuthor'] . "</p>
-                </div>";
-            }
-        } else {
-            echo "There are no results matching your search!";
-        }
-    }
-    ?>
-</div>
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
 
 
 

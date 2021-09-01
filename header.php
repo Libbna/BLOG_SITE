@@ -16,6 +16,11 @@
 </head>
 
 <body>
+    <!-- Domain Modal -->
+
+    <?php
+    include('domainModal.php');
+    ?>
     <header id="site-header">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark stroke p-0">
@@ -116,11 +121,7 @@
         </div>
     </header>
 
-    <!-- Domain Modal -->
 
-    <?php
-    include('domainModal.php');
-    ?>
 
 
 
