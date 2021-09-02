@@ -42,7 +42,7 @@ include("./header.php");
                                         </li>
                                         <li>
                                             <span class="fa fa-commenting-o" aria-hidden="true">
-                                                <a href="#url">Comment</a>
+                                                <a href="/comment.php">Comment</a>
                                             </span>
                                         </li>
                                         <li>
@@ -80,5 +80,5 @@ include("./header.php");
 
 
 <?php
-// include('footer.php');
+include('footer.php');
 ?>

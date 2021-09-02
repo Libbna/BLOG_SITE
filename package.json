@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Libbna/BLOG_php_mysql_qed42#readme",
   "dependencies": {
-    "node-sass": "^6.0.1"
+    "node-sass": "^6.0.1",
+    "owl.carousel": "^2.3.4"
   }
 }

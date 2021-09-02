@@ -14,61 +14,65 @@ include("./header.php");
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
 
-<!-- font awesome ico  -->
+<link rel="stylesheet" href="/assets/main.css">
+
+
+<!-- font awesome icon  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- main css -->
-<link href="./assets/main.css" rel="stylesheet" type="text/css">
+<!-- <link href="./assets/main.css" rel="stylesheet" type="text/css"> -->
 
-<!-- Banner Section -->
-<?php include('banner.php') ?>
 
-<!--Main Section  -->
+<?php
+include('banner.php')
+?>
 
-<div class="container mt-5">
+<!--Main Slider  -->
+<div style="margin: 8px auto; display: block; text-align:center;"></div>
 
-    <?php
-    try {
-        //selecting data through ID
-        while ($row = $stmt->fetch()) { ?>
-            <div class="card">
-                <div class="card-header">
-                    <?php echo $row['articleTitle']; ?>
+<section class="w3l-blog">
+    <div class="text-element-9">
+        <div class="row no-gutters">
+            <a href="blog-single.html" class="col-lg-6 blog-article-posts bg-color-one">
+                <div class="blog-post d-flex flex-wrap align-content-between">
+                    <div class="post-content">
+                        <ul class="author-date mb-4 d-flex align-items-center">
+                            <li class="circle-lg avatar">
+                                <img src="assets/uploads/author4.jpg" alt="">
+                            </li>
+                            <li>by <b>Daniel Roberto</b></li>
+                            <li><span class="fa fa-clock-o" aria-hidden="true"></span> Feb 16, 2020</li>
+                        </ul>
+                        <h4 class="blog_post_title mb-4">That’s what I want to show you how to do here. In this article, I will:</h4>
+                        <p class="sub-para">#Market Tips <sup> 36</sup></p>
+                        <p class="sub-para">#Sports <sup> 235</sup></p>
+                        <p class="sub-para">#Techniques <sup> 59</sup></p>
+                    </div>
+                    <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
                 </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p><?php echo $row['articleDesc']; ?></p>
-                        <footer class="footer">
-                            <?php echo $row['articleAuthor']; ?>
-                        </footer>
+            </a>
+        </div>
+    </div>
+</section>
 
-                        <?php
-                        echo '<a href="http://blogsite.com//admin/view-article.php?id=' . $row['articleID'] . '">Read More </a>';
-                        ?>
-                        <a href="javascript:void(0)" class="btn btn-info btn-sm float-right">
-                            <span class="fa fa-thumbs-up" onclick="likes_update('<?php echo $row['articleID']; ?>')"> (<span id="like_count<?php echo $row['articleID']; ?>"><?php echo $row['likes'] ?></span>)</span>
-                        </a>
-                    </blockquote>
-                </div>
-            </div>
-    <?php
-        }
-    } catch (PDOException $e) {
-        echo $e->getMessage();
-    }
-    ?>
-</div>
+
+
+
+
+
 
 <?php
 // include('comment-section.php');
 include('footer.php');
 ?>
 
+
 <script>
     function likes_update(articleID) {
-        var curr_count = jQuery('#like_count' + articleID).html();
+        var curr_count = $('#like_count' + articleID).html();
         curr_count++;
-        jQuery('#like_count' + articleID).html(curr_count);
-        jQuery.ajax({
+        $('#like_count' + articleID).html(curr_count);
+        $.ajax({
             url: 'update_count_post.php',
             type: 'POST',
             data: 'type=like&articleID=' + articleID,
@@ -86,10 +90,10 @@ include('footer.php');
 
 
 <!-- jQuery library -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!-- Popper JS -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

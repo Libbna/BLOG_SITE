@@ -1,20 +1,220 @@
-.container {
-    .row {
-        margin-left: -10% !important;
-        width: 120%; 
-        .col-xl-5 {
-            form {
-                width: 71%;
-                margin-left: 15%;
-                .form-group {
-                    .btn {
-                        border-radius: 5px;
+// .container {
+//     .row {
+//         margin-left: -10% !important;
+//         width: 120%; 
+//         .col-xl-5 {
+//             form {
+//                 width: 71%;
+//                 margin-left: 15%;
+//                 .form-group {
+//                     .btn {
+//                         border-radius: 5px;
+//                     }
+//                 }
+//             }
+            
+//         }
+
+//     }
+    
+// }
+
+$border-color : #ddd;
+$border-radius: 6px;
+$primary-color: #f76a8c;
+$border-light: #ddd;
+$bg-color-three: #f2f0f3;
+$heading-color: #292922;
+$font-color: #696969;
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+.w3l-blog-single {
+    .container {
+        .row {
+            .post-navigation {
+                border-top: 1px solid $border-color;
+                border-bottom: 1px solid $border-color;
+                .nav-title {
+                    font-size: 16px;
+                    display: block;
+                    margin-bottom: 9px;
+                    color: #696969;
+                    position: relative;
+                    padding: 0 12px 0;
+
+                    .prev {
+                        font-size: 14px;
+                        display: inline-block;
+                        color: #696969;
+                        position: absolute;
+                        left: 0;
+                        top: 5px;
+                    }
+                }
+                .posts-view-left {
+                    display: grid;
+                    grid-template-columns: 23% 72%;
+                    grid-gap: 4%;
+                    align-items: center;
+                    font-size: 18px;
+                    line-height: 25px;
+                    color: #292922;
+                    transition: 0.3s ease-in;
+                }
+                .posts-view-right {
+                    display: grid;
+                    grid-template-columns: 72% 23%;
+                    grid-gap: 4%;
+                    align-items: center;
+                    font-size: 18px;
+                    line-height: 25px;
+                    color: #292922;
+                    transition: 0.3s ease-in;
+                }
+
+                img {
+                    border-radius: $border-radius ;
+                    border: 3px solid $primary-color;
+                }
+                label {
+                    cursor: pointer;
+                    font-weight: 500;
+                }
+                .text-right {
+                    text-align: right !important;
+                }
+
+                a {
+                    &:hover {
+                        color: $primary-color;
                     }
                 }
             }
-            
+        }
+    }
+
+    .side-title {
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    .comments {
+        .media {
+            display: grid;
+            align-items: flex-start;
+            grid-template-columns: auto 1fr;
+            margin-top: 30px;
+            grid-gap: 20px;
+            border-radius: 10px;
+            transition: 0.3s ease-in;
+            border: 1px solid $border-light;
+            padding: 30px;
+            background-color: $bg-color-three;
+        }
+        .img-circle {
+            width: 80px;
+            height: 80px;
+            display: inline-block;
+            overflow: hidden;
+            background: #f3f6f9;
+            border-radius: 15px;
+            border: 3px solid $primary-color;
+
+            img {
+                width: 100%;
+                min-height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        .media-body {
+            line-height: 26px;
+            flex: 1;
+            .time-rply {
+                li {
+                    display: inline-block;
+                    color: #abaeb1;
+                    font-size: 16px;
+                    margin-right: 51px;
+                    margin-left: -31px;
+                    .name {
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: $heading-color;
+                    }
+                    .reply-last {
+                        text-align: right;
+                    }
+
+                    a {
+                        color: $primary-color;
+                        font-weight: 600;
+                    }
+                }
+            }
+            p {
+                font-size: 16px;
+                line-height: 24.5px;
+                font-weight: 300;
+                color: $font-color;
+            }
+        }
+    }
+    .leave-comment-form {
+        p {
+            font-size: 16px;
+            line-height: 24.5px;
+            font-weight: 300;
+            color: #696969;
         }
 
+        form {
+            .form-group {
+                margin-bottom: 1rem;
+                textarea {
+                    height: 150px !important;
+                    box-shadow: none;
+                    margin-bottom: 30px;
+                }
+                .form-control {
+                    font-weight: normal;
+                    font-style: normal;
+                    font-family: inherit;
+                    outline: none;
+                    padding: 17px 20px;
+                    color: $heading-color;
+                    width: 100%;
+                    font-size: 16px;
+                    height: 55px;
+                    line-height: 26px;
+                    margin-bottom: 15px;
+                    border-radius:$border-radius;
+                    border: 1px solid $border-color;
+                    background: $bg-color-three;
+                    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                }
+            }
+        }
     }
-    
+    .text-right {
+        text-align: right;
+    }
+    .btn {
+        padding: 16px 40px;
+    }
+    .btn-primary {
+        color: #212529;
+        background-color: #f76a8c;
+        border-color: #f76a8c;
+    }
+
 }
+
+
+
+
