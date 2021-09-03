@@ -1,41 +1,57 @@
 // index.php -> home page
-.w3l-blog {
-    .text-element {
-        .row {
-           .blog-article-posts {
-                background-color: #f6f4f7;
 
+$bg-color-one: #f6f4f7; 
+$bg-color-two: #fcfafd;
+$bg-color-three: #f2f0f3;
+// $bg-color-four: #f6f4f7 ;
+
+
+.w3l-blog {
+    margin-top: 1rem;
+    margin-left: -12%;
+    width: 112%;
+    .blog-article-posts {
+                // margin-left: -11%;
                 .blog-post {
                     padding: 5rem;
                     height: 100%;
-
-                    .post-content {
-                        .author-date {
-                            
-                            li {
+                    width: 116%;
+                    .author-date {
+                        margin-left: -2rem;
+                        li {
                                 font-size: 14px;
-                                color: var(--font-color);
+                                color: #696969;
                                 display: inline-block;
                                 margin-right: 15px;
                                 transition: 0.3s ease-in-out;
                                 font-weight: 300;
-
-                                .avatar {
-                                    width: 65px;
-                                    height: 65px;
-                                    display: inline-block;
-                                    overflow: hidden;
-                                    border-radius: 15px;
-                                    border: 2px solid #fff;
-                                    background: #fff;
-
-                                    img {
-                                        width: 100%;
-                                        min-height: 100%;
-                                        object-fit: cover;
-                                        object-position: center;
-                                   }
-                             }
+                           }
+                            .avatar {
+                                width: 65px;
+                                height: 65px;
+                                display: inline-block;
+                                overflow: hidden;
+                                border-radius: 15px;
+                                border: 2px solid #fff;
+                                background: #fff;
+                                img {
+                                    width: 100%;
+                                    min-height: 100%;
+                                    object-fit: cover;
+                                    object-position: center;
+                               }
+                            }
+                            .author-name {
+                                b {
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                    text-decoration: underline;
+                                    transition: 0.3s ease-in-out;
+                                    &:hover {
+                                        color: #292922;
+                                    }
+                                }
+                            }
                         }
                    }
 
@@ -61,10 +77,20 @@
                         text-transform: capitalize;
                         font-weight: 700;
                     }
+
+                    .bg-color-one {
+                        background-color: $bg-color-one;
+                    }
+                    .bg-color-two {
+                        background-color: $bg-color-two;
+                    }
+                    .bg-color-three {
+                        background-color: $bg-color-three;
+                    }
                 }
-            }
-        }
+            
+        
 
         
-    }
-}
+    
+

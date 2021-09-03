@@ -539,6 +539,100 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
   font-weight: 700;
 }
 
+.w3l-blog {
+  margin-top: 1rem;
+  margin-left: -12%;
+  width: 112%;
+}
+
+.w3l-blog .blog-article-posts .blog-post {
+  padding: 5rem;
+  height: 100%;
+  width: 116%;
+}
+
+.w3l-blog .blog-article-posts .blog-post .author-date {
+  margin-left: -2rem;
+}
+
+.w3l-blog .blog-article-posts .blog-post .author-date li {
+  font-size: 14px;
+  color: #696969;
+  display: inline-block;
+  margin-right: 15px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  font-weight: 300;
+}
+
+.w3l-blog .blog-article-posts .blog-post .author-date .avatar {
+  width: 65px;
+  height: 65px;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 2px solid #fff;
+  background: #fff;
+}
+
+.w3l-blog .blog-article-posts .blog-post .author-date .avatar img {
+  width: 100%;
+  min-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.w3l-blog .blog-article-posts .blog-post .author-date .author-name b {
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: underline;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.w3l-blog .blog-article-posts .blog-post .author-date .author-name b:hover {
+  color: #292922;
+}
+
+.w3l-blog .blog-article-posts .blog_post_title {
+  font-size: 32px;
+  line-height: 41.6px;
+  display: inline-block;
+  font-weight: 700;
+  color: #292922;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.w3l-blog .blog-article-posts .sub-para {
+  font-size: 16px;
+  font-weight: bold;
+  color: #777;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.w3l-blog .read-button {
+  color: #f76a8c;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.w3l-blog .bg-color-one {
+  background-color: #f6f4f7;
+}
+
+.w3l-blog .bg-color-two {
+  background-color: #fcfafd;
+}
+
+.w3l-blog .bg-color-three {
+  background-color: #f2f0f3;
+}
+
 * {
   margin: 0;
   padding: 0;

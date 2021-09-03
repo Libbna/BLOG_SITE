@@ -40,8 +40,62 @@ include('banner.php')
                             <li class="circle-lg avatar">
                                 <img src="assets/uploads/author4.jpg" alt="">
                             </li>
-                            <li>by <b>Daniel Roberto</b></li>
+                            <li class="author-name">by <b>Daniel Roberto</b></li>
                             <li><span class="fa fa-clock-o" aria-hidden="true"></span> Feb 16, 2020</li>
+                        </ul>
+                        <h4 class="blog_post_title mb-4">That’s what I want to show you how to do here. In this article, I will:</h4>
+                        <p class="sub-para">#Market Tips <sup> 36</sup></p>
+                        <p class="sub-para">#Sports <sup> 235</sup></p>
+                        <p class="sub-para">#Techniques <sup> 59</sup></p>
+                    </div>
+                    <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+                </div>
+            </a>
+            <a href="blog-single.html" class="col-lg-6 blog-article-posts bg-color-two">
+                <div class="blog-post d-flex flex-wrap align-content-between">
+                    <div class="post-content">
+                        <ul class="author-date mb-4 d-flex align-items-center">
+                            <li class="circle-lg avatar">
+                                <img src="assets/uploads/author5.jpg" alt="">
+                            </li>
+                            <li class="author-name">by <b>Marko Dugonji</b></li>
+                            <li><span class="fa fa-clock-o" aria-hidden="true"></span> Apr 21, 2020</li>
+                        </ul>
+                        <h4 class="blog_post_title mb-4">That’s what I want to show you how to do here. In this article, I will:</h4>
+                        <p class="sub-para">#Market Tips <sup> 36</sup></p>
+                        <p class="sub-para">#Sports <sup> 235</sup></p>
+                        <p class="sub-para">#Techniques <sup> 59</sup></p>
+                    </div>
+                    <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+                </div>
+            </a>
+            <a href="blog-single.html" class="col-lg-6 blog-article-posts bg-color-three">
+                <div class="blog-post d-flex flex-wrap align-content-between">
+                    <div class="post-content">
+                        <ul class="author-date mb-4 d-flex align-items-center">
+                            <li class="circle-lg avatar">
+                                <img src="assets/uploads/author6.jpg" alt="">
+                            </li>
+                            <li class="author-name">by <b>Max Stoiber</b></li>
+                            <li><span class="fa fa-clock-o" aria-hidden="true"></span> Jun 08, 2020</li>
+                        </ul>
+                        <h4 class="blog_post_title mb-4">That’s what I want to show you how to do here. In this article, I will:</h4>
+                        <p class="sub-para">#Market Tips <sup> 36</sup></p>
+                        <p class="sub-para">#Sports <sup> 235</sup></p>
+                        <p class="sub-para">#Techniques <sup> 59</sup></p>
+                    </div>
+                    <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+                </div>
+            </a>
+            <a href="blog-single.html" class="col-lg-6 blog-article-posts bg-color-one">
+                <div class="blog-post d-flex flex-wrap align-content-between">
+                    <div class="post-content">
+                        <ul class="author-date mb-4 d-flex align-items-center">
+                            <li class="circle-lg avatar">
+                                <img src="assets/uploads/author7.jpg" alt="">
+                            </li>
+                            <li class="author-name">by <b>Dhony Abraham</b></li>
+                            <li><span class="fa fa-clock-o" aria-hidden="true"></span> Sep 14, 2020</li>
                         </ul>
                         <h4 class="blog_post_title mb-4">That’s what I want to show you how to do here. In this article, I will:</h4>
                         <p class="sub-para">#Market Tips <sup> 36</sup></p>
