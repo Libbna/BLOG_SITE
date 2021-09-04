@@ -539,16 +539,9 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
   font-weight: 700;
 }
 
-.w3l-blog {
-  margin-top: 1rem;
-  margin-left: -12%;
-  width: 112%;
-}
-
 .w3l-blog .blog-article-posts .blog-post {
   padding: 5rem;
   height: 100%;
-  width: 116%;
 }
 
 .w3l-blog .blog-article-posts .blog-post .author-date {
@@ -744,6 +737,51 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
   padding-left: 15px;
   position: relative;
   width: 31%;
+}
+
+.member-login-content {
+  top: 0;
+  bottom: 0;
+  background: rgba(247, 106, 140, 0.75);
+  right: 12px;
+  left: 12px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem 15px;
+}
+
+.member-login-content h3 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.member-login-content p {
+  color: #fff;
+  font-size: 18px;
+  line-height: 28.5px;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.member-login-content .theme-button {
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0px;
+  border-radius: 6px;
+}
+
+.member-login-content .theme-button:hover {
+  color: #212529;
+  background-color: #e2e6ea;
+  border-color: #dae0e5;
 }
 
 * {

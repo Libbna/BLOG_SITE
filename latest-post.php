@@ -23,52 +23,6 @@
     <!-- Latest-Post Section -->
     <div style="margin: 8px auto; display: block; text-align:center;"></div>
 
-    <!-- <section class="w3l-latest-posts py5">
-        <div class="container pt-lg-3">
-            <div class="header-section text-center mb-md-5 mb-4">
-                <h3>Latest Posts</h3>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <a href="#" class="blog-article-post height-full bg-color-three d-flex flex-wrap align-content-between">
-                        <div class="post-content">
-                            <h6 class="sub-title">2 Days ago</h6>
-                            <h4 class="blog_post_title">How to Create your blog domain to make it live</h4>
-                            <ul class="author-date my-4 d-flex align-items-center">
-                                <li>by <b>Rhoda Byrd</b></li>
-                            </ul>
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto necessitatibus consectetur dolor ipsam adipisci aperiam,
-                                voluptatum ipsum harum ducimus veritatis iusto velit labore rerum quibusdam!
-                            </p>
-                        </div>
-                        <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
-
-                    </a>
-                </div>
-                <div class="col-lg-4 mt-lg-0 mb-4">
-                    <a href="#" class="blog-article-post height-full bg-color-three d-flex flex-wrap align-content-between">
-                        <div class="post-content">
-                            <h6 class="sub-title">1 Week ago</h6>
-                            <h4 class="blog_post_title">Register a Domain or Subdomain With a Website Host
-                            </h4>
-                            <ul class="author-date my-4 d-flex align-items-center">
-                                <li>by <b>Emma Stone</b></li>
-                            </ul>
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto necessitatibus consectetur dolor ipsam adipisci aperiam,
-                                voluptatum ipsum harum ducimus veritatis iusto velit labore rerum quibusdam!
-                            </p>
-                        </div>
-                        <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
-
-
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
     <section class="w3l-latest-posts py-5">
         <div class="container pt-lg-3">
             <div class="header-section text-center mb-md-5 mb-4">
@@ -123,6 +77,44 @@
             </div>
         </div>
     </section>
+    <div style="margin: 8px auto; display: block; text-align:center;"></div>
+    <section class="w3l-latest-posts py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 position-relative">
+                    <img src="/assets/uploads/img1.jpg" class="img-fluid" alt="">
+                    <div class="member-login-content text-center position-absolute">
+                        <div>
+                            <h3>All you want is a fast, secure web?</h3>
+                            <p class="mt-md-4 mt-3 mb-md-5 mb-4">
+                                A friendly community that keeps this website alive. With books, webinars, discounts and networking —
+                                for just 1
+                                coffee a month. Join the
+                                family.
+                            </p>
+                            <a href="signup.html" class="btn btn-light theme-button">Join us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-lg-0 mt-4">
+                    <a href="#" class="blog-article-post bg-color-three d-flex flex-wrap align-content-between">
+                        <div class="post-content">
+                            <h6 class="sub-title">2 Days ago</h6>
+                            <h4 class="blog_post_title">Disabled People Must Be Front And Centre On</h4>
+                            <ul class="author-date my-4 d-flex align-items-center">
+                                <li>by <b>John Michele</b></li>
+                            </ul>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto neque perspiciatis debitis nostrum, similique ut vel nobis explicabo
+                                ducimus ratione, aut asperiores nemo veniam. Voluptatum at hic id quis delectus!
+                            </p>
+                        </div>
+                        <div class="read-button mt-5">Read story <span class="fa fa-long-arrow-right" aria-hidden="true"></span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
 

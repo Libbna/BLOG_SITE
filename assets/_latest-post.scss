@@ -5,6 +5,7 @@ $bg-color-three: #f2f0f3;
 $font-color: #696969;
 $primary-color :#f76a8c;
 $card-hover-box-shadow:  0 0.5rem 1rem rgba(0, 0, 0, 0.09);
+$border-radius: 6px;
 
 .w3l-latest-posts {
     background-color: $bg-color;
@@ -105,4 +106,41 @@ $card-hover-box-shadow:  0 0.5rem 1rem rgba(0, 0, 0, 0.09);
     padding-left: 15px;
     position: relative;
     width: 31%;
+}
+.member-login-content {
+    top: 0;
+    bottom: 0;
+    background: rgba(247, 106, 140, 0.75);
+    right: 12px;
+    left: 12px;
+    display: grid;
+    align-items: center;
+    padding: 2rem 15px;
+
+    h3 {
+        color: #fff;
+        font-size: 36px;
+        font-weight: 700;
+    }
+    p {
+        color: #fff;
+        font-size: 18px;
+        line-height: 28.5px;
+        max-width: 550px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .theme-button {
+        transition: 0.3s ease-out;
+        display: inline-block;
+        font-weight: 700;
+        font-size: 16px;
+        margin: 0px;
+        border-radius: $border-radius;
+            &:hover {
+                color: #212529;
+                background-color: #e2e6ea;
+                border-color: #dae0e5;
+            }
+    }
 }
