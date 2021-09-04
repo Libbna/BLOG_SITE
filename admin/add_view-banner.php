@@ -55,8 +55,8 @@ if (!$user->is_logged_in()) {
 
     <!-- Add new banner form -->
     <div class="container-fluid mt-4">
-        <div class="row justify-content-center">
-            <div class="col-lg-4 bg-dark rounded px-4">
+        <div class="banner-row row justify-content-center">
+            <div class="banner-col col-lg-4 bg-dark rounded px-4">
                 <h4 class="text-center text-light p-1">Select Image to Upload!</h4>
                 <form action="" method="POST" enctype="multipart/form-data">
                     <div class="form-group">

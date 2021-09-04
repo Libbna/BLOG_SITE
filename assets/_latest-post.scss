@@ -1,0 +1,108 @@
+
+$bg-color : #fff;
+$heading-color: #292922;
+$bg-color-three: #f2f0f3;
+$font-color: #696969;
+$primary-color :#f76a8c;
+$card-hover-box-shadow:  0 0.5rem 1rem rgba(0, 0, 0, 0.09);
+
+.w3l-latest-posts {
+    background-color: $bg-color;
+    
+    .header-section {
+        h3 {
+            color: $heading-color;
+            font-size: 46px;
+            line-height: 1;
+            font-weight: 700;
+        }
+    }
+    .blog-article-post {
+        padding: 2rem;
+        transform: scale(1);
+        transition: 0.3s ease-in-out;
+        background: $bg-color-three;
+            &:hover {
+                transform: scale(1.02);
+                background-color: $bg-color;
+                transition: 0.3s ease-in-out;
+                z-index: 9;
+                box-shadow: $card-hover-box-shadow;
+
+                .blog_post_title {
+                    color: $primary-color;
+                    // transition: 0.3s ease-in-out;
+                    text-decoration: underline;
+                }
+
+
+            }
+
+        .post-content {
+            .sub-title {
+                font-size: 14px;
+                color: $font-color;
+                margin-bottom: 10px;
+            }
+            .blog_post_title {
+                font-size: 32px;
+                line-height: 41.6px;
+                display: inline-block;
+                font-weight: 700;
+                    &:hover {
+                        text-decoration: underline;
+                        transition: 0.3s ease-in-out;
+                    }
+            }
+            .author-date {
+                margin-left: -2rem;
+                li {
+                    font-size: 14px;
+                    color: $font-color;
+                    display: inline-block;
+                    margin-right: 15px;
+                    transition: 0.3s ease-in-out;
+                    font-weight: 300;
+
+                    b {
+                        font-size: 16px;
+                        font-weight: 700;
+                        text-decoration: underline;
+                        transition: 0.3s ease-in-out;
+
+                        &:hover {
+                            color: $heading-color;
+                            transition: 0.3s ease-in-out; ;
+                        }
+                    }
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 24.5px;
+                    font-weight: 300;
+                    color: $font-color;
+                }
+            }
+        }
+        .read-button {
+            color:$primary-color;
+            font-size: 16px;
+            text-transform: capitalize;
+            font-weight: 700;
+            span {
+                vertical-align: middle;
+                margin-left: 5px
+            }
+        }
+    }
+    .height-full {
+        height: 100%;
+    }
+}
+
+.latest-col {
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+    width: 31%;
+}

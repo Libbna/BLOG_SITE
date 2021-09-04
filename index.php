@@ -109,6 +109,10 @@ include('banner.php')
     </div>
 </section>
 
+<?php
+include("./latest-post.php");
+?>
+
 
 
 

@@ -5,6 +5,7 @@
 @import "./footer";
 @import "./search-results";
 @import "./main-slider";
+@import "./latest-post";
 
 
 // color-codes
@@ -64,9 +65,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // add_view-banner.php
-.row {
+.banner-row {
     margin-left: 10% !important;
-    .col {
+    .banner-col {
       
         img {
             margin-bottom: 36px;
