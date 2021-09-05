@@ -111,6 +111,7 @@ include('banner.php')
 
 <?php
 include("./latest-post.php");
+include("./author-section.php");
 ?>
 
 

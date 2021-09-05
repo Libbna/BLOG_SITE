@@ -7,6 +7,7 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 // date_default_timezone_set('Asia/Kolkata');
 
 function __autoload($class)
+
 {
     $class = strtolower($class);
 

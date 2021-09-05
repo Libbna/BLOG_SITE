@@ -1,0 +1,129 @@
+$bg-color: #fff;
+$bg-color-three: #f2f0f3;
+$border-radius: 6px;
+$primary-color: #f76a8c;
+$font-color: #696969;
+$heading-color: #292922;
+
+.w3l-author {
+    background-color: $bg-color;
+    .author-image {
+        width: 230px;
+        height: 230px;
+        display: inline-block;
+        overflow: hidden;
+        border-radius: 15px;
+        border: 3px solid #F7F9FC;
+        background: #fff;
+        img {
+            width: 100%;
+            min-width: 100%;
+            object-fit: cover;
+            object-position: center;
+            }
+        }
+        .category {
+            display: inline-block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            font-size: 16px;
+            color: #888;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #292922;
+        }
+        p {
+            font-size: 16px;
+            line-height: 24.5px;
+            font-weight: 300;
+        }
+        .author-icons {
+            li {
+                // font-size: 16px;
+                // line-height: 24.5px;
+                // font-weight: 300;
+                display: inline-block;
+                margin-right: 5px;
+            }
+            a {
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                display: inline-block;
+                font-size: 18px;
+                color: #69696980;
+                span {
+                    line-height: 30px;
+                }
+            }
+        }
+}
+
+// testimonials section
+.w3l-authors {
+    background-color: $bg-color;
+    .slider-info {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-gap: 30px;
+        background-color: $bg-color-three;
+        border-radius: $border-radius;
+        padding: 2rem;
+        margin-top: 30px;
+    }
+    .img-circle {
+        width: 90px;
+        height: 90px;
+        display: inline-block;
+        overflow: hidden;
+        background: #f3f6f9;
+        border-radius: 15px;
+        border: 3px solid $primary-color;
+        img {
+            width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    .blog-single-author-date {
+        li {
+            font-size: 14px;
+            color: $font-color;
+            display: inline-block;
+            margin-right: 15px;
+            transition: 0.3s ease-in-out;
+            font-weight: 300;
+
+            a {
+                font-size: 16px;
+                font-weight: 700;
+                text-decoration: underline;
+                transition: 0.3s ease-in-out;
+                color: $font-color;
+            }
+        }
+    }
+    .author-book-title {
+        color: $heading-color;
+        font-size: 32px;
+        line-height: 41.6px;
+        display: inline-block;
+        font-weight: 700;
+        transition: 0.3s ease-in-out;
+        margin-top: 5px;
+        &:hover {
+            text-decoration: underline;
+            transition: 0.3s ease-in-out;
+        }
+    }
+    .message {
+        p {
+            margin-top: 10px;
+        }
+    }
+}
