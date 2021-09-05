@@ -1,5 +1,11 @@
 <?php
+require_once("includes/config.php");
 include("header.php");
+
+
+// $stmt = $db->prepare('SELECT * FROM article WHERE articleID = :articleID');
+// $stmt->execute(array(':articleID' => $_GET['id']));
+// $row = $stmt->fetch();
 ?>
 
 <!DOCTYPE html>
@@ -39,39 +45,53 @@ include("header.php");
     <!-- article section -->
     <section class="w3l-articles">
         <div class="container py-lg-3">
-            <article class="mt-5">
-                <div class="row align-items-center pt-md-0 pt-4">
-                    <div class="col-md-12">
-                        <div class="slider-info">
-                            <div class="img-circle">
-                                <a href="blog-single.html"><img src="assets/uploads/author7.jpg" class="img-fluid" alt="article image"></a>
-                            </div>
-                            <div class="message">
-                                <ul class="blog-single-author-date d-flex align-items-center">
-                                    <li><a href="blog-single.html">Daniel Roberto</a></li>
-                                    <li><span class="fa fa-clock-o" aria-hidden="true"></span> Apr 04, 2020</li>
-                                </ul>
-                                <a class="author-book-title" href="blog-single.html">Article Post title - Responsive Web And Desktop Development.</a>
-                                <div class="row">
-                                    <div class="col-md-9 pr-md-5 order-md-1 order-2">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda corporis deleniti praesentium doloremque. Repellendus soluta
-                                            quos
-                                            nemo quisquam consectetur temporibus quam obcaecati sapiente quaerat et.</p>
-                                        <a href="blog-single.html" class="read-button mt-4 d-inline-block">Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>
+            <?php
+            try {
+                $stmt = $db->query('SELECT articleID, articleTitle, articleDesc, articleAuthor, profile_img FROM article ORDER BY articleID DESC');
+                while ($row = $stmt->fetch()) {
+            ?>
+                    <article class="mt-5">
+                        <div class="row align-items-center pt-md-0 pt-4">
+                            <div class="col-md-12">
+                                <div class="slider-info">
+                                    <div class="img-circle">
+                                        <a href="blog-single.html"><img src="<?php echo $row['profile_img']; ?>" class="img-fluid" alt="article image"></a>
                                     </div>
-                                    <div class="col-md-3 article-right order-md-2 order-1 pl-md-0">
-                                        <p><span class="fa fa-clock-o" aria-hidden="true"></span> 4 min read</p>
-                                        <a href="blog-single.html"><span class="fa fa-commenting-o" aria-hidden="true"></span> Leave comment</a>
+                                    <div class="message">
+                                        <ul class="blog-single-author-date d-flex align-items-center">
+                                            <li><a href="blog-single.html"><?php echo $row['articleAuthor'] ?></a></li>
+                                            <li><span class="fa fa-clock-o" aria-hidden="true"></span> Apr 04, 2020</li>
+                                        </ul>
+                                        <a class="author-book-title" href="blog-single.html"><?php echo $row['articleTitle']; ?></a>
+                                        <div class="row">
+                                            <div class="col-md-9 pr-md-5 order-md-1 order-2">
+                                                <p><?php echo $row['articleDesc']; ?></p>
+                                                <a href="blog-single.html" class="read-button mt-4 d-inline-block">Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>
+                                            </div>
+                                            <div class="col-md-3 article-right order-md-2 order-1 pl-md-0">
+                                                <p><span class="fa fa-clock-o" aria-hidden="true"></span> 4 min read</p>
+                                                <a href="blog-single.html"><span class="fa fa-commenting-o" aria-hidden="true"></span> Leave comment</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </article>
+                    </article>
+            <?php
+                }
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+            }
+            ?>
+
         </div>
     </section>
 
+
+    <?php
+    include("footer.php");
+    ?>
 </body>
 
 </html>
