@@ -1,13 +1,3 @@
-a {
-  text-decoration: none;
-  background: transparent;
-  color: #f76a8c;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
 header {
   background-color: #f76a8c;
   padding: 15px 0;
@@ -20,24 +10,24 @@ header {
           align-items: center;
 }
 
-header .container .navbar .navbar-brand {
+.navbar .navbar-brand {
   padding: 0;
   font-size: 36px;
   text-transform: capitalize;
-  color: #fff;
+  color: #ffffff;
   margin: 0;
   z-index: 1;
   font-weight: 700;
 }
 
-header .container .navbar .navbar-collapse .navbar-nav .nav-item {
+.navbar .navbar-collapse .navbar-nav .nav-item {
   padding: 0 10px;
   position: relative;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-header .container .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
+.navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
   text-transform: capitalize;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -46,17 +36,17 @@ header .container .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
   font-weight: 700;
 }
 
-header .container .navbar .navbar-collapse .navbar-nav .nav-item .caret-off::after {
+.navbar .navbar-collapse .navbar-nav .nav-item .caret-off::after {
   display: none;
 }
 
-header .container .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-item {
+.navbar .navbar-collapse .navbar-nav .nav-item .dropdown-item {
   font-weight: 600;
   font-size: 17px;
   color: #444;
 }
 
-header .container .navbar .navbar-collapse .search-right {
+.navbar .navbar-collapse .search-right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,7 +55,7 @@ header .container .navbar .navbar-collapse .search-right {
           align-items: center;
 }
 
-header .container .navbar .navbar-collapse .search-right .theme-button {
+.navbar .navbar-collapse .search-right .theme-button {
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
   display: inline-block;
@@ -75,7 +65,7 @@ header .container .navbar .navbar-collapse .search-right .theme-button {
   border-radius: 6px;
 }
 
-header .container .navbar .navbar-collapse .search-right .pop-overlay {
+.navbar .navbar-collapse .search-right .pop-overlay {
   position: fixed;
   top: 0px;
   left: 0;
@@ -89,7 +79,7 @@ header .container .navbar .navbar-collapse .search-right .pop-overlay {
   height: 100vh;
 }
 
-header .container .navbar .navbar-collapse .search-right .pop-overlay .popup {
+.navbar .navbar-collapse .search-right .pop-overlay .popup {
   padding: 40px 50px;
   border-radius: 0px;
   position: relative;
@@ -98,14 +88,14 @@ header .container .navbar .navbar-collapse .search-right .pop-overlay .popup {
           transform: translateY(-50%);
 }
 
-header .container .navbar .navbar-collapse .search-right .pop-overlay .popup form {
+.navbar .navbar-collapse .search-right .pop-overlay .popup form {
   margin: 0rem auto;
   max-width: 600px;
   display: block;
   position: relative;
 }
 
-header .container .navbar .navbar-collapse .search-right .pop-overlay .popup form input[type="search"] {
+.navbar .navbar-collapse .search-right .pop-overlay .popup form input[type="search"] {
   padding: 15px 45px 15px 15px;
   border: none;
   background: #fff;
@@ -118,7 +108,7 @@ header .container .navbar .navbar-collapse .search-right .pop-overlay .popup for
   width: 100%;
 }
 
-header .container .navbar .navbar-collapse .search-right .pop-overlay .popup form button {
+.navbar .navbar-collapse .search-right .pop-overlay .popup form button {
   font-size: 18px;
   font-weight: 600;
   display: block;
@@ -128,7 +118,7 @@ header .container .navbar .navbar-collapse .search-right .pop-overlay .popup for
   top: 13px;
 }
 
-header .container .navbar .navbar-collapse .search-right .pop-overlay .popup .browse-items h3 {
+.navbar .navbar-collapse .search-right .pop-overlay .popup .browse-items h3 {
   color: #fff;
   margin-bottom: 26px;
   text-align: center;
@@ -136,25 +126,25 @@ header .container .navbar .navbar-collapse .search-right .pop-overlay .popup .br
   font-weight: 700;
 }
 
-header .container .navbar .navbar-collapse .search-right .pop-overlay .popup .browse-items .search-items {
+.navbar .navbar-collapse .search-right .pop-overlay .popup .browse-items .search-items {
   text-align: center;
   max-width: 650px;
   margin: 0 auto;
 }
 
-header .container .navbar .navbar-collapse .search-right .pop-overlay .popup .browse-items .search-items li {
+.navbar .navbar-collapse .search-right .pop-overlay .popup .browse-items .search-items li {
   margin: 10px;
   display: inline-block;
 }
 
-header .container .navbar .navbar-collapse .search-right .pop-overlay .popup .browse-items .search-items li a {
+.navbar .navbar-collapse .search-right .pop-overlay .popup .browse-items .search-items li a {
   font-size: 16px;
   color: #eee;
   text-transform: uppercase;
   font-weight: 700;
 }
 
-header .container .navbar .navbar-collapse .search-right .pop-overlay .close {
+.navbar .navbar-collapse .search-right .pop-overlay .close {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -167,12 +157,12 @@ header .container .navbar .navbar-collapse .search-right .pop-overlay .close {
   background: none;
 }
 
-header .container .navbar .navbar-collapse .search-right .pop-overlay:target {
+.navbar .navbar-collapse .search-right .pop-overlay:target {
   visibility: visible;
   opacity: 1;
 }
 
-header .container .navbar .navbar-collapse .search-right .domain .hamburger1 {
+.navbar .navbar-collapse .search-right .domain .hamburger1 {
   width: 30px;
   float: left;
   cursor: pointer;
@@ -181,7 +171,7 @@ header .container .navbar .navbar-collapse .search-right .domain .hamburger1 {
   transition: all 0.5s;
 }
 
-header .container .navbar .navbar-collapse .search-right .domain .hamburger1 div {
+.navbar .navbar-collapse .search-right .domain .hamburger1 div {
   height: 3px;
   width: 24px;
   background: #ffffff;
@@ -192,19 +182,19 @@ header .container .navbar .navbar-collapse .search-right .domain .hamburger1 div
   text-align: center;
 }
 
-header .container .navbar .navbar-collapse .search-right .domain .hamburger1:hover .d1 {
+.navbar .navbar-collapse .search-right .domain .hamburger1:hover .d1 {
   width: 12px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-header .container .navbar .navbar-collapse .search-right .domain .hamburger1:hover .d2 {
+.navbar .navbar-collapse .search-right .domain .hamburger1:hover .d2 {
   width: 20px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-header .container .navbar .navbar-collapse .search-right .domain .hamburger1:hover .d3 {
+.navbar .navbar-collapse .search-right .domain .hamburger1:hover .d3 {
   width: 30px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -1074,12 +1064,25 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
 }
 
+a {
+  text-decoration: none;
+  background: transparent;
+  color: #f76a8c;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 body {
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #292922;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
 }
 
 .card .card-header {
