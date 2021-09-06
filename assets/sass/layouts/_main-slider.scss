@@ -62,6 +62,11 @@ $bg-color-three: #f2f0f3;
                             font-weight: 700;
                             color:#292922;
                             transition: 0.3s ease-in-out;
+
+                            &:hover {
+                                text-decoration: underline;
+                                transition: 0.3s ease-in-out;
+                            }
                         }
                         .sub-para {
                             font-size: 16px;
