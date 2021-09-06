@@ -1067,6 +1067,117 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
   display: inline-block;
 }
 
+.w3l-index5 .img-one {
+  overflow: hidden;
+}
+
+.w3l-index5 .img-one img {
+  display: block;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+  border-radius: 0;
+  width: 100%;
+}
+
+.w3l-index5 .img-one img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+}
+
+.w3l-index5 .bg-color-one {
+  background-color: #f6f4f7;
+}
+
+.w3l-index5 .blog-post {
+  border-radius: 6px;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  padding: 5rem;
+  display: block;
+  height: 100%;
+}
+
+.w3l-index5 .sub-para {
+  font-size: 16px;
+  font-weight: bold;
+  color: #777;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.blog_post_title {
+  font-size: 32px;
+  line-height: 41.6px;
+  display: inline-block;
+  font-weight: 700;
+  color: #292922;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.blog_post_title:hover {
+  text-decoration: underline;
+}
+
+.author-date li {
+  font-size: 14px;
+  color: #696969;
+  display: inline-block;
+  margin-right: 15px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  font-weight: 300;
+}
+
+.author-date li b {
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: underline;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.author-date li b:hover {
+  color: #292922;
+}
+
+.author-date .circle-lg {
+  width: 65px;
+  height: 65px;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 2px solid #fff;
+  background: #fff;
+}
+
+.author-date .circle-lg img {
+  width: 100%;
+  min-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.read-button {
+  color: #f76a8c;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.read-button span {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
 * {
   margin: 0;
   padding: 0;

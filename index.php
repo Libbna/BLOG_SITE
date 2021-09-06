@@ -112,6 +112,7 @@ include('./components/banner.php');
 
 <?php
 include("./components/latest-post.php");
+include("./components/about-image-grid.php");
 include("./components/author-section.php");
 ?>
 
