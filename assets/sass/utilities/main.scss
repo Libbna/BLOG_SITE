@@ -1,13 +1,14 @@
-@import "./header";
-@import "./login";
-// @import "./comment";
-@import "./domain-modal";
-@import "./footer";
-@import "./search-results";
-@import "./main-slider";
-@import "./latest-post";
-@import "./author-section";
-@import "./articles";
+// @import "/components/header.php";
+@import "../layouts/header";
+@import "../layouts/login";
+// @import "/components/comment.php";
+@import "../layouts/domain-modal";
+@import "../layouts/footer";
+@import "../layouts/search-results";
+@import "../layouts/main-slider";
+@import "../layouts/latest-post";
+@import "../layouts/author-section";
+@import "../layouts/articles";
 
 
 // color-codes

@@ -1,5 +1,5 @@
 <?php
-require_once("includes/config.php");
+require_once("./includes/config.php");
 $type = $_POST['type'];
 $articleID = $_POST['articleID'];
 if ($type == 'like') {

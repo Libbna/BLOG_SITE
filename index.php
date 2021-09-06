@@ -7,7 +7,7 @@ $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
 
 <title>Blog Site</title>
 <?php
-include("./header.php");
+include("./components/header.php");
 
 ?>
 <!-- boostrap -->
@@ -15,7 +15,7 @@ include("./header.php");
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" href="/assets/main.css">
+<link rel="stylesheet" href="./assets/sass/utilities/main.css">
 
 
 <!-- font awesome icon  -->
@@ -25,7 +25,7 @@ include("./header.php");
 
 
 <?php
-include('banner.php')
+include('./components/banner.php');
 ?>
 
 <!--Main Slider  -->
@@ -111,8 +111,8 @@ include('banner.php')
 </section>
 
 <?php
-include("./latest-post.php");
-include("./author-section.php");
+include("./components/latest-post.php");
+include("./components/author-section.php");
 ?>
 
 
@@ -123,7 +123,7 @@ include("./author-section.php");
 
 <?php
 // include('comment-section.php');
-include('footer.php');
+include('./components/footer.php');
 ?>
 
 

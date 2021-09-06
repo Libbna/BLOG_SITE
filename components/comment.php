@@ -14,7 +14,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="/assets/blog.css">
+    <link rel="stylesheet" href="../assets/sass/utilities/blog.css">
+
 </head>
 
 <body>
@@ -31,7 +32,7 @@
                                 &nbsp; Prev Post
                             </span>
                             <a href="#url" rel="prev" class="posts-view posts-view-left">
-                                <img src="assets/uploads/img10.jpg" class="img-fluid postimg d-none d-md-block">
+                                <img src="/assets/uploads/img10.jpg" class="img-fluid postimg d-none d-md-block">
                                 <label>That’s what I want to show you how to do here.</label>
                             </a>
                         </div>
@@ -42,7 +43,7 @@
                             </span>
                             <a href="#url" rel="next" class="posts-view posts-view-right ">
                                 <label>How to Make Cappuccino without a Machine</label>
-                                <img src="assets/uploads/img11.jpg" class="img-fluid postimg d-none d-md-block">
+                                <img src="/assets/uploads/img11.jpg" class="img-fluid postimg d-none d-md-block">
                             </a>
                         </div>
                     </nav>
@@ -50,7 +51,7 @@
                         <h4 class="side-title ">Comments</h4>
                         <div class="media mt-4">
                             <div class="img-circle">
-                                <img src="assets/uploads/author.jpg" class="img-fluid" alt="...">
+                                <img src="/assets/uploads/author.jpg" class="img-fluid" alt="...">
                             </div>
                             <div class="media-body">
                                 <ul class="time-rply mb-2">
@@ -69,7 +70,7 @@
                         </div>
                         <div class="media mt-4">
                             <div class="img-circle">
-                                <img src="assets/uploads/author1.jpg" class="img-fluid" alt="...">
+                                <img src="/assets/uploads/author1.jpg" class="img-fluid" alt="...">
                             </div>
                             <div class="media-body">
                                 <ul class="time-rply mb-2">

@@ -12,7 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
     <!-- Main CSS -->
-    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="../assets/sass/utilities/main.css">
+
 </head>
 
 <body>
@@ -37,7 +38,7 @@
                             <a class="nav-link" href="http://blogsite.com/index.php">Home </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @@article-active" href="articles.php">Articles</a>
+                            <a class="nav-link @@article-active" href="../components/articles.php">Articles</a>
                         </li>
                         <li class="nav-item dropdown @@dropdown-active">
                             <a class="nav-link dropdown-toggle caret-off" id="navbarDropdown" href="blog-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog
@@ -74,7 +75,7 @@
                         <div id="search" class="pop-overlay">
                             <div class="popup">
                                 <!-- <form action="search-results.php" method="GET" class="search-box"> -->
-                                <form action="search-results.php" method="GET" class="search-box">
+                                <form action="../components/search-results.php" method="GET" class="search-box">
                                     <input type="search" name="search" required autofocus="" placeholder="Search your Keyword">
                                     <button name="submit-search" type="submit" class="btn"><span class="fa fa-search" aria-hidden="true"></span></button>
 

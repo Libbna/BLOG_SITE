@@ -1,5 +1,5 @@
 <?php
-require_once("includes/config.php");
+require_once("../includes/config.php");
 
 $stmt = $db->query('SELECT * FROM article');
 
@@ -14,7 +14,9 @@ include("./header.php");
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-<link href="./assets/main.css" rel="stylesheet" type="text/css">
+<!-- <link href="./assets/main.css" rel="stylesheet" type="text/css"> -->
+<link rel="stylesheet" href="../assets/sass/utilities/main.css">
+
 
 <div id="self-space"></div>
 <section class="auhtors1 py-5">
@@ -44,7 +46,7 @@ include("./header.php");
                                         </li>
                                         <li>
                                             <span class="fa fa-commenting-o" aria-hidden="true">
-                                                <a href="/comment.php">Comment</a>
+                                                <a href="../components/comment.php">Comment</a>
                                             </span>
                                         </li>
                                         <li>

@@ -1,6 +1,6 @@
 <?php
-require_once("includes/config.php");
-include("header.php");
+require_once("../includes/config.php");
+include("./header.php");
 
 
 // $stmt = $db->prepare('SELECT * FROM article WHERE articleID = :articleID');
@@ -24,7 +24,7 @@ include("header.php");
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="/assets/sass/utilities/main.css">
 
 </head>
 
@@ -90,7 +90,7 @@ include("header.php");
 
 
     <?php
-    include("footer.php");
+    include("./footer.php");
     ?>
 </body>
 
