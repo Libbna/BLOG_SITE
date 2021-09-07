@@ -46,10 +46,7 @@ $border-radius: 6px;
                 margin-bottom: 10px;
             }
             .blog_post_title {
-                font-size: 32px;
-                line-height: 41.6px;
-                display: inline-block;
-                font-weight: 700;
+                @include blog-post-title;
                     &:hover {
                         text-decoration: underline;
                         transition: 0.3s ease-in-out;

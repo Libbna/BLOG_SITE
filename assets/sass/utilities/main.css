@@ -579,16 +579,6 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
   color: #292922;
 }
 
-.w3l-blog .blog-article-posts .blog_post_title {
-  font-size: 32px;
-  line-height: 41.6px;
-  display: inline-block;
-  font-weight: 700;
-  color: #292922;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-
 .w3l-blog .blog-article-posts .blog_post_title:hover {
   text-decoration: underline;
   -webkit-transition: 0.3s ease-in-out;

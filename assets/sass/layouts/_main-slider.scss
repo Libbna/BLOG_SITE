@@ -35,10 +35,7 @@ $bg-color-three: #f2f0f3;
                                 border: 2px solid #fff;
                                 background: #fff;
                                 img {
-                                    width: 100%;
-                                    min-height: 100%;
-                                    object-fit: cover;
-                                    object-position: center;
+                                    @include author-img;
                                }
                             }
                             .author-name {
@@ -56,12 +53,7 @@ $bg-color-three: #f2f0f3;
                    }
 
                         .blog_post_title {
-                            font-size: 32px;
-                            line-height: 41.6px;
-                            display: inline-block;
-                            font-weight: 700;
-                            color:#292922;
-                            transition: 0.3s ease-in-out;
+                            @include blog-post-title;
 
                             &:hover {
                                 text-decoration: underline;
