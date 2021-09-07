@@ -1,0 +1,56 @@
+$white: #ffffff;
+$main-color: #de4839;
+$font-fam: san-serif;
+$header-bg-color: #f76a8c;
+$font-clr1: #444;
+$border-radius: 6px;
+$heading-color: #292922;
+$bg-color-three: #f2f0f3;
+
+.w3l-products {
+    background-color: $bg-color-three;
+}
+.header-section {
+    h3 {
+        color: $heading-color;
+        font-size: 46px;
+        line-height: 1;
+        font-weight: 700;
+    }
+}
+#parentHorizontalTab {
+    display: block;
+    width: 100%;
+    margin: 0px;
+}
+.resp-tabs-list {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+
+        li {
+            border-color: rgb(193, 193, 193);
+            font-weight: 700;
+            font-size: 18px;
+            padding: 10px;
+            margin: 0;
+            list-style: none;
+            cursor: pointer;
+            float: left;
+            width: 33.333%;
+            text-align: center;
+            color: #949494;
+            background:$white !important;
+            border-bottom: 3px solid ;
+        }
+    }
+    .resp-tab-active {
+        margin-bottom: -1px !important;
+        border-bottom: 3px $header-bg-color solid !important;
+        color: $header-bg-color !important;
+    }
+
+.resp-tabs-container {
+    padding: 0px;
+    clear: left;
+}

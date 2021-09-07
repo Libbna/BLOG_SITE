@@ -70,7 +70,7 @@ include("./header.php");
                                             </div>
                                             <div class="col-md-3 article-right order-md-2 order-1 pl-md-0">
                                                 <p><span class="fa fa-clock-o" aria-hidden="true"></span> 4 min read</p>
-                                                <a href="blog-single.html"><span class="fa fa-commenting-o" aria-hidden="true"></span> Leave comment</a>
+                                                <a href="./comment.php"><span class="fa fa-commenting-o" aria-hidden="true"></span> Leave comment</a>
                                             </div>
                                         </div>
                                     </div>
