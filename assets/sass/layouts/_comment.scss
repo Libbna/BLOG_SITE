@@ -1,31 +1,5 @@
-// .container {
-//     .row {
-//         margin-left: -10% !important;
-//         width: 120%; 
-//         .col-xl-5 {
-//             form {
-//                 width: 71%;
-//                 margin-left: 15%;
-//                 .form-group {
-//                     .btn {
-//                         border-radius: 5px;
-//                     }
-//                 }
-//             }
-            
-//         }
+@import "../abstracts/fonts";
 
-//     }
-    
-// }
-
-$border-color : #ddd;
-$border-radius: 6px;
-$primary-color: #f76a8c;
-$border-light: #ddd;
-$bg-color-three: #f2f0f3;
-$heading-color: #292922;
-$font-color: #696969;
 
 a {
     text-decoration: none;
@@ -40,17 +14,17 @@ a {
                 border-top: 1px solid $border-color;
                 border-bottom: 1px solid $border-color;
                 .nav-title {
-                    font-size: 16px;
+                    font-size: $fontSize16;
                     display: block;
                     margin-bottom: 9px;
-                    color: #696969;
+                    color: $font-color;
                     position: relative;
                     padding: 0 12px 0;
 
                     .prev {
                         font-size: 14px;
                         display: inline-block;
-                        color: #696969;
+                        color: $font-color;
                         position: absolute;
                         left: 0;
                         top: 5px;
@@ -63,7 +37,7 @@ a {
                     align-items: center;
                     font-size: 18px;
                     line-height: 25px;
-                    color: #292922;
+                    color: $heading-color;
                     transition: 0.3s ease-in;
                 }
                 .posts-view-right {
@@ -73,7 +47,7 @@ a {
                     align-items: center;
                     font-size: 18px;
                     line-height: 25px;
-                    color: #292922;
+                    color: $heading-color;
                     transition: 0.3s ease-in;
                 }
 
@@ -112,7 +86,7 @@ a {
             grid-gap: 20px;
             border-radius: 10px;
             transition: 0.3s ease-in;
-            border: 1px solid $border-light;
+            border: 1px solid $border-color;
             padding: 30px;
             background-color: $bg-color-three;
         }
@@ -139,7 +113,7 @@ a {
                 li {
                     display: inline-block;
                     color: #abaeb1;
-                    font-size: 16px;
+                    font-size: $fontSize16;
                     margin-right: 51px;
                     margin-left: -31px;
                     .name {
@@ -158,7 +132,7 @@ a {
                 }
             }
             p {
-                font-size: 16px;
+                font-size: $fontSize16;
                 line-height: 24.5px;
                 font-weight: 300;
                 color: $font-color;
@@ -167,10 +141,10 @@ a {
     }
     .leave-comment-form {
         p {
-            font-size: 16px;
+            font-size: $fontSize16;
             line-height: 24.5px;
             font-weight: 300;
-            color: #696969;
+            color: $font-color;
         }
 
         form {
@@ -189,7 +163,7 @@ a {
                     padding: 17px 20px;
                     color: $heading-color;
                     width: 100%;
-                    font-size: 16px;
+                    font-size: $fontSize16;
                     height: 55px;
                     line-height: 26px;
                     margin-bottom: 15px;
@@ -208,9 +182,9 @@ a {
         padding: 16px 40px;
     }
     .btn-primary {
-        color: #212529;
-        background-color: #f76a8c;
-        border-color: #f76a8c;
+        color: $font-color2;
+        background-color: $primary-color;
+        border-color: $primary-color;
     }
 
 }

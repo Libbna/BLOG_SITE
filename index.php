@@ -104,7 +104,7 @@ include('./components/banner-index.php');
 include("./components/latest-post.php");
 include("./components/about-image-grid.php");
 include("./components/author-section.php");
-include("./components/featured-news.php");
+// include("./components/featured-news.php");
 
 
 ?>

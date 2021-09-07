@@ -1,9 +1,5 @@
-$bg-color: #fff;
-$bg-color-three: #f2f0f3;
-$border-radius: 6px;
-$primary-color: #f76a8c;
-$font-color: #696969;
-$heading-color: #292922;
+@import "../abstracts/fonts";
+
 
 .w3l-author {
     background-color: $bg-color;

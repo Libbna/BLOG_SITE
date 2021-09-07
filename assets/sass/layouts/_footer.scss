@@ -1,6 +1,9 @@
+@import "../abstracts/fonts";
+
+
 footer {
     .footer-inner-main {
-        background-color: #fff;
+        background-color: $bg-color;
         .footer-grids {
             .container {
                 .text-txt {
@@ -16,13 +19,13 @@ footer {
                         .footer-about-links {
                             .header-section {
                                 h3 {
-                                    color: #292922;
+                                    color: $heading-color;
                                     font-size: 46px;
                                     line-height: 1;
                                     font-weight: 700;
                                 }
                                 p {
-                                    color: #696969;
+                                    color: $font-color;
                                     font-size: 22px;
                                     line-height: 32.5px;
                                     font-weight: 300;
@@ -41,7 +44,7 @@ footer {
                                             display: inline-block;
                                             text-align: center;
                                             font-size: 18px;
-                                            color: #696969;
+                                            color: $font-color;
                                             width: 32px;
                                         }
                                     }
@@ -53,7 +56,7 @@ footer {
                     .footer-links {
                         .sub-two-right {
                             h6 {
-                                color: #292922;
+                                color: $heading-color;
                                 font-size: 20px;
                                 line-height: 20px;
                                 text-transform: capitalize;
@@ -75,14 +78,14 @@ footer {
                                         position: absolute;
                                         top: 10px;
                                         left: 0;
-                                        background: #292922 ;
+                                        background: $heading-color;
                                     }
                                     a {
                                         font-style: normal;
                                         font-weight: 400;
                                         font-size: 16px;
                                         line-height: 24.5px;
-                                        color: #696969;
+                                        color: $font-color;
                                         margin: 0 0 10px 0;
                                         display: block;
                                     }
