@@ -1,0 +1,69 @@
+$white: #ffffff;
+$main-color: #de4839;
+$font-fam: san-serif;
+$header-bg-color: #f76a8c;
+$font-clr1: #444;
+$border-radius: 6px;
+$heading-color: #292922;
+$bg-color-three: #f2f0f3;
+
+
+.w3l-subscribe {
+    .main-w3 {
+        background-color: $bg-color-three;
+    }
+    .grids-forms {
+        span {
+            color: $header-bg-color;
+            font-size: 40px;
+        }
+    }
+    .rightside-form {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        input {
+            background: $white;
+            border: none;
+            padding-left: 25px;
+            padding-right: 25px;
+            font-size: 16px;
+            color: #333;
+            flex-basis: 70%;
+            height: 70px;
+        }
+    }
+    button {
+        flex-basis: 30%;
+        height: auto;
+        border-radius: 0;
+    }
+}
+.header-section {
+    h3 {
+        color: $heading-color;
+        font-size: 46px;
+        line-height: 1;
+        font-weight: 700;
+    }
+    p {
+        color: $font-clr1;
+        font-size: 22px;
+        line-height: 32.5px;
+        font-weight: 300;
+        margin-top: 5px;
+    }
+}
+.theme-button {
+    transition: 0.3s ease-out;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0px;
+}
+.btn-primary {
+    color: #212529;
+    background-color: $header-bg-color;
+    border-color: $header-bg-color;
+}

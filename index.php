@@ -124,6 +124,7 @@ include("./components/author-section.php");
 
 <?php
 // include('comment-section.php');
+include('./components/subscribe.php');
 include('./components/footer.php');
 ?>
 
