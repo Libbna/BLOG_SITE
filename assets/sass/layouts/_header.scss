@@ -37,10 +37,7 @@ header {
                     font-size: 18px;
                     font-weight: 700;
 
-                    &:active {
-                        color:$white;
-                        opacity: 1;
-                    }
+                    
                 }
                 .caret-off::after {
                     display: none;

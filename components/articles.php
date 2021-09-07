@@ -1,11 +1,5 @@
 <?php
 require_once("../includes/config.php");
-include("./header.php");
-
-
-// $stmt = $db->prepare('SELECT * FROM article WHERE articleID = :articleID');
-// $stmt->execute(array(':articleID' => $_GET['id']));
-// $row = $stmt->fetch();
 ?>
 
 <!DOCTYPE html>
@@ -20,15 +14,15 @@ include("./header.php");
     <!-- font awesome icon  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Main css -->
     <link rel="stylesheet" href="/assets/sass/utilities/main.css">
 
 </head>
 
 <body>
+    <?php include("./header.php"); ?>
+
     <!-- breadcrumn -->
     <section class="w3l-breadcrumb py-5">
         <div class="container">
@@ -92,6 +86,10 @@ include("./header.php");
     <?php
     include("./footer.php");
     ?>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

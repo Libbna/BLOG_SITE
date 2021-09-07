@@ -1,15 +1,10 @@
 <?php
 require_once("includes/config.php");
 $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
-
-
 ?>
 
 <title>Blog Site</title>
-<?php
-include("./components/header.php");
 
-?>
 <!-- boostrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <!-- main css -->
@@ -19,6 +14,7 @@ include("./components/header.php");
 
 
 <?php
+include("./components/header.php");
 include('./components/banner-index.php');
 ?>
 

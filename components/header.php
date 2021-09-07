@@ -37,8 +37,8 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="http://blogsite.com/index.php">Home </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link @@article-active" href="../components/articles.php">Articles</a>
+                        <li class="nav-item  @@article-active">
+                            <a class=" nav-link" href="../components/articles.php">Articles</a>
                         </li>
                         <li class="nav-item dropdown @@dropdown-active">
                             <a class="nav-link dropdown-toggle caret-off" id="navbarDropdown" href="blog-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog
