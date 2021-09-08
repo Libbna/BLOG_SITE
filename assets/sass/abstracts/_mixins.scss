@@ -38,6 +38,7 @@
     border-radius: $border-radius;
     border: 1px solid $border-color;
     background: $bg-color-three;
+    
 }
 
 @mixin btn-login {
@@ -62,4 +63,28 @@
     margin-bottom: 3px;
     color: $primary-color;
     font-weight: 700;
+}
+
+@mixin h3 {
+    color: $heading-color;
+    font-size: 46px;
+    line-height: 1;
+    font-weight: 700;
+}
+@mixin p {
+    color: $font-color;
+    font-size: 22px;
+    line-height: 32.5px;
+    font-weight: 300;
+    margin-top: 5px;
+}
+@mixin w3l-breadcrumb {
+    border-radius: 0;
+    background-color: $bg-color-three;
+}
+
+@mixin breadcrumb-subtitle {
+    font-size: 14px;
+    color: $font-color;
+    margin-bottom: 10px;
 }

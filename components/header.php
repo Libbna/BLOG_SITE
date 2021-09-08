@@ -64,7 +64,7 @@
                             <a class="nav-link" href="#">About </a>
                         </li>
                         <li class="nav-item @@contact-active">
-                            <a class="nav-link" href="#">Contact </a>
+                            <a class="nav-link" href="/components/contact-form.php">Contact </a>
                         </li>
                     </ul>
                     <!-- search right -->
