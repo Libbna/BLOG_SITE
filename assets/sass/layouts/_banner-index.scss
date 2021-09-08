@@ -31,7 +31,7 @@
         margin: 0 auto;
     }
     .blog_post_title {
-        @include blog-post-title;
+        @include blog-post-title();
     }
 }
 .author-date {
@@ -45,7 +45,7 @@
         background: $bg-color;
 
         img {
-            @include author-img;
+            @include author-img();
         }
     }
     li {

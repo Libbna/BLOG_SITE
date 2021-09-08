@@ -35,7 +35,7 @@ $bg-color-three: #f2f0f3;
                                 border: 2px solid #fff;
                                 background: #fff;
                                 img {
-                                    @include author-img;
+                                    @include author-img();
                                }
                             }
                             .author-name {
@@ -53,7 +53,7 @@ $bg-color-three: #f2f0f3;
                    }
 
                         .blog_post_title {
-                            @include blog-post-title;
+                            @include blog-post-title();
 
                             &:hover {
                                 text-decoration: underline;

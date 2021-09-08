@@ -8,11 +8,12 @@
     <title>Header</title>
 
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="../assets/sass/utilities/main.css">
+    <!-- font awesome icon  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- boostrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Main css -->
+    <link rel="stylesheet" href="/assets/sass/utilities/main.css">
 
 </head>
 
@@ -28,7 +29,7 @@
                 <h1>
                     <a class="navbar-brand" href="">Publication</a>
                 </h1>
-                <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse" data-target="navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler  bg-gradient collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
                     <span class="navbar-toggler-icon fa icon-close fa-times"></span>
                 </button>
@@ -54,8 +55,8 @@
                                 <span class="fa fa-angle-down"></span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navBarDropdown">
-                                <a class="dropdown-item @@login-active" href="http://blogsite.com/admin/login.php">Login</a>
-                                <a class="dropdown-item @@signup-active" href="./admin/register.php">SignUp</a>
+                                <a class="dropdown-item @@login-active" href="/components/login.php">Login</a>
+                                <a class="dropdown-item @@signup-active" href="/components/register.php">SignUp</a>
                                 <a class="dropdown-item @@search-active" href="#">Search Results</a>
                             </div>
                         </li>
@@ -122,6 +123,9 @@
         </div>
     </header>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

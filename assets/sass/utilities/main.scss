@@ -1,4 +1,5 @@
 // @import "/components/header.php";
+@import "../abstracts/mixins";
 @import "../layouts/header";
 @import "../layouts/login";
 // @import "/components/comment.php";
@@ -14,8 +15,11 @@
 @import "../layouts/_about-image-grid";
 @import "../layouts/subscribe";
 @import "../layouts/featured-news";
+@import "../layouts/login";
+@import "../layouts/register";
 
-// @import "../abstracts/mixins";
+
+
 
 
 // color-codes

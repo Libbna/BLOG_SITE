@@ -100,7 +100,7 @@ a {
             border: 3px solid $primary-color;
 
             img {
-                @include author-img;
+                @include author-img();
             }
         }
         .media-body {

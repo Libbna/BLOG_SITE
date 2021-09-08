@@ -1,15 +1,65 @@
+@import "../abstracts/fonts";
+
 @mixin blog-post-title {
     font-size: 32px;
     line-height: 41.6px;
     display: inline-block;
     font-weight: 700;
-    color:#292922;
-    transition: 0.3s ease-in-out;
-};
+    color:$heading-color;
+    transition: $transition-easeout;
+}
 
-@mixin  author-img {
+@mixin author-img {
     width: 100%;
+    min-height: 100%;
     min-width: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+// login and signup
+@mixin reallogin {
+    max-width: 500px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 2em;
+    background: $bg-color;
+    box-shadow: $card-hover-boxshadow;
+}
+
+@mixin input {
+    outline: none;
+    padding: 17px 20px;
+    border-radius: 0;
+    color: $heading-color;
+    width: 100%;
+    font-size: $fontSize16;
+    line-height: 26px;
+    border-radius: $border-radius;
+    border: 1px solid $border-color;
+    background: $bg-color-three;
+}
+
+@mixin btn-login {
+    border: none;
+    color: $bg-color;
+    padding: 16px 40px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+@mixin account {
+    padding-top: 20px;
+    padding-bottom: 0px;
+    line-height: 1.5em;
+    font-size: 14px;
+}
+
+@mixin h2 {
+    display: inline-block;
+    font-size: 26px;
+    margin-bottom: 3px;
+    color: $primary-color;
+    font-weight: 700;
 }

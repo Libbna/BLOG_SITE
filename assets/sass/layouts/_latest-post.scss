@@ -46,7 +46,7 @@ $border-radius: 6px;
                 margin-bottom: 10px;
             }
             .blog_post_title {
-                @include blog-post-title;
+                @include blog-post-title();
                     &:hover {
                         text-decoration: underline;
                         transition: 0.3s ease-in-out;

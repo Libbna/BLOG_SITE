@@ -115,6 +115,7 @@ a:hover {
 .w3l-blog-single .comments .img-circle img {
   width: 100%;
   min-height: 100%;
+  min-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;

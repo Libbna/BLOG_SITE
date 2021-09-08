@@ -194,3 +194,27 @@ header {
         }
     }
 } 
+
+
+@media only screen and (max-width: 991px) {
+    .navbar-toggler .collapsed {
+        .icon-expand {
+            display: block;
+        }
+        .icon-close {
+            display: none;
+        }
+    }
+
+    .navbar-dark {
+        .navbar-toggler-icon {
+            background-image: none;
+            padding: 0;
+            width: 34px;
+            height: 34px;
+            background: transparent;
+            border-radius: 4px;
+            text-align: center;
+        }
+    }
+}

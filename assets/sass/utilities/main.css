@@ -200,40 +200,123 @@ header {
   transition: all 0.5s;
 }
 
-.content {
-  background-color: antiquewhite;
-  padding-bottom: 48px;
+@media only screen and (max-width: 991px) {
+  .navbar-toggler .collapsed .icon-expand {
+    display: block;
+  }
+  .navbar-toggler .collapsed .icon-close {
+    display: none;
+  }
+  .navbar-dark .navbar-toggler-icon {
+    background-image: none;
+    padding: 0;
+    width: 34px;
+    height: 34px;
+    background: transparent;
+    border-radius: 4px;
+    text-align: center;
+  }
 }
 
-.content .container form {
-  margin: auto;
-  width: 30%;
+.login-page {
+  background: #f2f0f3;
 }
 
-.content .container form h3 {
-  color: #de4839 !important;
-  margin-left: 100px;
+.login-page .reallogin_info {
+  max-width: 500px;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 2em;
+  background: #fff;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.09);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.09);
 }
 
-.content .container form div input {
-  width: 95%;
+.login-page .real_info h2 {
+  display: inline-block;
+  font-size: 26px;
+  margin-bottom: 3px;
+  color: #f76a8c;
+  font-weight: 700;
 }
 
-.content .container form div #eye {
-  font-size: 20px;
-  position: absolute;
-  top: 284px;
-  left: 58%;
+.login-page .real_info p {
+  padding-bottom: 30px;
+}
+
+.login-page .real_info form label {
+  color: #292922;
+}
+
+.login-page .input-group {
+  margin-bottom: 20px;
+}
+
+.login-page .input-group input {
+  outline: none;
+  padding: 17px 20px;
+  border-radius: 0;
+  color: #292922;
+  width: 100%;
+  font-size: 16px;
+  line-height: 26px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #f2f0f3;
+}
+
+.login-page .login-check {
+  position: relative;
+}
+
+.login-page .login-check label {
+  font-size: 14px;
+  color: #292922;
+  font-weight: 400;
+}
+
+.login-page .login-check input {
+  vertical-align: -1px;
+}
+
+.login-page .btn-login {
+  border: none;
+  color: #fff;
+  padding: 16px 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.login-page .btn-login:hover {
+  background: #000000;
+  color: #fff;
+}
+
+.login-page .account1 {
+  padding-top: 20px;
+  padding-bottom: 0px;
+  line-height: 1.5em;
+  font-size: 14px;
+}
+
+.login-page .account1 a {
+  color: #f76a8c;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.login-page .account1 a:hover {
+  text-decoration: none;
+}
+
+.login-page #eye {
   color: #31708f;
-}
-
-.content .container form div #remember {
-  margin: auto;
-  width: 86%;
-}
-
-.content .container form div #remember input {
-  width: 9%;
+  font-size: 1.3rem;
+  position: absolute;
+  top: 1rem;
+  left: 25rem;
 }
 
 p {
@@ -561,6 +644,7 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
 .w3l-blog .blog-article-posts .blog-post .author-date .avatar img {
   width: 100%;
   min-height: 100%;
+  min-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -577,6 +661,16 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
 
 .w3l-blog .blog-article-posts .blog-post .author-date .author-name b:hover {
   color: #292922;
+}
+
+.w3l-blog .blog-article-posts .blog_post_title {
+  font-size: 32px;
+  line-height: 41.6px;
+  display: inline-block;
+  font-weight: 700;
+  color: #292922;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .w3l-blog .blog-article-posts .blog_post_title:hover {
@@ -659,6 +753,9 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
   line-height: 41.6px;
   display: inline-block;
   font-weight: 700;
+  color: #292922;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .w3l-latest-posts .blog-article-post .post-content .blog_post_title:hover {
@@ -786,6 +883,7 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
 
 .w3l-author .author-image img {
   width: 100%;
+  min-height: 100%;
   min-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -862,6 +960,7 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
 .w3l-authors .img-circle img {
   width: 100%;
   min-height: 100%;
+  min-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -961,6 +1060,7 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
 .w3l-articles .img-circle img {
   width: 100%;
   min-height: 100%;
+  min-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -1094,10 +1194,10 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
 }
 
 .w3l-main-slider .blog_post_title {
-  font-size: 48px;
-  line-height: 55px;
+  font-size: 32px;
+  line-height: 41.6px;
+  display: inline-block;
   font-weight: 700;
-  margin: 16px 0 30px 0;
   color: #292922;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
@@ -1116,6 +1216,7 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
 .author-date .circle img {
   width: 100%;
   min-height: 100%;
+  min-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -1275,6 +1376,7 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
 .author-date .circle-lg img {
   width: 100%;
   min-height: 100%;
+  min-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -1357,7 +1459,13 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
 }
 
 .btn-primary {
-  color: #212529;
+  color: #ffffff;
+  background-color: #f76a8c;
+  border-color: #f76a8c;
+}
+
+.btn-primary:hover {
+  color: #fff;
   background-color: #f76a8c;
   border-color: #f76a8c;
 }
@@ -1410,6 +1518,200 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
 .resp-tabs-container {
   padding: 0px;
   clear: left;
+}
+
+.login-page {
+  background: #f2f0f3;
+}
+
+.login-page .reallogin_info {
+  max-width: 500px;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 2em;
+  background: #fff;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.09);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.09);
+}
+
+.login-page .real_info h2 {
+  display: inline-block;
+  font-size: 26px;
+  margin-bottom: 3px;
+  color: #f76a8c;
+  font-weight: 700;
+}
+
+.login-page .real_info p {
+  padding-bottom: 30px;
+}
+
+.login-page .real_info form label {
+  color: #292922;
+}
+
+.login-page .input-group {
+  margin-bottom: 20px;
+}
+
+.login-page .input-group input {
+  outline: none;
+  padding: 17px 20px;
+  border-radius: 0;
+  color: #292922;
+  width: 100%;
+  font-size: 16px;
+  line-height: 26px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #f2f0f3;
+}
+
+.login-page .login-check {
+  position: relative;
+}
+
+.login-page .login-check label {
+  font-size: 14px;
+  color: #292922;
+  font-weight: 400;
+}
+
+.login-page .login-check input {
+  vertical-align: -1px;
+}
+
+.login-page .btn-login {
+  border: none;
+  color: #fff;
+  padding: 16px 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.login-page .btn-login:hover {
+  background: #000000;
+  color: #fff;
+}
+
+.login-page .account1 {
+  padding-top: 20px;
+  padding-bottom: 0px;
+  line-height: 1.5em;
+  font-size: 14px;
+}
+
+.login-page .account1 a {
+  color: #f76a8c;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.login-page .account1 a:hover {
+  text-decoration: none;
+}
+
+.login-page #eye {
+  color: #31708f;
+  font-size: 1.3rem;
+  position: absolute;
+  top: 1rem;
+  left: 25rem;
+}
+
+.login-page {
+  background: #f2f0f3;
+}
+
+.login-page .reallogin_info {
+  max-width: 500px;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 2em;
+  background: #fff;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.09);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.09);
+}
+
+.login-page .real_info h2 {
+  display: inline-block;
+  font-size: 26px;
+  margin-bottom: 3px;
+  color: #f76a8c;
+  font-weight: 700;
+}
+
+.login-page .real_info p {
+  padding-bottom: 30px;
+}
+
+.login-page .real_info form label {
+  color: #292922;
+}
+
+.login-page .input-group {
+  margin-bottom: 20px;
+}
+
+.login-page .input-group input {
+  outline: none;
+  padding: 17px 20px;
+  border-radius: 0;
+  color: #292922;
+  width: 100%;
+  font-size: 16px;
+  line-height: 26px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #f2f0f3;
+}
+
+.login-page .login-check {
+  position: relative;
+}
+
+.login-page .login-check label {
+  font-size: 14px;
+  color: #292922;
+  font-weight: 400;
+}
+
+.login-page .login-check input {
+  vertical-align: -1px;
+}
+
+.login-page .btn-login {
+  border: none;
+  color: #fff;
+  padding: 16px 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.login-page .btn-login:hover {
+  background: #000000;
+  color: #fff;
+}
+
+.login-page .account1 {
+  padding-top: 20px;
+  padding-bottom: 0px;
+  line-height: 1.5em;
+  font-size: 14px;
+}
+
+.login-page .account1 a {
+  color: #f76a8c;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.login-page .account1 a:hover {
+  text-decoration: none;
 }
 
 * {

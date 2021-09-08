@@ -10,7 +10,8 @@ $font-color2: #212529;
 $heading-color: #292922;
 $light-image-layer: rgba(255, 253, 253, 0.85);
 $border-color : #ddd;
-
+$bg-Black: #000000;
+$eye-color: rgb(49, 112, 143);
 
 // @import "../abstracts/fonts";
 
@@ -23,3 +24,5 @@ $transition-easeout: 0.3s ease-in-out;
 
 $border-radius: 6px;
 $fontSize16: 16px;
+
+$card-hover-boxshadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.09);
