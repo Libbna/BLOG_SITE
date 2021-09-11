@@ -29,10 +29,11 @@
                     </div>
                     <div class="row mt-md-5 mt-4">
                         <div class="col-lg-7 col-md-9 mx-auto main-midd-2">
-                            <form action="#" method="post" class="rightside-form">
-                                <input type="email" name="email" placeholder="Input your e-mail" required="">
-                                <button type="submit" class="btn btn-primary theme-button">Subscribe</button>
+                            <form onsubmit="return doSubscribe()" action="#" method="post" class="rightside-form">
+                                <input id="email" type="email" name="email" placeholder="Input your e-mail" required="">
+                                <button type="submit" name="subscribe" class="btn btn-primary theme-button">Subscribe</button>
                             </form>
+                            <p id="message"></p>
                         </div>
                     </div>
                 </div>
@@ -42,6 +43,28 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        function doSubscribe() {
+            var email = document.getElementById("email").value;
+
+            var ajax = new XMLHttpRequest();
+            ajax.open("POST", "/components/do-subscribe.php", true);
+            ajax.setRequestHeader(
+                "Content-Type",
+                "application/x-www-form-urlencoded"
+            );
+            ajax.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("message").innerHTML = "Subscription Successful";
+                }
+            };
+
+            ajax.send("email=" + email);
+
+            return false;
+        }
+    </script>
 </body>
 
 </html>
