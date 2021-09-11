@@ -1,16 +1,16 @@
 
 .w3l-main-slider {
-    .banner-top1 {
-        background: url("/assets/images/banner2.jpg") no-repeat center;
-        background-size: cover;
-    }
-    .banner-top2 {
-        background: url("/assets/images/banner3.jpg") no-repeat center;
-    }
-    .banner-top3 {
-        background: url("/assets/images/banner1.jpg") no-repeat center;
+    // .banner-top1 {
+    //     // background: url("/assets/images/banner2.jpg") no-repeat center;
+    //     background-size: cover;
+    // }
+    // .banner-top2 {
+    //     // background: url("/assets/images/banner3.jpg") no-repeat center;
+    // }
+    // .banner-top3 {
+    //     // background: url("/assets/images/banner1.jpg") no-repeat center;
 
-    }
+    // }
     .banner-view {
             background-size: cover;
             height: 480px;
@@ -21,6 +21,8 @@
     }
     .banner-info {
         background: $light-image-layer;
+        position: absolute;
+        width: 100%;
         height: 480px;
         display: grid;
         align-items: center;

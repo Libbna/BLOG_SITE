@@ -15,14 +15,14 @@
                 <div class="container py-lg-4">
                     <div class="text-txt">
                         <div class="row footer-about pb-5">
-                            <div class="col-lg-9 footer-about-links">
+                            <div class="col-lg-9 footer-links">
                                 <div class="header-section">
                                     <h3 class="mb-3">About Us</h3>
                                     <p class="pr-lg-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Consequuntur hic odio voluptatem tenetur consequatur.Lorem ipsum dolor sit amet
                                         consectetur adipisicing elit. </p>
                                 </div>
-                                <div class="social-links mt-4">
+                                <div class="columns-2 mt-4">
                                     <ul class="social">
                                         <li><a href="#facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
                                         </li>

@@ -80,6 +80,7 @@
         </div>
     </section>
     <div style="margin: 8px auto; display: block; text-align:center;"></div>
+    <!-- Section 2 -->
     <section class="w3l-latest-posts py-5">
         <div class="container">
             <div class="row">

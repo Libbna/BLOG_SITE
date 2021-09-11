@@ -20,6 +20,12 @@ header {
   font-weight: 700;
 }
 
+.navbar .navbar-collapse .navbar-nav {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .navbar .navbar-collapse .navbar-nav .nav-item {
   padding: 0 10px;
   position: relative;
@@ -200,21 +206,29 @@ header {
   transition: all 0.5s;
 }
 
+.navbar-dark .navbar-toggler-icon {
+  background-image: none;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
 @media only screen and (max-width: 991px) {
-  .navbar-toggler .collapsed .icon-expand {
-    display: block;
+  .navbar-toggler-icon {
+    font-size: 20px;
+    color: #fff;
+    line-height: 34px;
   }
-  .navbar-toggler .collapsed .icon-close {
+  .icon-close {
     display: none;
   }
-  .navbar-dark .navbar-toggler-icon {
-    background-image: none;
-    padding: 0;
-    width: 34px;
-    height: 34px;
-    background: transparent;
-    border-radius: 4px;
-    text-align: center;
+  .search-right {
+    margin-left: 44%;
+    display: block;
+  }
+  .search-right .domain {
+    display: none;
   }
 }
 
@@ -428,41 +442,16 @@ footer .footer-inner-main {
   background-color: #fff;
 }
 
-footer .footer-inner-main .footer-grids .container .text-txt .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -40px !important;
-}
-
-footer .footer-inner-main .footer-grids .container .text-txt .footer-about {
+footer .footer-about {
   border-bottom: 1px solid #ddd;
 }
 
-footer .footer-inner-main .footer-grids .container .text-txt .footer-about .footer-about-links .header-section h3 {
-  color: #292922;
-  font-size: 46px;
-  line-height: 1;
-  font-weight: 700;
-}
-
-footer .footer-inner-main .footer-grids .container .text-txt .footer-about .footer-about-links .header-section p {
-  color: #696969;
-  font-size: 22px;
-  line-height: 32.5px;
-  font-weight: 300;
-  margin-top: 5px;
-}
-
-footer .footer-inner-main .footer-grids .container .text-txt .footer-about .footer-about-links .social-links ul li {
-  margin-right: 0px;
+footer .social li {
+  margin-right: 0;
   display: inline-block;
 }
 
-footer .footer-inner-main .footer-grids .container .text-txt .footer-about .footer-about-links .social-links ul li a {
+footer .social li a {
   background: transparent;
   display: inline-block;
   text-align: center;
@@ -471,7 +460,7 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-about .foot
   width: 32px;
 }
 
-footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-two-right h6 {
+footer h6 {
   color: #292922;
   font-size: 20px;
   line-height: 20px;
@@ -480,17 +469,17 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
   font-weight: 700;
 }
 
-footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-two-right ul {
-  margin-left: -33px;
+footer .sub-two-right ul {
+  margin: 0;
+  padding: 0;
 }
 
-footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-two-right ul li {
-  list-style: none;
+footer .sub-two-right ul li {
   padding-left: 15px;
   position: relative;
 }
 
-footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-two-right ul li ::before {
+footer .sub-two-right ul li::before {
   content: "";
   width: 5px;
   height: 5px;
@@ -501,7 +490,7 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
   background: #292922;
 }
 
-footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-two-right ul li a {
+footer .sub-two-right ul li a {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -509,6 +498,21 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
   color: #696969;
   margin: 0 0 10px 0;
   display: block;
+}
+
+.header-section h3 {
+  color: #292922;
+  font-size: 46px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.header-section p {
+  font-size: 22px;
+  line-height: 32.5px;
+  font-weight: 300;
+  margin-top: 5px;
+  color: #696969;
 }
 
 #self-space {
@@ -710,15 +714,16 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
   background-color: #fff;
 }
 
-.w3l-latest-posts .header-section h3 {
+.header-section h3 {
   color: #292922;
   font-size: 46px;
   line-height: 1;
   font-weight: 700;
 }
 
-.w3l-latest-posts .blog-article-post {
-  padding: 2rem;
+.blog-article-post {
+  height: 100%;
+  padding: 1.10rem;
   -webkit-transform: scale(1);
           transform: scale(1);
   -webkit-transition: 0.3s ease-in-out;
@@ -726,49 +731,20 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
   background: #f2f0f3;
 }
 
-.w3l-latest-posts .blog-article-post:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
-  background-color: #fff;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-  z-index: 9;
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.09);
-          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.09);
-}
-
-.w3l-latest-posts .blog-article-post:hover .blog_post_title {
-  color: #f76a8c;
-  text-decoration: underline;
-}
-
-.w3l-latest-posts .blog-article-post .post-content .sub-title {
+.sub-title {
   font-size: 14px;
   color: #696969;
   margin-bottom: 10px;
 }
 
-.w3l-latest-posts .blog-article-post .post-content .blog_post_title {
+.blog_post_title {
   font-size: 32px;
   line-height: 41.6px;
   display: inline-block;
   font-weight: 700;
-  color: #292922;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
 }
 
-.w3l-latest-posts .blog-article-post .post-content .blog_post_title:hover {
-  text-decoration: underline;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-
-.w3l-latest-posts .blog-article-post .post-content .author-date {
-  margin-left: -2rem;
-}
-
-.w3l-latest-posts .blog-article-post .post-content .author-date li {
+.author-date li {
   font-size: 14px;
   color: #696969;
   display: inline-block;
@@ -778,7 +754,7 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
   font-weight: 300;
 }
 
-.w3l-latest-posts .blog-article-post .post-content .author-date li b {
+.author-date li b {
   font-size: 16px;
   font-weight: 700;
   text-decoration: underline;
@@ -786,40 +762,16 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
   transition: 0.3s ease-in-out;
 }
 
-.w3l-latest-posts .blog-article-post .post-content .author-date li b:hover {
-  color: #292922;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-
-.w3l-latest-posts .blog-article-post .post-content .author-date p {
-  font-size: 16px;
-  line-height: 24.5px;
-  font-weight: 300;
-  color: #696969;
-}
-
-.w3l-latest-posts .blog-article-post .read-button {
+.read-button {
   color: #f76a8c;
   font-size: 16px;
   text-transform: capitalize;
   font-weight: 700;
 }
 
-.w3l-latest-posts .blog-article-post .read-button span {
+.read-button span {
   vertical-align: middle;
   margin-left: 5px;
-}
-
-.w3l-latest-posts .height-full {
-  height: 100%;
-}
-
-.latest-col {
-  padding-right: 15px;
-  padding-left: 15px;
-  position: relative;
-  width: 31%;
 }
 
 .member-login-content {
@@ -1152,19 +1104,6 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
   display: inline-block;
 }
 
-.w3l-main-slider .banner-top1 {
-  background: url("/assets/images/banner2.jpg") no-repeat center;
-  background-size: cover;
-}
-
-.w3l-main-slider .banner-top2 {
-  background: url("/assets/images/banner3.jpg") no-repeat center;
-}
-
-.w3l-main-slider .banner-top3 {
-  background: url("/assets/images/banner1.jpg") no-repeat center;
-}
-
 .w3l-main-slider .banner-view {
   background-size: cover;
   height: 480px;
@@ -1179,6 +1118,8 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
 
 .w3l-main-slider .banner-info {
   background: rgba(255, 253, 253, 0.85);
+  position: absolute;
+  width: 100%;
   height: 480px;
   display: -ms-grid;
   display: grid;
@@ -1860,6 +1801,12 @@ footer .footer-inner-main .footer-grids .container .text-txt .footer-links .sub-
 .w3l-contact .icon span {
   font-size: 20px;
   color: #f76a8c;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
 
 * {
