@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <?php include("./header.php"); ?>
+    <?php include("../layouts/header.php"); ?>
     <section class="w3l-blog-single py-5">
         <div class="container py-lg-3">
             <div class="row">
@@ -233,8 +233,8 @@
 
 
     <?php
-    include("./comment.php");
-    include("./footer.php");
+    include("../layouts/comment.php");
+    include("../layouts/footer.php");
     ?>
 </body>
 

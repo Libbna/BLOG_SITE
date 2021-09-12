@@ -25,7 +25,7 @@ if ($user->is_logged_in()) {
 </head>
 
 <body>
-    <?php include("../components/header.php"); ?>
+    <?php include("../layouts/header.php"); ?>
 
     <div style="margin: 8px auto; display: block; text-align:center;">
         <!---728x90--->
@@ -80,7 +80,7 @@ if ($user->is_logged_in()) {
             </div>
         </div>
     </section>
-    <?php include("../components/footer.php"); ?>
+    <?php include("../layouts/footer.php"); ?>
 
 
     <script src="/assets/js/app.js"></script>

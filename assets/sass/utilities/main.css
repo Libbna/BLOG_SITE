@@ -1809,6 +1809,19 @@ footer .sub-two-right ul li a {
   color: #f76a8c;
 }
 
+@media (max-width: 991px) {
+  .w3l-contact .contact-info {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .w3l-contact .contact-info-left {
+    grid-gap: 40px;
+  }
+}
+
 .w3l-blog-single .img-circle {
   width: 200px;
   height: 200px;
@@ -2006,9 +2019,51 @@ footer .sub-two-right ul li a {
   padding: 16px 40px;
 }
 
+.about-head-title {
+  color: #292922;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.text-list ol {
+  margin-left: 10px;
+}
+
+.text-list ol li {
+  font-size: 16px;
+  line-height: 24.5px;
+  margin: 12px 0;
+  color: #292922;
+  font-weight: 400;
+  position: relative;
+  padding-left: 15px;
+}
+
+.text-list ol li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #f76a8c;
+  border-radius: 100px;
+  position: absolute;
+  top: 9px;
+  left: 0;
+  border: 1px solid #f76a8c;
+}
+
+.about-title {
+  color: #292922;
+  display: block;
+  margin: 1em 0 2em;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 500;
+}
+
 html, body {
   margin: 0px;
   padding: 0px;
+  padding-right: 0 !important;
   overflow-x: hidden;
 }
 

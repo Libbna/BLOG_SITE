@@ -20,9 +20,6 @@
 <body>
     <!-- Domain Modal -->
 
-    <?php
-    include('domainModal.php');
-    ?>
     <header id="site-header">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark stroke p-0">
@@ -39,7 +36,7 @@
                             <a class="nav-link" href="/index.php">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item @@article-active">
-                            <a class="nav-link" href="/components//articles.php">Articles</a>
+                            <a class="nav-link" href="/components/articles.php">Articles</a>
                         </li>
                         <li class="nav-item dropdown @@dropdown-active">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
@@ -63,7 +60,7 @@
                             </div>
                         </li>
                         <li class="nav-item @@about-active">
-                            <a class="nav-link" href="about.html">About</a>
+                            <a class="nav-link" href="/components/about.php">About</a>
                         </li>
                         <li class="nav-item @@contact-active">
                             <a class="nav-link" href="/components/contact-form.php">Contact</a>
@@ -118,6 +115,9 @@
             </nav>
         </div>
     </header>
+    <?php
+    include('domainModal.php');
+    ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

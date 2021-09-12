@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <?php include("../components/header.php"); ?>
+    <?php include("../layouts/header.php"); ?>
 
     <section class="w3l-breadcrumb py-5">
         <div class="container">
@@ -102,7 +102,7 @@
 
 
 
-    <?php include("../components/footer.php"); ?>
+    <?php include("../layouts/footer.php"); ?>
 
 </body>
 

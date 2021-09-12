@@ -19,6 +19,7 @@
 @import "../layouts/register";
 @import "../layouts/contact-form";
 @import "../layouts/blog.single";
+@import "../layouts/about";
 
 
 
@@ -32,6 +33,7 @@ html,body
     // height: 100%;
     margin: 0px;
     padding: 0px;
+    padding-right: 0 !important;
     overflow-x: hidden; 
 }
 

@@ -107,3 +107,19 @@
 }
 
     }
+
+
+@media (max-width: 991px) {
+    .w3l-contact {
+        .contact-info {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+@media (max-width: 1024px) {
+    .w3l-contact {
+        .contact-info-left {
+        grid-gap: 40px;
+        }
+    }
+}

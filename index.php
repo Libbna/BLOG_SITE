@@ -22,8 +22,8 @@ $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
 
 <body>
     <?php
-    include("./components/header.php");
-    include('./components/banner-index.php');
+    include("./layouts/header.php");
+    include('./layouts/banner-index.php');
     ?>
 
     <!--Main Slider  -->
@@ -109,15 +109,15 @@ $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
     </section>
 
     <?php
-    include("./components/latest-post.php");
-    include("./components/about-image-grid.php");
-    include("./components/author-section.php");
-    // include("./components/featured-news.php");
+    include("./layouts/latest-post.php");
+    include("./layouts/about-image-grid.php");
+    include("./layouts/author-section.php");
+    // include("./layouts/featured-news.php");
     ?>
     <?php
     // include('comment-section.php');
-    include('./components/subscribe.php');
-    include('./components/footer.php');
+    include('./layouts/subscribe.php');
+    include('./layouts/footer.php');
     ?>
     <script>
         function likes_update(articleID) {

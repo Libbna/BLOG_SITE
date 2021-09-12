@@ -58,15 +58,7 @@
                 padding-left: 15px;
 
                 &::before {
-                    content: "";
-                    width: 6px;
-                    height: 6px;
-                    background-color: $primary-color;
-                    border-radius: 100px;
-                    position: absolute;
-                    top: 9px;
-                    left: 0;
-                    border: 1px solid $primary-color;
+                    @include li-before();
                 }
             }
         }

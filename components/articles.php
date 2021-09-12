@@ -21,7 +21,7 @@ require_once("../includes/config.php");
 </head>
 
 <body>
-    <?php include("./header.php"); ?>
+    <?php include("../layouts/header.php"); ?>
 
     <!-- breadcrumn -->
     <section class="w3l-breadcrumb py-5">
@@ -84,7 +84,7 @@ require_once("../includes/config.php");
 
 
     <?php
-    include("./footer.php");
+    include("../layouts/footer.php");
     ?>
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
