@@ -77,7 +77,7 @@ $result = $db->query("SELECT banner_path FROM banners");
                 margin: 0,
                 nav: false,
                 responsiveClass: true,
-                autoplay: false,
+                autoplay: true,
                 autoplayTimeout: 5000,
                 autoplaySpeed: 1000,
                 autoplayHoverPause: false,

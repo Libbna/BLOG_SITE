@@ -198,12 +198,12 @@ header {
 } 
 .navbar-dark {
     .navbar-toggler-icon {
-        background-image: none;
+        background-image: none !important;
     }
 }
 .dropdown-toggle {
     &::after {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -213,8 +213,11 @@ header {
         color: #fff;
         line-height: 34px;
     }
-    .icon-close {
-        display: none;
+    .navbar-toggler {
+        #cross {
+            display: none;
+        }
+        transition: transform 0.3s ease-in-out ;
     }
     .search-right {
         margin-left: 44%;

@@ -33,56 +33,51 @@
         display: inline-block;
         margin-right: 20px;
     }
-}
-.blog_post_title {
-    @include blog-post-title;
-
-    &:hover {
-        text-decoration: underline;
-    }
-}
-.author-date {
-    li {
-        font-size: 14px;
-        color: $font-color;
-        display: inline-block;
-        margin-right: 15px;
-        transition: $transition-easeout;
-        font-weight: 300;
-
-        b {
-            font-size: $fontSize16;
-            font-weight: 700;
+    .blog_post_title {
+        @include blog-post-title;
+    
+        &:hover {
             text-decoration: underline;
-            transition: $transition-easeout;
-
-            &:hover {
-                color: $heading-color;
+        }
+    }
+    .author-date {
+        li {
+            @include author-date();
+    
+            b {
+                font-size: $fontSize16;
+                font-weight: 700;
+                text-decoration: underline;
+                transition: $transition-easeout;
+    
+                &:hover {
+                    color: $heading-color;
+                }
+            }
+        }
+        .circle-lg {
+            width: 65px;
+            height: 65px;
+            display: inline-block;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 2px solid $bg-color;
+            background: $bg-color;
+    
+            img {
+                @include author_img;
             }
         }
     }
-    .circle-lg {
-        width: 65px;
-        height: 65px;
-        display: inline-block;
-        overflow: hidden;
-        border-radius: 15px;
-        border: 2px solid $bg-color;
-        background: $bg-color;
-
-        img {
-            @include author_img;
+    .read-button {
+        color: $primary-color;
+        font-size: $fontSize16;
+        text-transform: capitalize;
+        font-weight: 700;
+    
+        span {
+            vertical-align: middle;
+            margin-left: 5px;
         }
-    }
-}
-.read-button {
-    color: $primary-color;
-    font-size: $fontSize16;
-    text-transform: capitalize;
-    font-weight: 700;
-
-    span {
-        vertical-align: middle;
-        margin-left: 5px;
     }
 }

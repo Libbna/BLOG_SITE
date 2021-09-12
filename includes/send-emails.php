@@ -10,7 +10,7 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 // require_once "./plugins/PHPMailer/PHPMailer.php";
 
-require_once("../includes/config.php");
+require_once("config.php");
 $result = $db->query('SELECT * FROM subscribers');
 while ($row = $result->fetch()) {
     //Create an instance; passing `true` enables exceptions
@@ -22,16 +22,16 @@ while ($row = $result->fetch()) {
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = $username;                     //SMTP username
-        $mail->Password   = $password;                               //SMTP password
+        $mail->Username   = 'libbna260296@gmail.com';                     //SMTP username
+        $mail->Password   = '';                               //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
-        $mail->setFrom($username, 'Libbna');
+        $mail->setFrom('libbna260296@gmail.com', 'Libbna');
         // $mail->addAddress('joe@example.net', 'Joe User');     //Add a recipient
         $mail->addAddress($row->email);               //Name is optional
-        $mail->addReplyTo($username, 'Libbna');
+        $mail->addReplyTo('libbna260296@gmail.com', 'Libbna');
         // $mail->addCC('cc@example.com');
         // $mail->addBCC('bcc@example.com');
 

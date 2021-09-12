@@ -1,0 +1,165 @@
+@import "../abstracts/fonts";
+@import "../abstracts/mixins";
+
+
+.w3l-blog-single {
+    .img-circle {
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        overflow: hidden;
+        background: #f3f6f9;
+        border-radius: 15px;
+        border: 3px solid $primary-color;
+
+        img {
+            @include author-img();
+        }
+    }
+    .about-title {
+        font-size: 18px;
+        color: $heading-color;
+        margin: 15px 0;
+    }
+    
+    .author-date {
+        li {
+            @include author-date();
+            a {
+                color: $primary-color;
+                font-weight: 300;
+                text-decoration: none;
+            }
+        }
+    }
+    .blog-post-title {
+        @include blog-post-title();
+    }
+    .blog-desc-big {
+        display: block;
+        font-size: 34px;
+        line-height: 44px;
+        font-weight: 600;
+        color: $heading-color;
+        margin-bottom: 20px;
+        transition: .3s ease;
+        max-width: 700px;
+    }
+    .text-list {
+        ol {
+            margin-left: 10px;
+            li {
+                font-size: 16px;
+                line-height: 24.5px;
+                margin: 12px 0;
+                color: $heading-color;
+                font-weight: 400;
+                position: relative;
+                padding-left: 15px;
+
+                &::before {
+                    content: "";
+                    width: 6px;
+                    height: 6px;
+                    background-color: $primary-color;
+                    border-radius: 100px;
+                    position: absolute;
+                    top: 9px;
+                    left: 0;
+                    border: 1px solid $primary-color;
+                }
+            }
+        }
+    }
+    .blockquote {
+        position: relative;
+        padding-left: 60px;
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 500;
+        color: $font-color;
+
+    }
+    .icon-quote {
+        position: absolute;
+        top: 4px;
+        left: 0px;
+
+        span {
+            font-size: 45px;
+            opacity: 0.1;
+            transition: .3s;
+            color: $font-color;
+        }
+    }
+    .blockquote-footer {
+        display: flex;
+        align-items: center;
+        color: #999;
+    }
+    .single-post-content {
+        p {
+            a {
+                font-weight: 600;
+                color: $heading-color;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .left-right {
+        grid-template-rows: auto auto;
+        grid-gap: 50px;
+        justify-content: space-between;
+    }
+    .buttons-singles {
+        display: inline-block;
+        margin-right: 30px;
+        font-size: 24px;
+        font-weight: 600;
+        a {
+            color: #999;
+            font-size: 18px;
+            margin-right: 10px;
+            display: inline-block;
+        }
+    }
+    .blog-single-content {
+        background: $bg-color-three;
+        padding: 10px;
+        border-radius: $border-radius;
+        p {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        span {
+            color:$primary-color;
+            width: 20px;
+            display: inline-block;
+        }
+        a {
+            font-size: 16px;
+            color: $font-color;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .blog-subscribe {
+        background: $bg-color-three;
+        border-radius: $border-radius;
+    }
+    .subscribe-field {
+        height: 55px;
+        border: 1px solid #eee;
+        font-size: 16px;
+        border-radius: 4px;
+    }
+    button {
+        padding: 16px 40px;
+    }
+}
+
+

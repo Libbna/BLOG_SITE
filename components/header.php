@@ -75,9 +75,9 @@
                         <!-- search popup -->
                         <div id="search" class="pop-overlay">
                             <div class="popup">
-                                <form action="../components/search-results.php" method="GET" class="search-box">
+                                <form action="/components/search-results.php" method="GET" class="search-box">
                                     <input type="search" placeholder="Search your Keyword" name="search" required="required" autofocus="">
-                                    <button type="submit" class="btn"><span class="fa fa-search" aria-hidden="true"></span></button>
+                                    <button type="submit-search" class="btn"><span class="fa fa-search" aria-hidden="true"></span></button>
                                 </form>
                                 <div class="browse-items">
                                     <h3 class="hny-title two mt-md-5 mt-4">Browse all topics:</h3>

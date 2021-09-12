@@ -207,11 +207,11 @@ header {
 }
 
 .navbar-dark .navbar-toggler-icon {
-  background-image: none;
+  background-image: none !important;
 }
 
 .dropdown-toggle::after {
-  display: none;
+  display: none !important;
 }
 
 @media only screen and (max-width: 991px) {
@@ -220,7 +220,13 @@ header {
     color: #fff;
     line-height: 34px;
   }
-  .icon-close {
+  .navbar-toggler {
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  }
+  .navbar-toggler #cross {
     display: none;
   }
   .search-right {
@@ -1268,7 +1274,7 @@ footer .sub-two-right ul li a {
   margin-right: 20px;
 }
 
-.blog_post_title {
+.w3l-index5 .blog_post_title {
   font-size: 32px;
   line-height: 41.6px;
   display: inline-block;
@@ -1278,11 +1284,11 @@ footer .sub-two-right ul li a {
   transition: 0.3s ease-in-out;
 }
 
-.blog_post_title:hover {
+.w3l-index5 .blog_post_title:hover {
   text-decoration: underline;
 }
 
-.author-date li {
+.w3l-index5 .author-date li {
   font-size: 14px;
   color: #696969;
   display: inline-block;
@@ -1292,7 +1298,7 @@ footer .sub-two-right ul li a {
   font-weight: 300;
 }
 
-.author-date li b {
+.w3l-index5 .author-date li b {
   font-size: 16px;
   font-weight: 700;
   text-decoration: underline;
@@ -1300,11 +1306,11 @@ footer .sub-two-right ul li a {
   transition: 0.3s ease-in-out;
 }
 
-.author-date li b:hover {
+.w3l-index5 .author-date li b:hover {
   color: #292922;
 }
 
-.author-date .circle-lg {
+.w3l-index5 .author-date .circle-lg {
   width: 65px;
   height: 65px;
   display: inline-block;
@@ -1314,7 +1320,7 @@ footer .sub-two-right ul li a {
   background: #fff;
 }
 
-.author-date .circle-lg img {
+.w3l-index5 .author-date .circle-lg img {
   width: 100%;
   min-height: 100%;
   min-width: 100%;
@@ -1324,14 +1330,14 @@ footer .sub-two-right ul li a {
      object-position: center;
 }
 
-.read-button {
+.w3l-index5 .read-button {
   color: #f76a8c;
   font-size: 16px;
   text-transform: capitalize;
   font-weight: 700;
 }
 
-.read-button span {
+.w3l-index5 .read-button span {
   vertical-align: middle;
   margin-left: 5px;
 }
@@ -1803,6 +1809,203 @@ footer .sub-two-right ul li a {
   color: #f76a8c;
 }
 
+.w3l-blog-single .img-circle {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  background: #f3f6f9;
+  border-radius: 15px;
+  border: 3px solid #f76a8c;
+}
+
+.w3l-blog-single .img-circle img {
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.w3l-blog-single .about-title {
+  font-size: 18px;
+  color: #292922;
+  margin: 15px 0;
+}
+
+.w3l-blog-single .author-date li {
+  font-size: 14px;
+  color: #696969;
+  display: inline-block;
+  margin-right: 15px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  font-weight: 300;
+}
+
+.w3l-blog-single .author-date li a {
+  color: #f76a8c;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.w3l-blog-single .blog-post-title {
+  font-size: 32px;
+  line-height: 41.6px;
+  display: inline-block;
+  font-weight: 700;
+  color: #292922;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.w3l-blog-single .blog-desc-big {
+  display: block;
+  font-size: 34px;
+  line-height: 44px;
+  font-weight: 600;
+  color: #292922;
+  margin-bottom: 20px;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  max-width: 700px;
+}
+
+.w3l-blog-single .text-list ol {
+  margin-left: 10px;
+}
+
+.w3l-blog-single .text-list ol li {
+  font-size: 16px;
+  line-height: 24.5px;
+  margin: 12px 0;
+  color: #292922;
+  font-weight: 400;
+  position: relative;
+  padding-left: 15px;
+}
+
+.w3l-blog-single .text-list ol li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #f76a8c;
+  border-radius: 100px;
+  position: absolute;
+  top: 9px;
+  left: 0;
+  border: 1px solid #f76a8c;
+}
+
+.w3l-blog-single .blockquote {
+  position: relative;
+  padding-left: 60px;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  color: #696969;
+}
+
+.w3l-blog-single .icon-quote {
+  position: absolute;
+  top: 4px;
+  left: 0px;
+}
+
+.w3l-blog-single .icon-quote span {
+  font-size: 45px;
+  opacity: 0.1;
+  -webkit-transition: .3s;
+  transition: .3s;
+  color: #696969;
+}
+
+.w3l-blog-single .blockquote-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #999;
+}
+
+.w3l-blog-single .single-post-content p a {
+  font-weight: 600;
+  color: #292922;
+}
+
+.w3l-blog-single .single-post-content p a:hover {
+  text-decoration: underline;
+}
+
+.w3l-blog-single .left-right {
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  grid-gap: 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.w3l-blog-single .buttons-singles {
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.w3l-blog-single .buttons-singles a {
+  color: #999;
+  font-size: 18px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.w3l-blog-single .blog-single-content {
+  background: #f2f0f3;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.w3l-blog-single .blog-single-content p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.w3l-blog-single .blog-single-content span {
+  color: #f76a8c;
+  width: 20px;
+  display: inline-block;
+}
+
+.w3l-blog-single .blog-single-content a {
+  font-size: 16px;
+  color: #696969;
+}
+
+.w3l-blog-single .blog-single-content a:hover {
+  text-decoration: underline;
+}
+
+.w3l-blog-single .blog-subscribe {
+  background: #f2f0f3;
+  border-radius: 6px;
+}
+
+.w3l-blog-single .subscribe-field {
+  height: 55px;
+  border: 1px solid #eee;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.w3l-blog-single button {
+  padding: 16px 40px;
+}
+
 html, body {
   margin: 0px;
   padding: 0px;
@@ -1825,6 +2028,13 @@ a {
 
 a:hover {
   text-decoration: none;
+}
+
+p {
+  font-size: 14px;
+  line-height: 24.5px;
+  font-weight: 300;
+  color: #696969;
 }
 
 body {

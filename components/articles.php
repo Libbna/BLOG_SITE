@@ -60,7 +60,7 @@ require_once("../includes/config.php");
                                         <div class="row">
                                             <div class="col-md-9 pr-md-5 order-md-1 order-2">
                                                 <p><?php echo $row['articleDesc']; ?></p>
-                                                <a href="blog-single.html" class="read-button mt-4 d-inline-block">Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>
+                                                <a href="/components/blog-single.php" class="read-button mt-4 d-inline-block">Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>
                                             </div>
                                             <div class="col-md-3 article-right order-md-2 order-1 pl-md-0">
                                                 <p><span class="fa fa-clock-o" aria-hidden="true"></span> 4 min read</p>

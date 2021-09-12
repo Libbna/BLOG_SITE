@@ -29,7 +29,7 @@
                     </div>
                     <div class="row mt-md-5 mt-4">
                         <div class="col-lg-7 col-md-9 mx-auto main-midd-2">
-                            <form onsubmit="return doSubscribe()" action="#" method="post" class="rightside-form">
+                            <form onsubmit="return doSubscribe()" action="/components/send-emails.php" method="post" class="rightside-form">
                                 <input id="email" type="email" name="email" placeholder="Input your e-mail" required="">
                                 <button type="submit" name="subscribe" class="btn btn-primary theme-button">Subscribe</button>
                             </form>
@@ -49,7 +49,7 @@
             var email = document.getElementById("email").value;
 
             var ajax = new XMLHttpRequest();
-            ajax.open("POST", "/components/do-subscribe.php", true);
+            ajax.open("POST", "/includes/do-subscribe.php", true);
             ajax.setRequestHeader(
                 "Content-Type",
                 "application/x-www-form-urlencoded"
