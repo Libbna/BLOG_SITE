@@ -72,7 +72,7 @@
                         <!-- search popup -->
                         <div id="search" class="pop-overlay">
                             <div class="popup">
-                                <form action="/components/search-results.php" method="GET" class="search-box">
+                                <form action="../components/search-results.php" method="GET" class="search-box">
                                     <input type="search" placeholder="Search your Keyword" name="search" required="required" autofocus="">
                                     <button type="submit-search" class="btn"><span class="fa fa-search" aria-hidden="true"></span></button>
                                 </form>
@@ -112,6 +112,19 @@
                         <!--//search-right-->
                     </div>
                 </div>
+                <div class="mobile-position">
+                    <nav class="navigation">
+                        <div class="theme-switch-wrapper">
+                            <label for="checkbox" class="theme-switch">
+                                <input type="checkbox" id="checkbox">
+                                <div class="mode-container">
+                                    <span class="fa fa-sun"></span>
+                                    <span class="fa fa-moon"></span>
+                                </div>
+                            </label>
+                        </div>
+                    </nav>
+                </div>
             </nav>
         </div>
     </header>
@@ -123,6 +136,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <!-- navbar toggle function -->
     <script>
         function myFunction() {
             var x = document.getElementById('navbarTogglerDemo02');
@@ -141,6 +155,32 @@
                 bars.style.display = 'none';
             }
         }
+    </script>
+
+    <!-- theme switch toggler -->
+    <script>
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
     </script>
 </body>
 

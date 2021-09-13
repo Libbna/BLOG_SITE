@@ -207,6 +207,37 @@ header {
     }
 }
 
+// theme switcher
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+.theme-switch {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    margin: 0;
+
+    input {
+        display: block;
+    }
+}
+.mode-container {
+    width: 24px;
+    height: 24px;
+    margin-left: 20px;
+    margin-top: 3px;
+
+    .fa-sun {
+        display: none;
+    }
+    .fa-moon {
+        display: block;
+        color: $white;
+    }
+}
+
+// media queries
 @media only screen and (max-width:991px) {
     .navbar-toggler-icon {
         font-size: 20px;

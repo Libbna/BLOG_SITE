@@ -7,7 +7,7 @@ $stmt = $db->query('SELECT * FROM article');
 
 <title>Blog Site</title>
 <?php
-include("./header.php");
+include("../layouts/header.php");
 ?>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -36,7 +36,7 @@ include("./header.php");
                             <div class="slider-info">
                                 <div class="img-circle">
                                     <a href="#">
-                                        <!-- <img src="<?php echo $row['profile_img']; ?>" alt=""> -->
+                                        <img src="<?php echo $row['profile_img']; ?>" alt="">
                                     </a>
                                 </div>
                                 <div class="message">
@@ -84,5 +84,5 @@ include("./header.php");
 
 
 <?php
-include('footer.php');
+include('../layouts/footer.php');
 ?>
