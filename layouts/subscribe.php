@@ -16,14 +16,9 @@
 <body>
 
     <?php
-
     if (isset($_POST['subscribe'])) {
 
         require 'PHPMailerAutoload.php';
-        require("../includes/config.php");
-
-        // $email = $_POST["email"];
-        // $stmt = $db->query("INSERT INTO subscribers (semail) VALUES ('$email')");
 
         $mail = new PHPMailer;
 
@@ -33,14 +28,14 @@
         $mail->Host = 'smtp1.gmail.com';  // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
         $mail->Username = 'libbna260296@gmail.com';                 // SMTP username
-        $mail->Password = userpass;                           // SMTP password
+        $mail->Password = 'kormaroti@@';                           // SMTP password
         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587;                                    // TCP port to connect to
 
-        $mail->setFrom('libbna260296@gmail.com', 'Libbna Mathew');
+        $mail->setFrom('libbna260296@gmail.com', 'Libbna');
         $mail->addAddress($_POST['email']);     // Add a recipient
         // $mail->addAddress('ellen@example.com');               // Name is optional
-        $mail->addReplyTo('libbna260296@gmail.com');
+        $mail->addReplyTo('libbna260296@gmail.com', 'Information');
         // $mail->addCC('cc@example.com');
         // $mail->addBCC('bcc@example.com');
 
@@ -49,7 +44,7 @@
         $mail->isHTML(true);                                  // Set email format to HTML
 
         $mail->Subject = 'Here is the subject';
-        $mail->Body    = '<p>This is the HTML message body <b>in bold!</b></p>';
+        $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         if (!$mail->send()) {
@@ -60,6 +55,7 @@
         }
     }
     ?>
+
     <section class="w3l-subscribe">
         <div class="main-w3 py-5">
             <div class="container py-lg-3">
@@ -75,7 +71,7 @@
                     </div>
                     <div class="row mt-md-5 mt-4">
                         <div class="col-lg-7 col-md-9 mx-auto main-midd-2">
-                            <form enctype="multipart/form-data" action="" method=" post" class="rightside-form">
+                            <form role="form" method="post" enctype="multipart/form-data" class="rightside-form">
                                 <input id="email" type="email" name="email" placeholder="Input your e-mail" required="">
                                 <button type="submit" name="subscribe" class="btn btn-primary theme-button">Subscribe</button>
                             </form>

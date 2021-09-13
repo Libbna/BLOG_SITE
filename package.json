@@ -20,5 +20,6 @@
   "dependencies": {
     "node-sass": "^6.0.1",
     "owl.carousel": "^2.3.4"
-  }
+  },
+  "devDependencies": {}
 }
