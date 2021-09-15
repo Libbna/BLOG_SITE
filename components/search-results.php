@@ -59,7 +59,7 @@ include("../layouts/header.php");
                                     <p>
                                         <?php echo $row['articleDesc']; ?>
                                     </p>
-                                    <?php echo '<a href="http://blogsite.com/components/blog-single.php?id=' . $row['articleID'] . '" class="read-button mt-4 d-inline-block">Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>'; ?>
+                                    <?php echo '<a href="http://blogsite.com/components/blog-single?id=' . $row['articleID'] . '" class="read-button mt-4 d-inline-block">Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>'; ?>
 
                                 </div>
                             </div>

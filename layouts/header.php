@@ -33,10 +33,10 @@
                 <div class="navbar-collapse collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav mx-auto" id="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="/index.php">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item @@article-active">
-                            <a class="nav-link" href="/components/articles.php">Articles</a>
+                            <a class="nav-link" href="/components/articles">Articles</a>
                         </li>
                         <li class="nav-item dropdown @@dropdown-active">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
@@ -54,16 +54,16 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
                                 <a class="dropdown-item @@error-active" href="error.html">404 Page</a>
-                                <a class="dropdown-item @@login-active" href="/components/login.php">Login</a>
-                                <a class="dropdown-item @@signup-active" href="/components/register.php">Signup</a>
+                                <a class="dropdown-item @@login-active" href="/components/login">Login</a>
+                                <a class="dropdown-item @@signup-active" href="/components/register">Signup</a>
                                 <a class="dropdown-item @@search-active" href="search-results.html">Search Results</a>
                             </div>
                         </li>
                         <li class="nav-item @@about-active">
-                            <a class="nav-link" href="/components/about.php">About</a>
+                            <a class="nav-link" href="/components/about">About</a>
                         </li>
                         <li class="nav-item @@contact-active">
-                            <a class="nav-link" href="/components/contact-form.php">Contact</a>
+                            <a class="nav-link" href="/components/contact-form">Contact</a>
                         </li>
                     </ul>
                     <!--/search-right-->
@@ -72,7 +72,7 @@
                         <!-- search popup -->
                         <div id="search" class="pop-overlay">
                             <div class="popup">
-                                <form action="../components/search-results.php" method="GET" class="search-box">
+                                <form action="../components/search-results" method="GET" class="search-box">
                                     <input type="search" placeholder="Search your Keyword" name="search" required="required" autofocus="">
                                     <button type="search" name="submit-search" class="btn"><span class="fa fa-search" aria-hidden="true"></span></button>
                                 </form>
