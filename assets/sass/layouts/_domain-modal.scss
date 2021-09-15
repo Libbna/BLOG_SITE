@@ -98,10 +98,30 @@ li {
                                         margin-right: 5px;
                                     }
                                     a {
-                                        font-weight: 600;
-                                        color: $font-color;
-                                        &:hover {
-                                            color:#f76a8c ;
+                                        border: 2px solid transparent;
+                                        color: #fff;
+                                        display: inline-block;
+                                        font-size: 16px;
+                                        height: 36px;
+                                        line-height: 2;
+                                        margin-right: 4px;
+                                        position: relative;
+                                        text-align: center;
+                                        text-decoration: none;
+                                        width: 36px;
+                                        transition: all .2s ease;
+                                        border-radius: 4px;
+
+                                        .twitter {
+                                            background: #1da1f2;
+                                        }
+                                        .linkedin {
+                                            background: #0077b5;
+                                        }
+                                        .tumblr {
+                                            background: #35465c;
+                                        }
+
                                         }
                                     }
                                 }
@@ -115,4 +135,5 @@ li {
             background-color: $bg-color;
         }
     }
-}
+
+

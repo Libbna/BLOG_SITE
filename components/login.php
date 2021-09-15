@@ -1,7 +1,34 @@
 <?php
 require_once('../includes/config.php');
+
+// if user is already logged in, redirect to home/index page
 if ($user->is_logged_in()) {
     header('location:../index.php');
+}
+?>
+
+<?php
+
+if (isset($_POST['submit'])) {
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
+    $checkbox = isset($_POST['remember-me']);
+
+    if ($user->login($username, $password)) {
+        $_SESSION['username'] = $username;
+
+        if ($checkbox == "on") {
+            setcookie("username", $username, time() + 3600);
+        }
+        header('location: ../components/login.php');
+        exit;
+    } else {
+        $message = '<p class="invalid">Invalid username or password</p>';
+    }
+}
+
+if (isset($message)) {
+    echo $message;
 }
 ?>
 
@@ -35,32 +62,9 @@ if ($user->is_logged_in()) {
         <div class="container py-lg-5">
             <div class="real_info">
                 <div class="reallogin_info">
-                    <?php
-                    if (isset($_POST['submit'])) {
-                        $username = trim($_POST['username']);
-                        $password = trim($_POST['password']);
-                        $checkbox = isset($_POST['remember-me']);
-
-                        if ($user->login($username, $password)) {
-                            $_SESSION['username'] = $username;
-
-                            // if ($checkbox == "on") {
-                            //     setcookie("username", $username, time() + 3600);
-                            // }
-                            header('location: ../components/login.php');
-                            exit;
-                        } else {
-                            $message = '<p class="invalid">Invalid username or password</p>';
-                        }
-                    }
-
-                    if (isset($message)) {
-                        echo $message;
-                    }
-                    ?>
                     <h2>Login to your Account</h2>
                     <p>Enter your details to login.</p>
-                    <form action="" method="post" autocomplete="off">
+                    <form action="#" method="post" autocomplete="off">
                         <label>Username</label>
                         <div class="input-group">
                             <input type="text" name="username" placeholder="" required="">

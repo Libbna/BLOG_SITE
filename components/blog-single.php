@@ -1,3 +1,13 @@
+<?php
+require_once('../includes/config.php');
+
+$stmt = $db->prepare('SELECT * FROM article WHERE articleID = :articleID');
+$stmt->execute(array(':articleID' => $_GET['id']));
+$row = $stmt->fetch();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,14 +29,17 @@
     <?php include("../layouts/header.php"); ?>
     <section class="w3l-blog-single py-5">
         <div class="container py-lg-3">
+            <?php
+
+            ?>
             <div class="row">
                 <div class="col-lg-3 pr-lg-4 order-lg-1 order-2">
                     <div class="img-circle">
                         <a href="author.php">
-                            <img src="/assets/uploads/main-author.jpg" class="img-fliud" alt="author-img">
+                            <img src="<?php echo $row['profile_img']; ?>" class="img-fliud" alt="author-img">
                         </a>
                     </div>
-                    <h4 class="about-title">About the author</h4>
+                    <h4 class="about-title"><?php echo $row['articleAuthor']; ?></h4>
                     <p class="mr-lg-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, fugiat omnis aliquam iure quasi aspernatur nulla
                         soluta dignissimos
                         consequatur. Omnis fugit dolor recusandae quae! Molestiae! <br>
@@ -40,19 +53,12 @@
                             <li><span class="fa fa-commenting-o" aria-hidden="true"></span> <a href="#reply">12 Comments</a></li>
                             <li><span class="fa fa-clock-o" aria-hidden="true"></span> 8 min read</li>
                         </ul>
-                        <h4 class="blog_post_title">That’s what I want to show you how to do here. In this article, I will:</h4>
+                        <h4 class="blog_post_title"><?php echo $row['articleTitle']; ?>:</h4>
                         <div class="row mt-4">
                             <div class="col-lg-8 pr-lg-4 order-lg-1 order-2">
                                 <div class="single-post-content">
-                                    <p class="mb-4">Lorem ipsum dolor sit amet,Ea consequuntur
-                                        illum facere aperiam sequi optio
-                                        dolor set consectetur.Ea ipsum sed consequuntur illum facere aperiam sequi optio consectetur
-                                        adipisicing elitFuga, suscipit totam animi consequatur saepe. Lorem ipsum dolor sit amet,
-                                        illum facere sequi optio elit..</p>
-                                    <p class="mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. At, corrupti odit? At
-                                        iure facere, porro repellat officia quas, dolores magnam assumenda soluta odit harum voluptate
-                                        inventore ipsa maiores fugiat accusamus eos nulla. Iure explicabo officia. Lorem ipsum dolor sit
-                                        amet, consectetur adipisicing elit, dolorem.</p>
+                                    <p class="mb-4"><?php echo $row['articleDesc']; ?></p>
+                                    <p class="mb-4"><?php echo $row['articleContent']; ?></p>
                                     <div class="single-post-content mt-4 mb-4 py-lg-3">
                                         <h3 class="blog-desc-big m-0 mb-4">Developing first class solutions for our clients.</h3>
                                         <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime vel nam tenetur sequi
