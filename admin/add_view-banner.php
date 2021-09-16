@@ -5,6 +5,11 @@ require_once('../includes/config.php');
 if (!$user->is_logged_in()) {
     header('location: /components/login');
 }
+// } elseif (isset($_SESSION['role']) && $_SESSION['role'] != "admin") {
+//     header('location: ../index');
+// }
+
+if ($_SESSION['role'] == 1)
 
 ?>
 

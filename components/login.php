@@ -9,47 +9,40 @@ if ($user->is_logged_in()) {
 
 <?php
 
-$login = false;
-
 if (isset($_POST['submit'])) {
-    $username = trim($_POST['username']);
-    $password = trim($_POST['password']);
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $checkbox = isset($_POST['remember-me']);
 
-    $result = $user->login($username, $password);
-    if ($result) {
-        try {
-            $stmt = $db->prepare('SELECT * FROM users WHERE username = :username AND password = :password');
-            $stmt->execute(array('username' => $username, 'password' => $password));
-            $row = $stmt->fetch();
+    $stmt = $db->query("SELECT * FROM users WHERE username = '$username'");
+    $count = $stmt->rowCount();
 
-            while ($row) {
-                $_SESSION['username'] = $row['username'];
-                $_SESSION['role'] = $row['role'];
+    if ($count > 0) {
+        $row = $stmt->fetch();
+        $_SESSION['role'] = $row['role'];
 
-                if ($row['role'] == "admin") {
-                    if (isset($_SESSION['username'])) {
-
-                        if ($checkbox == "on") {
-                            setcookie("username", $username, time() + 3600);
-                        }
-                        header('location: /components/articles.php');
-                        // header('/components/')
-                        exit;
-                    } else {
-                        header("location: /components/articles.php");
-                    }
-                } elseif ($row['role'] == "user") {
-                    if (isset($_SESSION['username'])) {
-                        header('location: ../index.php');
-                    }
-                } else {
-                    echo "Invalid username and password";
+        if ($user->login($username, $password)) {
+            $_SESSION['username'] = $username;
+            if ($row['role'] == 'admin') {
+                if ($checkbox == "on") {
+                    setcookie("username", $username, time() + 3600);
                 }
+                header("location: /admin/index.php");
+            } elseif ($row['role'] == 'user') {
+                if ($checkbox == "on") {
+                    setcookie("username", $username, time() + 3600);
+                }
+                header("location: ../index.php");
             }
-        } catch (PDOException $e) {
-            echo "Error";
         }
+        exit;
+    } else {
+        $message = '<p class="invalid">Invalid username or password</p>';
     }
+}
+
+if (isset($message)) {
+    echo $message;
 }
 
 
@@ -59,31 +52,63 @@ if (isset($_POST['submit'])) {
 
 
 
+// $login = false;
 
 // if (isset($_POST['submit'])) {
-//     $username = trim($_POST['username']);
-//     $password = trim($_POST['password']);
-//     $checkbox = isset($_POST['remember-me']);
+// $username = trim($_POST['username']);
+// $password = trim($_POST['password']);
 
-//     if ($user->login($username, $password)) {
-//         $_SESSION['username'] = $username;
+// $result = $user->login($username, $password);
+// if ($result) {
+// try {
+// $stmt = $db->prepare('SELECT * FROM users WHERE username = :username AND password = :password');
+// $stmt->execute(array('username' => $username, 'password' => $password));
+// $row = $stmt->fetch();
 
-//         if ($checkbox == "on") {
-//             setcookie("username", $username, time() + 3600);
-//         }
-//         header('location: index.php');
-//         exit;
-//     } else {
-//         $message = '<p class="invalid">Invalid username or password</p>';
-//     }
+// while ($row) {
+// $_SESSION['username'] = $row['username'];
+// $_SESSION['role'] = $row['role'];
+
+// if (isset($_SESSION['username'])) {
+// if ($row['role'] == "admin") {
+
+// if ($checkbox == "on") {
+// setcookie("username", $username, time() + 3600);
 // }
-
-// if (isset($message)) {
-//     echo $message;
+// header('location: /components/articles.php');
+// exit;
+// } elseif ($row['role'] == "user") {
+// if ($checkbox == "on") {
+// setcookie("username", $username, time() + 3600);
 // }
-
+// header('location: ../index.php');
+// exit;
+// }
+// } else {
+// echo "Invalid username and password";
+// // }
+// }
+// } catch (PDOException $e) {
+// echo "Error";
+// }
+// }
+// }
 
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -117,7 +142,7 @@ if (isset($_POST['submit'])) {
                 <div class="reallogin_info">
                     <h2>Login to your Account</h2>
                     <p>Enter your details to login.</p>
-                    <form action="" method="POST" autocomplete="off">
+                    <form action="login.php" method="POST" autocomplete="off">
                         <label>Username</label>
                         <div class="input-group">
                             <input type="text" name="username" placeholder="" required="">
