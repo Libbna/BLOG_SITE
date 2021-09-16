@@ -1,3 +1,7 @@
+<?php
+// include("../includes/config.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,12 +24,13 @@
 
         require 'PHPMailerAutoload.php';
 
+
         $mail = new PHPMailer;
 
-        $mail->SMTPDebug = 4;                               // Enable verbose debug output
+        // $mail->SMTPDebug = 4;                               // Enable verbose debug output
 
         $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = 'smtp1.gmail.com';  // Specify main and backup SMTP servers
+        $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
         $mail->Username = useremail;                 // SMTP username
         $mail->Password = userpass;                           // SMTP password
@@ -71,7 +76,7 @@
                     </div>
                     <div class="row mt-md-5 mt-4">
                         <div class="col-lg-7 col-md-9 mx-auto main-midd-2">
-                            <form role="form" method="post" enctype="multipart/form-data" class="rightside-form">
+                            <form role="form" method="POST" enctype="multipart/form-data" class="rightside-form">
                                 <input id="email" type="email" name="email" placeholder="Input your e-mail" required="">
                                 <button type="submit" name="subscribe" class="btn btn-primary theme-button">Subscribe</button>
                             </form>
