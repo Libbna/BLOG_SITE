@@ -2,9 +2,9 @@
 <?php
 require_once('../includes/config.php');
 
-// if (!$user->is_logged_in()) {
-//     header('location: login.php');
-// }
+if (!$user->is_logged_in()) {
+    header('location: /components/login');
+}
 
 ?>
 

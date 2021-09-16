@@ -3,33 +3,86 @@ require_once('../includes/config.php');
 
 // if user is already logged in, redirect to home/index page
 if ($user->is_logged_in()) {
-    header('location:../index.php');
+    header('location: ../index.php');
 }
 ?>
 
 <?php
 
+$login = false;
+
 if (isset($_POST['submit'])) {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
-    $checkbox = isset($_POST['remember-me']);
 
-    if ($user->login($username, $password)) {
-        $_SESSION['username'] = $username;
+    $result = $user->login($username, $password);
+    if ($result) {
+        try {
+            $stmt = $db->prepare('SELECT * FROM users WHERE username = :username AND password = :password');
+            $stmt->execute(array('username' => $username, 'password' => $password));
+            $row = $stmt->fetch();
 
-        if ($checkbox == "on") {
-            setcookie("username", $username, time() + 3600);
+            while ($row) {
+                $_SESSION['username'] = $row['username'];
+                $_SESSION['role'] = $row['role'];
+
+                if ($row['role'] == "admin") {
+                    if (isset($_SESSION['username'])) {
+
+                        if ($checkbox == "on") {
+                            setcookie("username", $username, time() + 3600);
+                        }
+                        header('location: /components/articles.php');
+                        // header('/components/')
+                        exit;
+                    } else {
+                        header("location: /components/articles.php");
+                    }
+                } elseif ($row['role'] == "user") {
+                    if (isset($_SESSION['username'])) {
+                        header('location: ../index.php');
+                    }
+                } else {
+                    echo "Invalid username and password";
+                }
+            }
+        } catch (PDOException $e) {
+            echo "Error";
         }
-        header('location: ../components/login.php');
-        exit;
-    } else {
-        $message = '<p class="invalid">Invalid username or password</p>';
     }
 }
 
-if (isset($message)) {
-    echo $message;
-}
+
+
+
+
+
+
+
+
+// if (isset($_POST['submit'])) {
+//     $username = trim($_POST['username']);
+//     $password = trim($_POST['password']);
+//     $checkbox = isset($_POST['remember-me']);
+
+//     if ($user->login($username, $password)) {
+//         $_SESSION['username'] = $username;
+
+//         if ($checkbox == "on") {
+//             setcookie("username", $username, time() + 3600);
+//         }
+//         header('location: index.php');
+//         exit;
+//     } else {
+//         $message = '<p class="invalid">Invalid username or password</p>';
+//     }
+// }
+
+// if (isset($message)) {
+//     echo $message;
+// }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +117,7 @@ if (isset($message)) {
                 <div class="reallogin_info">
                     <h2>Login to your Account</h2>
                     <p>Enter your details to login.</p>
-                    <form action="#" method="post" autocomplete="off">
+                    <form action="" method="POST" autocomplete="off">
                         <label>Username</label>
                         <div class="input-group">
                             <input type="text" name="username" placeholder="" required="">
