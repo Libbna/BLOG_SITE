@@ -11,21 +11,19 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 
 RewriteRule ^(.*)$ $1.php [NC,L]
-# RewriteRule ^([^\.]+)$ $1.php  [NC,L]
+
+RewriteRule ^blog-single/([0-9]+) blog-single.php?id=$1 [NC,L]
+
 
 #RewriteRule ^index/([0-9]+)/([0-9a-zA-Z_-]+) index.php?id=$1&name=$2 [NC,L]
 
 #Return 404 if original request is .php
-RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
+# RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
 # RewriteRule .* - [L,R=404]
 
-#http://blogsite.com/components/blog-single?id=708
-#http://blogsite.com/components/blog-single/708
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-l
 
-# RewriteBase /blog-single
-RewriteRule ^/blog-single/([0-9]+)$ blog-single?id=$1 [QSA,L]
+
+
+
 
