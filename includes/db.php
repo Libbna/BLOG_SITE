@@ -2,9 +2,9 @@
 
 ob_start();
 session_start();
-define('DBHOST', 'localhost');
+define('DBHOST', 'localhost:8889');
 define('DBUSER', 'root');
-define('DBPASS', '');
+define('DBPASS', 'root');
 define('DBNAME', 'blogdb');
 
 

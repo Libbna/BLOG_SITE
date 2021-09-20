@@ -7,12 +7,9 @@
 @import "./main-slider";
 @import "./latest-post";
 
-
 // color-codes
 $main-color: #de4839;
 $heading-color: #292922;
-
-
 
 * {
     margin: 0;
@@ -25,14 +22,10 @@ body {
     overflow-x: hidden;
 }
 
-
-
 h1, h2, h3, h4, h5, h6 {
     
     color: $heading-color;
 }
-
-
 
 .card {
     .card-header {

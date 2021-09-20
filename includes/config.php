@@ -6,7 +6,7 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // date_default_timezone_set('Asia/Kolkata');
 
-function __autoload($class)
+spl_autoload_register(function ($class)
 {
     $class = strtolower($class);
 
@@ -24,7 +24,7 @@ function __autoload($class)
     if (file_exists($classpath)) {
         require_once $classpath;
     }
-}
+});
 
 // admin/index --> dashboard --> to delete a blog
 if (isset($_GET['delpost'])) {
