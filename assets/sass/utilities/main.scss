@@ -1,8 +1,8 @@
-// @import "/components/header.php";
 @import "../abstracts/mixins";
+@import "../abstracts/variables";
+
 @import "../layouts/header";
 @import "../layouts/login";
-// @import "/components/comment.php";
 @import "../layouts/domain-modal";
 @import "../layouts/footer";
 @import "../layouts/search-results";

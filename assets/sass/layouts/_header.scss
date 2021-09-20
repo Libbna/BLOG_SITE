@@ -1,13 +1,6 @@
-$white: #ffffff;
-$main-color: #de4839;
-$font-fam: san-serif;
-$header-bg-color: #f76a8c;
-$font-clr1: #444;
-$border-radius: 6px;
-$heading-color: #292922;
 
 header {
-    background-color: $header-bg-color;
+    background-color: $primary-color;
     padding: 15px 0;
     transition: all 0.4s ease 0s;
     display: grid;
@@ -19,7 +12,7 @@ header {
         padding: 0;
         font-size: 36px;
         text-transform: capitalize;
-        color: $white;
+        color: $bg-color;
         margin: 0;
         z-index: 1;
         font-weight: 700;
@@ -105,7 +98,7 @@ header {
                             font-size: 18px;
                             font-weight: 600;
                             display: block;
-                            color: $header-bg-color;
+                            color: $primary-color;
                             position: absolute;
                             right: 0;
                             top: 13px;
@@ -168,7 +161,7 @@ header {
                     div {
                         height: 3px;
                         width: 24px;
-                        background: $white;
+                        background: $bg-color;
                         margin: 5px 0px;
                         transition: all 0.5s;
                         border-radius: 0;
@@ -233,7 +226,7 @@ header {
     }
     .fa-moon {
         display: block;
-        color: $white;
+        color: $bg-color;
     }
 }
 
