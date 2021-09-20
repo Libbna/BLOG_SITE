@@ -13,4 +13,6 @@
    * And inside the database create three tables 'users', 'articles', and 'banners'
    * [blogdb.sql (1).zip](https://github.com/Libbna/BLOG_SITE/files/7105509/blogdb.sql.1.zip)
 
+# Contributors
+* [Libbna](https://github.com/Libbna) (Libbna Mathew)
 
