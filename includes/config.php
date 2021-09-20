@@ -4,7 +4,7 @@ require 'db.php';
 $db = new PDO("mysql:host=" . DBHOST . ";dbname=" . DBNAME, DBUSER, DBPASS);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// date_default_timezone_set('Asia/Kolkata');
+date_default_timezone_set('Asia/Kolkata');
 
 spl_autoload_register(function ($class) {
     $class = strtolower($class);
@@ -60,17 +60,16 @@ if (isset($_POST['upload'])) {
     if (in_array($file_extension, $valid_ext)) {
 
         // compress Image function declare
-        // compressedImage($_FILES['image']['tmp_name'], $location, 50);
         move_uploaded_file($_FILES['image']['tmp_name'], $location);
 
         resize_image($location, $resized_loc, "500");
-        // Insert query
 
+        // Insert query
         $stmt = $db->query("INSERT INTO banners (banner_path) VALUES ('$new_img')");
         if ($stmt) {
 
             header('location:add_view-banner.php?action=added');
-            // echo "<script>alert('Image Uplaoded Successfully!')</script>";
+            echo "<script>alert('Image Uplaoded Successfully!')</script>";
         } else {
             echo "<div class='alert alert-danger' role='alert'>
             Image upload failed! </div>";
@@ -116,8 +115,6 @@ function resize_image($source, $path, $max_res)
     }
 
     imagejpeg($new_image, $path, 90);
-
-    // echo "<img src = '$new_image'>" ;
 }
 
 //delete image
@@ -127,10 +124,5 @@ if (isset($_GET['delimg'])) {
     header('location:add_view-banner.php ? action=deleted');
     exit();
 }
-
-
-
-
-
 
 $user = new User($db);

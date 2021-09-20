@@ -38,7 +38,6 @@ $result = $db->query("SELECT banner_path FROM banners");
                         $actives = 'active';
                     }
                     $img = "../assets/images/" . $row['banner_path'];
-                    // $img = $row['banner_path'];
                 ?>
                     <div class="item">
                         <li>

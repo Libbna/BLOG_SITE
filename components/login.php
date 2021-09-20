@@ -4,7 +4,7 @@ require_once('../includes/config.php');
 // if user is already logged in, redirect to home/index page
 if ($user->is_logged_in()) {
     header('location: ../index.php');
-} 
+}
 ?>
 
 <?php
@@ -15,7 +15,6 @@ if (isset($_POST['submit'])) {
     $checkbox = isset($_POST['remember-me']);
 
     $stmt = $db->query("SELECT * FROM users WHERE username = '$username'");
-    // $stmt = $db->query("SELECT * FROM users WHERE username = '$username' AND password = '$password'");
     $count = $stmt->rowCount();
 
     if ($count > 0) {

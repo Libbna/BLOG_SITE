@@ -9,7 +9,6 @@ require_once("../includes/config.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <base href="http://blogsite.com/"> -->
 
     <title>Articles</title>
 
@@ -26,7 +25,7 @@ require_once("../includes/config.php");
 <body>
     <?php include("../layouts/header.php"); ?>
 
-    <!-- breadcrumn -->
+    <!-- breadcrumb -->
     <section class="w3l-breadcrumb py-5">
         <div class="container">
             <h6 class="sub-title">Sub title</h6>
@@ -37,7 +36,6 @@ require_once("../includes/config.php");
         </div>
     </section>
     <div style="margin: 8px auto; display: block; text-align:center;">
-        <!---728x90--->
     </div>
     <!-- article section -->
     <section class="w3l-articles">
@@ -63,9 +61,7 @@ require_once("../includes/config.php");
                                         <div class="row">
                                             <div class="col-md-9 pr-md-5 order-md-1 order-2">
                                                 <p><?php echo $row['articleDesc']; ?></p>
-                                                <!-- <a href="/components/blog-single.php" class="read-button mt-4 d-inline-block">Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span></a> -->
                                                 <?php
-                                                // echo '<a href="../blog-single?id=' . $row['articleID'] . '" class="read-button mt-4 d-inline-block">Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>';
                                                 ?>
                                                 <?php echo '<a href="../blog-single/' . $row['articleID'] . '" class="read-button mt-4 d-inline-block">Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>'; ?>
 
@@ -94,10 +90,6 @@ require_once("../includes/config.php");
     <?php
     include("../layouts/footer.php");
     ?>
-
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 </body>
 
 </html>

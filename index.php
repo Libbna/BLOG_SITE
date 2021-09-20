@@ -112,14 +112,12 @@ $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
     include("./layouts/latest-post.php");
     include("./layouts/about-image-grid.php");
     include("./layouts/author-section.php");
-    // include("./layouts/featured-news.php");
     ?>
     <?php
-    // include('comment-section.php');
     include('./layouts/subscribe.php');
     include('./layouts/footer.php');
     ?>
-    
+
     <script>
         function likes_update(articleID) {
             var curr_count = $('#like_count' + articleID).html();

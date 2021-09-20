@@ -14,7 +14,6 @@ include("../layouts/header.php");
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-<!-- <link href="./assets/main.css" rel="stylesheet" type="text/css"> -->
 <link rel="stylesheet" href="../assets/sass/utilities/main.css">
 
 
@@ -25,8 +24,7 @@ include("../layouts/header.php");
             <?php
             if (isset($_GET['submit-search'])) {
                 $search = $_GET['search'];
-                // $result = $db->query("SELECT * FROM article WHERE articleTitle LIKE '%" . $search . "%' OR articleDesc LIKE '%" . $search . "%' OR articleContent LIKE '%" . $search . "%' 
-                // OR articleAuthor LIKE '%" . $search . "%'");
+
                 $result = $db->query("SELECT * FROM article WHERE articleTitle LIKE '" . $search . "'  OR soundex(articleTitle) = soundex('$search') OR articleDesc LIKE '%" . $search . "%' OR articleContent LIKE '%" . $search . "%' 
                 OR articleAuthor LIKE '%" . $search . "%'");
                 if ($result) {

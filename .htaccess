@@ -1,16 +1,21 @@
 
+#turn on the engine to rewrite requested URLs
 RewriteEngine on
 
-ErrorDocument 404 /404error.php
 
 #ErrorDocument error-code custom-page
+ErrorDocument 404 /404error.php
+
+#redirects to blog-page with this applied condition
 RewriteRule ^blog-single/([a-zA-Z0-9-/]+)$ blog-single.php?id=$1 [NC,L]
 
+#rewrite condition that checks for requested file that should not a folder/directory
 RewriteCond %{REQUEST_FILENAME} !-d
 
+#rewrite codition that check for requested php file
 RewriteCond %{REQUEST_FILENAME}\.php -f
 
-
+rewrite rule to ignore/remove the .php extension
 RewriteRule ^(.*)$ $1.php [NC,L]
 
 
@@ -20,7 +25,6 @@ RewriteRule ^(.*)$ $1.php [NC,L]
 
 
 
-#RewriteRule ^index/([0-9]+)/([0-9a-zA-Z_-]+) index.php?id=$1&name=$2 [NC,L]
 
 
 

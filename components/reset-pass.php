@@ -48,8 +48,11 @@ require("../includes/config.php");
             $db->query("INSERT INTO pwdreset (resetEmail, token, expDate) VALUES ('" . $email . "', '" . $key . "', '" . $expDate . "')");
 
             $output .= '<p>Please click on the following link to reset your password.</p>';
-            //replace the site url
+
+            //this url will redirect yout to create-new-password page
             $output .= '<p><a href="http://blogsite.com/components/create-new-pass.php?key=' . $key . '&email=' . $email . '&action=reset" target="_blank">http://blogsite.com/components/create-new-pass.php?key=' . $key . '&email=' . $email . '&action=reset</a></p>';
+
+            // php mailer boiler plate
             $body = $output;
             $subject = "Password Recovery";
 
@@ -60,18 +63,16 @@ require("../includes/config.php");
 
             $mail = new PHPMailer;
 
-            // $mail->SMTPDebug = 4;                               // Enable verbose debug output
-
             $mail->isSMTP();                                      // Set mailer to use SMTP
-            $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+            $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username = useremail;                 // SMTP username
+            $mail->Username = useremail;                          // SMTP username
             $mail->Password = userpass;                           // SMTP password
             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 587;                                    // TCP port to connect to
 
             $mail->setFrom(useremail, 'Libbna');
-            $mail->addAddress($email_to);     // Add a recipient
+            $mail->addAddress($email_to);                         // Add a recipient
             $mail->addReplyTo(useremail, 'Information');
             $mail->isHTML(true);                                  // Set email format to HTML
 

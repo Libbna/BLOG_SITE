@@ -27,9 +27,8 @@
         </div>
     </div>
 </section>
+
 <!-- Author section - testimonials -->
-
-
 <section class="w3l-authors" id="testimonials">
     <div class="testimonials pb-5">
         <div class="container py-lg-3">
