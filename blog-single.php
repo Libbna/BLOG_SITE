@@ -1,5 +1,5 @@
 <?php
-require_once('../includes/config.php');
+require_once('./includes/config.php');
 
 $stmt = $db->prepare('SELECT * FROM article WHERE articleID = :articleID');
 $stmt->execute(array(':articleID' => $_GET['id']));
@@ -27,7 +27,7 @@ $row = $stmt->fetch();
 </head>
 
 <body>
-    <?php include("../layouts/header.php"); ?>
+    <?php include("./layouts/header.php"); ?>
     <section class="w3l-blog-single py-5">
         <div class="container py-lg-3">
             <?php
@@ -240,8 +240,8 @@ $row = $stmt->fetch();
 
 
     <?php
-    include("../layouts/comment.php");
-    include("../layouts/footer.php");
+    include("./layouts/comment.php");
+    include("./layouts/footer.php");
     ?>
 </body>
 

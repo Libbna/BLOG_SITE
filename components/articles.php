@@ -9,7 +9,10 @@ require_once("../includes/config.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <base href="http://blogsite.com/"> -->
+
     <title>Articles</title>
+
 
     <!-- font awesome icon  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -61,8 +64,10 @@ require_once("../includes/config.php");
                                             <div class="col-md-9 pr-md-5 order-md-1 order-2">
                                                 <p><?php echo $row['articleDesc']; ?></p>
                                                 <!-- <a href="/components/blog-single.php" class="read-button mt-4 d-inline-block">Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span></a> -->
-
-                                                <?php echo '<a href="http://blogsite.com/components/blog-single?id=' . $row['articleID'] . '" class="read-button mt-4 d-inline-block">Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>'; ?>
+                                                <?php
+                                                // echo '<a href="../blog-single?id=' . $row['articleID'] . '" class="read-button mt-4 d-inline-block">Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>';
+                                                ?>
+                                                <?php echo '<a href="../blog-single/' . $row['articleID'] . '" class="read-button mt-4 d-inline-block">Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>'; ?>
 
                                             </div>
                                             <div class="col-md-3 article-right order-md-2 order-1 pl-md-0">
