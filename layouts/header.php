@@ -43,7 +43,7 @@
                                 Blog <span class="fa fa-angle-down"></span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item @@blog-active" href="blog.html">Featured Posts</a>
+                                <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
                                 <a class="dropdown-item @@blog-single-active" href="blog-single.html">Single post</a>
                             </div>
                         </li>

@@ -83,7 +83,7 @@ if ($error == 404) {
                 <span class="fa fa-frown-o"></span>
                 <h2 class="mt-3"><?php echo $err_title; ?></h2>
                 <p class="mt-3 mb-5"><?php echo $err_msg ?></p>
-                <a href="../index.php" class="btn btn-primary theme-button py-3 px-4">Back to Home</a>
+                <a href="../index" class="btn btn-primary theme-button py-3 px-4">Back to Home</a>
             </div>
         </div>
     </section>

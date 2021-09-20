@@ -4,7 +4,7 @@ require_once('../includes/config.php');
 // if user is already logged in, redirect to home/index page
 if ($user->is_logged_in()) {
     header('location: ../index.php');
-}
+} 
 ?>
 
 <?php
@@ -15,6 +15,7 @@ if (isset($_POST['submit'])) {
     $checkbox = isset($_POST['remember-me']);
 
     $stmt = $db->query("SELECT * FROM users WHERE username = '$username'");
+    // $stmt = $db->query("SELECT * FROM users WHERE username = '$username' AND password = '$password'");
     $count = $stmt->rowCount();
 
     if ($count > 0) {
@@ -32,7 +33,7 @@ if (isset($_POST['submit'])) {
                 if ($checkbox == "on") {
                     setcookie("username", $username, time() + 3600);
                 }
-                header("location: ../index.php");
+                header("location: ../index");
             }
         }
         exit;
@@ -44,71 +45,7 @@ if (isset($_POST['submit'])) {
 if (isset($message)) {
     echo $message;
 }
-
-
-
-
-
-
-
-
-// $login = false;
-
-// if (isset($_POST['submit'])) {
-// $username = trim($_POST['username']);
-// $password = trim($_POST['password']);
-
-// $result = $user->login($username, $password);
-// if ($result) {
-// try {
-// $stmt = $db->prepare('SELECT * FROM users WHERE username = :username AND password = :password');
-// $stmt->execute(array('username' => $username, 'password' => $password));
-// $row = $stmt->fetch();
-
-// while ($row) {
-// $_SESSION['username'] = $row['username'];
-// $_SESSION['role'] = $row['role'];
-
-// if (isset($_SESSION['username'])) {
-// if ($row['role'] == "admin") {
-
-// if ($checkbox == "on") {
-// setcookie("username", $username, time() + 3600);
-// }
-// header('location: /components/articles.php');
-// exit;
-// } elseif ($row['role'] == "user") {
-// if ($checkbox == "on") {
-// setcookie("username", $username, time() + 3600);
-// }
-// header('location: ../index.php');
-// exit;
-// }
-// } else {
-// echo "Invalid username and password";
-// // }
-// }
-// } catch (PDOException $e) {
-// echo "Error";
-// }
-// }
-// }
-
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -155,9 +92,19 @@ if (isset($message)) {
                         <div class="login-check">
                             <label class="checkbox"><input type="checkbox" name="remember-me"> Remember me</label>
                         </div>
+                        <div class="account1">
+                            <?php
+                            if (isset($_GET["newpwd"])) {
+                                if ($_GET["newpwd"] == "passwordupdated") {
+                                    echo '<p class="signupsuccess">Your password has been reset!</p>';
+                                }
+                            }
+                            ?>
+                            <a href="../components/reset-pass">Forgot Password?</a>
+                        </div>
                         <button class="btn btn-primary theme-button btn-login" name="submit" type="submit">Login</button>
                     </form>
-                    <p class="account1">Dont have an account? <a href="../components/register.php">Register here</a></p>
+                    <p class="account1">Dont have an account? <a href="../components/register">Register here</a></p>
                 </div>
             </div>
         </div>

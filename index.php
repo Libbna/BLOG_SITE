@@ -119,6 +119,7 @@ $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
     include('./layouts/subscribe.php');
     include('./layouts/footer.php');
     ?>
+    
     <script>
         function likes_update(articleID) {
             var curr_count = $('#like_count' + articleID).html();
