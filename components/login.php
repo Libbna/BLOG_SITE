@@ -2,9 +2,9 @@
 require_once('../includes/config.php');
 
 // if user is already logged in, redirect to home/index page
-if ($user->is_logged_in()) {
-    header('location: ../index.php');
-}
+// if ($user->is_logged_in()) {
+//     header('location: ../index.php');
+// }
 ?>
 
 <?php

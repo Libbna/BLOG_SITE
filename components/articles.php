@@ -1,5 +1,9 @@
 <?php
 require_once("../includes/config.php");
+
+// if ($user->is_logged_in()) {
+//     header('location: add-blog.php');
+// }
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +36,7 @@ require_once("../includes/config.php");
             <div class="header-section">
                 <h3>Articles</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime optio nam id quibusdam laborum sunt?</p>
+                <a href="../admin/add-blog-article" class="btn btn-primary theme-button">Add Article</a>
             </div>
         </div>
     </section>

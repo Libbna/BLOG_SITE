@@ -2,9 +2,14 @@
 require_once('../includes/config.php');
 
 //if user is not logged in
-if (!$user->is_logged_in()) {
-    header('location: login.php');
+if ($user->is_logged_in()) {
+    if ($_SESSION['role'] == "user") {
+        header('Location: ../components/login');
+    }
+} else if (!$user->is_logged_in()) {
+    header('Location: ../components/login');
 }
+
 ?>
 
 <title> Admin Page </title>

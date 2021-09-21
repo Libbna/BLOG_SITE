@@ -3,8 +3,8 @@ require_once('../includes/config.php');
 
 //if user is not logged in
 if (!$user->is_logged_in()) {
-    header('location: login.php');
-};
+    header('location: ../components/login.php');
+}
 
 if (isset($_POST['submit'])) {
     $profile_img = $_FILES['profile_img'];
