@@ -10,7 +10,6 @@
 @import "../layouts/latest-post";
 @import "../layouts/author-section";
 @import "../layouts/articles";
-@import "../layouts/banner";
 @import "../layouts/banner-index";
 @import "../layouts/_about-image-grid";
 @import "../layouts/subscribe";
@@ -20,7 +19,6 @@
 @import "../layouts/contact-form";
 @import "../layouts/blog.single";
 @import "../layouts/about";
-@import "../layouts/reset-pass";
 
 
 
@@ -49,7 +47,7 @@ html,body
 a {
     text-decoration: none;
     background: transparent;
-    color: $header-bg-color;
+    color: $heading-color;
     &:hover {
         text-decoration: none;
     }

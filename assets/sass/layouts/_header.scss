@@ -187,6 +187,19 @@ header {
             }
 
         }
+        #welcome {
+            padding: 6px;
+            border: 1px solid $white;
+            border-radius: $border-radius;
+            font-size: 25px;
+            text-transform: capitalize;
+            color: $white;
+            margin-right: 0;
+            font-weight: 700;
+            position: relative;
+            right: 2rem;
+            box-shadow: rgb(193 191 191 / 35%) 0px 5px 15px;
+        }
     }
 } 
 .navbar-dark {
