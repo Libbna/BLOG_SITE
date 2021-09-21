@@ -5,6 +5,7 @@ RewriteEngine on
 
 #ErrorDocument error-code custom-page
 ErrorDocument 404 /404error.php
+ErrorDocument 403 /403error.php
 
 #redirects to blog-page with this applied condition
 RewriteRule ^blog-single/([a-zA-Z0-9-/]+)$ blog-single.php?id=$1 [NC,L]
@@ -19,7 +20,8 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [NC,L]
 
 
-
+#Disable directory browsing 
+Options -Indexes
 
 
 
