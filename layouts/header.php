@@ -31,41 +31,86 @@
                     <span onclick='myFunction()' class="navbar-toggler-icon fa icon-close fa-times" id="cross"></span>
                 </button>
                 <div class="navbar-collapse collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav mx-auto" id="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item @@article-active">
-                            <a class="nav-link" href="/components/articles">Articles</a>
-                        </li>
-                        <li class="nav-item dropdown @@dropdown-active">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
-                                Blog <span class="fa fa-angle-down"></span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
-                                <a class="dropdown-item @@blog-single-active" href="blog-single.html">Single post</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown @@pages-dropdown-active">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
-                                Pages <span class="fa fa-angle-down"></span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
-                                <a class="dropdown-item @@error-active" href="error.html">404 Page</a>
-                                <a class="dropdown-item @@login-active" href="/components/login">Login</a>
-                                <a class="dropdown-item @@signup-active" href="/components/register">Signup</a>
-                                <a class="dropdown-item @@search-active" href="search-results.html">Search Results</a>
-                            </div>
-                        </li>
-                        <li class="nav-item @@about-active">
-                            <a class="nav-link" href="/components/about">About</a>
-                        </li>
-                        <li class="nav-item @@contact-active">
-                            <a class="nav-link" href="/components/contact-form">Contact</a>
-                        </li>
-                    </ul>
+                    <?php
+                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                    ?>
+                        <ul class="navbar-nav mx-auto" id="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item @@article-active">
+                                <a class="nav-link" href="/components/articles">Articles</a>
+                            </li>
+                            <li class="nav-item dropdown @@dropdown-active">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
+                                    Blog <span class="fa fa-angle-down"></span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
+                                    <a class="dropdown-item @@blog-single-active" href="blog-single.html">Single post</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown @@pages-dropdown-active">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
+                                    Pages <span class="fa fa-angle-down"></span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
+                                </div>
+                            </li>
+                            <li class="nav-item @@about-active">
+                                <a class="nav-link" href="/components/about">About</a>
+                            </li>
+                            <li class="nav-item @@contact-active">
+                                <a class="nav-link" href="/components/contact-form">Contact</a>
+                            </li>
+                            <li class="nav-item @@contact-active ">
+                                <a class="nav-link" href="/admin/logout.php">Logout</a>
+                            </li>
+                        </ul>
+                        <h3 id="welcome">Welcome</h3>
+                    <?php
+                    } else { ?>
+                        <ul class="navbar-nav mx-auto" id="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item @@article-active">
+                                <a class="nav-link" href="/components/articles">Articles</a>
+                            </li>
+                            <li class="nav-item dropdown @@dropdown-active">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
+                                    Blog <span class="fa fa-angle-down"></span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
+                                    <a class="dropdown-item @@blog-single-active" href="blog-single.html">Single post</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown @@pages-dropdown-active">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
+                                    Pages <span class="fa fa-angle-down"></span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
+                                    <a class="dropdown-item @@error-active" href="error.html">404 Page</a>
+                                    <a class="dropdown-item @@login-active" href="/components/login">Login</a>
+                                    <a class="dropdown-item @@signup-active" href="/components/register">Signup</a>
+                                    <a class="dropdown-item @@search-active" href="search-results.html">Search Results</a>
+                                </div>
+                            </li>
+                            <li class="nav-item @@about-active">
+                                <a class="nav-link" href="/components/about">About</a>
+                            </li>
+                            <li class="nav-item @@contact-active">
+                                <a class="nav-link" href="/components/contact-form">Contact</a>
+                            </li>
+                        </ul>
+                    <?php
+                    }
+                    ?>
+
+
                     <!--/search-right-->
                     <div class="search-right">
                         <a href="#search" class="btn btn-light theme-button mr-lg-3 mt-lg-0 mt-4" title="search"><span class="fa fa-search" aria-hidden="true"></span> Topics</a>

@@ -45,20 +45,6 @@ class User
             $_SESSION['loggedin'] = true;
             return true;
         }
-
-        // try {
-        //     $stmt = $this->db->prepare('SELECT * FROM users WHERE username = :username AND password = :password');
-        //     $stmt->execute(array('username' => $username, 'password' => $password));
-        //     $row = $stmt->fetch();
-
-        //     while ($row) {
-        //         $data[] = $row;
-        //     }
-
-        //     return $data;
-        // } catch (PDOException $e) {
-        //     echo "Error";
-        // }
     }
 
     public function logout()

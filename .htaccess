@@ -15,7 +15,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 #rewrite codition that check for requested php file
 RewriteCond %{REQUEST_FILENAME}\.php -f
 
-rewrite rule to ignore/remove the .php extension
+#rewrite rule to ignore/remove the .php extension
 RewriteRule ^(.*)$ $1.php [NC,L]
 
 
