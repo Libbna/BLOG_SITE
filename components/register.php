@@ -1,14 +1,13 @@
 <?php
 require_once('../includes/config.php');
 
-// //loggedin or not
 if ($user->is_logged_in()) {
     header('location: ../index');
 }
 
-
-
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
