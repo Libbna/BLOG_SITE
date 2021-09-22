@@ -44,6 +44,7 @@
                             <li class="nav-item dropdown @@dropdown-active">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
                                     Blog <span class="fa fa-angle-down"></span>
+                                    <span class="fa fa-angle-up"></span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
@@ -53,6 +54,7 @@
                             <li class="nav-item dropdown @@pages-dropdown-active">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
                                     Pages <span class="fa fa-angle-down"></span>
+                                    <span class="fa fa-angle-up"></span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
@@ -81,6 +83,7 @@
                             <li class="nav-item dropdown @@dropdown-active">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
                                     Blog <span class="fa fa-angle-down"></span>
+                                    <span class="fa fa-angle-up"></span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
@@ -90,6 +93,7 @@
                             <li class="nav-item dropdown @@pages-dropdown-active">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
                                     Pages <span class="fa fa-angle-down"></span>
+                                    <span class="fa fa-angle-up"></span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
