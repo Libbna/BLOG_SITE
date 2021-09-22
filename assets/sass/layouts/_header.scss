@@ -23,11 +23,11 @@ header {
             .nav-item {
                 padding: 0 10px;
                 position: relative;
-                transition: all 0.5s ease;
+                transition: $trans-all-ease05;
             
                .nav-link {
                     text-transform: capitalize;
-                    transition: all 0.5s ease;
+                    transition: $trans-all-ease05;
                     padding: 10px 0 10px;
                     font-size: 18px;
                     font-weight: 700;
@@ -86,8 +86,8 @@ header {
                             border: none;
                             background: #fff;
                             color: #292922;
-                            font-size: 16px;
-                            border-radius: 6px;
+                            font-size: $fontSize16;
+                            border-radius: $border-radius;
                             margin: 0;
                             text-align: left;
                             height: 60px;
@@ -107,11 +107,11 @@ header {
 
                     .browse-items {
                         h3 {
-                            color: #fff;
+                            @include header_3();
+                            color: $white;
                             margin-bottom: 26px;
                             text-align: center;
-                            text-decoration: underline;
-                            font-weight: 700;
+                            text-decoration: underline;                            
                         }
 
                         .search-items {
@@ -163,24 +163,24 @@ header {
                         width: 24px;
                         background: $bg-color;
                         margin: 5px 0px;
-                        transition: all 0.5s;
+                        transition: $trans-all-05;
                         border-radius: 0;
                         text-align: center;        
                     }
 
-                                transition: all 0.5s;
+                                transition: $trans-all-05;
                     &:hover {
                         .d1 {
                             width: 12px;
-                            transition: all 0.5s;
+                            transition: $trans-all-05;
                         }
                         .d2 {
                             width: 20px;
-                            transition: all 0.5s;
+                            transition: $trans-all-05;
                         }
                         .d3 {
                             width: 30px;
-                            transition: all 0.5s;
+                            transition: $trans-all-05;
                         }
                     }
                 }
@@ -198,7 +198,7 @@ header {
             font-weight: 700;
             position: relative;
             right: 2rem;
-            box-shadow: 0px 5px 15px rgb(193 191 191 / 35%) ;
+            box-shadow: (193 191 191 / 35%) 0px 5px 15px rgb ;
         }
     }
 } 
@@ -254,7 +254,7 @@ header {
         #cross {
             display: none;
         }
-        transition: transform 0.3s ease-in-out ;
+        transition: $transition-ease_in_out ;
     }
     .search-right {
         margin-left: 44%;
