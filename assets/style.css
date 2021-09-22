@@ -1,7 +1,6 @@
 body {
     margin: 0;
     height: 100%;
-    /* overflow: y-auto; */
     overflow-y: auto;
 
 }
@@ -23,10 +22,7 @@ form {
     background-color: antiquewhite;
     padding-bottom: 15px;
 }
-/* .container{
-    margin-top: 5%;
-    width: 85%;
-} */
+
 
 
 
@@ -58,7 +54,6 @@ form {
     margin-top: 5%;
     margin-left: 5%;
     width: 90%;
-    /* max-width: 100%; */
     margin-bottom: 20px;
 }
 
@@ -95,64 +90,6 @@ th, td {
 #add {
     margin-left: 5%;
 }
-/* Header CSS */
-
-/* .navbar-brand {
-    margin-left: 20px;
-    font-weight: bold;
-    border: 1px solid white;
-    padding: 8px;
-}
-
-.navbar-nav .nav-item {
-    padding-left: 25px;
-}
-
-.nav-link {
-    color: white !important;
-    font-size: 18px;
-}
-
-.nav-link:hover {
-    color: wheat !important;
-}
-
-.navbar-toggler {
-    margin-right: 15px;
-    margin-top: -18px;
-} */
-
-/* #toggle {
-    display: none;
-}
-
-#toggle i {
-    color: #fff;
-}
-#toggle a {
-    position: absolute;
-    top: 30px;
-    left: 94%;
-    width: 53px;
-    height: 52px;
-    transform: translate(-50%, -50%);
-    overflow: hidden;
-}
-#toggle a span {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: .5s;
-    font-size: 30px;
-    line-height: 43px;
-    /* transition: .5s; 
-    
-}*/
-
-/* #toggle a span:active{
-    transform: translateY(-100%);
-} */
 
 /* view page */
 .blockquote {
@@ -178,7 +115,6 @@ th, td {
 .blockquote-footer {
     font-size: 24px;
     letter-spacing: 3px;
-    /* color: #de4839; */
     color: #de4839;
     font-family: "Brush Script MT", cursive;
     text-transform: uppercase;
@@ -209,48 +145,6 @@ th, td {
     padding-top: 12px;
 }
 
-/* home page css */
-
-/* .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-} */
-/* .card-header {
-    color:#de4839;
-    font-size: 25px;
-    font-family: Garamond, serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: .75rem 1.25rem;
-    margin-bottom: 0;
-    background-color: rgb(255 233 230);
-    border-bottom: 1px solid rgba(0,0,0,.125);
-} */
-/* .card-body {
-    padding: 1.25rem;
-} */
-/* .card-body__blackquote{
-    margin-bottom: 0;
-} */
-/* .card-body__blackquote p {
-    font-size: 25px;
-    color: grey;
-    text-transform: uppercase;
-    font-family: Garamond, serif;
-    letter-spacing: 2px;
-    text-decoration: underline;
-
-}
-.footer {
-    font-size: 15px;
-    color: grey;
-    text-transform: uppercase;
-    font-family: Garamond, serif;
-} */
 
 .edit_textarea {
         margin-bottom: 24px;
@@ -267,38 +161,7 @@ th, td {
     left: 790px;
     color: #31708f;
 }
-/* .slide-out {
-    animation:0.5s forwards;
-} */
 
-
-
-
-
-
-
-
-/* @media only screen and (max-width: 768px) {
-    .head {
-        width: 130px;
-        margin-left: 15px;
-    }
-    #toggle {
-       display: block;
-       cursor: pointer;
-    }
-    #navbar-nav{
-        text-align: center;
-        width: 100%;
-        display: none ;
-    }
-    #navbar-nav li  {
-        display: block;
-        border-bottom: 1px solid wheat;
-        margin: 0;
-    }
-    
- */
 
 
 

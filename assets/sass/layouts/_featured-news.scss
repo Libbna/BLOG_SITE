@@ -29,14 +29,14 @@
             width: 33.333%;
             text-align: center;
             color: #949494;
-            background:$bg-color!important;
+            background:$bg-colo;
             border-bottom: 3px solid ;
         }
     }
     .resp-tab-active {
-        margin-bottom: -1px !important;
-        border-bottom: 3px $primary-color solid !important;
-        color: $primary-color !important;
+        margin-bottom: -1px;
+        border-bottom: 3px $primary-color solid;
+        color: $primary-color;
     }
 
 .resp-tabs-container {

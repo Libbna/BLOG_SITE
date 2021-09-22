@@ -75,24 +75,20 @@
             background: transparent;
             padding: 0;
             span {
-                width: 40px !important;
-                height: 3px !important;
-                margin: 5px 5px !important;
-                background: $bg-color !important;
-                display: block !important;
-                border: none !important;
-                transition: opacity .2s ease !important;
-                border-radius: 0 !important;
-                position: relative !important;
-
-                &:active {
-                    background: $primary-color !important;
+                width: 40px ;
+                height: 3px ;
+                margin: 5px 5px ;
+                background: $bg-color;
+                display: block ;
+                border: none ;
+                transition: opacity .2s ease ;
+                border-radius: 0 ;
+                position: relative ;
+               
+                &:hover, &:active {
+                    background: $primary-color;
                 }
-                &:hover {
-                    background: $primary-color !important;
-
-                }
-
+               
             }
         }
     }

@@ -204,12 +204,12 @@ header {
 } 
 .navbar-dark {
     .navbar-toggler-icon {
-        background-image: none !important;
+        background-image: none;
     }
 }
 .dropdown-toggle {
     &::after {
-        display: none !important;
+        display: none;
     }
 }
 
