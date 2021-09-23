@@ -2096,6 +2096,19 @@ footer .sub-two-right ul li a {
   font-weight: 500;
 }
 
+.banner-gallery {
+  margin-left: 8rem;
+}
+
+.banner-gallery .recorder-gallery img {
+  padding-bottom: 2rem;
+}
+
+.banner-gallery .recorder-gallery #trash {
+  position: relative;
+  right: 17rem;
+}
+
 html, body {
   margin: 0px;
   padding: 0px;

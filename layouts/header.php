@@ -66,8 +66,8 @@
                             <li class="nav-item @@contact-active">
                                 <a class="nav-link" href="/components/contact-form">Contact</a>
                             </li>
-                            <li class="nav-item @@contact-active ">
-                                <a class="nav-link" href="/admin/logout.php">Logout</a>
+                            <li class="nav-item @@contact-active">
+                                <a class="nav-link logout" href="/admin/logout.php">LOGOUT</a>
                             </li>
                         </ul>
                         <h3 id="welcome">Welcome</h3>
