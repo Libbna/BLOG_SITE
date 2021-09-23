@@ -131,8 +131,6 @@ $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
 
                 }
             })
-
-
         }
     </script>
 
