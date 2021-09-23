@@ -6,8 +6,6 @@ $stmt->execute(array(':articleID' => $_GET['id']));
 $row = $stmt->fetch();
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 
