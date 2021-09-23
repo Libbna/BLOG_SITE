@@ -3,8 +3,14 @@ require_once('../includes/config.php');
 
 //if user is not logged in
 if (!$user->is_logged_in()) {
+    $_SESSION['redirectURL'] = $_SERVER['REQUEST_URI'];
     header('location: ../components/login.php');
 }
+
+// if ($user->is_logged_in()) {
+//     // echo $_SERVER['REQUEST_URI'];
+
+// }
 
 if (isset($_POST['submit'])) {
     $profile_img = $_FILES['profile_img'];

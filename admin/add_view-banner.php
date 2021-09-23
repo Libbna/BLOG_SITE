@@ -3,7 +3,8 @@
 require_once('../includes/config.php');
 
 if (!$user->is_logged_in()) {
-    header('location: /components/login');
+    $_SESSION['redirectURL'] = $_SERVER['REQUEST_URI'];
+    header('location: ../components/login.php');
 }
 // } elseif (isset($_SESSION['role']) && $_SESSION['role'] != "admin") {
 //     header('location: ../index');
