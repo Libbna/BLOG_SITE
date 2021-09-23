@@ -5,7 +5,7 @@
     Dynamic Image List and Banner
     Adding and Updating of Articles/Blogs
 ### Technologies Used: 
-    HTML, SASS, PHP MySQL and gulp
+    HTML, SASS, PHP MySQL and Gulp
     
 ## HOW TO SETUP A PROJECT: 
    * Clone a project https://github.com/Libbna/BLOG_php_mysql_qed42
