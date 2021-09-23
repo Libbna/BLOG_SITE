@@ -1,0 +1,138 @@
+
+
+p {
+    font-size: $fontSize16;
+    line-height: 24.5px;
+    font-weight: 300;
+    color: $font-color;
+}
+
+li {
+    list-style: none;
+}
+
+#DomainModal {
+    display: none;
+    padding: 17px;
+
+    .modal-dialog{
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: auto;
+        max-width: 400px;
+        width: 400px;
+        height: 100%;
+        transform: translate3d(0%, 0, 0);
+
+        .modal-content {
+            border-radius: 0;
+            border: none;
+            padding: 50px;
+            height: 100%;
+            overflow-y: auto;
+
+            .close {
+                position: absolute;
+                right: 0;
+                top: 0;
+                opacity: 1;
+                z-index: 9;
+                float: right;
+                font-size: 1.5rem;
+                font-weight: 700;
+                line-height: 1;
+                color: #000;
+                text-shadow: 0 1px 0 #fff;
+
+                span {
+                    font-size: 25px;
+                    color: #333;
+                    margin-top: 20px;
+                    margin-right: 15px;
+                    background: #eee;
+                    width: 50px;
+                    height: 50px;
+                    line-height: 47px;
+                    border-radius: 30px;
+                    transition: all .4s ease;
+                    opacity: 1;
+                    display: block;
+                }
+            }
+
+            .modal-body {
+                .modal__content {
+                    .logo {
+                        a {
+                            color: var(--heading-color);
+                            font-weight: 600;
+                            font-size: 30px;
+                            padding: 0;
+                            margin: 0
+                        }
+                    }
+                    
+                    .widget-menu-items {
+                        .navbar-nav {
+                            .nav-item {
+                                .nav-link {
+                                    color: $font-color;
+                                    &:hover {
+                                        color: #f76a8c;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .widget-social-icons {
+                        ul {
+                            li {
+                                display: inline-block;
+                                p {
+                                    span {
+                                        color: #ddd;
+                                        width: 16px;
+                                        margin-right: 5px;
+                                    }
+                                    a {
+                                        border: 2px solid transparent;
+                                        color: #fff;
+                                        display: inline-block;
+                                        font-size: 16px;
+                                        height: 36px;
+                                        line-height: 2;
+                                        margin-right: 4px;
+                                        position: relative;
+                                        text-align: center;
+                                        text-decoration: none;
+                                        width: 36px;
+                                        transition: all .2s ease;
+                                        border-radius: 4px;
+
+                                        .twitter {
+                                            background: #1da1f2;
+                                        }
+                                        .linkedin {
+                                            background: #0077b5;
+                                        }
+                                        .tumblr {
+                                            background: #35465c;
+                                        }
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .right-toggle-bg {
+            background-color: $bg-color;
+        }
+    }
+
+

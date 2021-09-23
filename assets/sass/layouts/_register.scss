@@ -1,0 +1,59 @@
+
+.login-page {
+    background: $bg-color-three;
+    .reallogin_info {
+        @include reallogin;
+    }
+    .real_info {
+        h2 {
+            @include h2;
+        }
+        p {
+            padding-bottom: 30px;
+        }
+        form {
+            label {
+                color: $heading-color;
+            }
+        }
+    }
+    .input-group {
+        margin-bottom: 20px; 
+        input {
+            @include input;
+        }
+    } 
+    
+    .login-check {
+        position: relative;
+        label {
+            font-size: 14px;
+            color: $heading-color;
+            font-weight: 400;
+        }
+        input {
+            vertical-align: -1px;
+        }
+    }
+    .btn-login {
+        @include btn-login;
+
+        &:hover {
+            background: $bg-Black;
+            color: $bg-color;
+        }
+    }
+    .account1 {
+        @include account;
+
+        a {
+            color: $primary-color;
+            font-size: 14px;
+            text-decoration: underline;
+             
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

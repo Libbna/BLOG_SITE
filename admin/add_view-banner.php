@@ -3,8 +3,13 @@
 require_once('../includes/config.php');
 
 if (!$user->is_logged_in()) {
-    header('location: login.php');
+    header('location: /components/login');
 }
+// } elseif (isset($_SESSION['role']) && $_SESSION['role'] != "admin") {
+//     header('location: ../index');
+// }
+
+if ($_SESSION['role'] == 1)
 
 ?>
 
@@ -92,7 +97,7 @@ if (!$user->is_logged_in()) {
             ?>
 
                 <img class="draggable-item" src="<?= $img; ?>" alt="image">
-                
+
                 <a id="trash" type="button" class="btn btn-danger ml-5" role="button" href="javascript:delimg('<?php echo $row['banner_id']; ?>','<?php echo $img; ?>')">
                     <i class="fa fa-trash"></i>
                 </a>

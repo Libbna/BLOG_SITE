@@ -46,6 +46,7 @@ class User
             return true;
         }
     }
+
     public function logout()
     {
         session_destroy();

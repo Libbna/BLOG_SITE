@@ -1,0 +1,106 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+@import "../layouts/header";
+@import "../layouts/login";
+@import "../layouts/domain-modal";
+@import "../layouts/footer";
+@import "../layouts/search-results";
+@import "../layouts/main-slider";
+@import "../layouts/latest-post";
+@import "../layouts/author-section";
+@import "../layouts/articles";
+@import "../layouts/banner-index";
+@import "../layouts/_about-image-grid";
+@import "../layouts/subscribe";
+@import "../layouts/featured-news";
+@import "../layouts/login";
+@import "../layouts/register";
+@import "../layouts/contact-form";
+@import "../layouts/blog.single";
+@import "../layouts/about";
+
+
+
+
+
+
+html,body
+{
+    margin: 0px;
+    padding: 0px;
+    padding-right: 0 !important;
+    overflow-x: hidden; 
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    background: transparent;
+    color: $heading-color;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+p {
+        font-size: 14px;
+        line-height: 24.5px;
+        font-weight: 300;
+        color: $font-color;
+    }
+
+body {
+    overflow-x: hidden;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: $heading-color;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+}
+
+
+
+
+.card {
+    .card-header {
+        color: $main-color;
+        font-size: 25px;
+        font-family: Garamond, serif;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .card-body {
+        blockquote {
+            p {
+                font-size: 25px;
+                color: grey;
+                font-family: Garamond, serif;
+                letter-spacing: 2px;
+                text-decoration: underline;
+            }
+            footer {
+                font-size: 15px;
+                color: grey;
+                text-transform: uppercase;
+                font-family: Garamond, serif;
+            }
+
+        }
+    }
+    
+}
+
+
+    

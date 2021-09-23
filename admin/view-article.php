@@ -1,9 +1,9 @@
 <?php
 require_once('../includes/config.php');
 
-if (!$user->is_logged_in()) {
-    header('location: login.php');
-};
+// if (!$user->is_logged_in()) {
+//     header('location: login.php');
+// };
 
 // $stmt = $db->prepare('SELECT articleID, articleTitle, articleDesc, articleContent, articleAuthor FROM article WHERE articleID = :articleID');
 $stmt = $db->prepare('SELECT * FROM article WHERE articleID = :articleID');

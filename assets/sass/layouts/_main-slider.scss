@@ -1,0 +1,81 @@
+
+.w3l-blog {
+    .blog-article-posts {
+                .blog-post {
+                    padding: 5rem;
+                    height: 100%;
+                    .author-date {
+                        margin-left: -2rem;
+                        li {
+                                font-size: 14px;
+                                color: #696969;
+                                display: inline-block;
+                                margin-right: 15px;
+                                transition: 0.3s ease-in-out;
+                                font-weight: 300;
+                           }
+                            .avatar {
+                                width: 65px;
+                                height: 65px;
+                                display: inline-block;
+                                overflow: hidden;
+                                border-radius: 15px;
+                                border: 2px solid #fff;
+                                background: #fff;
+                                img {
+                                    @include author-img();
+                               }
+                            }
+                            .author-name {
+                                b {
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                    text-decoration: underline;
+                                    transition: 0.3s ease-in-out;
+                                    &:hover {
+                                        color: #292922;
+                                    }
+                                }
+                            }
+                        }
+                   }
+
+                        .blog_post_title {
+                            @include blog-post-title();
+
+                            &:hover {
+                                text-decoration: underline;
+                                transition: 0.3s ease-in-out;
+                            }
+                        }
+                        .sub-para {
+                            font-size: 16px;
+                            font-weight: bold;
+                            color: #777;
+                            display: inline-block;
+                            margin-right: 20px;
+                        }
+                    }
+                    .read-button {
+                        color: #f76a8c;
+                        font-size: 16px;
+                        text-transform: capitalize;
+                        font-weight: 700;
+                    }
+
+                    .bg-color-one {
+                        background-color: $bg-color-one;
+                    }
+                    .bg-color-two {
+                        background-color: $bg-color-two;
+                    }
+                    .bg-color-three {
+                        background-color: $bg-color-three;
+                    }
+                }
+            
+        
+
+        
+    
+

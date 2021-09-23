@@ -1,0 +1,35 @@
+
+
+.about-head-title {
+    color: $heading-color;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.text-list {
+    ol {
+        margin-left: 10px;
+        li {
+            font-size: 16px;
+            line-height: 24.5px;
+            margin: 12px 0;
+            color: $heading-color;
+            font-weight: 400;
+            position: relative;
+            padding-left: 15px;
+
+            &::before {
+                @include li-before();
+            }
+        }
+    }
+}
+
+.about-title {
+    color: $heading-color;
+    display: block;
+    margin: 1em 0 2em;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 500;
+}

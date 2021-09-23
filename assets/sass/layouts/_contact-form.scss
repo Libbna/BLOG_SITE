@@ -1,0 +1,124 @@
+
+.w3l-breadcrumb {
+    @include w3l-breadcrumb();
+.sub-title {
+    @include breadcrumb-subtitle();
+}
+.header-section {
+    h3 {
+        @include h3();
+    }
+    p {
+        @include p();
+    }
+  }
+}
+
+.w3l-contact {
+    .contacts12-main {
+        margin: auto;
+        max-width: 700px;
+        text-align: center;
+    }
+    .header-section {
+        h3 {
+            @include h3();
+        }
+        p {
+            @include p();
+        }
+    }
+    .contact-input {
+        @include input();
+        margin-bottom: 15px;
+    }
+    textarea {
+        height: 180px;
+        resize: none;
+    }
+    .theme-button {
+        padding: 20px 50px;
+        color: $bg-Black;
+       
+        &:hover {
+            color: $bg-color;
+            background-color: $bg-color-four;
+            border-color: $border-color2;
+        }
+    }
+    .contant11-top-bg {
+        background: $bg-color-three;
+    }
+    .contact {
+        grid-template-columns: 1fr;
+
+        a {
+            display: block;
+            color: $heading-color;
+            transition: $transition-easein;
+
+            &:hover {
+                display: block;
+                color: $primary-color;
+                text-decoration: underline;
+                transition: $transition-easein;
+            }
+        }
+    }
+    .contact-info-left {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 50px;
+    }
+    .contact-info {
+        box-shadow: $card-hover-boxshadow;
+        padding: 2rem;
+        background: rgb(121, 100, 100);
+        border-radius:$border-radius;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-gap: 20px;
+        background: $bg-color;
+
+        h4 {
+            font-size: 16px;
+            color: $font-color;
+            margin: 0px 0 10px 0;
+        }
+        p {
+            font-size: 18px;
+            color:$heading-color;
+            line-height: 28px;
+            font-weight: 500;
+        }
+    }
+    .icon {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        border-radius: 50%;
+        line-height: 54px;
+        border: 3px solid $bg-color-three;
+
+        span {
+            font-size: 20px;
+            color: $primary-color;
+        }
+}
+
+    }
+
+
+@media (max-width: 991px) {
+    .w3l-contact {
+        .contact-info {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+@media (max-width: 1024px) {
+    .w3l-contact {
+        .contact-info-left {
+        grid-gap: 40px;
+        }
+    }
+}

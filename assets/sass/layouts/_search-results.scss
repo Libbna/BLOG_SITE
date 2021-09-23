@@ -1,0 +1,97 @@
+#self-space {
+    margin: 8px auto;
+    display: block;
+    text-align: center;
+}
+
+.auhtors1 {
+    background-color: $bg-color-two;
+    .container {
+        .header-section {
+            h3 {
+                font-size: 46px;
+                line-height: 1;
+                font-weight: 700;
+            }
+        }
+        .row {
+            margin-left: -15px !important;
+            article {
+                 .slider-info {
+            max-width: 100%;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-gap: 8px;
+            border-radius: 6px;
+
+            .img-circle {
+                width: 90px;
+                height: 90px;
+                display: inline-block;
+                overflow: hidden;
+                background: #f3f6f9;
+                border-radius: 15px;
+                border: 3px solid $primary-color;
+
+                img {
+                    width: 100%;
+                    min-height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .message {
+                width: 100%;
+                .blog-single-author-date {
+                    li {
+                        font-size: 14px;
+                        color: $font-color ;
+                        display: inline-block;
+                        margin-right: 15px;
+                        transition: 0.3s ease-in-out;
+                        font-weight: 300;
+
+                        a{
+                            font-size: 16px;
+                            font-weight: 700;
+                            text-decoration: underline;
+                            transition: 0.3s ease-in-out;
+                            color: $font-color;
+                        }
+                    }
+                    
+                }
+                .author-book-title {
+                    color: $heading-color;
+                    font-size: 28px;
+                    line-height: 36.6px;
+                    display: inline-block;
+                    font-weight: 700;
+                    transition: 0.3s ease-in-out;
+                    margin-top: 5px;
+                    margin-left: 27px;
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 24.5px;
+                    font-weight: 300;
+                    color: $font-color;
+                    margin-top: 10px;
+                    margin-left: 27px;
+
+                }
+
+                .read-button {
+                    color: $primary-color;
+                    text-decoration: none;
+                    font-size: 16px;
+                    text-transform: capitalize;
+                    font-weight: 700;
+                }
+            }
+               }
+           }
+       }
+   }
+}

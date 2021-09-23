@@ -1,0 +1,37 @@
+
+#turn on the engine to rewrite requested URLs
+RewriteEngine on
+
+
+#ErrorDocument error-code custom-page
+ErrorDocument 404 /404error.php
+ErrorDocument 403 /403error.php
+
+#redirects to blog-page with this applied condition
+RewriteRule ^blog-single/([a-zA-Z0-9-/]+)$ blog-single.php?id=$1 [NC,L]
+
+#rewrite condition that checks for requested file that should not a folder/directory
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#rewrite codition that check for requested php file
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+#rewrite rule to ignore/remove the .php extension
+RewriteRule ^(.*)$ $1.php [NC,L]
+
+
+#Disable directory browsing 
+Options -Indexes
+
+
+
+
+
+
+
+
+
+
+
+
+
