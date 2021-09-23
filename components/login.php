@@ -36,8 +36,8 @@ if (isset($_POST['submit'])) {
                     setcookie("username", $username, time() + 3600);
                 }
                 header('location:' . $_SESSION['redirectURL']);
-                // header("location: ../index");
             }
+            // header("location: ../index");
         }
         exit;
     } else {

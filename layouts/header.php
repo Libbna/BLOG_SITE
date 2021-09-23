@@ -74,13 +74,13 @@
                     <?php
                     } else { ?>
                         <ul class="navbar-nav mx-auto" id="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="/index">Home <span class="sr-only">(current)</span></a>
                             </li>
-                            <li class="nav-item @@article-active">
-                                <a class="nav-link" href="/components/articles">Articles</a>
+                            <li class="nav-item @@article-active ">
+                                <a class="nav-link active" href="/components/articles">Articles</a>
                             </li>
-                            <li class="nav-item dropdown @@dropdown-active">
+                            <li class="nav-item dropdown @@dropdown-active ">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
                                     Blog <span class="fa fa-angle-down"></span>
                                     <span class="fa fa-angle-up"></span>

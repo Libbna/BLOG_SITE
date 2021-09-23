@@ -7,10 +7,7 @@ if (!$user->is_logged_in()) {
     header('location: ../components/login.php');
 }
 
-// if ($user->is_logged_in()) {
-//     // echo $_SERVER['REQUEST_URI'];
 
-// }
 
 if (isset($_POST['submit'])) {
     $profile_img = $_FILES['profile_img'];
@@ -26,7 +23,6 @@ if (isset($_POST['submit'])) {
     if (in_array($filecheck, $file_ext_stored)) {
         $destinationFile = '../assets/uploads/' . $filename;
         move_uploaded_file($filename_tmp, $destinationFile);
-        // $stmt = $db->prepare('INSERT INTO article (profile_img) VALUES ($destinationFile)');
     }
 
     extract($_POST);
@@ -47,17 +43,7 @@ if (isset($_POST['submit'])) {
 
     if (!isset($error)) {
         try {
-            // $stmt = $db->query("INSERT INTO article (articleTitle, articleDesc, articleContent, articleAuthor, profile_img) VALUES ('$articleTitle', '$articleDesc', '$articleContent', '$articleAuthor', '$destinationFile')");
-            $stmt = $db->prepare('INSERT INTO article (articleTitle, articleDesc, articleContent, articleAuthor, profile_img,) VALUES (:articleTitle, :articleDesc, :articleContent, :articleAuthor, :destinationFile)');
-            $stmt->execute(array(
-                ':articleTitle' => $articleTitle,
-                ':articleDesc' => $articleDesc,
-                ':articleContent' => $articleContent,
-                ':articleAuthor' => $articleAuthor,
-                ':profile_img' => $destinationFile,
-
-            ));
-
+            $stmt = $db->query("INSERT INTO article (articleTitle, articleDesc, articleContent, articleAuthor, profile_img) VALUES ('$articleTitle', '$articleDesc', '$articleContent', '$articleAuthor', '$destinationFile')");
             header('location:index.php?action=added');
             exit;
         } catch (PDOException $e) {
@@ -73,49 +59,53 @@ if (isset($error)) {
 }
 ?>
 
-
-
-<link rel="stylesheet" href="./assets/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="../assets/sass/utilities/main.css">
 
 
 
 
 <title>Add new Article</title>
 <?php
-include("header.php");
+include("../layouts/header.php");
 ?>
 
-<div class=" container mt-5">
-    <form action="" method="post" enctype="multipart/form-data">
 
-        <input type="text" name="articleTitle" class="input my-3" placeholder="Title" autocomplete="off" value="<?php if (isset($error)) {
-                                                                                                                    echo $_POST['articleTitle'];
-                                                                                                                } ?>">
+<section class="w3l-contact" id="contact">
+    <div class="container py-5">
+        <div class="contacts12-main py-md-3">
+            <div class="header-section text-center">
+                <h3 class="mb-md-5 mb-4">Add Article
+                </h3>
+            </div>
+            <form action="" method="post" class="" enctype="multipart/form-data">
+                <div class="main-input">
+                    <input type="text" name="articleTitle" class="contact-input" placeholder="Title" required="" autocomplete="off" value="<?php if (isset($error)) {
+                                                                                                                                                echo $_POST['articleTitle'];
+                                                                                                                                            } ?>">
+                    <textarea class="contact-textarea contact-input" name="articleDesc" placeholder="Description" required="" value="<?php if (isset($error)) {
+                                                                                                                                            echo $_POST['articleDesc'];
+                                                                                                                                        } ?>"></textarea>
+                    <textarea class="contact-textarea contact-input" name="articleContent" placeholder="Content" required="" value="<?php if (isset($error)) {
+                                                                                                                                        echo $_POST['articleContent'];
+                                                                                                                                    } ?>"></textarea>
+                    <input type="text" name="articleAuthor" placeholder="Author" class="contact-input" required="" autocomplete="off" value="<?php if (isset($error)) {
+                                                                                                                                                    echo $_POST['articleAuthor'];
+                                                                                                                                                } ?>">
+                    <input type="file" name="profile_img" class="contact-input" value="<?php echo $_POST['profile_img']; ?>">
 
+                </div>
+                <div class="text-right">
+                    <button name="submit" class="btn-primary btn theme-button">+ Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
-        <textarea name="articleDesc" class="input my-3 " placeholder="Description"><?php if (isset($error)) {
-                                                                                        echo $_POST['articleDesc'];
-                                                                                    } ?></textarea>
-
-
-        <textarea name="articleContent" class=" input body_content " placeholder="Content"><?php if (isset($error)) {
-                                                                                                echo $_POST['articleContent'];
-                                                                                            } ?></textarea>
-
-        <input type="text" name="articleAuthor" class="input my-3 author" placeholder="Author" autocomplete="off" value="<?php if (isset($error)) {
-                                                                                                                                echo $_POST['articleAuthor'];
-                                                                                                                            } ?>">
-        <input type="file" name="profile_img" class="input my-3" value="<?php echo $_POST['profile_img']; ?>">
-
-        <button name="submit" class="subbtn btn-success">+ Add Article</button>
-
-
-    </form>
-
-
-
-</div>
+<?php include("../layouts/footer.php"); ?>
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
