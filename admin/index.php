@@ -12,15 +12,6 @@ if ($user->is_logged_in()) {
 
 ?>
 
-<title> Admin Page </title>
-
-<head>
-    <link rel="stylesheet" href="./assets/style.css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
 <script type="text/javascript">
     function delpost(id, title) {
         if (confirm("Are you sure you want to delete '" + title + "'")) {
@@ -28,9 +19,6 @@ if ($user->is_logged_in()) {
         }
     }
 </script>
-
-<?php include("header.php"); ?>
-
 
 <?php if (isset($_REQUEST['action'])) { ?>
     <?php if ($_REQUEST['action'] == "added") { ?>
@@ -59,81 +47,97 @@ if ($user->is_logged_in()) {
 <?php } ?>
 
 
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Author</th>
-            <th>Profile</th>
+<!DOCTYPE html>
+<html lang="en">
 
-        </tr>
-    </thead>
-    <?php
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    try {
-        $stmt = $db->query('SELECT articleID, articleTitle, articleDesc, articleAuthor, profile_img FROM article ORDER BY articleID DESC');
-        while ($row = $stmt->fetch()) {
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-            echo '<tbody>';
-            echo '<tr id="row">';
-            echo '<td class="w-25">' . $row['articleTitle'] . '</td>';
-            echo '<td class="w-25">' . $row['articleDesc'] . '</td>';
-            echo '<td class=" style="width: 15%;">' . $row['articleAuthor'] . '</td>';
-    ?>
-            <td class="w-25"><img src="<?php echo $row['profile_img'] ?>" alt="" height="100px" width="100px"></td>
-            <td>
-                <div id="mybtn" class="btn-group btn-group-md">
-                    <?php
-                    echo '<a type="button" class="btn btn-success" id="edit" href="http://blogsite.com/admin/edit-blog-article.php?id=' . $row['articleID'] . '"><i class="fa fa-edit"></i></a>';
-                    ?>
+    <link rel="stylesheet" href="../assets/sass/utilities/main.css">
+    <title>Dashboard</title>
+</head>
 
-                    </a>
-                    <a id="trash" type="button" class="btn btn-danger" role="button" href="javascript:delpost('<?php echo $row['articleID']; ?>','<?php echo $row['articleTitle']; ?>')">
-                        <i class="fa fa-trash"></i>
-                    </a>
-                    <?php
-                    echo '<a type="button" class="btn btn-primary" href="http://blogsite.com/admin/view-article.php?id=' . $row['articleID'] . '"><i class="fa fa-eye"></i></a>';
-                    ?>
+<body>
+    <?php include("../layouts/header.php"); ?>
 
-                </div>
-            </td>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Author</th>
+                <th scope="col">Profile</th>
+                <th scope="col">Edit/Delt/View</th>
+            </tr>
+        </thead>
 
-    <?php
-            echo '</tr>';
-            echo '</tbody>';
+        <?php
+
+        try {
+            $stmt = $db->query('SELECT articleID, articleTitle, articleDesc, articleAuthor, profile_img FROM article ORDER BY articleID DESC');
+            while ($row = $stmt->fetch()) {
+        ?>
+                <tbody>
+                    <tr>
+                        <th scope="row"><?php echo $row['articleTitle']; ?></th>
+                        <td><?php echo $row['articleDesc']; ?></td>
+                        <td><?php echo $row['articleAuthor'] ?></td>
+                        <td><img src="<?php echo $row['profile_img'] ?>" alt="" height="100px" width="100px"></td>
+                        <td>
+                            <div id="mybtn" class="btn-group btn-group-md">
+                                <?php
+                                echo '<a type="button" class="btn btn-success" id="edit" href="http://blogsite.com/admin/edit-blog-article.php?id=' . $row['articleID'] . '"><i class="fa fa-edit"></i></a>';
+                                ?>
+
+                                </a>
+                                <a id="trash" type="button" class="btn btn-danger" role="button" href="javascript:delpost('<?php echo $row['articleID']; ?>','<?php echo $row['articleTitle']; ?>')">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                                <?php
+                                echo '<a type="button" class="btn btn-info" href="http://blogsite.com/admin/view-article.php?id=' . $row['articleID'] . '"><i class="fa fa-eye"></i></a>';
+                                ?>
+
+                            </div>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+
+
+        <?php
+                echo '</tr>';
+                echo '</tbody>';
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
         }
-    } catch (PDOException $e) {
-        echo $e->getMessage();
-    }
 
-    ?>
-</table>
+        ?>
+    </table>
 
-<a id="add" class="btn btn-success" role="button" href="add-blog-article.php">Add Article</a>
-<a id="add_banner" class="btn btn-primary" role="button" href="add_view-banner.php">Add / View Banner</a>
+    <div class="add_view_btn ml-4">
+        <a id="add" class="btn btn-success" role="button" href="add-blog-article.php">Add Article</a>
+        <a id="add_banner" class="btn btn-primary" role="button" href="add_view-banner.php">Add / View Banner</a>
+    </div>
 
+    <?php include("../layouts/footer.php"); ?>
 
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-<!-- <script type="text/javascript">
-    var row = document.getElementById("row");
-    var mybtn = document.getElementById("mybtn");
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    row.onmouseover = function() {
-        mybtn.style.display = "flex";
-    }
+</body>
 
-    row.onmouseout = function() {
-        mybtn.style.display = "none";
-    }
-</script> -->
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>
