@@ -97,11 +97,6 @@
 
     </section>
 
-
-
-
-
-
     <?php include("../layouts/footer.php"); ?>
 
 </body>

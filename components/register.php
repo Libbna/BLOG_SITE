@@ -6,8 +6,6 @@ if ($user->is_logged_in()) {
 }
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
