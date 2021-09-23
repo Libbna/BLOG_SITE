@@ -1,12 +1,5 @@
 <?php
 require_once('../includes/config.php');
-
-// if user is already logged in, redirect to home/index page
-// if ($user->is_logged_in()) {
-//     header('location:' . $_SESSION['redirectURL']);
-// }
-
-
 ?>
 
 <?php
@@ -29,13 +22,13 @@ if (isset($_POST['submit'])) {
                 if ($checkbox == "on") {
                     setcookie("username", $username, time() + 3600);
                 }
-                // header('location:' . $_SESSION['redirectURL']);
                 header("location: /admin/index.php");
             } elseif ($row['role'] == 'user') {
                 if ($checkbox == "on") {
                     setcookie("username", $username, time() + 3600);
                 }
                 header('location:' . $_SESSION['redirectURL']);
+                // header("location: ../index");
             }
             // header("location: ../index");
         }
