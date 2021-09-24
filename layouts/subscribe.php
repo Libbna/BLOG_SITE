@@ -26,12 +26,9 @@ require_once("./includes/config.php");
 
         $sql = $db->query("INSERT INTO subscribers (semail) VALUES ('$email')");
 
-
         require 'PHPMailerAutoload.php';
 
-
         $mail = new PHPMailer;
-
 
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = 'smtp.gmail.com';                      // Specify main and backup SMTP servers
@@ -48,7 +45,8 @@ require_once("./includes/config.php");
         $mail->isHTML(true);                                  // Set email format to HTML
 
         $mail->Subject = 'Newsletter Subscription';
-        $mail->Body    = 'Hello there — thank you for signing up!';
+        $mail->Body = '<p>Hello there — thank you for signing up!</p>' .
+            '<p>To unsubscribe <a href = "http://blogsite.com/layouts/unsubscribe.php?email=' . $email . '">Unscubscribe</a></p>';
 
         if (!$mail->send()) {
             echo 'Message could not be sent.';
@@ -57,8 +55,6 @@ require_once("./includes/config.php");
             echo 'Message has been sent';
         }
     }
-
-
     ?>
 
     <section class="w3l-subscribe">
