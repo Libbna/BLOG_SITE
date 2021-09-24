@@ -1,10 +1,9 @@
 <?php
 
 require_once("includes/config.php");
-if (!$user->is_logged_in()) {
-    $_SESSION['redirectURL'] = $_SERVER['REQUEST_URI'];
-    header('location: ../components/login.php');
-}
+
+// $_SESSION['redirectURL'] = $_SERVER['REQUEST_URI'];
+
 $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
 ?>
 

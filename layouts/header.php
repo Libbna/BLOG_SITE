@@ -36,7 +36,7 @@
                     ?>
                         <ul class="navbar-nav mx-auto" id="navbar-nav">
                             <li class="nav-item active">
-                                <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="/index">Home</a>
                             </li>
                             <li class="nav-item @@article-active">
                                 <a class="nav-link" href="/components/articles">Articles</a>
