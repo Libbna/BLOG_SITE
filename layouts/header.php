@@ -15,6 +15,7 @@
     <!-- Main css -->
     <link rel="stylesheet" href="/assets/sass/utilities/main.css">
 
+
 </head>
 
 <body>
@@ -35,7 +36,7 @@
                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     ?>
                         <ul class="navbar-nav mx-auto" id="navbar-nav">
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="/index">Home</a>
                             </li>
                             <li class="nav-item @@article-active">
@@ -74,11 +75,11 @@
                     <?php
                     } else { ?>
                         <ul class="navbar-nav mx-auto" id="navbar-nav">
-                            <li class="nav-item ">
-                                <a class="nav-link active" href="/index">Home <span class="sr-only">(current)</span></a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item @@article-active ">
-                                <a class="nav-link active" href="/components/articles">Articles</a>
+                                <a class="nav-link" href="/components/articles">Articles</a>
                             </li>
                             <li class="nav-item dropdown @@dropdown-active ">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
@@ -205,6 +206,23 @@
             }
         }
     </script>
+
+    <script type="text/javascript">
+        $(function() {
+            // this will get the full URL at the address bar
+            var url = window.location.href;
+
+            // passes on every "a" tag 
+            $(".nav-link").each(function() {
+                // checks if its the same on the address bar
+                if (url == (this.href)) {
+                    $(this).closest("a").addClass("active");
+                }
+            });
+        });
+    </script>
+
+    <script src="../assets/js/jquery.js"></script>
 </body>
 
 </html>
