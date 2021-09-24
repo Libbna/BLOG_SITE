@@ -20,6 +20,12 @@ header {
            .navbar-nav {
             align-items: center;
 
+            .active {
+                color: rgb(92, 4, 4) !important;
+                // background-color: rgb(87, 53, 53);
+                opacity: 1 !important;
+            }
+
             .nav-link {
                 text-transform: capitalize;
                 transition: $trans-all-ease05;
@@ -33,6 +39,7 @@ header {
                     color: $white;
                     opacity: 1;
                 }
+                
 
                 &:hover {
                     .fa-angle-down {
@@ -261,11 +268,6 @@ header {
 .fa-angle-up {
     display: none;
 }
-
-// .active:active{
-//     opacity: 1;
-//     color: #fff;
-// }    
 
 
 
