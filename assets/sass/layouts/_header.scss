@@ -229,6 +229,9 @@ header {
     }
 } 
 .navbar-dark {
+    .navbar-toggler {
+        transition: $transition-ease_in_out;
+    }
     .navbar-toggler-icon {
         background-image: none;
     }
@@ -283,6 +286,8 @@ header {
         line-height: 34px;
     }
     .navbar-toggler {
+        padding: 0rem 0rem;
+        margin-left: 29.1rem;
         #cross {
             display: none;
         }
@@ -298,3 +303,15 @@ header {
     
 }
 
+@media only screen and (max-width:768px) {
+    .navbar-toggler {
+        padding: 0rem 0rem;
+        margin-left: 29.1rem;
+    }
+}
+@media only screen and (max-width:320px) {
+    .navbar-toggler {
+        padding: 0rem 0rem;
+        margin-left: 4.4rem;;
+    }
+}

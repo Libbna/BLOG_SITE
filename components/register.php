@@ -4,6 +4,9 @@ require_once('../includes/config.php');
 if ($user->is_logged_in()) {
     header('location: ../index');
 }
+if (!$user->is_logged_in()) {
+    $_SESSION['redirectURL'] = $_SERVER['REQUEST_URI'];
+}
 
 ?>
 <!DOCTYPE html>

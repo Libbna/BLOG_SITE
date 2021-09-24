@@ -2,7 +2,10 @@
 
 require_once("includes/config.php");
 
-// $_SESSION['redirectURL'] = $_SERVER['REQUEST_URI'];
+if (!$user->is_logged_in()) {
+    $_SESSION['redirectURL'] = $_SERVER['REQUEST_URI'];
+}
+
 
 $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
 ?>

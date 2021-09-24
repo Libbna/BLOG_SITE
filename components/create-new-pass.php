@@ -84,11 +84,12 @@ require("../includes/config.php");
             }
         }
                     ?>
+                            </div>
+                        </div>
                     </div>
-                 </div>
-            </div>
-        </section>
+                </section>
 
-    <?php include("../layouts/footer.php"); ?>
+                <?php include("../layouts/footer.php"); ?>
 </body>
+
 </html>

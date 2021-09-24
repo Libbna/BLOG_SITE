@@ -1,3 +1,7 @@
+<?php
+require_once("./includes/config.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +20,12 @@
 <body>
 
     <?php
-    if (isset($_POST['subscribe'])) {
+    if (isset($_GET['subscribe'])) {
+
+        $email = $_GET['email'];
+
+        $sql = $db->query("INSERT INTO subscribers (semail) VALUES ('$email')");
+
 
         require 'PHPMailerAutoload.php';
 
@@ -33,14 +42,13 @@
         $mail->Port = 587;                                    // TCP port to connect to
 
         $mail->setFrom(useremail, 'Libbna');
-        $mail->addAddress($_POST['email']);                   // Add a recipient
+        $mail->addAddress($_GET['email']);                   // Add a recipient
         $mail->addReplyTo(useremail, 'Information');
 
         $mail->isHTML(true);                                  // Set email format to HTML
 
-        $mail->Subject = 'Here is the subject';
-        $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        $mail->Subject = 'Newsletter Subscription';
+        $mail->Body    = 'Hello there — thank you for signing up!';
 
         if (!$mail->send()) {
             echo 'Message could not be sent.';
@@ -49,6 +57,8 @@
             echo 'Message has been sent';
         }
     }
+
+
     ?>
 
     <section class="w3l-subscribe">
@@ -66,7 +76,7 @@
                     </div>
                     <div class="row mt-md-5 mt-4">
                         <div class="col-lg-7 col-md-9 mx-auto main-midd-2">
-                            <form role="form" method="POST" enctype="multipart/form-data" class="rightside-form">
+                            <form action="#" role="form" method="GET" enctype="multipart/form-data" class="rightside-form">
                                 <input id="email" type="email" name="email" placeholder="Input your e-mail" required="">
                                 <button type="submit" name="subscribe" class="btn btn-primary theme-button">Subscribe</button>
                             </form>
