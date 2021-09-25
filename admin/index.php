@@ -55,9 +55,11 @@ if ($user->is_logged_in()) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- font awesome icon  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <!-- boostrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Main css -->
     <link rel="stylesheet" href="../assets/sass/utilities/main.css">
     <title>Dashboard</title>
 </head>
@@ -91,7 +93,7 @@ if ($user->is_logged_in()) {
                         <td>
                             <div id="mybtn" class="btn-group btn-group-md">
                                 <?php
-                                echo '<a type="button" class="btn btn-success" id="edit" href="http://blogsite.com/admin/edit-blog-article.php?id=' . $row['articleID'] . '"><i class="fa fa-edit"></i></a>';
+                                echo '<a type="button" class="btn btn-success" id="edit" href="../edit-blog-article.php?id=' . $row['articleID'] . '"><i class="fa fa-edit"></i></a>';
                                 ?>
 
                                 </a>
@@ -129,14 +131,7 @@ if ($user->is_logged_in()) {
 
     <?php include("../layouts/footer.php"); ?>
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 
