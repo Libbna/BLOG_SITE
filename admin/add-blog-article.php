@@ -59,59 +59,63 @@ if (isset($error)) {
 }
 ?>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="../assets/sass/utilities/main.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new Article</title>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="../assets/sass/utilities/main.css">
+    <script src="/ckeditor/ckeditor.js"></script>
+</head>
 
-
-<title>Add new Article</title>
-<?php
-include("../layouts/header.php");
-?>
-
-
-<section class="w3l-contact" id="contact">
-    <div class="container py-5">
-        <div class="contacts12-main py-md-3">
-            <div class="header-section text-center">
-                <h3 class="mb-md-5 mb-4">Add Article
-                </h3>
-            </div>
-            <form action="" method="post" class="" enctype="multipart/form-data">
-                <div class="main-input">
-                    <input type="text" name="articleTitle" class="contact-input" placeholder="Title" required="" autocomplete="off" value="<?php if (isset($error)) {
-                                                                                                                                                echo $_POST['articleTitle'];
-                                                                                                                                            } ?>">
-                    <textarea class="contact-textarea contact-input" name="articleDesc" placeholder="Description" required="" value="<?php if (isset($error)) {
-                                                                                                                                            echo $_POST['articleDesc'];
-                                                                                                                                        } ?>"></textarea>
-                    <textarea class="contact-textarea contact-input" name="articleContent" placeholder="Content" required="" value="<?php if (isset($error)) {
-                                                                                                                                        echo $_POST['articleContent'];
-                                                                                                                                    } ?>"></textarea>
-                    <input type="text" name="articleAuthor" placeholder="Author" class="contact-input" required="" autocomplete="off" value="<?php if (isset($error)) {
-                                                                                                                                                    echo $_POST['articleAuthor'];
+<body>
+    <?php
+    include("../layouts/header.php");
+    ?>
+    <section class="w3l-contact" id="contact">
+        <div class="container py-5">
+            <div class="contacts12-main py-md-3">
+                <div class="header-section text-center">
+                    <h3 class="mb-md-5 mb-4">Add Article
+                    </h3>
+                </div>
+                <form action="" method="post" class="" enctype="multipart/form-data">
+                    <div class="main-input">
+                        <input type="text" name="articleTitle" class="contact-input" placeholder="Title" required="" autocomplete="off" value="<?php if (isset($error)) {
+                                                                                                                                                    echo $_POST['articleTitle'];
                                                                                                                                                 } ?>">
-                    <input type="file" name="profile_img" class="contact-input" value="<?php echo $_POST['profile_img']; ?>">
+                        <textarea class="contact-textarea contact-input" name="articleDesc" placeholder="Description" required="" value="<?php if (isset($error)) {
+                                                                                                                                                echo $_POST['articleDesc'];
+                                                                                                                                            } ?>"></textarea>
+                        <textarea class="contact-textarea contact-input" id="content" name="articleContent" placeholder="Content" required="" value="<?php if (isset($error)) {
+                                                                                                                                                            echo $_POST['articleContent'];
+                                                                                                                                                        } ?>"></textarea>
+                        <input type="text" name="articleAuthor" placeholder="Author" class="contact-input mt-3" required="" autocomplete="off" value="<?php if (isset($error)) {
+                                                                                                                                                            echo $_POST['articleAuthor'];
+                                                                                                                                                        } ?>">
+                        <input type="file" name="profile_img" class="contact-input" value="<?php echo $_POST['profile_img']; ?>">
 
-                </div>
-                <div class="text-right">
-                    <button name="submit" class="btn-primary btn theme-button">+ Add</button>
-                </div>
-            </form>
+                    </div>
+                    <div class="text-right">
+                        <button name="submit" class="btn-primary btn theme-button">+ Add</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+    <?php include("../layouts/footer.php"); ?>
 
-<?php include("../layouts/footer.php"); ?>
+    <script>
+        CKEDITOR.replace('content');
+    </script>
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
 
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>
