@@ -1,5 +1,5 @@
 <?php
-require_once('../includes/config.php');
+require_once('./includes/config.php');
 
 // if (!$user->is_logged_in()) {
 //     header('location: login.php');
@@ -29,7 +29,7 @@ $row = $stmt->fetch();
 <meta name="description" content="<?php echo $row['articleDesc']; ?>">
 <meta name="keywords" content="Article Keywords">
 
-<?php include("header.php"); ?>
+<?php include("./layouts/header.php"); ?>
 
 <div class="container mt-5">
     <div class="container__title">
@@ -45,6 +45,9 @@ $row = $stmt->fetch();
         </blockquote>
     </div>
 </div>
+
+<?php include("./layouts/footer.php"); ?>
+
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
