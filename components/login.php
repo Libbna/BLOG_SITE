@@ -9,7 +9,6 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $checkbox = isset($_POST['remember-me']);
-
     $stmt = $db->query("SELECT * FROM users WHERE username = '$username'");
     $count = $stmt->rowCount();
 
@@ -23,6 +22,7 @@ if (isset($_POST['submit'])) {
                 if ($checkbox == "on") {
                     setcookie("username", $username, time() + 3600);
                 }
+
                 header("location: /admin/index.php");
             } elseif ($row['role'] == 'user') {
                 if ($checkbox == "on") {

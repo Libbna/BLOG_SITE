@@ -24,7 +24,6 @@ include("../layouts/header.php");
             <?php
             if (isset($_GET['submit-search'])) {
                 $search = $_GET['search'];
-
                 $result = $db->query("SELECT * FROM article WHERE articleTitle LIKE '" . $search . "'  OR soundex(articleTitle) = soundex('$search') OR articleDesc LIKE '%" . $search . "%' OR articleContent LIKE '%" . $search . "%' 
                 OR articleAuthor LIKE '%" . $search . "%'");
                 if ($result) {

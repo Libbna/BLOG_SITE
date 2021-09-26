@@ -27,7 +27,11 @@ if (!$user->is_logged_in()) {
     <div class="container">
 
         <?php
+
+
         if (isset($_POST['submit'])) {
+
+
             //collect form data
             extract($_POST);
 
@@ -57,6 +61,8 @@ if (!$user->is_logged_in()) {
                         ':articleDesc' => $articleDesc,
                         ':articleContent' => $articleContent,
                         ':articleID' => $articleID,
+
+
                     ));
 
                     //redirect to index page

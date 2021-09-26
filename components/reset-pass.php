@@ -44,7 +44,6 @@ require("../includes/config.php");
             $key = md5(time());
             $addKey = substr(md5(uniqid(rand(), 1)), 3, 10);
             $key = $key . $addKey;
-
             $db->query("INSERT INTO pwdreset (resetEmail, token, expDate) VALUES ('" . $email . "', '" . $key . "', '" . $expDate . "')");
 
             $output .= '<p>Please click on the following link to reset your password.</p>';
