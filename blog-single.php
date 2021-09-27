@@ -6,17 +6,13 @@ $stmt->execute(array(':articleID' => $_GET['id']));
 $row = $stmt->fetch();
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <!-- font awesome icon  -->
     <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- boostrap -->
@@ -29,9 +25,6 @@ $row = $stmt->fetch();
     <?php include("./layouts/header.php"); ?>
     <section class="w3l-blog-single py-5">
         <div class="container py-lg-3">
-            <?php
-
-            ?>
             <div class="row">
                 <div class="col-lg-3 pr-lg-4 order-lg-1 order-2">
                     <div class="img-circle">
@@ -136,8 +129,6 @@ $row = $stmt->fetch();
                                         lacinia id
                                         erat eu. Nunc id ipsum fringilla, gravida felis vitae. Phasellus lacinia id, sunt in
                                         culpa quis. </p>
-
-
                                     <div class="single-post-content my-4 py-lg-3">
                                         <h3 class="blog-desc-big m-0 mb-4">Your Blog Posts are Boring? Here are 9 Tips for Making your Writing more Interesting</h3>
                                         <p class="mb-4">Hong Kong is one of those cities you never really stop discovering. With its breathtaking
@@ -166,7 +157,6 @@ $row = $stmt->fetch();
                                             </div>
                                         </div>
                                     </div>
-
                                     <h3 class="blog-desc-big m-0 mb-4">Search for Inspiration</h3>
                                     <p class="mb-4">Vivamus a ligula quam. Ut blandit eu leo non suscipit. <a href="#" class="use-admin">Domains</a> In interdum
                                         ullamcorper dolor eu mattis.Nulla quis lorem
@@ -177,8 +167,6 @@ $row = $stmt->fetch();
                                     <p class="mb-4">Dolor sit sed amet, excepteur sint occaecat non proident, sunt in culpa quis. Phasellus
                                         lacinia id erat eu. Nunc id ipsum fringilla, gravida felis vitae. Phasellus lacinia id, sunt in
                                         culpa quis. </p>
-
-
                                     <div class="single-post-content mb-4 py-lg-3">
                                         <h3 class="blog-desc-big m-0 mb-4">Join With Us. We Will Make The Best Market Together!</h3>
                                         <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, amet fuga harum
@@ -198,7 +186,6 @@ $row = $stmt->fetch();
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="d-grid left-right">
                                         <div class="buttons-singles">
                                             <h4>Share :</h4>
@@ -208,7 +195,6 @@ $row = $stmt->fetch();
                                             <a href="#blog-share"><span class="fa fa-pinterest-p" aria-hidden=" true"></span></a>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="col-lg-4 mb-lg-0 mb-4 order-lg-2 order-1">
@@ -227,14 +213,12 @@ $row = $stmt->fetch();
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
     <?php
-    include("./layouts/comment.php");
-    include("./layouts/footer.php");
+        include("./layouts/comment.php");
+        include("./layouts/footer.php");
     ?>
 </body>
-
 </html>
