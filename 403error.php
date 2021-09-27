@@ -70,25 +70,25 @@ if ($error == 403) {
 </head>
 
 <body>
-<section class="w3l-error py-5">
-    <div class="container py-lg-3">
-        <div class="error_content text-center">
-           <span class="fa fa-frown-o"></span>
-           <h2 class="mt-3"><?php echo $err_title; ?></h2>
-           <p class="mt-3 mb-5"><?php echo $err_msg ?></p>
-           <a href="../index" class="btn btn-primary theme-button py-3 px-4">Back to Home</a>
+    <section class="w3l-error py-5">
+        <div class="container py-lg-3">
+            <div class="error_content text-center">
+                <span class="fa fa-frown-o"></span>
+                <h2 class="mt-3"><?php echo $err_title; ?></h2>
+                <p class="mt-3 mb-5"><?php echo $err_msg ?></p>
+                <a href="../index" class="btn btn-primary theme-button py-3 px-4">Back to Home</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
-<h1></h1>
-<h3></h3>
+    <h1></h1>
+    <h3></h3>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="../assets/js/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.js"></script>
 
 </body>
 

@@ -7,6 +7,8 @@ RewriteEngine on
 ErrorDocument 404 /404error.php
 ErrorDocument 403 /403error.php
 
+#RewriteRule ^add-blog-article$ /403error.php [R=403]
+
 #redirects to blog-page with this applied condition
 RewriteRule ^blog-single/([a-zA-Z0-9-/]+)$ blog-single.php?id=$1 [NC,L]
 
@@ -24,7 +26,6 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 
 #rewrite rule to ignore/remove the .php extension
 RewriteRule ^(.*)$ $1.php [NC,L]
-
 
 #Disable directory browsing 
 Options -Indexes

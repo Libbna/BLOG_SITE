@@ -23,6 +23,7 @@ include("../layouts/header.php");
         <div class="row">
             <?php
             if (isset($_GET['submit-search'])) {
+                http_response_code(301);
                 $search = $_GET['search'];
                 $result = $db->query("SELECT * FROM article WHERE articleTitle LIKE '" . $search . "'  OR soundex(articleTitle) = soundex('$search') OR articleDesc LIKE '%" . $search . "%' OR articleContent LIKE '%" . $search . "%' 
                 OR articleAuthor LIKE '%" . $search . "%'");

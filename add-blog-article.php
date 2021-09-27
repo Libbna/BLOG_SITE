@@ -1,5 +1,5 @@
 <?php
-require_once('../includes/config.php');
+require_once('./includes/config.php');
 
 //if user is not logged in
 if (!$user->is_logged_in()) {
@@ -77,7 +77,7 @@ if (isset($error)) {
 
 <body>
     <?php
-    include("../layouts/header.php");
+    include("./layouts/header.php");
     ?>
     <section class="w3l-contact" id="contact">
         <div class="container py-5">
@@ -110,7 +110,7 @@ if (isset($error)) {
             </div>
         </div>
     </section>
-    <?php include("../layouts/footer.php"); ?>
+    <?php include("./layouts/footer.php"); ?>
 
     <script>
         CKEDITOR.replace('content');
