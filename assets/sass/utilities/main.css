@@ -830,6 +830,22 @@ footer .sub-two-right ul li a {
   background-color: #f2f0f3;
 }
 
+@media only screen and (min-width: 320px) {
+  .w3l-blog .blog-post {
+    padding: 2rem 15px;
+  }
+  .w3l-blog .blog-article-posts .blog-post .author-date {
+    width: 176%;
+    margin-left: -5rem;
+  }
+  .w3l-blog .blog-article-posts h4.blog_post_title {
+    width: 143%;
+    font-size: 26px;
+    margin-left: -3rem;
+    line-height: 31.6px;
+  }
+}
+
 .w3l-latest-posts {
   background-color: #fff;
 }

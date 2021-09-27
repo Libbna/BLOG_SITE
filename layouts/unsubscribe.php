@@ -18,7 +18,7 @@ $sql->bindParam("s", $email);
 </head>
 
 <body>
-    <h3 class="">Your email, <?php echo $email; ?> has successfully unsubscribed from BlogIt</h3>
+    <h3 class="">Your email, <?php echo $email; ?> has successfully unsubscribed from Publication Blog</h3>
 </body>
 
 </html>
