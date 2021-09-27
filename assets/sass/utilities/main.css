@@ -319,12 +319,23 @@ header {
   .search-right .domain {
     display: none;
   }
+  .navbar-collapse {
+    -webkit-animation-name: none;
+            animation-name: none;
+    float: left;
+    text-align: center;
+    width: 100%;
+    background: rgba(214, 86, 116, 0.7);
+    padding: 20px;
+    margin-top: 16px;
+    border-radius: 6px;
+  }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   .navbar-toggler {
     padding: 0rem 0rem;
-    margin-left: 29.1rem;
+    margin-left: 29.2rem;
   }
 }
 
@@ -332,6 +343,9 @@ header {
   .navbar-toggler {
     padding: 0rem 0rem;
     margin-left: 4.4rem;
+  }
+  .search-right {
+    margin-left: 5.2rem;
   }
 }
 
