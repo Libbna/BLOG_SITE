@@ -7,6 +7,7 @@ if ($user->is_logged_in()) {
         header('Location: ../components/login');
     }
 } else if (!$user->is_logged_in()) {
+    $_SESSION['redirectURL'] = $_SERVER['REQUEST_URI'];
     header('Location: ../components/login');
 }
 
@@ -125,8 +126,8 @@ if ($user->is_logged_in()) {
     </table>
 
     <div class="add_view_btn ml-4">
-        <a id="add" class="btn btn-success" role="button" href="add-blog-article.php">Add Article</a>
-        <a id="add_banner" class="btn btn-primary" role="button" href="add_view-banner.php">Add / View Banner</a>
+        <a id="add" class="btn btn-success" role="button" href="../add-blog-article">Add Article</a>
+        <a id="add_banner" class="btn btn-primary" role="button" href="add_view-banner">Add / View Banner</a>
     </div>
 
     <?php include("../layouts/footer.php"); ?>
