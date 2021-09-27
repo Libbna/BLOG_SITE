@@ -26,9 +26,6 @@ $row = $stmt->fetch();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Main css -->
     <link rel="stylesheet" href="/assets/sass/utilities/main.css">
-
-
-
 </head>
 
 <meta name="description" content="<?php echo $row['articleDesc']; ?>">
