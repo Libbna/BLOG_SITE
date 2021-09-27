@@ -830,18 +830,17 @@ footer .sub-two-right ul li a {
   background-color: #f2f0f3;
 }
 
-@media only screen and (min-width: 320px) {
-  .w3l-blog .blog-post {
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+@media only screen and (max-width: 414px) {
+  .w3l-blog .blog-article-posts .blog-post {
     padding: 2rem 15px;
   }
-  .w3l-blog .blog-article-posts .blog-post .author-date {
-    width: 176%;
-    margin-left: -5rem;
-  }
   .w3l-blog .blog-article-posts h4.blog_post_title {
-    width: 143%;
     font-size: 26px;
-    margin-left: -3rem;
     line-height: 31.6px;
   }
 }
@@ -850,14 +849,14 @@ footer .sub-two-right ul li a {
   background-color: #fff;
 }
 
-.header-section h3 {
+.w3l-latest-posts .header-section h3 {
   color: #292922;
   font-size: 46px;
   line-height: 1;
   font-weight: 700;
 }
 
-.blog-article-post {
+.w3l-latest-posts .blog-article-post {
   height: 100%;
   padding: 1.10rem;
   -webkit-transform: scale(1);
@@ -867,20 +866,20 @@ footer .sub-two-right ul li a {
   background: #f2f0f3;
 }
 
-.sub-title {
+.w3l-latest-posts .sub-title {
   font-size: 14px;
   color: #696969;
   margin-bottom: 10px;
 }
 
-.blog_post_title {
+.w3l-latest-posts .blog_post_title {
   font-size: 32px;
   line-height: 41.6px;
   display: inline-block;
   font-weight: 700;
 }
 
-.author-date li {
+.w3l-latest-posts .author-date li {
   font-size: 14px;
   color: #696969;
   display: inline-block;
@@ -890,7 +889,7 @@ footer .sub-two-right ul li a {
   font-weight: 300;
 }
 
-.author-date li b {
+.w3l-latest-posts .author-date li b {
   font-size: 16px;
   font-weight: 700;
   text-decoration: underline;
@@ -898,19 +897,19 @@ footer .sub-two-right ul li a {
   transition: 0.3s ease-out;
 }
 
-.read-button {
+.w3l-latest-posts .read-button {
   color: #f76a8c;
   font-size: 16px;
   text-transform: capitalize;
   font-weight: 700;
 }
 
-.read-button span {
+.w3l-latest-posts .read-button span {
   vertical-align: middle;
   margin-left: 5px;
 }
 
-.member-login-content {
+.w3l-latest-posts .member-login-content {
   top: 0;
   bottom: 0;
   background: rgba(247, 106, 140, 0.75);
@@ -924,13 +923,13 @@ footer .sub-two-right ul li a {
   padding: 2rem 15px;
 }
 
-.member-login-content h3 {
+.w3l-latest-posts .member-login-content h3 {
   color: #fff;
   font-size: 36px;
   font-weight: 700;
 }
 
-.member-login-content p {
+.w3l-latest-posts .member-login-content p {
   color: #fff;
   font-size: 18px;
   line-height: 28.5px;
@@ -939,7 +938,7 @@ footer .sub-two-right ul li a {
   margin-right: auto;
 }
 
-.member-login-content .theme-button {
+.w3l-latest-posts .member-login-content .theme-button {
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
   display: inline-block;
@@ -949,7 +948,7 @@ footer .sub-two-right ul li a {
   border-radius: 6px;
 }
 
-.member-login-content .theme-button:hover {
+.w3l-latest-posts .member-login-content .theme-button:hover {
   color: #212529;
   background-color: #e2e6ea;
   border-color: #dae0e5;
