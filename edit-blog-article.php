@@ -28,9 +28,7 @@ if (!$user->is_logged_in()) {
 
         <?php
 
-
         if (isset($_POST['submit'])) {
-
 
             //collect form data
             extract($_POST);
