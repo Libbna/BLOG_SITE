@@ -1,3 +1,19 @@
+<?php
+include("./language.php");
+$en_select = '';
+$hi_select = '';
+$language = '';
+if ((isset($_GET['language']) && $_GET['language'] == 'en') || (!isset($_GET['language']))) {
+    $en_select = 'selected';
+    $language = 'en';
+} else {
+    $hi_select = 'selected';
+    $language = 'hi';
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -108,14 +124,14 @@
                     } else { ?>
                         <ul class="navbar-nav mx-auto" id="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="/index"><?php echo $header[$language][0]; ?><span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item @@article-active ">
-                                <a class="nav-link" href="/components/articles">Articles</a>
+                                <a class="nav-link" href="/components/articles"><?php echo $header[$language][1]; ?></a>
                             </li>
                             <li class="nav-item dropdown @@dropdown-active ">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
-                                    Blog <span class="fa fa-angle-down"></span>
+                                    <?php echo $header[$language][2]; ?> <span class="fa fa-angle-down"></span>
                                     <span class="fa fa-angle-up"></span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -125,7 +141,7 @@
                             </li>
                             <li class="nav-item dropdown @@pages-dropdown-active">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
-                                    Pages <span class="fa fa-angle-down"></span>
+                                    <?php echo $header[$language][3]; ?> <span class="fa fa-angle-down"></span>
                                     <span class="fa fa-angle-up"></span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -137,10 +153,16 @@
                                 </div>
                             </li>
                             <li class="nav-item @@about-active">
-                                <a class="nav-link" href="/components/about">About</a>
+                                <a class="nav-link" href="/components/about"><?php echo $header[$language][4]; ?></a>
                             </li>
                             <li class="nav-item @@contact-active">
-                                <a class="nav-link" href="/components/contact-form">Contact</a>
+                                <a class="nav-link" href="/components/contact-form"><?php echo $header[$language][5]; ?></a>
+                            </li>
+                            <li class="lang">
+                                <select name="language" id="language" onchange="set_lang()">
+                                    <option value="en" <?php echo  $en_select; ?>>EN</option>
+                                    <option value="hi" <?php echo  $hi_select; ?>>HI</option>
+                                </select>
                             </li>
                         </ul>
                     <?php
@@ -254,7 +276,15 @@
         });
     </script>
 
-    <script src="../assets/js/jquery.js"></script>
+    <!-- for website translation -->
+    <script type="text/javascript">
+        function set_lang() {
+            var language = $('#language').val();
+            window.location.href = 'http://blogsite.com/index.php/?language=' + language;
+        }
+    </script>
+
+    <script src=" ../assets/js/jquery.js"></script>
 </body>
 
 </html>
