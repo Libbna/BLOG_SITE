@@ -1,4 +1,5 @@
 <?php
+include("../language.php");
 require_once("../includes/config.php");
 
 $stmt = $db->query('SELECT * FROM article');
@@ -15,6 +16,7 @@ include("../layouts/header.php");
 
 
 <link rel="stylesheet" href="../assets/sass/utilities/main.css">
+<script src="../assets/js/app.js"></script>
 
 
 <div id="self-space"></div>

@@ -1,17 +1,8 @@
 <?php
-include("./language.php");
-$en_select = '';
-$hi_select = '';
-$language = '';
-if ((isset($_GET['language']) && $_GET['language'] == 'en') || (!isset($_GET['language']))) {
-    $en_select = 'selected';
-    $language = 'en';
-} else {
-    $hi_select = 'selected';
-    $language = 'hi';
-}
-?>
+$uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$uri_segments = explode('/', $uri_path);
 
+?>
 
 
 <!DOCTYPE html>
@@ -121,51 +112,102 @@ if ((isset($_GET['language']) && $_GET['language'] == 'en') || (!isset($_GET['la
 
                         <?php
                         }
-                    } else { ?>
-                        <ul class="navbar-nav mx-auto" id="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/index"><?php echo $header[$language][0]; ?><span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item @@article-active ">
-                                <a class="nav-link" href="/components/articles"><?php echo $header[$language][1]; ?></a>
-                            </li>
-                            <li class="nav-item dropdown @@dropdown-active ">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
-                                    <?php echo $header[$language][2]; ?> <span class="fa fa-angle-down"></span>
-                                    <span class="fa fa-angle-up"></span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
-                                    <a class="dropdown-item @@blog-single-active" href="blog-single.html">Single post</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown @@pages-dropdown-active">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
-                                    <?php echo $header[$language][3]; ?> <span class="fa fa-angle-down"></span>
-                                    <span class="fa fa-angle-up"></span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
-                                    <a class="dropdown-item @@error-active" href="error.html">404 Page</a>
-                                    <a class="dropdown-item @@login-active" href="/components/login">Login</a>
-                                    <a class="dropdown-item @@signup-active" href="/components/register">Signup</a>
-                                    <a class="dropdown-item @@search-active" href="search-results.html">Search Results</a>
-                                </div>
-                            </li>
-                            <li class="nav-item @@about-active">
-                                <a class="nav-link" href="/components/about"><?php echo $header[$language][4]; ?></a>
-                            </li>
-                            <li class="nav-item @@contact-active">
-                                <a class="nav-link" href="/components/contact-form"><?php echo $header[$language][5]; ?></a>
-                            </li>
-                            <li class="lang">
-                                <select name="language" id="language" onchange="set_lang()">
-                                    <option value="en" <?php echo  $en_select; ?>>EN</option>
-                                    <option value="hi" <?php echo  $hi_select; ?>>HI</option>
-                                </select>
-                            </li>
-                        </ul>
+                    } else {
+                        if (isset($language) && ($language == 'en')) {
+                        ?>
+                            <ul class="navbar-nav mx-auto" id="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/index">Home<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item @@article-active ">
+                                    <a class="nav-link" href="/components/articles">Articles</a>
+                                </li>
+                                <li class="nav-item dropdown @@dropdown-active ">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
+                                        Blog <span class="fa fa-angle-down"></span>
+                                        <span class="fa fa-angle-up"></span>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
+                                        <a class="dropdown-item @@blog-single-active" href="blog-single.html">Single post</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown @@pages-dropdown-active">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
+                                        Pages<span class="fa fa-angle-down"></span>
+                                        <span class="fa fa-angle-up"></span>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
+                                        <a class="dropdown-item @@error-active" href="error.html">404 Page</a>
+                                        <a class="dropdown-item @@login-active" href="/components/login">Login</a>
+                                        <a class="dropdown-item @@signup-active" href="/components/register">Signup</a>
+                                        <a class="dropdown-item @@search-active" href="search-results.html">Search Results</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item @@about-active">
+                                    <a class="nav-link" href="/components/about">About</a>
+                                </li>
+                                <li class="nav-item @@contact-active">
+                                    <a class="nav-link" href="/components/contact-form">Contact</a>
+                                </li>
+                                <!-- language select -->
+                                <li class="lang">
+                                    <select name="language" id="language" onchange="set_lang()">
+                                        <option value="en" <?php echo  $en_select; ?>>EN</option>
+                                        <option value="hi" <?php echo  $hi_select; ?>>HI</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        <?php
+                        } else {
+                        ?>
+                            <ul class="navbar-nav mx-auto" id="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/index"><?php echo $header[$language][0]; ?><span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item @@article-active ">
+                                    <a class="nav-link" href="/components/articles.php/?language=hi"><?php echo $header[$language][1]; ?></a>
+                                </li>
+                                <li class="nav-item dropdown @@dropdown-active ">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
+                                        <?php echo $header[$language][2]; ?> <span class="fa fa-angle-down"></span>
+                                        <span class="fa fa-angle-up"></span>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
+                                        <a class="dropdown-item @@blog-single-active" href="blog-single.html">Single post</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown @@pages-dropdown-active">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
+                                        <?php echo $header[$language][3]; ?> <span class="fa fa-angle-down"></span>
+                                        <span class="fa fa-angle-up"></span>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
+                                        <a class="dropdown-item @@error-active" href="error.html">404 Page</a>
+                                        <a class="dropdown-item @@login-active" href="/components/login">Login</a>
+                                        <a class="dropdown-item @@signup-active" href="/components/register">Signup</a>
+                                        <a class="dropdown-item @@search-active" href="search-results.html">Search Results</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item @@about-active">
+                                    <a class="nav-link" href="/components/about"><?php echo $header[$language][4]; ?></a>
+                                </li>
+                                <li class="nav-item @@contact-active">
+                                    <a class="nav-link" href="/components/contact-form"><?php echo $header[$language][5]; ?></a>
+                                </li>
+                                <!-- language select -->
+                                <li class="lang">
+                                    <select name="language" id="language" onchange="set_lang()">
+                                        <option value="en" <?php echo  $en_select; ?>>EN</option>
+                                        <option value="hi" <?php echo  $hi_select; ?>>HI</option>
+                                    </select>
+                                </li>
+                            </ul>
                     <?php
+                        }
                     }
                     ?>
 
@@ -280,7 +322,7 @@ if ((isset($_GET['language']) && $_GET['language'] == 'en') || (!isset($_GET['la
     <script type="text/javascript">
         function set_lang() {
             var language = $('#language').val();
-            window.location.href = 'http://blogsite.com/index.php/?language=' + language;
+            window.location.href = '/?language=' + language;
         }
     </script>
 
