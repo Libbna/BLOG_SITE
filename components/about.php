@@ -102,17 +102,9 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
     <?php
-    include("../layouts/subscribe.php");
-    include("../layouts/footer.php");
+        include("../layouts/subscribe.php");
+        include("../layouts/footer.php");
     ?>
 </body>
 

@@ -57,8 +57,6 @@ if (isset($message)) {
 
     <link rel="stylesheet" href="../assets/sass/utilities/main.css">
 
-
-
 </head>
 
 <body>
@@ -106,9 +104,7 @@ if (isset($message)) {
     </section>
     <?php include("../layouts/footer.php"); ?>
 
-
     <script src="/assets/js/app.js"></script>
-
 
 </body>
 
