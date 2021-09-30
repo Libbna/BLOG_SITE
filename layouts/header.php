@@ -1,10 +1,3 @@
-<?php
-$uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$uri_segments = explode('/', $uri_path);
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -134,7 +127,7 @@ $uri_segments = explode('/', $uri_path);
                                 </li>
                                 <li class="nav-item dropdown @@pages-dropdown-active">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
-                                        Pages<span class="fa fa-angle-down"></span>
+                                        Pages <span class="fa fa-angle-down"></span>
                                         <span class="fa fa-angle-up"></span>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -164,10 +157,10 @@ $uri_segments = explode('/', $uri_path);
                         ?>
                             <ul class="navbar-nav mx-auto" id="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/index"><?php echo $header[$language][0]; ?><span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/index?language=hi"><?php echo $header[$language][0]; ?><span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item @@article-active ">
-                                    <a class="nav-link" href="/components/articles.php/?language=hi"><?php echo $header[$language][1]; ?></a>
+                                    <a class="nav-link" href="/components/articles?language=hi"><?php echo $header[$language][1]; ?></a>
                                 </li>
                                 <li class="nav-item dropdown @@dropdown-active ">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
@@ -322,7 +315,7 @@ $uri_segments = explode('/', $uri_path);
     <script type="text/javascript">
         function set_lang() {
             var language = $('#language').val();
-            window.location.href = '/?language=' + language;
+            window.location.href = '?language=' + language;
         }
     </script>
 
