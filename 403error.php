@@ -11,7 +11,6 @@ if ($error == 403) {
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,10 +79,6 @@ if ($error == 403) {
             </div>
         </div>
     </section>
-
-
-    <h1></h1>
-    <h3></h3>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

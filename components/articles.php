@@ -131,9 +131,7 @@ include("../language.php");
     </section>
 
 
-    <?php
-    include("../layouts/footer.php");
-    ?>
+    <?php include("../layouts/footer.php"); ?>
 </body>
 
 </html>
