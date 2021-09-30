@@ -1,5 +1,7 @@
 <?php
 require_once('../includes/config.php');
+include("../language.php");
+
 
 //if user is not logged in
 if ($user->is_logged_in()) {

@@ -115,6 +115,12 @@ if (isset($error)) {
     <script>
         CKEDITOR.replace('content');
     </script>
+    <script type="text/javascript">
+        function set_lang() {
+            var language = $('#language').val();
+            window.location.href = '?language=' + language;
+        }
+    </script>
 
 </body>
 

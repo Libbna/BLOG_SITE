@@ -1,7 +1,7 @@
 <?php
 $header = array(
-    'en' => array('Home', 'Article', 'Blog', 'Pages', 'About', 'Contact', 'Quick Links', 'Login'),
-    'hi' => array('होम', 'आर्टइकल्', 'ब्लोग्', 'पगेस्', 'आबउट', 'कौन्टैकट', 'त्वरित सम्पक', 'लॉग इन करें'),
+    'en' => array('Home', 'Article', 'Blog', 'Pages', 'About', 'Contact', 'Quick Links', 'Login', 'Logout', 'Dashboard'),
+    'hi' => array('होम', 'आर्टइकल्', 'ब्लोग्', 'पगेस्', 'आबउट', 'कौन्टैकट', 'त्वरित सम्पक', 'लॉग इन करें', 'लॉग आउट', 'डैशबोर्ड'),
 );
 $footer_about = array(
     'en' => array('About Us', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur hic odio voluptatem tenetur consequatur.Lorem ipsum dolor sit amet consectetur adipisicing elit.'),
