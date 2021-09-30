@@ -1,4 +1,7 @@
 <?php
+
+use JetBrains\PhpStorm\Language;
+
 require_once('../includes/config.php');
 include("../language.php");
 
@@ -84,39 +87,70 @@ if ($user->is_logged_in()) {
         <?php
 
         try {
-            $stmt = $db->query('SELECT articleID, articleTitle, articleDesc, articleAuthor, profile_img FROM article ORDER BY articleID DESC');
-            while ($row = $stmt->fetch()) {
+            if (isset($language) && ($language == 'en')) {
+                $stmt = $db->query('SELECT articleID, articleTitle, articleDesc, articleAuthor, profile_img FROM article ORDER BY articleID DESC');
+                while ($row = $stmt->fetch()) {
         ?>
-                <tbody>
-                    <tr>
-                        <th scope="row"><?php echo $row['articleTitle']; ?></th>
-                        <td><?php echo $row['articleDesc']; ?></td>
-                        <td><?php echo $row['articleAuthor'] ?></td>
-                        <td><img src="<?php echo $row['profile_img'] ?>" alt="" height="100px" width="100px"></td>
-                        <td>
-                            <div id="mybtn" class="btn-group btn-group-md">
-                                <?php
-                                echo '<a type="button" class="btn btn-success" id="edit" href="../edit-blog-article/' . $row['articleID'] . '"><i class="fa fa-edit"></i></a>';
-                                ?>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><?php echo $row['articleTitle']; ?></th>
+                            <td><?php echo $row['articleDesc']; ?></td>
+                            <td><?php echo $row['articleAuthor'] ?></td>
+                            <td><img src="<?php echo $row['profile_img'] ?>" alt="" height="100px" width="100px"></td>
+                            <td>
+                                <div id="mybtn" class="btn-group btn-group-md">
+                                    <?php
+                                    echo '<a type="button" class="btn btn-success" id="edit" href="../edit-blog-article/' . $row['articleID'] . '"><i class="fa fa-edit"></i></a>';
+                                    ?>
 
-                                </a>
-                                <a id="trash" type="button" class="btn btn-danger" role="button" href="javascript:delpost('<?php echo $row['articleID']; ?>','<?php echo $row['articleTitle']; ?>')">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                                <?php
-                                echo '<a type="button" class="btn btn-info" href="../view-article/' . $row['articleID'] . '"><i class="fa fa-eye"></i></a>';
-                                ?>
+                                    </a>
+                                    <a id="trash" type="button" class="btn btn-danger" role="button" href="javascript:delpost('<?php echo $row['articleID']; ?>','<?php echo $row['articleTitle']; ?>')">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                    <?php
+                                    echo '<a type="button" class="btn btn-info" href="../view-article/' . $row['articleID'] . '"><i class="fa fa-eye"></i></a>';
+                                    ?>
 
-                            </div>
-                        </td>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php
+                }
+            } else {
+                $stmt = $db->query('SELECT articleID, articleTitle_hi, articleDesc_hi, articleAuthor, profile_img FROM article ORDER BY articleID DESC');
+                while ($row = $stmt->fetch()) {
+                    ?>
+                        <tr>
+                            <th scope="row"><?php echo $row['articleTitle_hi']; ?></th>
+                            <td><?php echo $row['articleDesc_hi']; ?></td>
+                            <td><?php echo $row['articleAuthor'] ?></td>
+                            <td><img src="<?php echo $row['profile_img'] ?>" alt="" height="100px" width="100px"></td>
+                            <td>
+                                <div id="mybtn" class="btn-group btn-group-md">
+                                    <?php
+                                    echo '<a type="button" class="btn btn-success" id="edit" href="../edit-blog-article/' . $row['articleID'] . '"><i class="fa fa-edit"></i></a>';
+                                    ?>
 
-                    </tr>
+                                    </a>
+                                    <a id="trash" type="button" class="btn btn-danger" role="button" href="javascript:delpost('<?php echo $row['articleID']; ?>','<?php echo $row['articleTitle']; ?>')">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                    <?php
+                                    echo '<a type="button" class="btn btn-info" href="../view-article/' . $row['articleID'] . '"><i class="fa fa-eye"></i></a>';
+                                    ?>
 
-                </tbody>
+                                </div>
+                            </td>
+                        </tr>
+
+                    <?php
+                }
+                    ?>
+                    </tbody>
 
 
 
-        <?php
+            <?php
                 echo '</tr>';
                 echo '</tbody>';
             }
@@ -124,13 +158,26 @@ if ($user->is_logged_in()) {
             echo $e->getMessage();
         }
 
-        ?>
+            ?>
     </table>
+    <?php
+    if (isset($language) && ($language == 'en')) {
+    ?>
+        <div class="add_view_btn ml-4">
+            <a id="add" class="btn btn-success" role="button" href="../add-blog-article">Add Article</a>
+            <a id="add_banner" class="btn btn-primary" role="button" href="add_view-banner">Add / View Banner</a>
+        </div>
+    <?php
+    } else {
+    ?>
+        <div class="add_view_btn ml-4">
+            <a id="add" class="btn btn-success" role="button" href="../add-blog-article"><?php echo $terms[$language][2]; ?></a>
+            <a id="add_banner" class="btn btn-primary" role="button" href="add_view-banner"><?php echo $terms[$language][3]; ?></a>
+        </div>
+    <?php
+    }
+    ?>
 
-    <div class="add_view_btn ml-4">
-        <a id="add" class="btn btn-success" role="button" href="../add-blog-article">Add Article</a>
-        <a id="add_banner" class="btn btn-primary" role="button" href="add_view-banner">Add / View Banner</a>
-    </div>
 
     <?php include("../layouts/footer.php"); ?>
 

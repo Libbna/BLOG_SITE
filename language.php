@@ -22,6 +22,6 @@ $footer_health = array(
 );
 
 $terms = array(
-    'en' => array('Leave Comment', 'Read More'),
-    'hi' => array('टिप्पणी दें', 'अधिक पढ़ें'),
+    'en' => array('Leave Comment', 'Read More', "Add Article", "Add / View Banner"),
+    'hi' => array('टिप्पणी दें', 'अधिक पढ़ें', 'लेख जोड़ें', 'बैनर जोड़ें / देखें'),
 );
