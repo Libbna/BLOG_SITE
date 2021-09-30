@@ -16,7 +16,7 @@ include("../language.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Articles</title>
-    
+
     <!-- font awesome icon  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- boostrap -->
@@ -106,12 +106,12 @@ include("../language.php");
                                                     <p><?php echo $row['articleDesc_hi']; ?></p>
                                                     <?php
                                                     ?>
-                                                    <?php echo '<a href="../blog-single/' . $row['articleID'] . '" class="read-button mt-4 d-inline-block">Read more <span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>'; ?>
+                                                    <?php echo '<a href="../blog-single/' . $row['articleID'] . '" class="read-button mt-4 d-inline-block">' . $terms[$language][1] . '<span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>'; ?>
 
                                                 </div>
                                                 <div class="col-md-3 article-right order-md-2 order-1 pl-md-0">
                                                     <p><span class="fa fa-clock-o" aria-hidden="true"></span> 4 min read</p>
-                                                    <a href="./comment.php"><span class="fa fa-commenting-o" aria-hidden="true"></span> Leave comment</a>
+                                                    <a href="./comment.php"><span class="fa fa-commenting-o" aria-hidden="true"></span><?php echo $terms[$language][0]; ?></a>
                                                 </div>
                                             </div>
                                         </div>

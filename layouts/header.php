@@ -108,6 +108,7 @@
                     } else {
                         if (isset($language) && ($language == 'en')) {
                         ?>
+                            <!-- NavBar for English Language -->
                             <ul class="navbar-nav mx-auto" id="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="/index">Home<span class="sr-only">(current)</span></a>
@@ -155,6 +156,7 @@
                         <?php
                         } else {
                         ?>
+                            <!-- NavBar for Hindi Language -->
                             <ul class="navbar-nav mx-auto" id="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="/index?language=hi"><?php echo $header[$language][0]; ?><span class="sr-only">(current)</span></a>
@@ -310,7 +312,6 @@
             });
         });
     </script>
-
     <!-- for website translation -->
     <script type="text/javascript">
         function set_lang() {
@@ -318,6 +319,7 @@
             window.location.href = '?language=' + language;
         }
     </script>
+
 
     <script src=" ../assets/js/jquery.js"></script>
 </body>
