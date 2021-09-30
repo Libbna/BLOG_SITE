@@ -121,9 +121,7 @@ if (!$user->is_logged_in()) {
     </section>
 
     <?php include("../layouts/footer.php"); ?>
-
-
-
+    
 </body>
 
 </html>

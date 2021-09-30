@@ -91,9 +91,7 @@ require_once("../includes/config.php");
     </section>
 
 
-    <?php
-    include("../layouts/footer.php");
-    ?>
+    <?php include("../layouts/footer.php"); ?>
 </body>
 
 </html>
