@@ -1,6 +1,5 @@
 <?php
 $error = $_SERVER['REDIRECT_STATUS'];
-
 $err_title = "";
 $err_msg = "";
 
