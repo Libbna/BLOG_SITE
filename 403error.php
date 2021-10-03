@@ -1,6 +1,5 @@
 <?php
 $error = 403;
-
 $err_title = "";
 $err_msg = "";
 
