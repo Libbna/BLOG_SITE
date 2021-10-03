@@ -2175,8 +2175,27 @@ footer .sub-two-right ul li a {
   margin-left: 8rem;
 }
 
+.banner-gallery .recorder-gallery {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .banner-gallery .recorder-gallery img {
   padding-bottom: 2rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.banner-gallery .recorder-gallery img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }
 
 .banner-gallery .recorder-gallery #trash {
