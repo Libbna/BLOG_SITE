@@ -25,3 +25,19 @@ $terms = array(
     'en' => array('Leave Comment', 'Read More', "Add Article", "Add / View Banner"),
     'hi' => array('टिप्पणी दें', 'अधिक पढ़ें', 'लेख जोड़ें', 'बैनर जोड़ें / देखें'),
 );
+
+// array(
+//     "Home" => (
+//         "hi" => "होम",
+//     ), 
+// );
+
+
+// $curr_lang = array(
+//     "Home" => {
+//         "hi" => "होम",
+//     },
+//     "Article" => {
+//         "hi" => "आर्टइकल्",
+//     },
+// );

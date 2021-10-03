@@ -28,7 +28,7 @@ $result = $db->query("SELECT banner_path FROM banners");
 
 <body>
     <section class="w3l-main-slider position-relative" id="home">
-        <div class="companies20-content">
+        <div class="companies20-content fade-in">
             <div class="owl-one owl-carousel owl-theme">
                 <?php
                 $i = 0;
@@ -98,8 +98,13 @@ $result = $db->query("SELECT banner_path FROM banners");
                         nav: true
                     }
                 }
-            })
-        })
+            });
+        });
+
+        // fade out banner on scroll
+        $(window).scroll(function() {
+            $(".fade-in").css("opacity", 1 - $(window).scrollTop() / 250);
+        });
     </script>
 
     <script src="../assets/js/jquery.js"></script>
