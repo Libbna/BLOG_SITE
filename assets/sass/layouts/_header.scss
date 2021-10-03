@@ -19,8 +19,8 @@ header {
         }
            .navbar-nav {
             align-items: center;
-           
-            .nav-link {
+            
+              .nav-link {
                 text-transform: capitalize;
                 transition: $trans-all-ease05;
                 padding: 10px 0 10px;
@@ -29,13 +29,15 @@ header {
                 color: $white;
                 opacity: 0.8;
 
-                
-                &:hover {
-                    color: $white;
-                    opacity: 1;
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 2px;
+                    background: $white;
+                    transition: width .3s;
                 }
-                
-
+                  
                 &:hover {
                     .fa-angle-down {
                         display: none;
@@ -43,7 +45,12 @@ header {
                     .fa-angle-up {
                         display: inline-block;
                     }
-                }
+                    color: $white;
+                    opacity: 1;
+                        &::after {
+                        width: 100%;
+                        }
+               }
                 
             }
             .nav-item {
@@ -64,6 +71,12 @@ header {
                     &.active {
                         color: #fff;
                         opacity: 1;
+                    }
+                }
+
+                #navbarDropdown {
+                    &::after {
+                        display: none;
                     }
                 }
                
@@ -194,7 +207,6 @@ header {
                         text-align: center;        
                     }
 
-                                transition: $trans-all-05;
                     &:hover {
                         .d1 {
                             width: 12px;

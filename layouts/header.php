@@ -356,9 +356,9 @@
                     <!-- /search popup -->
                     <a href="#domain" class="domain" data-toggle="modal" data-target="#DomainModal">
                         <div class="hamburger1">
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                            <div class="d1"></div>
+                            <div class="d2"></div>
+                            <div class="d3"></div>
                         </div>
                     </a>
 
