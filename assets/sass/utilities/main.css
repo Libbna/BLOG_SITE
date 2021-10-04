@@ -2282,4 +2282,29 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-family: Garamond, serif;
 }
+
+#myBtn {
+  display: none;
+  position: fixed;
+  right: 0.8rem;
+  top: 36rem;
+  z-index: 99;
+  width: 3rem;
+  font-size: 1.2rem;
+  border: 2px solid #383434;
+  background: #383434;
+  border-radius: 50%;
+  color: #fff;
+  padding: 10px;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+#myBtn:hover {
+  color: #383434;
+  background: #fff;
+  border: 2px solid #383434;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
 /*# sourceMappingURL=main.css.map */
