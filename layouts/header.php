@@ -401,7 +401,6 @@
                                     </div>
                                 </a>
 
-                                <!--//search-right-->
                             </div>
 
                     <?php
@@ -409,7 +408,7 @@
                     }
                     ?>
                 </div>
-
+        </div>
         </div>
         <div class="mobile-position">
             <nav class="navigation">
