@@ -34,7 +34,7 @@ include("../layouts/header.php");
                             <div class="slider-info">
                                 <div class="img-circle">
                                     <a href="#">
-                                        <img src="<?php echo $row['profile_img']; ?>" alt="">
+                                        <img src="<?php echo $row['profile_img']; ?>" alt="profile-picture">
                                     </a>
                                 </div>
                                 <div class="message">
