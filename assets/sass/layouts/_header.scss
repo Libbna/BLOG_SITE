@@ -5,7 +5,15 @@ header {
     transition: all 0.4s ease 0s;
     display: grid;
     align-items: center;
-    
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    .fade-in {
+        opacity: 1;
+    }
 }
 .navbar {
     .navbar-brand {  

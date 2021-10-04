@@ -21,7 +21,7 @@
 <body>
     <!-- Domain Modal -->
 
-    <header id="site-header">
+    <header id="site-header" class="fade-in">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark stroke p-0">
                 <h1>
@@ -364,7 +364,9 @@
 
                     <!--//search-right-->
                 </div>
+            </nav>
         </div>
+
         <div class="mobile-position">
             <nav class="navigation">
                 <div class="theme-switch-wrapper">
@@ -378,8 +380,7 @@
                 </div>
             </nav>
         </div>
-        </nav>
-        </div>
+
     </header>
     <?php
     include('domainModal.php');
@@ -430,6 +431,11 @@
             var language = $('#language').val();
             window.location.href = '?language=' + language;
         }
+
+        // fade out banner on scroll
+        $(window).scroll(function() {
+            $(".fade-in").css("opacity", 1 - $(window).scrollTop() / 250);
+        });
     </script>
 
 
