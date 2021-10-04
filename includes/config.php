@@ -1,7 +1,7 @@
 <?php
 require 'db.php';
 
-$db = new PDO("mysql:host=" . DBHOST . ";dbname=" . DBNAME, DBUSER, DBPASS);
+$db = new PDO("mysql:host=" . $database['host'] . ";dbname=" . $database['dbName'], $database['user'], $database['password']);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 date_default_timezone_set('Asia/Kolkata');
