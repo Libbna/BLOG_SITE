@@ -2,7 +2,6 @@
 
 .w3l-breadcrumb {
         @include w3l-breadcrumb();
-        margin-top: 5rem;
     .sub-title {
         @include breadcrumb-subtitle();
     }

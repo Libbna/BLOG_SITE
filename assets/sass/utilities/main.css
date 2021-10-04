@@ -1127,7 +1127,6 @@ footer .sub-two-right ul li a {
 .w3l-breadcrumb {
   border-radius: 0;
   background-color: #f2f0f3;
-  margin-top: 5rem;
 }
 
 .w3l-breadcrumb .sub-title {
@@ -1268,10 +1267,6 @@ footer .sub-two-right ul li a {
   color: #f76a8c;
   width: 20px;
   display: inline-block;
-}
-
-.w3l-main-slider {
-  margin-top: 5rem;
 }
 
 .w3l-main-slider .banner-view {
