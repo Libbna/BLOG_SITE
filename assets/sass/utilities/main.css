@@ -37,6 +37,16 @@ header {
   opacity: 0.8;
 }
 
+.navbar .navbar-nav .nav-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+}
+
 .navbar .navbar-nav .nav-link:hover {
   color: #ffffff;
   opacity: 1;
@@ -48,6 +58,10 @@ header {
 
 .navbar .navbar-nav .nav-link:hover .fa-angle-up {
   display: inline-block;
+}
+
+.navbar .navbar-nav .nav-link:hover::after {
+  width: 100%;
 }
 
 .navbar .navbar-nav .nav-item {
@@ -70,6 +84,10 @@ header {
 .navbar .navbar-nav .nav-item a.nav-link.active {
   color: #fff;
   opacity: 1;
+}
+
+.navbar .navbar-nav .nav-item #navbarDropdown::after {
+  display: none;
 }
 
 .navbar .search-right {
@@ -196,8 +214,6 @@ header {
   float: left;
   cursor: pointer;
   background: transparent;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
 }
 
 .navbar .search-right .domain .hamburger1 div {
@@ -1293,6 +1309,10 @@ footer .sub-two-right ul li a {
   transition: 0.3s ease-out;
 }
 
+.w3l-main-slider .fade-in {
+  opacity: 1;
+}
+
 .author-date .circle {
   width: 45px;
   height: 45px;
@@ -2155,8 +2175,27 @@ footer .sub-two-right ul li a {
   margin-left: 8rem;
 }
 
+.banner-gallery .recorder-gallery {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .banner-gallery .recorder-gallery img {
   padding-bottom: 2rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.banner-gallery .recorder-gallery img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }
 
 .banner-gallery .recorder-gallery #trash {

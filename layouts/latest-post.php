@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,14 +15,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- main.css -->
     <link rel="stylesheet" href="../assets/sass/utilities/main.css">
-
-
 </head>
 
 <body>
     <!-- Latest-Post Section -->
     <div style="margin: 8px auto; display: block; text-align:center;"></div>
-
     <section class="w3l-latest-posts py-5">
         <div class="container pt-lg-3">
             <div class="header-section text-center mb-md-5 mb-4">
@@ -168,29 +164,6 @@
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

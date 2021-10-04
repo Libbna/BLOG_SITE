@@ -1,9 +1,6 @@
-<?php
-require_once('../includes/config.php');
-?>
+<?php require_once('../includes/config.php'); ?>
 
 <?php
-
 
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];

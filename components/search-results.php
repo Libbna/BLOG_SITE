@@ -1,4 +1,5 @@
 <?php
+include("../language.php");
 require_once("../includes/config.php");
 
 $stmt = $db->query('SELECT * FROM article');
@@ -13,9 +14,8 @@ include("../layouts/header.php");
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
 <link rel="stylesheet" href="../assets/sass/utilities/main.css">
-
+<script src="../assets/js/app.js"></script>
 
 <div id="self-space"></div>
 <section class="auhtors1 py-5">

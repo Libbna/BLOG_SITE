@@ -72,7 +72,7 @@ if (!$user->is_logged_in()) {
                 while ($row = $result->fetch()) {
                     $img = "../assets/images/resized_" . $row['banner_path'];
                 ?>
-                    <img class="draggable-item" src="<?= $img; ?>" alt="image">
+                    <img class="draggable-item img-fluid" src="<?= $img; ?>" alt="image">
 
                     <a id="trash" type="button" class="btn btn-danger" role="button" href="javascript:delimg('<?php echo $row['banner_id']; ?>','<?php echo $img; ?>')">
                         <i class="fa fa-trash"></i>

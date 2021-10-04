@@ -1,6 +1,5 @@
 
 .w3l-main-slider {
-    
     .banner-view {
             background-size: cover;
             height: 480px;
@@ -24,6 +23,9 @@
     }
     .blog_post_title {
         @include blog-post-title();
+    }
+    .fade-in {
+        opacity: 1;
     }
 }
 .author-date {

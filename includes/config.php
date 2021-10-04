@@ -125,4 +125,18 @@ if (isset($_GET['delimg'])) {
     exit();
 }
 
+// translate
+
+$en_select = '';
+$hi_select = '';
+$language = '';
+if ((isset($_GET['language']) && $_GET['language'] == 'en') || (!isset($_GET['language']))) {
+    $en_select = 'selected';
+    $language = 'en';
+} else {
+    $hi_select = 'selected';
+    $language = 'hi';
+}
+
+
 $user = new User($db);
