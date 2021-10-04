@@ -21,7 +21,7 @@
 <body>
     <!-- Domain Modal -->
 
-    <header id="site-header" class="fade-in">
+    <header id="site-header">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark stroke p-0">
                 <h1>
@@ -358,15 +358,59 @@
                                     </select>
                                 </li>
                             </ul>
+                            <!--/search-right-->
+                            <div class="search-right">
+                                <a href="#search" class="btn btn-light theme-button mr-lg-3 mt-lg-0 mt-4" title="search"><span class="fa fa-search" aria-hidden="true"></span> Topics</a>
+                                <!-- search popup -->
+                                <div id="search" class="pop-overlay">
+                                    <div class="popup">
+                                        <form action="../components/search-results" method="GET" class="search-box">
+                                            <input type="search" placeholder="Search your Keyword" name="search" required="required" autofocus="">
+                                            <button type="search" name="submit-search" class="btn"><span class="fa fa-search" aria-hidden="true"></span></button>
+                                        </form>
+                                        <div class="browse-items">
+                                            <h3 class="hny-title two mt-md-5 mt-4">Browse all topics:</h3>
+                                            <ul class="search-items">
+                                                <li><a href="blog.html">Design Patterns</a></li>
+                                                <li><a href="blog.html">Performance</a></li>
+                                                <li><a href="blog.html">Photoshop</a></li>
+                                                <li><a href="blog.html">User Experience</a></li>
+                                                <li><a href="blog.html">Typography</a></li>
+                                                <li><a href="blog.html">E-commerce</a></li>
+                                                <li><a href="blog.html">HTML</a></li>
+                                                <li><a href="blog.html">Illustration</a></li>
+                                                <li><a href="blog.html">Design Patterns</a></li>
+                                                <li><a href="blog.html">Performance</a></li>
+                                                <li><a href="blog.html">Photoshop</a></li>
+                                                <li><a href="blog.html">User Experience</a></li>
+                                                <li><a href="blog.html">Typography</a></li>
+                                                <li><a href="blog.html">E-commerce</a></li>
+                                                <li><a href="blog.html">HTML</a></li>
+                                                <li><a href="blog.html">Illustration</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <a class="close" href="#close">×</a>
+                                </div>
+                                <!-- /search popup -->
+                                <a href="#domain" class="domain" data-toggle="modal" data-target="#DomainModal">
+                                    <div class="hamburger1">
+                                        <div class="d1"></div>
+                                        <div class="d2"></div>
+                                        <div class="d3"></div>
+                                    </div>
+                                </a>
+
+                                <!--//search-right-->
+                            </div>
 
                     <?php
                         }
                     }
                     ?>
                 </div>
-            </nav>
-        </div>
 
+        </div>
         <div class="mobile-position">
             <nav class="navigation">
                 <div class="theme-switch-wrapper">
@@ -380,7 +424,8 @@
                 </div>
             </nav>
         </div>
-
+        </nav>
+        </div>
     </header>
     <?php
     include('domainModal.php');
@@ -431,11 +476,6 @@
             var language = $('#language').val();
             window.location.href = '?language=' + language;
         }
-
-        // fade out banner on scroll
-        $(window).scroll(function() {
-            $(".fade-in").css("opacity", 1 - $(window).scrollTop() / 250);
-        });
     </script>
 
 
