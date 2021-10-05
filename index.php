@@ -45,7 +45,7 @@ $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
                         <div class="post-content">
                             <ul class="author-date mb-4 d-flex align-items-center">
                                 <li class="circle-lg avatar">
-                                    <img src="assets/uploads/author4.jpg" alt="">
+                                    <img src="assets/uploads/author4.jpg" alt="author-image">
                                 </li>
                                 <li class="author-name">by <b>Daniel Roberto</b></li>
                                 <li><span class="fa fa-clock-o" aria-hidden="true"></span> Feb 16, 2020</li>
@@ -63,7 +63,7 @@ $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
                         <div class="post-content">
                             <ul class="author-date mb-4 d-flex align-items-center">
                                 <li class="circle-lg avatar">
-                                    <img src="assets/uploads/author5.jpg" alt="">
+                                    <img src="assets/uploads/author5.jpg" alt="author-image">
                                 </li>
                                 <li class="author-name">by <b>Marko Dugonji</b></li>
                                 <li><span class="fa fa-clock-o" aria-hidden="true"></span> Apr 21, 2020</li>
@@ -81,7 +81,7 @@ $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
                         <div class="post-content">
                             <ul class="author-date mb-4 d-flex align-items-center">
                                 <li class="circle-lg avatar">
-                                    <img src="assets/uploads/author6.jpg" alt="">
+                                    <img src="assets/uploads/author6.jpg" alt="author-image">
                                 </li>
                                 <li class="author-name">by <b>Max Stoiber</b></li>
                                 <li><span class="fa fa-clock-o" aria-hidden="true"></span> Jun 08, 2020</li>
@@ -99,7 +99,7 @@ $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
                         <div class="post-content">
                             <ul class="author-date mb-4 d-flex align-items-center">
                                 <li class="circle-lg avatar">
-                                    <img src="assets/uploads/author7.jpg" alt="">
+                                    <img src="assets/uploads/author7.jpg" alt="author-image">
                                 </li>
                                 <li class="author-name">by <b>Dhony Abraham</b></li>
                                 <li><span class="fa fa-clock-o" aria-hidden="true"></span> Sep 14, 2020</li>
