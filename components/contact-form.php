@@ -1,3 +1,8 @@
+<?php
+require_once("../includes/config.php");
+include("../language.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -96,11 +101,6 @@
         </div>
 
     </section>
-
-
-
-
-
 
     <?php include("../layouts/footer.php"); ?>
 

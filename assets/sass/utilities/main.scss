@@ -13,12 +13,12 @@
 @import "../layouts/banner-index";
 @import "../layouts/_about-image-grid";
 @import "../layouts/subscribe";
-@import "../layouts/featured-news";
 @import "../layouts/login";
 @import "../layouts/register";
 @import "../layouts/contact-form";
 @import "../layouts/blog.single";
 @import "../layouts/about";
+@import "../layouts/add-viewBanner";
 
 
 
@@ -30,7 +30,7 @@ html,body
     margin: 0px;
     padding: 0px;
     padding-right: 0 !important;
-    overflow-x: hidden; 
+    // overflow-x: hidden; 
 }
 
 
@@ -100,6 +100,33 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
     
+}
+
+#topScrollBtn {
+    display: none;
+    position: fixed;
+    right: 0.8rem;
+    top:36rem;
+    z-index: 99;
+    width: 3rem;
+    font-size: 1.2rem;
+    border: 2px solid #383434;
+    background: #383434;
+    border-radius: 50%;
+    color: #fff;
+    padding: 10px;
+    transition: $transition-easein;
+
+    &:hover {
+        color: #383434;
+        background: #fff;
+        border: 2px solid #383434;
+
+        transition: $transition-easein;
+
+
+    
+    }
 }
 
 

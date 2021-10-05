@@ -32,24 +32,18 @@
 }
 .header-section {
     h3 {
-        color: $heading-color;
-        font-size: 46px;
-        line-height: 1;
-        font-weight: 700;
+        @include header_3();
     }
     p {
         color: #444;
-        font-size: 22px;
-        line-height: 32.5px;
-        font-weight: 300;
-        margin-top: 5px;
+        @include paragraph();
     }
 }
 .theme-button {
-    transition: 0.3s ease-out;
+    transition: $transition-easeout;
     display: inline-block;
     font-weight: 700;
-    font-size: 16px;
+    font-size: $fontSize16;
     margin: 0px;
 }
 .btn-primary {
@@ -57,7 +51,7 @@
     background-color: $primary-color;
     border-color: $primary-color;
     &:hover {
-        color: #fff;
+        color: $white;
         background-color: $primary-color;
         border-color: $primary-color;
     }

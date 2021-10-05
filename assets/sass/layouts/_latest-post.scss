@@ -2,13 +2,10 @@
 
 .w3l-latest-posts {
     background-color: $bg-color;
-}
+
 .header-section {
     h3 {
-        color: $heading-color;
-        font-size: 46px;
-        line-height: 1;
-        font-weight: 700;
+        @include header_3();
     }
 }
 .blog-article-post {
@@ -93,4 +90,5 @@
                 border-color: #dae0e5;
             }
     }
+}
 }

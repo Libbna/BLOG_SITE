@@ -7,8 +7,16 @@ RewriteEngine on
 ErrorDocument 404 /404error.php
 ErrorDocument 403 /403error.php
 
+#RewriteRule ^add-blog-article$ /403error.php [R=403]
+
 #redirects to blog-page with this applied condition
 RewriteRule ^blog-single/([a-zA-Z0-9-/]+)$ blog-single.php?id=$1 [NC,L]
+
+#redirects to edit-blog-article with this applied condition
+RewriteRule ^edit-blog-article/([a-zA-Z0-9-/]+)$ edit-blog-article.php?id=$1 [NC,L]
+
+#redirects to edit-blog-article with this applied condition
+RewriteRule ^view-article/([a-zA-Z0-9-/]+)$ view-article.php?id=$1 [NC,L]
 
 #rewrite condition that checks for requested file that should not a folder/directory
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -18,7 +26,6 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 
 #rewrite rule to ignore/remove the .php extension
 RewriteRule ^(.*)$ $1.php [NC,L]
-
 
 #Disable directory browsing 
 Options -Indexes

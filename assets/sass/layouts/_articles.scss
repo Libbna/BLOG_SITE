@@ -7,10 +7,10 @@
     }
     .header-section {
         h3 {
-            @include h3();
+            @include header_3();
         }
         p {
-            @include p();
+            @include paragraph();
         }
     }
 }

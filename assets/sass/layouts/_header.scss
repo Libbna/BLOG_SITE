@@ -1,5 +1,8 @@
 
 header {
+    position: sticky;
+    top: 0;
+    z-index: 99;
     background-color: $primary-color;
     padding: 15px 0;
     transition: all 0.4s ease 0s;
@@ -17,23 +20,47 @@ header {
         z-index: 1;
         font-weight: 700;
         }
-        .navbar-collapse {
-        .navbar-nav {
+           .navbar-nav {
             align-items: center;
-            .nav-item {
-                padding: 0 10px;
-                position: relative;
-                transition: all 0.5s ease;
             
-               .nav-link {
-                    text-transform: capitalize;
-                    transition: all 0.5s ease;
-                    padding: 10px 0 10px;
-                    font-size: 18px;
-                    font-weight: 700;
+              .nav-link {
+                text-transform: capitalize;
+                transition: $trans-all-ease05;
+                padding: 10px 0 10px;
+                font-size: 18px;
+                font-weight: 700;
+                color: $white;
+                opacity: 0.8;
 
-                    
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 2px;
+                    background: $white;
+                    transition: width .3s;
                 }
+                  
+                &:hover {
+                    .fa-angle-down {
+                        display: none;
+                    }
+                    .fa-angle-up {
+                        display: inline-block;
+                    }
+                    color: $white;
+                    opacity: 1;
+                        &::after {
+                        width: 100%;
+                        }
+               }
+                
+            }
+            .nav-item {
+                padding: 0 12px;
+                position: relative;
+                transition: $trans-all-ease05;
+
                 .caret-off::after {
                     display: none;
                 }
@@ -42,7 +69,22 @@ header {
                     font-size: 17px;
                     color: #444;
                 }
+
+                a.nav-link {
+                    &.active {
+                        color: #fff;
+                        opacity: 1;
+                    }
+                }
+
+                #navbarDropdown {
+                    &::after {
+                        display: none;
+                    }
+                }
+               
             }
+           
         }
         .search-right {
             display: flex;
@@ -86,8 +128,8 @@ header {
                             border: none;
                             background: #fff;
                             color: #292922;
-                            font-size: 16px;
-                            border-radius: 6px;
+                            font-size: $fontSize16;
+                            border-radius: $border-radius;
                             margin: 0;
                             text-align: left;
                             height: 60px;
@@ -107,11 +149,11 @@ header {
 
                     .browse-items {
                         h3 {
-                            color: #fff;
+                            @include header_3();
+                            color: $white;
                             margin-bottom: 26px;
                             text-align: center;
-                            text-decoration: underline;
-                            font-weight: 700;
+                            text-decoration: underline;                            
                         }
 
                         .search-items {
@@ -163,24 +205,23 @@ header {
                         width: 24px;
                         background: $bg-color;
                         margin: 5px 0px;
-                        transition: all 0.5s;
+                        transition: $trans-all-05;
                         border-radius: 0;
                         text-align: center;        
                     }
 
-                                transition: all 0.5s;
                     &:hover {
                         .d1 {
                             width: 12px;
-                            transition: all 0.5s;
+                            transition: $trans-all-05;
                         }
                         .d2 {
                             width: 20px;
-                            transition: all 0.5s;
+                            transition: $trans-all-05;
                         }
                         .d3 {
                             width: 30px;
-                            transition: all 0.5s;
+                            transition: $trans-all-05;
                         }
                     }
                 }
@@ -198,22 +239,25 @@ header {
             font-weight: 700;
             position: relative;
             right: 2rem;
-            box-shadow: 0px 5px 15px rgb(193 191 191 / 35%) ;
-        }
+            box-shadow: (193 191 191 / 35%) 0px 5px 15px rgb ;
+        
     }
 } 
 .navbar-dark {
+    .navbar-toggler {
+        transition: $transition-ease_in_out;
+    }
     .navbar-toggler-icon {
-        background-image: none !important;
+        background-image: none;
     }
 }
 .dropdown-toggle {
     &::after {
-        display: none !important;
+        display: none;
     }
 }
 
-// theme switcher
+// theme switcher --- dark & light mode
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
@@ -234,14 +278,20 @@ header {
     margin-left: 20px;
     margin-top: 3px;
 
-    .fa-sun {
+    span.fa-sun {
         display: none;
     }
-    .fa-moon {
+    span.fa-moon {
         display: block;
         color: $bg-color;
     }
 }
+
+.fa-angle-up {
+    display: none;
+}
+
+
 
 // media queries
 @media only screen and (max-width:991px) {
@@ -251,10 +301,12 @@ header {
         line-height: 34px;
     }
     .navbar-toggler {
+        padding: 0rem 0rem;
+        margin-left: 29.1rem;
         #cross {
             display: none;
         }
-        transition: transform 0.3s ease-in-out ;
+        transition: $transition-ease_in_out ;
     }
     .search-right {
         margin-left: 44%;
@@ -263,6 +315,31 @@ header {
             display: none;
         }
     }
+    .navbar-collapse {
+        animation-name: none;
+        float: left;
+        text-align: center;
+        width: 100%;
+        background: rgba(214, 86, 116, 0.7);
+        padding: 20px;
+        margin-top: 16px;
+        border-radius: 6px;
+    }
     
 }
 
+@media only screen and (min-width:768px) {
+    .navbar-toggler {
+        padding: 0rem 0rem;
+        margin-left: 29.2rem;
+    }
+}
+@media only screen and (max-width:320px) {
+    .navbar-toggler {
+        padding: 0rem 0rem;
+        margin-left: 4.4rem;;
+    }
+    .search-right {
+        margin-left: 5.2rem;
+    }
+}
