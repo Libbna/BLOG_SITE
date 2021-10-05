@@ -125,7 +125,7 @@ if (isset($_GET['delimg'])) {
     exit();
 }
 
-// translate
+// multilingual translation
 
 $en_select = '';
 $hi_select = '';
