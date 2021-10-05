@@ -1,22 +1,17 @@
 <?php
-require_once('./includes/config.php');
-
-$stmt = $db->prepare('SELECT * FROM article WHERE articleID = :articleID');
-$stmt->execute(array(':articleID' => $_GET['id']));
-$row = $stmt->fetch();
+    require_once('./includes/config.php');
+    $stmt = $db->prepare('SELECT * FROM article WHERE articleID = :articleID');
+    $stmt->execute(array(':articleID' => $_GET['id']));
+    $row = $stmt->fetch();
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <!-- font awesome icon  -->
     <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- boostrap -->
@@ -29,9 +24,6 @@ $row = $stmt->fetch();
     <?php include("./layouts/header.php"); ?>
     <section class="w3l-blog-single py-5">
         <div class="container py-lg-3">
-            <?php
-
-            ?>
             <div class="row">
                 <div class="col-lg-3 pr-lg-4 order-lg-1 order-2">
                     <div class="img-circle">
@@ -227,14 +219,12 @@ $row = $stmt->fetch();
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
     <?php
-    include("./layouts/comment.php");
-    include("./layouts/footer.php");
+        include("./layouts/comment.php");
+        include("./layouts/footer.php");
     ?>
 </body>
-
 </html>
