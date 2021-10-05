@@ -1,23 +1,17 @@
 <?php
-require_once("includes/config.php");
-
-include("language.php");
-
-
-$stmt = $db->prepare('SELECT * FROM article WHERE articleID = :articleID');
-$stmt->execute(array(':articleID' => $_GET['id']));
-$row = $stmt->fetch();
+    require_once('./includes/config.php');
+    $stmt = $db->prepare('SELECT * FROM article WHERE articleID = :articleID');
+    $stmt->execute(array(':articleID' => $_GET['id']));
+    $row = $stmt->fetch();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <!-- font awesome icon  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- boostrap -->
@@ -242,8 +236,8 @@ $row = $stmt->fetch();
                     </div>
     </section>
     <?php
-    include("./layouts/comment.php");
-    include("./layouts/footer.php");
+        include("./layouts/comment.php");
+        include("./layouts/footer.php");
     ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -253,5 +247,4 @@ $row = $stmt->fetch();
     <script src="../assets/js/jquery.js"></script>
 
 </body>
-
 </html>
