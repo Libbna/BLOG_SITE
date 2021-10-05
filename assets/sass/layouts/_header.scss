@@ -257,7 +257,7 @@ header {
     }
 }
 
-// theme switcher
+// theme switcher --- dark & light mode
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
@@ -278,10 +278,10 @@ header {
     margin-left: 20px;
     margin-top: 3px;
 
-    .fa-sun {
+    span.fa-sun {
         display: none;
     }
-    .fa-moon {
+    span.fa-moon {
         display: block;
         color: $bg-color;
     }

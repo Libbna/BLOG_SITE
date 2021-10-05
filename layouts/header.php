@@ -408,22 +408,20 @@
                     }
                     ?>
                 </div>
-        </div>
-        </div>
-        <div class="mobile-position">
-            <nav class="navigation">
-                <div class="theme-switch-wrapper">
-                    <label for="checkbox" class="theme-switch">
-                        <input type="checkbox" id="checkbox">
-                        <div class="mode-container">
-                            <span class="fa fa-sun"></span>
-                            <span class="fa fa-moon"></span>
+                <div class="mobile-position">
+                    <nav class="navigation">
+                        <div class="theme-switch-wrapper">
+                            <label for="checkbox" class="theme-switch">
+                                <input type="checkbox" id="checkbox">
+                                <div class="mode-container">
+                                    <span class="fa fa-sun"></span>
+                                    <span class="fa fa-moon"></span>
+                                </div>
+                            </label>
                         </div>
-                    </label>
+                    </nav>
                 </div>
             </nav>
-        </div>
-        </nav>
         </div>
     </header>
     <?php
