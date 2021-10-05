@@ -1,4 +1,8 @@
 header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 99;
   background-color: #f76a8c;
   padding: 15px 0;
   -webkit-transition: all 0.4s ease 0s;
@@ -2207,7 +2211,6 @@ html, body {
   margin: 0px;
   padding: 0px;
   padding-right: 0 !important;
-  overflow-x: hidden;
 }
 
 * {
@@ -2269,7 +2272,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Garamond, serif;
 }
 
-#myBtn {
+#topScrollBtn {
   display: none;
   position: fixed;
   right: 0.8rem;
@@ -2286,7 +2289,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s ease-in;
 }
 
-#myBtn:hover {
+#topScrollBtn:hover {
   color: #383434;
   background: #fff;
   border: 2px solid #383434;

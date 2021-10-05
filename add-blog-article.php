@@ -1,5 +1,6 @@
 <?php
 require_once('./includes/config.php');
+include("language.php");
 
 //if user is not logged in
 if (!$user->is_logged_in()) {
@@ -44,7 +45,7 @@ if (isset($_POST['submit'])) {
     if (!isset($error)) {
         try {
             $stmt = $db->query("INSERT INTO article (articleTitle, articleDesc, articleContent, articleAuthor, profile_img) VALUES ('$articleTitle', '$articleDesc', '$articleContent', '$articleAuthor', '$destinationFile')");
-            header('location:index.php?action=added');
+            header('location:./admin/index.php?action=added');
             exit;
         } catch (PDOException $e) {
             echo $e->getMessage();

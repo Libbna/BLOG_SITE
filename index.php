@@ -116,7 +116,7 @@ $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
         </div>
     </section>
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">
+    <button onclick="topFunction()" id="topScrollBtn" title="Go to top">
         <i class="fa fa-arrow-up"></i>
     </button>
 
@@ -148,7 +148,7 @@ $stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
     </script>
     <script>
         //Get the button
-        var mybutton = document.getElementById("myBtn");
+        var mybutton = document.getElementById("topScrollBtn");
 
         // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function() {
