@@ -24,7 +24,7 @@
                 <div class="blog-post d-flex flex-wrap align-content-between">
                     <div class="post-content">
                         <ul class="author-date mb-4 d-flex align-items-center">
-                            <li class="circle-lg avatar"><img src="assets/uploads/author8.jpg" alt=""></li>
+                            <li class="circle-lg avatar"><img src="assets/uploads/author8.jpg" alt="author-image"></li>
                             <li>by <b>Dhony Abraham</b></li>
                             <li><span class="fa fa-clock-o" aria-hidden="true"></span> Feb 16, 2020</li>
                         </ul>
@@ -40,7 +40,7 @@
                 <div class="blog-post d-flex flex-wrap align-content-between">
                     <div class="post-content">
                         <ul class="author-date mb-4 d-flex align-items-center">
-                            <li class="circle-lg avatar"><img src="assets/uploads/author9.jpg" alt=""></li>
+                            <li class="circle-lg avatar"><img src="assets/uploads/author9.jpg" alt="author-image"></li>
                             <li>by <b>Rhoda Byrd</b></li>
                             <li><span class="fa fa-clock-o" aria-hidden="true"></span> Apr 19, 2020</li>
                         </ul>
@@ -53,7 +53,7 @@
                 </div>
             </a>
             <div class="col-lg-6 img-one order-lg-4 order-3">
-                <a href="blog-single.html"><img src="assets/uploads/img3.jpg" alt=" " class="img-fluid"></a>
+                <a href="blog-single.html"><img src="assets/uploads/img3.jpg" alt="image" class="img-fluid"></a>
             </div>
         </div>
     </section>
