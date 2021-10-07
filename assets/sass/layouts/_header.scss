@@ -22,6 +22,10 @@ header {
         }
            .navbar-nav {
             align-items: center;
+            display: flex;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
             
               .nav-link {
                 text-transform: capitalize;
@@ -291,6 +295,10 @@ header {
     display: none;
 }
 
+.navbar-collapse {
+    flex-grow: 1;
+    align-items: center;
+}
 
 
 // media queries

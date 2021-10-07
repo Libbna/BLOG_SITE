@@ -1,3 +1,8 @@
+<?php
+require_once("../includes/config.php");
+include("../language.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -103,8 +108,8 @@
     </div>
 
     <?php
-        include("../layouts/subscribe.php");
-        include("../layouts/footer.php");
+    include("../layouts/subscribe.php");
+    include("../layouts/footer.php");
     ?>
 </body>
 

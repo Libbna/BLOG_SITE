@@ -47,7 +47,6 @@ include("../language.php");
         <div class="container py-lg-3">
             <?php
             try {
-                // if (isset($language) && ($language == "en")) {
                 $stmt = $db->query("SELECT * FROM article_lang WHERE lang_code = '$language' ORDER BY articleLang_id DESC");
                 while ($row = $stmt->fetch()) {
             ?>
@@ -86,8 +85,6 @@ include("../language.php");
                     </article>
             <?php
                 }
-                // } 
-
             } catch (PDOException $e) {
                 echo $e->getMessage();
             }
