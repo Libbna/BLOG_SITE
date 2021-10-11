@@ -1,7 +1,7 @@
 <?php
 include("language.php");
 
-require_once("includes/config.php");
+require_once("./includes/config.php");
 
 if (!$user->is_logged_in()) {
     $_SESSION['redirectURL'] = $_SERVER['REQUEST_URI'];
