@@ -34,7 +34,7 @@ include("../language.php");
         <div class="container">
             <h6 class="sub-title">Sub title</h6>
             <div class="header-section">
-                <h3>Articles</h3>
+                <h3><?php echo $header[$language][1] ?></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime optio nam id quibusdam laborum sunt?</p>
                 <a href="../add-blog-article" class="btn btn-primary theme-button">Add Article</a>
             </div>

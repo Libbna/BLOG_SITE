@@ -1,7 +1,4 @@
 <?php
-
-use JetBrains\PhpStorm\Language;
-
 require_once('../includes/config.php');
 include("../language.php");
 
