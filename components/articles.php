@@ -47,7 +47,7 @@ include("../language.php");
         <div class="container py-lg-3">
             <?php
             try {
-                $stmt = $db->query("SELECT * FROM custom_lang WHERE langCode = '$language' ORDER BY lang_id  DESC");
+                $stmt = $db->query("SELECT * FROM article WHERE langCode = '$language' ORDER BY lang_id  DESC");
                 while ($row = $stmt->fetch()) {
             ?>
                     <article class="mt-5">
