@@ -47,7 +47,7 @@ include("../language.php");
         <div class="container py-lg-3">
             <?php
             try {
-                $stmt = $db->query("SELECT * FROM article_lang WHERE lang_code = '$language' ORDER BY articleLang_id DESC");
+                $stmt = $db->query("SELECT * FROM article WHERE langCode = '$language' ORDER BY lang_id  DESC");
                 while ($row = $stmt->fetch()) {
             ?>
                     <article class="mt-5">
@@ -55,20 +55,20 @@ include("../language.php");
                             <div class="col-md-12">
                                 <div class="slider-info">
                                     <div class="img-circle">
-                                        <a href="blog-single.html"><img src="<?php echo $row['image']; ?>" class="img-fluid" alt="article image"></a>
+                                        <a href="blog-single.html"><img src="<?php echo $row['profileImage']; ?>" class="img-fluid" alt="article image"></a>
                                     </div>
                                     <div class="message">
                                         <ul class="blog-single-author-date d-flex align-items-center">
-                                            <!-- <li><a href="blog-single.html"><?php echo $row['articleAuthor'] ?></a></li> -->
+                                            <!-- <li><a href="blog-single.html"><?php echo $row['author'] ?></a></li> -->
                                             <li><span class="fa fa-clock-o" aria-hidden="true"></span> Apr 04, 2020</li>
                                         </ul>
-                                        <a class="author-book-title" href="blog-single.html"><?php echo $row['articleLang_title']; ?></a>
+                                        <a class="author-book-title" href="blog-single.html"><?php echo $row['langTitle']; ?></a>
                                         <div class="row">
                                             <div class="col-md-9 pr-md-5 order-md-1 order-2">
-                                                <p><?php echo $row['articleLang_desc']; ?></p>
+                                                <p><?php echo $row['langDesc']; ?></p>
                                                 <?php
                                                 ?>
-                                                <?php echo '<a href="../blog-single/' . $row['articleLang_id'] . '" class="read-button mt-4 d-inline-block">' . $terms[$language][1] . '<span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>'; ?>
+                                                <?php echo '<a href="../blog-single/' . $row['lang_id'] . '" class="read-button mt-4 d-inline-block">' . $terms[$language][1] . '<span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>'; ?>
 
                                             </div>
                                             <div class="col-md-3 article-right order-md-2 order-1 pl-md-0">

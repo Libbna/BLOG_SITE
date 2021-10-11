@@ -44,7 +44,9 @@ if (isset($_POST['submit'])) {
 
     if (!isset($error)) {
         try {
-            $stmt = $db->query("INSERT INTO article (articleTitle, articleDesc, articleContent, articleAuthor, profile_img) VALUES ('$articleTitle', '$articleDesc', '$articleContent', '$articleAuthor', '$destinationFile')");
+            // $stmt = $db->query("INSERT INTO article (articleTitle, articleDesc, articleContent, articleAuthor, profile_img) VALUES ('$articleTitle', '$articleDesc', '$articleContent', '$articleAuthor', '$destinationFile')");
+            $stmt = $db->query("INSERT INTO article (langCode, langTitle, langDesc, langContent, author, profileImage) VALUES ('$language', '$articleTitle', '$articleDesc', '$articleContent', '$articleAuthor', '$destinationFile')");
+
             header('location:./admin/index.php?action=added');
             exit;
         } catch (PDOException $e) {
@@ -90,18 +92,18 @@ if (isset($error)) {
                 <form action="" method="post" class="" enctype="multipart/form-data">
                     <div class="main-input">
                         <input type="text" name="articleTitle" class="contact-input" placeholder="Title" required="" autocomplete="off" value="<?php if (isset($error)) {
-                                                                                                                                                    echo $_POST['articleTitle'];
+                                                                                                                                                    echo $_POST['langTitle'];
                                                                                                                                                 } ?>">
                         <textarea class="contact-textarea contact-input" name="articleDesc" placeholder="Description" required="" value="<?php if (isset($error)) {
-                                                                                                                                                echo $_POST['articleDesc'];
+                                                                                                                                                echo $_POST['langDesc'];
                                                                                                                                             } ?>"></textarea>
                         <textarea class="contact-textarea contact-input" id="content" name="articleContent" placeholder="Content" required="" value="<?php if (isset($error)) {
-                                                                                                                                                            echo $_POST['articleContent'];
+                                                                                                                                                            echo $_POST['langContent'];
                                                                                                                                                         } ?>"></textarea>
                         <input type="text" name="articleAuthor" placeholder="Author" class="contact-input mt-3" required="" autocomplete="off" value="<?php if (isset($error)) {
                                                                                                                                                             echo $_POST['articleAuthor'];
                                                                                                                                                         } ?>">
-                        <input type="file" name="profile_img" class="contact-input" value="<?php echo $_POST['profile_img']; ?>">
+                        <input type="file" name="profile_img" class="contact-input" value="<?php echo $_POST['profileImage']; ?>">
 
                     </div>
                     <div class="text-right">
