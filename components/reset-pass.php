@@ -1,9 +1,14 @@
 <?php
-    require("../includes/config.php");
+require("../includes/config.php");
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +20,7 @@
 
     <link rel="stylesheet" href="../assets/sass/utilities/main.css">
 </head>
+
 <body>
     <?php include("../layouts/header.php"); ?>
     <?php
@@ -54,7 +60,7 @@
             $subject = "Password Recovery";
             $email_to = $email;
 
-            require '../PHPMailerAutoload.php';
+            require './phpMailer/vendor/autoload.php';
 
             $mail = new PHPMailer;
             $mail->isSMTP();                                      // Set mailer to use SMTP
@@ -106,4 +112,5 @@
     </section>
     <?php include("../layouts/footer.php"); ?>
 </body>
+
 </html>
