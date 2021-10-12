@@ -8,7 +8,7 @@ if (!$user->is_logged_in()) {
 }
 
 
-$stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
+$stmt = $db->query('SELECT * FROM article ORDER BY lang_id DESC');
 ?>
 
 <!DOCTYPE html>
