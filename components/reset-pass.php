@@ -60,7 +60,7 @@ use PHPMailer\PHPMailer\Exception;
             $subject = "Password Recovery";
             $email_to = $email;
 
-            require './phpMailer/vendor/autoload.php';
+            require 'vendor/autoload.php';
 
             $mail = new PHPMailer;
             $mail->isSMTP();                                      // Set mailer to use SMTP

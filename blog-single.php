@@ -1,12 +1,13 @@
 <?php
-    require_once('./includes/config.php');
-    $stmt = $db->prepare('SELECT * FROM article WHERE articleID = :articleID');
-    $stmt->execute(array(':articleID' => $_GET['id']));
-    $row = $stmt->fetch();
+require_once('./includes/config.php');
+$stmt = $db->prepare('SELECT * FROM article WHERE lang_id = :lang_id');
+$stmt->execute(array(':lang_id' => $_GET['id']));
+$row = $stmt->fetch();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +34,7 @@
                 <div class="col-lg-3 pr-lg-4 order-lg-1 order-2">
                     <div class="img-circle">
                         <a href="author.php">
-                            <img src="<?php echo $row['profile_img']; ?>" class="img-fliud" alt="author-img">
+                            <img src="<?php echo $row['profileImage']; ?>" class="img-fliud" alt="author-img">
                         </a>
                     </div>
                     <h4 class="about-title"><?php echo $row['articleAuthor']; ?></h4>
@@ -236,8 +237,8 @@
                     </div>
     </section>
     <?php
-        include("./layouts/comment.php");
-        include("./layouts/footer.php");
+    include("./layouts/comment.php");
+    include("./layouts/footer.php");
     ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -247,4 +248,5 @@
     <script src="../assets/js/jquery.js"></script>
 
 </body>
+
 </html>

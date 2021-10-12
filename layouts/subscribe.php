@@ -35,7 +35,7 @@ include("./language.php");
 
         $sql = $db->query("INSERT INTO subscribers (semail) VALUES ('$email')");
 
-        require './phpMailer/vendor/autoload.php';
+        require 'vendor/autoload.php';
 
         $mail = new PHPMailer;
 
