@@ -28,12 +28,6 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -1374,11 +1368,11 @@ footer .sub-two-right ul li a {
   color: #f32154;
 }
 
-.owl-one .owl-nav {
+.owl-carousel .owl-nav {
   display: none;
 }
 
-.owl-one .owl-dots {
+.owl-carousel .owl-dots {
   margin-top: 0px;
   bottom: 25px;
   position: absolute;
@@ -1386,12 +1380,12 @@ footer .sub-two-right ul li a {
   right: 0;
 }
 
-.owl-one .owl-dots .owl-dot {
+.owl-carousel .owl-dots .owl-dot {
   background: transparent;
   padding: 0;
 }
 
-.owl-one .owl-dots .owl-dot span {
+.owl-carousel .owl-dots .owl-dot span {
   width: 40px;
   height: 3px;
   margin: 5px 5px;
@@ -1404,7 +1398,7 @@ footer .sub-two-right ul li a {
   position: relative;
 }
 
-.owl-one .owl-dots .owl-dot span:hover, .owl-one .owl-dots .owl-dot span:active {
+.owl-carousel .owl-dots .owl-dot span:hover, .owl-carousel .owl-dots .owl-dot span:active {
   background: #f76a8c;
 }
 

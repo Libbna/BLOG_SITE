@@ -1,6 +1,6 @@
 <?php
-require_once("../includes/config.php");
-include("../language.php");
+require_once("./includes/config.php");
+include("./language.php");
 
 ?>
 
@@ -23,13 +23,19 @@ include("../language.php");
 <body>
 
     <?php
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
+
     if (isset($_GET['subscribe'])) {
 
         $email = $_GET['email'];
 
         $sql = $db->query("INSERT INTO subscribers (semail) VALUES ('$email')");
 
-        require 'PHPMailerAutoload.php';
+        require 'vendor/autoload.php';
 
         $mail = new PHPMailer;
 

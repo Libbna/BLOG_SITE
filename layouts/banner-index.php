@@ -1,5 +1,5 @@
 <?php
-require_once("includes/config.php");
+require_once("./includes/config.php");
 
 $result = $db->query("SELECT banner_path FROM banners");
 
@@ -15,6 +15,7 @@ $result = $db->query("SELECT banner_path FROM banners");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- main css -->
@@ -28,7 +29,7 @@ $result = $db->query("SELECT banner_path FROM banners");
 <body>
     <section class="w3l-main-slider position-relative" id="home">
         <div class="companies20-content fade-in">
-            <div class="owl-one owl-carousel owl-theme">
+            <div class="owl-carousel owl-theme">
                 <?php
                 $i = 0;
                 foreach ($result as $row) {
@@ -70,12 +71,12 @@ $result = $db->query("SELECT banner_path FROM banners");
 
     <script>
         $(document).ready(function() {
-            $('.owl-one').owlCarousel({
+            $('.owl-carousel').owlCarousel({
                 loop: true,
                 margin: 0,
                 nav: false,
                 responsiveClass: true,
-                autoplay: false,
+                autoplay: true,
                 autoplayTimeout: 5000,
                 autoplaySpeed: 1000,
                 autoplayHoverPause: false,
@@ -106,8 +107,11 @@ $result = $db->query("SELECT banner_path FROM banners");
         });
     </script>
 
+   
+
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/owl.carousel.min.js"></script>
+
 
 
 

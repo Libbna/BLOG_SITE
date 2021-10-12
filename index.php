@@ -1,14 +1,14 @@
 <?php
 include("language.php");
 
-require_once("includes/config.php");
+require_once("./includes/config.php");
 
 if (!$user->is_logged_in()) {
     $_SESSION['redirectURL'] = $_SERVER['REQUEST_URI'];
 }
 
 
-$stmt = $db->query('SELECT * FROM article ORDER BY articleID DESC');
+$stmt = $db->query('SELECT * FROM article ORDER BY lang_id DESC');
 ?>
 
 <!DOCTYPE html>
