@@ -89,10 +89,7 @@ require("../includes/config.php");
                     </div>
                 </section>
 
-
                 <?php include("../layouts/footer.php"); ?>
-
-
 </body>
 
 </html>

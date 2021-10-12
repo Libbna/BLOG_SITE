@@ -1,5 +1,9 @@
 <?php
 require("../includes/config.php");
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +48,6 @@ require("../includes/config.php");
             $key = md5(time());
             $addKey = substr(md5(uniqid(rand(), 1)), 3, 10);
             $key = $key . $addKey;
-
             $db->query("INSERT INTO pwdreset (resetEmail, token, expDate) VALUES ('" . $email . "', '" . $key . "', '" . $expDate . "')");
 
             $output .= '<p>Please click on the following link to reset your password.</p>';
@@ -55,14 +58,11 @@ require("../includes/config.php");
             // php mailer boiler plate
             $body = $output;
             $subject = "Password Recovery";
-
             $email_to = $email;
 
-
-            require '../PHPMailerAutoload.php';
+            require 'vendor/autoload.php';
 
             $mail = new PHPMailer;
-
             $mail->isSMTP();                                      // Set mailer to use SMTP
             $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -70,12 +70,10 @@ require("../includes/config.php");
             $mail->Password = userpass;                           // SMTP password
             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 587;                                    // TCP port to connect to
-
             $mail->setFrom(useremail, 'Libbna');
             $mail->addAddress($email_to);                         // Add a recipient
             $mail->addReplyTo(useremail, 'Information');
             $mail->isHTML(true);                                  // Set email format to HTML
-
             $mail->Subject = $subject;
             $mail->Body    = $body;
             if (!$mail->send()) {
@@ -93,7 +91,7 @@ require("../includes/config.php");
             <div class="real_info">
                 <div class="reallogin_info">
                     <h2>Reset Your Password</h2>
-                    <p>An email will be send to you with a link to reset your password. </p>
+                    <p>An email will be sent to you with a link to reset your password. </p>
                     <form action="" method="POST" autocomplete="off" name="reset">
                         <label>Email</label>
                         <div class="input-group">
@@ -112,11 +110,7 @@ require("../includes/config.php");
             </div>
         </div>
     </section>
-
-
     <?php include("../layouts/footer.php"); ?>
-
-
 </body>
 
 </html>

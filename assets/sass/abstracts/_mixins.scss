@@ -35,7 +35,7 @@
     box-shadow: $card-hover-boxshadow;
 }
 
-@mixin input {
+@mixin input_field {
     outline: none;
     padding: 17px 20px;
     border-radius: 0;
@@ -65,7 +65,7 @@
     font-size: 14px;
 }
 
-@mixin h2 {
+@mixin header_2 {
     display: inline-block;
     font-size: 26px;
     margin-bottom: 3px;
@@ -73,13 +73,13 @@
     font-weight: 700;
 }
 
-@mixin h3 {
+@mixin header_3 {
     color: $heading-color;
     font-size: 46px;
     line-height: 1;
     font-weight: 700;
 }
-@mixin p {
+@mixin paragraph {
     color: $font-color;
     font-size: 22px;
     line-height: 32.5px;
@@ -97,7 +97,7 @@
     margin-bottom: 10px;
 }
 
-@mixin li-before {
+@mixin list-before {
     content: "";
     width: 6px;
     height: 6px;

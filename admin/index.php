@@ -1,5 +1,7 @@
 <?php
 require_once('../includes/config.php');
+include("../language.php");
+
 
 //if user is not logged in
 if ($user->is_logged_in()) {
@@ -7,19 +9,11 @@ if ($user->is_logged_in()) {
         header('Location: ../components/login');
     }
 } else if (!$user->is_logged_in()) {
+    $_SESSION['redirectURL'] = $_SERVER['REQUEST_URI'];
     header('Location: ../components/login');
 }
 
 ?>
-
-<title> Admin Page </title>
-
-<head>
-    <link rel="stylesheet" href="./assets/style.css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
 
 <script type="text/javascript">
     function delpost(id, title) {
@@ -28,9 +22,6 @@ if ($user->is_logged_in()) {
         }
     }
 </script>
-
-<?php include("header.php"); ?>
-
 
 <?php if (isset($_REQUEST['action'])) { ?>
     <?php if ($_REQUEST['action'] == "added") { ?>
@@ -59,81 +50,102 @@ if ($user->is_logged_in()) {
 <?php } ?>
 
 
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Author</th>
-            <th>Profile</th>
+<!DOCTYPE html>
+<html lang="en">
 
-        </tr>
-    </thead>
-    <?php
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    try {
-        $stmt = $db->query('SELECT articleID, articleTitle, articleDesc, articleAuthor, profile_img FROM article ORDER BY articleID DESC');
-        while ($row = $stmt->fetch()) {
+    <!-- font awesome icon  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- boostrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Main css -->
+    <link rel="stylesheet" href="../assets/sass/utilities/main.css">
+    <title>Dashboard</title>
+</head>
 
-            echo '<tbody>';
-            echo '<tr id="row">';
-            echo '<td class="w-25">' . $row['articleTitle'] . '</td>';
-            echo '<td class="w-25">' . $row['articleDesc'] . '</td>';
-            echo '<td class=" style="width: 15%;">' . $row['articleAuthor'] . '</td>';
-    ?>
-            <td class="w-25"><img src="<?php echo $row['profile_img'] ?>" alt="" height="100px" width="100px"></td>
-            <td>
-                <div id="mybtn" class="btn-group btn-group-md">
-                    <?php
-                    echo '<a type="button" class="btn btn-success" id="edit" href="http://blogsite.com/admin/edit-blog-article.php?id=' . $row['articleID'] . '"><i class="fa fa-edit"></i></a>';
-                    ?>
+<body>
+    <?php include("../layouts/header.php"); ?>
 
-                    </a>
-                    <a id="trash" type="button" class="btn btn-danger" role="button" href="javascript:delpost('<?php echo $row['articleID']; ?>','<?php echo $row['articleTitle']; ?>')">
-                        <i class="fa fa-trash"></i>
-                    </a>
-                    <?php
-                    echo '<a type="button" class="btn btn-primary" href="http://blogsite.com/admin/view-article.php?id=' . $row['articleID'] . '"><i class="fa fa-eye"></i></a>';
-                    ?>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Author</th>
+                <th scope="col">Profile</th>
+                <th scope="col">Edit/Delt/View</th>
+            </tr>
+        </thead>
 
-                </div>
-            </td>
+        <?php
 
-    <?php
+        try {
+            $stmt = $db->query("SELECT * FROM article WHERE langCode = '$language' ORDER BY lang_id  DESC");
+            while ($row = $stmt->fetch()) {
+        ?>
+                <tbody>
+                    <tr>
+                        <th scope="row"><?php echo $row['langTitle']; ?></th>
+                        <td><?php echo $row['langDesc']; ?></td>
+                        <td><?php echo $row['author'] ?></td>
+                        <td><img src="<?php echo $row['profileImage'] ?>" alt="" height="100px" width="100px"></td>
+                        <td>
+                            <div id="mybtn" class="btn-group btn-group-md">
+                                <?php
+                                echo '<a type="button" class="btn btn-success" id="edit" href="../edit-blog-article/' . $row['lang_id'] . '"><i class="fa fa-edit"></i></a>';
+                                ?>
+
+                                </a>
+                                <a id="trash" type="button" class="btn btn-danger" role="button" href="javascript:delpost('<?php echo $row['lang_id']; ?>','<?php echo $row['langTitle']; ?>')">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                                <?php
+                                echo '<a type="button" class="btn btn-info" href="../view-article/' . $row['lang_id'] . '"><i class="fa fa-eye"></i></a>';
+                                ?>
+
+                            </div>
+                        </td>
+                    </tr>
+                <?php
+            }
+                ?>
+                </tbody>
+            <?php
             echo '</tr>';
             echo '</tbody>';
+        } catch (PDOException $e) {
+            echo $e->getMessage();
         }
-    } catch (PDOException $e) {
-        echo $e->getMessage();
-    }
 
+            ?>
+    </table>
+    <?php
+    if (isset($language) && ($language == 'en')) {
     ?>
-</table>
-
-<a id="add" class="btn btn-success" role="button" href="add-blog-article.php">Add Article</a>
-<a id="add_banner" class="btn btn-primary" role="button" href="add_view-banner.php">Add / View Banner</a>
-
-
-
-
-<!-- <script type="text/javascript">
-    var row = document.getElementById("row");
-    var mybtn = document.getElementById("mybtn");
-
-    row.onmouseover = function() {
-        mybtn.style.display = "flex";
+        <div class="add_view_btn ml-4">
+            <a id="add" class="btn btn-success" role="button" href="../add-blog-article">Add Article</a>
+            <a id="add_banner" class="btn btn-primary" role="button" href="add_view-banner">Add / View Banner</a>
+        </div>
+    <?php
+    } else {
+    ?>
+        <div class="add_view_btn ml-4">
+            <a id="add" class="btn btn-success" role="button" href="../add-blog-article"><?php echo $terms[$language][2]; ?></a>
+            <a id="add_banner" class="btn btn-primary" role="button" href="add_view-banner"><?php echo $terms[$language][3]; ?></a>
+        </div>
+    <?php
     }
+    ?>
 
-    row.onmouseout = function() {
-        mybtn.style.display = "none";
-    }
-</script> -->
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <?php include("../layouts/footer.php"); ?>
 
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

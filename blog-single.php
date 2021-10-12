@@ -1,37 +1,42 @@
 <?php
-    require_once('./includes/config.php');
-    $stmt = $db->prepare('SELECT * FROM article WHERE articleID = :articleID');
-    $stmt->execute(array(':articleID' => $_GET['id']));
-    $row = $stmt->fetch();
+require_once('./includes/config.php');
+$stmt = $db->prepare('SELECT * FROM article WHERE lang_id = :lang_id');
+$stmt->execute(array(':lang_id' => $_GET['id']));
+$row = $stmt->fetch();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- font awesome icon  -->
-    <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- boostrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Main css -->
     <link rel="stylesheet" href="/assets/sass/utilities/main.css">
+    <link rel="stylesheet" href="/assets/sass/utilities/blog.css">
+
 </head>
+<?php
+include("./layouts/header.php");
+?>
 
 <body>
-    <?php include("./layouts/header.php"); ?>
     <section class="w3l-blog-single py-5">
         <div class="container py-lg-3">
             <div class="row">
                 <div class="col-lg-3 pr-lg-4 order-lg-1 order-2">
                     <div class="img-circle">
                         <a href="author.php">
-                            <img src="<?php echo $row['profile_img']; ?>" class="img-fliud" alt="author-img">
+                            <img src="<?php echo $row['profileImage']; ?>" class="img-fliud" alt="author-img">
                         </a>
                     </div>
-                    <h4 class="about-title"><?php echo $row['articleAuthor']; ?></h4>
+                    <h4 class="about-title"><?php echo $row['author']; ?></h4>
                     <p class="mr-lg-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, fugiat omnis aliquam iure quasi aspernatur nulla
                         soluta dignissimos
                         consequatur. Omnis fugit dolor recusandae quae! Molestiae! <br>
@@ -45,12 +50,12 @@
                             <li><span class="fa fa-commenting-o" aria-hidden="true"></span> <a href="#reply">12 Comments</a></li>
                             <li><span class="fa fa-clock-o" aria-hidden="true"></span> 8 min read</li>
                         </ul>
-                        <h4 class="blog_post_title"><?php echo $row['articleTitle']; ?>:</h4>
+                        <h4 class="blog_post_title"><?php echo $row['langTitle']; ?>:</h4>
                         <div class="row mt-4">
                             <div class="col-lg-8 pr-lg-4 order-lg-1 order-2">
                                 <div class="single-post-content">
-                                    <p class="mb-4"><?php echo $row['articleDesc']; ?></p>
-                                    <p class="mb-4"><?php echo $row['articleContent']; ?></p>
+                                    <p class="mb-4"><?php echo $row['langDesc']; ?></p>
+                                    <p class="mb-4"><?php echo $row['langContent']; ?></p>
                                     <div class="single-post-content mt-4 mb-4 py-lg-3">
                                         <h3 class="blog-desc-big m-0 mb-4">Developing first class solutions for our clients.</h3>
                                         <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime vel nam tenetur sequi
@@ -128,8 +133,6 @@
                                         lacinia id
                                         erat eu. Nunc id ipsum fringilla, gravida felis vitae. Phasellus lacinia id, sunt in
                                         culpa quis. </p>
-
-
                                     <div class="single-post-content my-4 py-lg-3">
                                         <h3 class="blog-desc-big m-0 mb-4">Your Blog Posts are Boring? Here are 9 Tips for Making your Writing more Interesting</h3>
                                         <p class="mb-4">Hong Kong is one of those cities you never really stop discovering. With its breathtaking
@@ -158,7 +161,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <h3 class="blog-desc-big m-0 mb-4">Search for Inspiration</h3>
                                     <p class="mb-4">Vivamus a ligula quam. Ut blandit eu leo non suscipit. <a href="#" class="use-admin">Domains</a> In interdum
                                         ullamcorper dolor eu mattis.Nulla quis lorem
@@ -169,8 +171,6 @@
                                     <p class="mb-4">Dolor sit sed amet, excepteur sint occaecat non proident, sunt in culpa quis. Phasellus
                                         lacinia id erat eu. Nunc id ipsum fringilla, gravida felis vitae. Phasellus lacinia id, sunt in
                                         culpa quis. </p>
-
-
                                     <div class="single-post-content mb-4 py-lg-3">
                                         <h3 class="blog-desc-big m-0 mb-4">Join With Us. We Will Make The Best Market Together!</h3>
                                         <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, amet fuga harum
@@ -190,7 +190,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="d-grid left-right">
                                         <div class="buttons-singles">
                                             <h4>Share :</h4>
@@ -200,7 +199,6 @@
                                             <a href="#blog-share"><span class="fa fa-pinterest-p" aria-hidden=" true"></span></a>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="col-lg-4 mb-lg-0 mb-4 order-lg-2 order-1">
@@ -223,8 +221,16 @@
         </div>
     </section>
     <?php
-        include("./layouts/comment.php");
-        include("./layouts/footer.php");
+    include("./layouts/comment.php");
+    include("./layouts/footer.php");
     ?>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- <script src="../assets/js/jquery.js"></script> -->
+
 </body>
+
 </html>

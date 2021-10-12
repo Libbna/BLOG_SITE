@@ -6,7 +6,7 @@
     }
     .real_info {
         h2 {
-            @include h2();
+            @include header_2();
         }
         p {
             padding-bottom: 30px;
@@ -20,7 +20,7 @@
     .input-group {
         margin-bottom: 20px; 
         input {
-            @include input();
+            @include input_field();
         }
     } 
     

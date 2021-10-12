@@ -22,27 +22,12 @@ $font-fam: san-serif;
 
 $transition-linear : transform 0.3s linear;
 $transition-easein : 0.3s ease-in;
-$transition-easeout: 0.3s ease-in-out;
+$transition-easeout : 0.3s ease-out;
+$transition-ease_in_out: 0.3s ease-in-out;
+$trans-all-ease05: all 0.5s ease;
+$trans-all-05: all 0.5s;
 
 $border-radius: 6px;
 $fontSize16: 16px;
 
 $card-hover-boxshadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.09);
-
-[data-theme="dark"] {
-    --primary-color: #f76a8c;
-    --secondary-color: #818cab;
-    --header-bg-color: #c65570;
-    --bg-color-one: #0a041a;
-    --bg-color-two: rgba(10, 9, 26, 0.6);
-    --bg-color-three: rgba(27, 26, 42, 0.96);
-    --bg-color-four: rgba(10, 9, 26, 0.1);
-    --bg-color: #161625;
-    --light-image-layer: rgba(0, 0, 0, 0.85);
-    --font-color: #c2c2c2;
-    --heading-color: #fff;
-    --border-color: #888;
-    --border-light: #444;
-    --nav-color: #fff;
-    --breadcrumb-bg: #1a1b2a;
-    --card-hover-box-shadow: 0 0.5rem 1rem #020204; }

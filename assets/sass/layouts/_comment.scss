@@ -6,6 +6,10 @@ a {
         text-decoration: none;
     }
 }
+#comment-section {
+    margin-top: -8rem;
+    margin-left: 13rem;
+}
 .w3l-blog-single {
     .container {
         .row {
@@ -58,10 +62,6 @@ a {
                     cursor: pointer;
                     font-weight: 500;
                 }
-                .text-right {
-                    text-align: right !important;
-                }
-
                 a {
                     &:hover {
                         color: $primary-color;
@@ -147,7 +147,7 @@ a {
             .form-group {
                 margin-bottom: 1rem;
                 textarea {
-                    height: 150px !important;
+                    height: 150px;
                     box-shadow: none;
                     margin-bottom: 30px;
                 }
@@ -171,9 +171,7 @@ a {
             }
         }
     }
-    .text-right {
-        text-align: right;
-    }
+    
     .btn {
         padding: 16px 40px;
     }

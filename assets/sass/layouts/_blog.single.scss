@@ -55,7 +55,7 @@
                 padding-left: 15px;
 
                 &::before {
-                    @include li-before();
+                    @include list-before();
                 }
             }
         }

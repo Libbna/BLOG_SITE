@@ -27,8 +27,8 @@ spl_autoload_register(function ($class) {
 
 // admin/index --> dashboard --> to delete a blog
 if (isset($_GET['delpost'])) {
-    $stmt = $db->prepare('DELETE FROM article WHERE articleID=:articleID');
-    $stmt->execute(array(':articleID' => $_GET['delpost']));
+    $stmt = $db->prepare('DELETE FROM article WHERE lang_id=:lang_id');
+    $stmt->execute(array(':lang_id' => $_GET['delpost']));
     header('location:index.php ? action=deleted');
     exit();
 }
@@ -124,5 +124,19 @@ if (isset($_GET['delimg'])) {
     header('location:add_view-banner.php ? action=deleted');
     exit();
 }
+
+// multilingual translation
+
+$en_select = '';
+$hi_select = '';
+$language = '';
+if ((isset($_GET['language']) && $_GET['language'] == 'en') || (!isset($_GET['language']))) {
+    $en_select = 'selected';
+    $language = 'en';
+} else {
+    $hi_select = 'selected';
+    $language = 'hi';
+}
+
 
 $user = new User($db);

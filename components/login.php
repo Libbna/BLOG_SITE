@@ -1,11 +1,4 @@
-<?php
-require_once('../includes/config.php');
-
-// if user is already logged in, redirect to home/index page
-// if ($user->is_logged_in()) {
-//     header('location: ../index.php');
-// }
-?>
+<?php require_once('../includes/config.php'); ?>
 
 <?php
 
@@ -13,7 +6,6 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $checkbox = isset($_POST['remember-me']);
-
     $stmt = $db->query("SELECT * FROM users WHERE username = '$username'");
     $count = $stmt->rowCount();
 
@@ -27,12 +19,13 @@ if (isset($_POST['submit'])) {
                 if ($checkbox == "on") {
                     setcookie("username", $username, time() + 3600);
                 }
+
                 header("location: /admin/index.php");
             } elseif ($row['role'] == 'user') {
                 if ($checkbox == "on") {
                     setcookie("username", $username, time() + 3600);
                 }
-                header("location: ../index");
+                header('location:' . $_SESSION['redirectURL']);
             }
         }
         exit;
@@ -53,15 +46,13 @@ if (isset($message)) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
+    <title>Login</title>
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="../assets/sass/utilities/main.css">
-
-
 
 </head>
 
@@ -110,9 +101,7 @@ if (isset($message)) {
     </section>
     <?php include("../layouts/footer.php"); ?>
 
-
     <script src="/assets/js/app.js"></script>
-
 
 </body>
 

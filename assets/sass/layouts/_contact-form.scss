@@ -6,10 +6,10 @@
 }
 .header-section {
     h3 {
-        @include h3();
+        @include header_3();
     }
     p {
-        @include p();
+        @include paragraph();
     }
   }
 }
@@ -22,14 +22,14 @@
     }
     .header-section {
         h3 {
-            @include h3();
+            @include header_2();
         }
         p {
-            @include p();
+            @include paragraph();
         }
     }
     .contact-input {
-        @include input();
+        @include input-field();
         margin-bottom: 15px;
     }
     textarea {

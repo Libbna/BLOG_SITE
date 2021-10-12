@@ -1,7 +1,5 @@
 <?php
-// $error = $_SERVER['REDIRECT_STATUS'];
 $error = 403;
-
 $err_title = "";
 $err_msg = "";
 
@@ -11,9 +9,6 @@ if ($error == 403) {
 }
 
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,11 +68,6 @@ if ($error == 403) {
 </head>
 
 <body>
-
-    <?php
-    // include("./layouts/header.php");
-    ?>
-
     <section class="w3l-error py-5">
         <div class="container py-lg-3">
             <div class="error_content text-center">
@@ -88,22 +78,6 @@ if ($error == 403) {
             </div>
         </div>
     </section>
-
-
-    <h1></h1>
-    <h3></h3>
-
-
-
-
-
-
-
-
-
-
-
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
