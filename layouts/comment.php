@@ -32,7 +32,7 @@
                                 &nbsp; Prev Post
                             </span>
                             <a href="#url" rel="prev" class="posts-view posts-view-left">
-                                <img src="/assets/uploads/img10.jpg" class="img-fluid postimg d-none d-md-block">
+                                <img src="/assets/uploads/img10.jpg" class="img-fluid postimg d-none d-md-block" alt="reference-image">
                                 <label>That’s what I want to show you how to do here.</label>
                             </a>
                         </div>
@@ -43,7 +43,7 @@
                             </span>
                             <a href="#url" rel="next" class="posts-view posts-view-right ">
                                 <label>How to Make Cappuccino without a Machine</label>
-                                <img src="/assets/uploads/img11.jpg" class="img-fluid postimg d-none d-md-block">
+                                <img src="/assets/uploads/img11.jpg" class="img-fluid postimg d-none d-md-block" alt="reference-image">
                             </a>
                         </div>
                     </nav>
