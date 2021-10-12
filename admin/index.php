@@ -100,7 +100,7 @@ if ($user->is_logged_in()) {
                                 ?>
 
                                 </a>
-                                <a id="trash" type="button" class="btn btn-danger" role="button" href="javascript:delpost('<?php echo $row['lang_id']; ?>','<?php echo $row['articleTitle']; ?>')">
+                                <a id="trash" type="button" class="btn btn-danger" role="button" href="javascript:delpost('<?php echo $row['lang_id']; ?>','<?php echo $row['langTitle']; ?>')">
                                     <i class="fa fa-trash"></i>
                                 </a>
                                 <?php

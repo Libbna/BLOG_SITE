@@ -6,6 +6,11 @@ a:hover {
   text-decoration: none;
 }
 
+#comment-section {
+  margin-top: -8rem;
+  margin-left: 13rem;
+}
+
 .w3l-blog-single .container .row .post-navigation {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;

@@ -27,8 +27,8 @@ spl_autoload_register(function ($class) {
 
 // admin/index --> dashboard --> to delete a blog
 if (isset($_GET['delpost'])) {
-    $stmt = $db->prepare('DELETE FROM article WHERE articleID=:articleID');
-    $stmt->execute(array(':articleID' => $_GET['delpost']));
+    $stmt = $db->prepare('DELETE FROM article WHERE lang_id=:lang_id');
+    $stmt->execute(array(':lang_id' => $_GET['delpost']));
     header('location:index.php ? action=deleted');
     exit();
 }
