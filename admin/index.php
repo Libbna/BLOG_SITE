@@ -96,7 +96,7 @@ if ($user->is_logged_in()) {
                         <td>
                             <div id="mybtn" class="btn-group btn-group-md">
                                 <?php
-                                echo '<a type="button" class="btn btn-success" id="edit" href="../edit-blog-article/' . $row['lang_id'] . '"><i class="fa fa-edit"></i></a>';
+                                echo '<a type="button" class="btn btn-success" id="edit" href="../edit-blog-article/' . $row['lang_id'] . '?language=' . $row['langCode'] . '"><i class="fa fa-edit"></i></a>';
                                 ?>
 
                                 </a>

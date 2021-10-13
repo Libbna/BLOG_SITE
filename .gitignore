@@ -1,5 +1,5 @@
 includes/db.php
 /vendor
 /node_modules
-assets/node_modules
+/assets/node_modules
 
