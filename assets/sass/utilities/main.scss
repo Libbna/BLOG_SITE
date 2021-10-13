@@ -1,6 +1,5 @@
 @import "../abstracts/mixins";
 @import "../abstracts/variables";
-
 @import "../layouts/header";
 @import "../layouts/login";
 @import "../layouts/domain-modal";
@@ -19,10 +18,6 @@
 @import "../layouts/blog.single";
 @import "../layouts/about";
 @import "../layouts/add-viewBanner";
-
-
-
-
 
 
 html,body
@@ -61,17 +56,12 @@ body {
     overflow-x: hidden;
 }
 
-
-
 h1, h2, h3, h4, h5, h6 {
     color: $heading-color;
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
 }
-
-
-
 
 .card {
     .card-header {

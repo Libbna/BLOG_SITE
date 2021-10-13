@@ -21,7 +21,7 @@
 <body>
 
     <div style="margin: 8px auto; display: block; text-align:center;"></div>
-    <section class="w3l-blog-single py-5">
+    <section class="w3l-blog-single py-5" id="comment-section">
         <div class="container py-lg-3">
             <div class="row">
                 <div class="col-lg-8 pl-lg-0 offset-lg-2 offset-0">

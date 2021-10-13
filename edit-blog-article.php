@@ -1,4 +1,5 @@
 <?php require_once('./includes/config.php');
+require('language.php');
 
 if (!$user->is_logged_in()) {
     header('Location: login.php');
@@ -34,37 +35,29 @@ if (!$user->is_logged_in()) {
             extract($_POST);
 
             //very basic validation
-            if ($articleID == '') {
+            if ($lang_id == '') {
                 $error[] = 'This post is missing a valid id!.';
             }
 
-            if ($articleTitle == '') {
+            if ($langTitle == '') {
                 $error[] = 'Please enter the title.';
             }
 
-            if ($articleDesc == '') {
+            if ($langDesc == '') {
                 $error[] = 'Please enter the description.';
             }
 
-            if ($articleContent == '') {
+            if ($langContent == '') {
                 $error[] = 'Please enter the content.';
             }
 
             if (!isset($error)) {
                 try {
                     //insert into database
-                    $stmt = $db->prepare('UPDATE article SET articleTitle = :articleTitle,  articleDesc = :articleDesc, articleContent = :articleContent =  WHERE articleID= :articleID');
-                    $stmt->execute(array(
-                        ':articleTitle' => $articleTitle,
-                        ':articleDesc' => $articleDesc,
-                        ':articleContent' => $articleContent,
-                        ':articleID' => $articleID,
-
-
-                    ));
+                    $stmt = $db->query("UPDATE article SET langTitle = '$langTitle',  langDesc = '$langDesc', langContent = '$langContent' WHERE lang_id = '$lang_id'");
 
                     //redirect to index page
-                    header('Location: index.php?action=updated');
+                    header('Location: /admin/index.php?action=updated');
                     exit;
                 } catch (PDOException $e) {
                     echo $e->getMessage();
@@ -80,8 +73,8 @@ if (!$user->is_logged_in()) {
             }
         }
         try {
-            $stmt = $db->prepare('SELECT articleID, articleTitle, articleDesc, articleContent, profile_img FROM article WHERE articleID = :articleID');
-            $stmt->execute(array(':articleID' => $_GET['id']));
+            $stmt = $db->prepare('SELECT lang_id, langTitle, langDesc, langContent, profileImage FROM article WHERE lang_id = :lang_id');
+            $stmt->execute(array(':lang_id' => $_GET['id']));
             $row = $stmt->fetch();
         } catch (PDOException $e) {
             echo $e->getMessage();
@@ -96,10 +89,10 @@ if (!$user->is_logged_in()) {
                     </div>
                     <form action="" method="post" class="" enctype="multipart/form-data">
                         <div class="main-input">
-                            <input class="input" type='hidden' name='articleID' autocomplete="off" value="<?php echo $row['articleID']; ?>">
-                            <input type="text" name="articleTitle" class="contact-input" value="<?php echo $row['articleTitle']; ?>">
-                            <textarea class=" contact-textarea contact-input" name="articleDesc"><?php echo $row['articleDesc']; ?></textarea>
-                            <textarea class="contact-textarea contact-input" name="articleContent" value=""><?php echo $row['articleContent']; ?></textarea>
+                            <input class="input" type='hidden' name='lang_id' autocomplete="off" value="<?php echo $row['lang_id']; ?>">
+                            <input type="text" name="langTitle" class="contact-input" value="<?php echo $row['langTitle']; ?>">
+                            <textarea class=" contact-textarea contact-input" name="langDesc"><?php echo $row['langDesc']; ?></textarea>
+                            <textarea class="contact-textarea contact-input" name="langContent" value=""><?php echo $row['langContent']; ?></textarea>
                         </div>
                         <div class="text-right">
                             <button name="submit" class="btn-primary btn theme-button">^ Update</button>
