@@ -49,7 +49,6 @@ if (isset($_POST['upload'])) {
     $new_img = time() . '.' . $phototest1;
     // location
     $location = '../assets/images/' . $new_img;
-    // $resized_loc = '../assets/images/' . $new_img_resize;
     $resized_loc = '../assets/images/resized_' . $new_img;
 
     // file extension
@@ -78,7 +77,6 @@ if (isset($_POST['upload'])) {
         echo "File format is not correct!";
     }
 
-    // header("Location: add_view-banner.php");
 }
 
 // compress Image function definition
