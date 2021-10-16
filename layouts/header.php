@@ -130,11 +130,11 @@
                                     <a class="nav-link" href="/components/articles">Articles</a>
                                 </li>
                                 <li class="nav-item dropdown @@dropdown-active ">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
+                                    <a class="dropbtn nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
                                         Blog <span class="fa fa-angle-down"></span>
                                         <span class="fa fa-angle-up"></span>
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <div class="dropdown-menu dropdown-content" id="myDropdown" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
                                         <a class="dropdown-item @@blog-single-active" href="blog-single.html">Single post</a>
                                     </div>
@@ -144,7 +144,7 @@
                                         Pages <span class="fa fa-angle-down"></span>
                                         <span class="fa fa-angle-up"></span>
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <div class="dropdown-menu dropdown-content  " aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
                                         <a class="dropdown-item @@error-active" href="error.html">404 Page</a>
                                         <a class="dropdown-item @@login-active" href="/components/login">Login</a>

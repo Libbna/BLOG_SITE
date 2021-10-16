@@ -26,11 +26,7 @@ header {
         }
            .navbar-nav {
             align-items: center;
-            // width: 80%;
-            // display: flex;
-            // padding-left: 0;
-            // margin-bottom: 0;
-            // list-style: none;
+            
             a {
                 &.nav-link {
                     text-transform: capitalize;
@@ -62,9 +58,8 @@ header {
                             &::after {
                             width: 100%;
                             }
+                         }
                    }
-                    
-                }
             }
            
             .nav-item {
@@ -269,6 +264,12 @@ header {
     }
 }
 
+.dropdown {
+    &:hover .dropdown-content {
+        display: block;
+    }
+}
+
 // theme switcher --- dark & light mode
 .theme-switch-wrapper {
     display: flex;
@@ -313,7 +314,9 @@ header {
         margin-right: 0;
     }
 }
-
+.show {
+    display: block;
+}
 
 
 
