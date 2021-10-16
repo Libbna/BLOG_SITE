@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Main css -->
     <link rel="stylesheet" href="/assets/sass/utilities/main.css">
-
-
 </head>
 
 <body>
@@ -473,6 +471,10 @@
             var language = $('#language').val();
             window.location.href = '?language=' + language;
         }
+
+        // $(".nav-link").click(function() {
+        //     event.preventDefault();
+        // });
     </script>
 
 

@@ -2234,12 +2234,6 @@ footer .sub-two-right ul li a {
   right: 17rem;
 }
 
-html, body {
-  margin: 0px;
-  padding: 0px;
-  padding-right: 0 !important;
-}
-
 * {
   margin: 0;
   padding: 0;
