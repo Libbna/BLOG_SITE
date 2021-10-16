@@ -24,7 +24,7 @@
     <header id="site-header">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark stroke p-0">
-                <h1>
+                <h1 class="logo">
                     <a class="navbar-brand" href="">Publication</a>
                 </h1>
                 <button id="navbar-toggler" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-label="Toggle navigation">
@@ -122,7 +122,7 @@
                         // if user is unauthorized
                         {
                             ?>
-                            <ul class="navbar-nav mx-auto" id="navbar-nav">
+                            <ul class="navbar-nav" id="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="/index">Home<span class="sr-only">(current)</span></a>
                                 </li>

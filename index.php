@@ -1,13 +1,11 @@
 <?php
 
-use MyApp\Game\Player\Player;
+// use MyApp\Game\Player\Player;
 
-require_once realpath("vendor/autoload.php");
+// require_once realpath("vendor/autoload.php");
 
-$player = new Player();
-$gameController = new \MyApp\Game\GameController();
-
-
+// $player = new Player();
+// $gameController = new \MyApp\Game\GameController();
 
 include("language.php");
 
