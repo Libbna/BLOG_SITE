@@ -39,7 +39,7 @@ if (isset($_POST['upload'])) {
     $filename = $_FILES['image']['name'];
     echo $filename;
 
-    // valid extension
+   
     $valid_ext = array('png', 'jpeg', 'jpg');
 
     $photoExt1 = @end(explode('.', $filename));
