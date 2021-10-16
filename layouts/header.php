@@ -52,7 +52,7 @@
                                             Blog <span class="fa fa-angle-down"></span>
                                             <span class="fa fa-angle-up"></span>
                                         </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
                                             <a class="dropdown-item @@blog-single-active" href="blog-single.html">Single post</a>
                                         </div>
@@ -89,7 +89,7 @@
                                             Blog <span class="fa fa-angle-down"></span>
                                             <span class="fa fa-angle-up"></span>
                                         </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
                                             <a class="dropdown-item @@blog-single-active" href="blog-single.html">Single post</a>
                                         </div>
@@ -99,7 +99,7 @@
                                             Pages <span class="fa fa-angle-down"></span>
                                             <span class="fa fa-angle-up"></span>
                                         </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
                                             <a class="dropdown-item @@search-active" href="search-results.html">Search Results</a>
                                         </div>
@@ -144,7 +144,7 @@
                                         Pages <span class="fa fa-angle-down"></span>
                                         <span class="fa fa-angle-up"></span>
                                     </a>
-                                    <div class="dropdown-menu dropdown-content  " aria-labelledby="navbarDropdown">
+                                    <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
                                         <a class="dropdown-item @@error-active" href="error.html">404 Page</a>
                                         <a class="dropdown-item @@login-active" href="/components/login">Login</a>
@@ -233,7 +233,7 @@
                                             <?php echo $header[$language][2]; ?> <span class="fa fa-angle-down"></span>
                                             <span class="fa fa-angle-up"></span>
                                         </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
                                             <a class="dropdown-item @@blog-single-active" href="blog-single.html">Single post</a>
                                         </div>
@@ -275,7 +275,7 @@
                                             <?php echo $header[$language][2]; ?> <span class="fa fa-angle-down"></span>
                                             <span class="fa fa-angle-up"></span>
                                         </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
                                             <a class="dropdown-item @@blog-single-active" href="blog-single.html">Single post</a>
                                         </div>
@@ -285,7 +285,7 @@
                                             <?php echo $header[$language][3]; ?> <span class="fa fa-angle-down"></span>
                                             <span class="fa fa-angle-up"></span>
                                         </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
                                         </div>
                                     </li>
@@ -326,7 +326,7 @@
                                         <?php echo $header[$language][2]; ?> <span class="fa fa-angle-down"></span>
                                         <span class="fa fa-angle-up"></span>
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
                                         <a class="dropdown-item @@blog-single-active" href="blog-single.html">Single post</a>
                                     </div>
@@ -336,7 +336,7 @@
                                         <?php echo $header[$language][3]; ?> <span class="fa fa-angle-down"></span>
                                         <span class="fa fa-angle-up"></span>
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
                                         <a class="dropdown-item @@error-active" href="error.html">404 Page</a>
                                         <a class="dropdown-item @@login-active" href="/components/login">Login</a>
