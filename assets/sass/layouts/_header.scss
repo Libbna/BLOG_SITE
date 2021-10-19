@@ -11,9 +11,12 @@ header {
 
     .logo {
         width: 30%;
+        .fa-joomla {
+            font-size: 2rem;
+             color: $white;
+            }
+        }
     }
-    
-}
 .navbar {
     .navbar-brand {  
         padding: 0;

@@ -39,7 +39,7 @@ if (isset($_POST['upload'])) {
     $filename = $_FILES['image']['name'];
     echo $filename;
 
-   
+
     $valid_ext = array('png', 'jpeg', 'jpg');
 
     $photoExt1 = @end(explode('.', $filename));
@@ -76,7 +76,6 @@ if (isset($_POST['upload'])) {
     } else {
         echo "File format is not correct!";
     }
-
 }
 
 // compress Image function definition
@@ -122,19 +121,4 @@ if (isset($_GET['delimg'])) {
     header('location:add_view-banner.php ? action=deleted');
     exit();
 }
-
-// multilingual translation
-
-$en_select = '';
-$hi_select = '';
-$language = '';
-if ((isset($_GET['language']) && $_GET['language'] == 'en') || (!isset($_GET['language']))) {
-    $en_select = 'selected';
-    $language = 'en';
-} else {
-    $hi_select = 'selected';
-    $language = 'hi';
-}
-
-
 $user = new User($db);

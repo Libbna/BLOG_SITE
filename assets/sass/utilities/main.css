@@ -18,6 +18,11 @@ header .logo {
   width: 30%;
 }
 
+header .logo .fa-joomla {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
 .navbar .navbar-brand {
   padding: 0;
   font-size: 36px;

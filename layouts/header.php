@@ -1,3 +1,18 @@
+<?php
+include("./language.php");
+
+$en_select = '';
+$hi_select = '';
+$language = '';
+if (isset($_COOKIE["lang"]) && $_COOKIE["lang"] === "en" || (!isset($_COOKIE["lang"]))) {
+    $en_select = 'selected';
+    $language = $_COOKIE["lang"];
+} else {
+    $hi_select = 'selected';
+    $language = $_COOKIE["lang"];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +29,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Main css -->
     <link rel="stylesheet" href="/assets/sass/utilities/main.css">
+    <script src="/language.js"></script>
 </head>
 
 <body>
@@ -32,7 +48,8 @@
                 <div class="navbar-collapse collapse" id="navbarTogglerDemo02">
                     <?php
                     // For English Language
-                    if (isset($language) && ($language == 'en')) {
+                    if (isset($_COOKIE["lang"]) && ($_COOKIE["lang"] === 'en')) {
+
                         // if user is authorized
                         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                             // if ROLE is ADMIN
@@ -64,7 +81,7 @@
                                     <li class="nav-item @@contact-active">
                                         <a class="nav-link logout" href="/admin/logout">LOGOUT</a>
                                     </li>
-                                    <select name="language" id="language" onchange="set_lang()">
+                                    <select name="language" id="language">
                                         <option value="en" <?php echo  $en_select; ?>>EN</option>
                                         <option value="hi" <?php echo  $hi_select; ?>>HI</option>
                                     </select>
@@ -221,10 +238,10 @@
                             ?>
                                 <ul class="navbar-nav mx-auto" id="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/index?language=hi"><?php echo $header[$language][0]; ?><span class="sr-only">(current)</span></a>
+                                        <a class="nav-link" href="/index?language=<?php echo $language; ?>"><?php echo $header[$language][0]; ?><span class="sr-only">(current)</span></a>
                                     </li>
                                     <li class="nav-item @@article-active ">
-                                        <a class="nav-link" href="/components/articles?language=hi"><?php echo $header[$language][1]; ?></a>
+                                        <a class="nav-link" href="/components/articles?language=<?php echo $language; ?>"><?php echo $header[$language][1]; ?></a>
                                     </li>
                                     <li class="nav-item dropdown @@dropdown-active ">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
@@ -237,20 +254,20 @@
                                         </div>
                                     </li>
                                     <li class="nav-item @@about-active">
-                                        <a class="nav-link" href="/admin/index?language=hi"><?php echo $header[$language][9]; ?></a>
+                                        <a class="nav-link" href="/admin/index?language=<?php echo $language; ?>"><?php echo $header[$language][9]; ?></a>
                                     </li>
                                     <li class="nav-item @@about-active">
-                                        <a class="nav-link" href="/components/about?language=hi"><?php echo $header[$language][4]; ?></a>
+                                        <a class="nav-link" href="/components/about?language=<?php echo $language; ?>"><?php echo $header[$language][4]; ?></a>
                                     </li>
                                     <li class="nav-item @@contact-active">
-                                        <a class="nav-link" href="/components/contact-form?language=hi"><?php echo $header[$language][5]; ?></a>
+                                        <a class="nav-link" href="/components/contact-form?language=<?php echo $language; ?>"><?php echo $header[$language][5]; ?></a>
                                     </li>
                                     <li class="nav-item @@contact-active">
-                                        <a class="nav-link logout" href="/admin/logout?language=hi"><?php echo $header[$language][8]; ?></a>
+                                        <a class="nav-link logout" href="/admin/logout?language=<?php echo $language; ?>"><?php echo $header[$language][8]; ?></a>
                                     </li>
                                     <!-- language select -->
                                     <li class="lang">
-                                        <select name="language" id="language" onchange="set_lang()">
+                                        <select name="language" id="language">
                                             <option value="en" <?php echo  $en_select; ?>>EN</option>
                                             <option value="hi" <?php echo  $hi_select; ?>>HI</option>
                                         </select>
@@ -298,7 +315,7 @@
                                     </li>
                                     <!-- language select -->
                                     <li class="lang">
-                                        <select name="language" id="language" onchange="set_lang()">
+                                        <select name="language" id="language">
                                             <option value="en" <?php echo  $en_select; ?>>EN</option>
                                             <option value="hi" <?php echo  $hi_select; ?>>HI</option>
                                         </select>
@@ -314,7 +331,7 @@
                             ?>
                             <ul class="navbar-nav mx-auto" id="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/index?language=hi"><?php echo $header[$language][0]; ?><span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/index?lang=en" .><?php echo $header[$language][0]; ?><span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item @@article-active ">
                                     <a class="nav-link" href="/components/articles?language=hi"><?php echo $header[$language][1]; ?></a>
@@ -465,17 +482,7 @@
             });
         });
     </script>
-    <!-- for website translation -->
-    <script type="text/javascript">
-        function set_lang() {
-            var language = $('#language').val();
-            window.location.href = '?language=' + language;
-        }
 
-        // $(".nav-link").click(function() {
-        //     event.preventDefault();
-        // });
-    </script>
 
 
     <script src=" ../assets/js/jquery.js"></script>

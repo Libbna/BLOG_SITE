@@ -1,5 +1,10 @@
 <?php
 
+// use MyBlog\User;
+
+// require_once realpath("../vendor/autoload.php");
+// $user = new User();
+
 // use MyApp\Game\Player\Player;
 
 // require_once realpath("vendor/autoload.php");
