@@ -1,5 +1,6 @@
 <?php
 require_once('./includes/config.php');
+include("language.php");
 $stmt = $db->prepare('SELECT * FROM article WHERE lang_id = :lang_id');
 $stmt->execute(array(':lang_id' => $_GET['id']));
 $row = $stmt->fetch();

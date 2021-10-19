@@ -1,5 +1,5 @@
 <?php
-include("./language.php");
+// include("../language.php");
 
 $en_select = '';
 $hi_select = '';
@@ -280,10 +280,10 @@ if (isset($_COOKIE["lang"]) && $_COOKIE["lang"] === "en" || (!isset($_COOKIE["la
                             ?>
                                 <ul class="navbar-nav mx-auto" id="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/index?language=hi"><?php echo $header[$language][0]; ?><span class="sr-only">(current)</span></a>
+                                        <a class="nav-link" href="/index?language=<?php echo $language; ?>"><?php echo $header[$language][0]; ?><span class="sr-only">(current)</span></a>
                                     </li>
                                     <li class="nav-item @@article-active ">
-                                        <a class="nav-link" href="/components/articles?language=hi"><?php echo $header[$language][1]; ?></a>
+                                        <a class="nav-link" href="/components/articles?language=<?php echo $language; ?>"><?php echo $header[$language][1]; ?></a>
                                     </li>
                                     <li class="nav-item dropdown @@dropdown-active ">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
@@ -305,13 +305,13 @@ if (isset($_COOKIE["lang"]) && $_COOKIE["lang"] === "en" || (!isset($_COOKIE["la
                                         </div>
                                     </li>
                                     <li class="nav-item @@about-active">
-                                        <a class="nav-link" href="/components/about?language=hi"><?php echo $header[$language][4]; ?></a>
+                                        <a class="nav-link" href="/components/about?language=<?php echo $language; ?>"><?php echo $header[$language][4]; ?></a>
                                     </li>
                                     <li class="nav-item @@contact-active">
-                                        <a class="nav-link" href="/components/contact-form?language=hi"><?php echo $header[$language][5]; ?></a>
+                                        <a class="nav-link" href="/components/contact-form?language=<?php echo $language; ?>"><?php echo $header[$language][5]; ?></a>
                                     </li>
                                     <li class="nav-item @@contact-active">
-                                        <a class="nav-link logout" href="/admin/logout?language=hi"><?php echo $header[$language][8]; ?></a>
+                                        <a class="nav-link logout" href="/admin/logout?language=<?php echo $language; ?>"><?php echo $header[$language][8]; ?></a>
                                     </li>
                                     <!-- language select -->
                                     <li class="lang">
@@ -331,10 +331,10 @@ if (isset($_COOKIE["lang"]) && $_COOKIE["lang"] === "en" || (!isset($_COOKIE["la
                             ?>
                             <ul class="navbar-nav mx-auto" id="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/index?lang=en" .><?php echo $header[$language][0]; ?><span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/index?lang=<?php echo $language; ?>"><?php echo $header[$language][0]; ?><span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item @@article-active ">
-                                    <a class="nav-link" href="/components/articles?language=hi"><?php echo $header[$language][1]; ?></a>
+                                    <a class="nav-link" href="/components/articles?language=<?php echo $language; ?>"><?php echo $header[$language][1]; ?></a>
                                 </li>
                                 <li class="nav-item dropdown @@dropdown-active ">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true">
@@ -375,7 +375,9 @@ if (isset($_COOKIE["lang"]) && $_COOKIE["lang"] === "en" || (!isset($_COOKIE["la
                             </ul>
                             <!--/search-right-->
                             <div class="search-right">
-                                <a href="#search" class="btn btn-light theme-button mr-lg-3 mt-lg-0 mt-4" title="search"><span class="fa fa-search" aria-hidden="true"></span> Topics</a>
+                                <a href="#search" class="btn btn-light theme-button mr-lg-3 mt-lg-0 mt-4" title="search"><span class="fa fa-search" aria-hidden="true"></span>
+                                    <?php echo $header[$language][10]; ?>
+                                </a>
                                 <!-- search popup -->
                                 <div id="search" class="pop-overlay">
                                     <div class="popup">
