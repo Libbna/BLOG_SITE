@@ -56,7 +56,7 @@ if (!$user->is_logged_in()) {
                     //insert into database
                     $stmt = $db->query("UPDATE article SET langTitle = '$langTitle',  langDesc = '$langDesc', langContent = '$langContent' WHERE lang_id = '$lang_id'");
 
-                    //redirect to index page
+                  
                     header('Location: /admin/index.php?action=updated');
                     exit;
                 } catch (PDOException $e) {
@@ -66,7 +66,7 @@ if (!$user->is_logged_in()) {
         }
         ?>
         <?php
-        //check for any errors
+        
         if (isset($error)) {
             foreach ($error as $error) {
                 echo $error . '<br>';
