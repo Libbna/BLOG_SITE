@@ -27,6 +27,9 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 #rewrite rule to ignore/remove the .php extension
 RewriteRule ^(.*)$ $1.php [NC,L]
 
+#RewriteCond %{REQUEST_URI}  !(\.png|\.jpg|\.gif|\.jpeg|\.zip|\.css|\.svg|\.js)$
+#RewriteRule (.*) routes.php [QSA,L]
+
 #Disable directory browsing 
 Options -Indexes
 

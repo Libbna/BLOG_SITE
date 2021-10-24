@@ -107,7 +107,7 @@ $result = $db->query("SELECT banner_path FROM banners");
         });
     </script>
 
-   
+
 
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/owl.carousel.min.js"></script>

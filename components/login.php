@@ -1,4 +1,4 @@
-<?php require_once('../includes/config.php'); ?>
+<?php require_once('./includes/config.php'); ?>
 
 <?php
 
@@ -57,7 +57,7 @@ if (isset($message)) {
 </head>
 
 <body>
-    <?php include("../layouts/header.php"); ?>
+    <?php include("./layouts/header.php"); ?>
 
     <div style="margin: 8px auto; display: block; text-align:center;">
         <!---728x90--->
@@ -99,7 +99,7 @@ if (isset($message)) {
             </div>
         </div>
     </section>
-    <?php include("../layouts/footer.php"); ?>
+    <?php include("./layouts/footer.php"); ?>
 
     <script src="/assets/js/app.js"></script>
 
