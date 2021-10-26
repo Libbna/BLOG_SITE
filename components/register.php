@@ -33,17 +33,17 @@ if (!$user->is_logged_in()) {
         <!---728x90--->
     </div>
     <section class="login-page py-5">
-        <!-- Register -->
+        
         <div class="container py-lg-3">
             <div class="real_info">
                 <div class="reallogin_info">
                     <?php
                     if (isset($_POST['submit'])) {
 
-                        //collect form data
+                        
                         extract($_POST);
 
-                        //very basic validation
+                       
                         if ($username == '') {
                             $error[] = 'Please enter the username.';
                         }
@@ -62,7 +62,7 @@ if (!$user->is_logged_in()) {
 
                             try {
 
-                                //insert into database
+                                
                                 $stmt = $db->prepare('INSERT INTO users (username,password,email) VALUES (:username, :password, :email)');
                                 $stmt->execute(array(
                                     ':username' => $username,
@@ -70,7 +70,7 @@ if (!$user->is_logged_in()) {
                                     ':email' => $email
                                 ));
 
-                                //redirect to user page 
+                                
                                 header('Location:../components/login.php?action=added');
                                 exit;
                             } catch (PDOException $e) {
@@ -79,7 +79,7 @@ if (!$user->is_logged_in()) {
                         }
                     }
 
-                    //check for any errors
+                    
                     if (isset($error)) {
                         foreach ($error as $error) {
                             echo '<p class="message">' . $error . '</p>';
