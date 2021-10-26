@@ -1,5 +1,6 @@
 <?php
 require_once('../includes/config.php');
+include("../language.php");
 
 if ($user->is_logged_in()) {
     header('location: ../index');
@@ -36,92 +37,183 @@ if (!$user->is_logged_in()) {
         <!-- Register -->
         <div class="container py-lg-3">
             <div class="real_info">
-                <div class="reallogin_info">
-                    <?php
-                    if (isset($_POST['submit'])) {
+                <?php
+                // For English Language
+                if (isset($_COOKIE["lang"]) && ($_COOKIE["lang"] === 'en')) {
+                ?>
+                    <div class="reallogin_info">
+                        <?php
+                        if (isset($_POST['submit'])) {
 
-                        //collect form data
-                        extract($_POST);
+                            //collect form data
+                            extract($_POST);
 
-                        //very basic validation
-                        if ($username == '') {
-                            $error[] = 'Please enter the username.';
-                        }
+                            //very basic validation
+                            if ($username == '') {
+                                $error[] = 'Please enter the username.';
+                            }
 
-                        if ($password == '') {
-                            $error[] = 'Please enter the password.';
-                        }
+                            if ($password == '') {
+                                $error[] = 'Please enter the password.';
+                            }
 
-                        if ($email == '') {
-                            $error[] = 'Please enter the email address.';
-                        }
+                            if ($email == '') {
+                                $error[] = 'Please enter the email address.';
+                            }
 
-                        if (!isset($error)) {
+                            if (!isset($error)) {
 
-                            $hashedpassword = $user->create_hash($password);
+                                $hashedpassword = $user->create_hash($password);
 
-                            try {
+                                try {
 
-                                //insert into database
-                                $stmt = $db->prepare('INSERT INTO users (username,password,email) VALUES (:username, :password, :email)');
-                                $stmt->execute(array(
-                                    ':username' => $username,
-                                    ':password' => $hashedpassword,
-                                    ':email' => $email
-                                ));
+                                    //insert into database
+                                    $stmt = $db->prepare('INSERT INTO users (username,password,email) VALUES (:username, :password, :email)');
+                                    $stmt->execute(array(
+                                        ':username' => $username,
+                                        ':password' => $hashedpassword,
+                                        ':email' => $email
+                                    ));
 
-                                //redirect to user page 
-                                header('Location:../components/login.php?action=added');
-                                exit;
-                            } catch (PDOException $e) {
-                                echo $e->getMessage();
+                                    //redirect to user page 
+                                    header('Location:../components/login.php?action=added');
+                                    exit;
+                                } catch (PDOException $e) {
+                                    echo $e->getMessage();
+                                }
                             }
                         }
-                    }
 
-                    //check for any errors
-                    if (isset($error)) {
-                        foreach ($error as $error) {
-                            echo '<p class="message">' . $error . '</p>';
+                        //check for any errors
+                        if (isset($error)) {
+                            foreach ($error as $error) {
+                                echo '<p class="message">' . $error . '</p>';
+                            }
                         }
-                    }
-                    ?>
+                        ?>
 
-                    <h2>Sign up now</h2>
-                    <p>Enter your details to Signup.</p>
-                    <form action="" method="post" autocomplete="off">
-                        <label>Username</label>
-                        <div class="input-group">
-                            <input name="username" type="text" placeholder="" required="" value="<?php if (isset($error)) {
-                                                                                                        echo $_POST['username'];
+                        <h2>Signup Now</h2>
+                        <p>Enter your details to Signup.</p>
+                        <form action="" method="post" autocomplete="off">
+                            <label>Username</label>
+                            <div class="input-group">
+                                <input name="username" type="text" placeholder="" required="" value="<?php if (isset($error)) {
+                                                                                                            echo $_POST['username'];
+                                                                                                        } ?>" autocomplete="off">
+                            </div>
+                            <label>Email</label>
+                            <div class="input-group">
+                                <input name="email" type="email" placeholder="" required="" value="<?php if (isset($error)) {
+                                                                                                        echo $_POST['email'];
                                                                                                     } ?>" autocomplete="off">
-                        </div>
-                        <label>Email</label>
-                        <div class="input-group">
-                            <input name="email" type="email" placeholder="" required="" value="<?php if (isset($error)) {
-                                                                                                    echo $_POST['email'];
-                                                                                                } ?>" autocomplete="off">
-                        </div>
-                        <label>Password</label>
-                        <div class="input-group">
-                            <input name="password" type="Password" placeholder="" required="" value="<?php if (isset($error)) {
-                                                                                                            echo $_POST['password'];
-                                                                                                        } ?>" autocomplete="new-password">
-                        </div>
-                        <div class="login-check">
-                            <label class="checkbox"><input type="checkbox" name="remember-me"><i> </i> Remember me</label>
-                        </div>
-                        <button class="btn btn-primary theme-button btn-login" name="submit" type="submit">Signup</button>
-                    </form>
-                    <p class="account">By clicking Signup, you agree to our <a href="#terms">Terms &amp; Conditions!</a></p>
-                    <p class="account1">Already Registered? <a href="../components/login.php">Login here</a></p>
-                </div>
+                            </div>
+                            <label>Password</label>
+                            <div class="input-group">
+                                <input name="password" type="Password" placeholder="" required="" value="<?php if (isset($error)) {
+                                                                                                                echo $_POST['password'];
+                                                                                                            } ?>" autocomplete="new-password">
+                            </div>
+                            <div class="login-check">
+                                <label class="checkbox"><input type="checkbox" name="remember-me"><i> </i> Remember me</label>
+                            </div>
+                            <button class="btn btn-primary theme-button btn-login" name="submit" type="submit">Signup</button>
+                        </form>
+                        <p class="account">By clicking Signup, you agree to our <a href="#terms">Terms &amp; Conditions!</a></p>
+                        <p class="account1">Already Registered? <a href="../components/login.php">Login here</a></p>
+                    </div>
+                <?php
+                } else {
+                    //For Hindi Language
+                ?>
+                    <div class="reallogin_info">
+                        <?php
+                        if (isset($_POST['submit'])) {
+
+                            //collect form data
+                            extract($_POST);
+
+                            //very basic validation
+                            if ($username == '') {
+                                $error[] = 'Please enter the username.';
+                            }
+
+                            if ($password == '') {
+                                $error[] = 'Please enter the password.';
+                            }
+
+                            if ($email == '') {
+                                $error[] = 'Please enter the email address.';
+                            }
+
+                            if (!isset($error)) {
+
+                                $hashedpassword = $user->create_hash($password);
+
+                                try {
+
+                                    //insert into database
+                                    $stmt = $db->prepare('INSERT INTO users (username,password,email) VALUES (:username, :password, :email)');
+                                    $stmt->execute(array(
+                                        ':username' => $username,
+                                        ':password' => $hashedpassword,
+                                        ':email' => $email
+                                    ));
+
+                                    //redirect to user page 
+                                    header('Location:../components/login.php?action=added');
+                                    exit;
+                                } catch (PDOException $e) {
+                                    echo $e->getMessage();
+                                }
+                            }
+                        }
+
+                        //check for any errors
+                        if (isset($error)) {
+                            foreach ($error as $error) {
+                                echo '<p class="message">' . $error . '</p>';
+                            }
+                        }
+                        ?>
+
+                        <h2><?php echo $header[$language][11]; ?></h2>
+                        <p>Enter your details to Signup.</p>
+                        <form action="" method="post" autocomplete="off">
+                            <label><?php echo $user_auth[$language][1]; ?></label>
+                            <div class="input-group">
+                                <input name="username" type="text" placeholder="" required="" value="<?php if (isset($error)) {
+                                                                                                            echo $_POST['username'];
+                                                                                                        } ?>" autocomplete="off">
+                            </div>
+                            <label><?php echo $user_auth[$language][6]; ?></label>
+                            <div class="input-group">
+                                <input name="email" type="email" placeholder="" required="" value="<?php if (isset($error)) {
+                                                                                                        echo $_POST['email'];
+                                                                                                    } ?>" autocomplete="off">
+                            </div>
+                            <label><?php echo $user_auth[$language][1]; ?></label>
+                            <div class="input-group">
+                                <input name="password" type="Password" placeholder="" required="" value="<?php if (isset($error)) {
+                                                                                                                echo $_POST['password'];
+                                                                                                            } ?>" autocomplete="new-password">
+                            </div>
+                            <div class="login-check">
+                                <label class="checkbox"><input type="checkbox" name="remember-me"><i> </i> <?php echo $user_auth[$language][2]; ?></label>
+                            </div>
+                            <button class="btn btn-primary theme-button btn-login" name="submit" type="submit"><?php echo $header[$language][11]; ?></button>
+                        </form>
+                        <p class="account">By clicking Signup, you agree to our <a href="#terms">Terms &amp; Conditions!</a></p>
+                        <p class="account1">Already Registered? <a href="../components/login.php">Login here</a></p>
+                    </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </section>
 
     <?php include("../layouts/footer.php"); ?>
-    
+
 </body>
 
 </html>

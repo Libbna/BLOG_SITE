@@ -1,4 +1,7 @@
-<?php require_once('./includes/config.php'); ?>
+<?php
+require_once('../includes/config.php');
+include("../language.php");
+?>
 
 <?php
 
@@ -57,7 +60,7 @@ if (isset($message)) {
 </head>
 
 <body>
-    <?php include("./layouts/header.php"); ?>
+    <?php include("../layouts/header.php"); ?>
 
     <div style="margin: 8px auto; display: block; text-align:center;">
         <!---728x90--->
@@ -66,40 +69,81 @@ if (isset($message)) {
     <section class="login-page py-5">
         <div class="container py-lg-5">
             <div class="real_info">
-                <div class="reallogin_info">
-                    <h2>Login to your Account</h2>
-                    <p>Enter your details to login.</p>
-                    <form action="login.php" method="POST" autocomplete="off">
-                        <label>Username</label>
-                        <div class="input-group">
-                            <input type="text" name="username" placeholder="" required="">
-                        </div>
-                        <label>Password</label>
-                        <div class="input-group">
-                            <input id="password" type="password" name="password" placeholder="" required="">
-                            <span id="eye"><i class="fa fa-eye" aria-hidden="true" onclick="toggle()"></i></span>
-                        </div>
-                        <div class="login-check">
-                            <label class="checkbox"><input type="checkbox" name="remember-me"> Remember me</label>
-                        </div>
-                        <div class="account1">
-                            <?php
-                            if (isset($_GET["newpwd"])) {
-                                if ($_GET["newpwd"] == "passwordupdated") {
-                                    echo '<p class="signupsuccess">Your password has been reset!</p>';
+                <?php
+                // For English Language
+                if (isset($_COOKIE["lang"]) && ($_COOKIE["lang"] === 'en')) {
+                ?>
+                    <div class="reallogin_info">
+                        <h2>Login to your Account</h2>
+                        <p>Enter your details to login.</p>
+                        <form action="login.php" method="POST" autocomplete="off">
+                            <label>Username</label>
+                            <div class="input-group">
+                                <input type="text" name="username" placeholder="" required="">
+                            </div>
+                            <label>Password</label>
+                            <div class="input-group">
+                                <input id="password" type="password" name="password" placeholder="" required="">
+                                <span id="eye"><i class="fa fa-eye" aria-hidden="true" onclick="toggle()"></i></span>
+                            </div>
+                            <div class="login-check">
+                                <label class="checkbox"><input type="checkbox" name="remember-me"> Remember me</label>
+                            </div>
+                            <div class="account1">
+                                <?php
+                                if (isset($_GET["newpwd"])) {
+                                    if ($_GET["newpwd"] == "passwordupdated") {
+                                        echo '<p class="signupsuccess">Your password has been reset!</p>';
+                                    }
                                 }
-                            }
-                            ?>
-                            <a href="../components/reset-pass">Forgot Password?</a>
-                        </div>
-                        <button class="btn btn-primary theme-button btn-login" name="submit" type="submit">Login</button>
-                    </form>
-                    <p class="account1">Dont have an account? <a href="../components/register">Register here</a></p>
-                </div>
+                                ?>
+                                <a href="../components/reset-pass">Forgot Password?</a>
+                            </div>
+                            <button class="btn btn-primary theme-button btn-login" name="submit" type="submit">Login</button>
+                        </form>
+                        <p class="account1">Dont have an account? <a href="../components/register">Register here</a></p>
+                    </div>
+                <?php
+                    // For Hindi Language
+                } else {
+                ?>
+                    <div class="reallogin_info">
+                        <h2><?php echo $header[$language][7]; ?></h2>
+                        <p>Enter your details to login.</p>
+                        <form action="login.php" method="POST" autocomplete="off">
+                            <label><?php echo $user_auth[$language][0]; ?></label>
+                            <div class="input-group">
+                                <input type="text" name="username" placeholder="" required="">
+                            </div>
+                            <label><?php echo $user_auth[$language][1]; ?></label>
+                            <div class="input-group">
+                                <input id="password" type="password" name="password" placeholder="" required="">
+                                <span id="eye"><i class="fa fa-eye" aria-hidden="true" onclick="toggle()"></i></span>
+                            </div>
+                            <div class="login-check">
+                                <label class="checkbox"><input type="checkbox" name="remember-me"> <?php echo $user_auth[$language][2]; ?></label>
+                            </div>
+                            <div class="account1">
+                                <?php
+                                if (isset($_GET["newpwd"])) {
+                                    if ($_GET["newpwd"] == "passwordupdated") {
+                                        echo '<p class="signupsuccess">Your password has been reset!</p>';
+                                    }
+                                }
+                                ?>
+                                <a href="../components/reset-pass"><?php echo $user_auth[$language][3]; ?></a>
+                            </div>
+                            <button class="btn btn-primary theme-button btn-login" name="submit" type="submit"><?php echo $header[$language][7]; ?></button>
+                        </form>
+                        <p class="account1"><?php echo $user_auth[$language][4]; ?> <a href="../components/register"><?php echo $user_auth[$language][5]; ?></a></p>
+                    </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </section>
-    <?php include("./layouts/footer.php"); ?>
+    <?php include("../layouts/footer.php"); ?>
 
     <script src="/assets/js/app.js"></script>
 

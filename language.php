@@ -1,7 +1,7 @@
 <?php
 $header = array(
-    'en' => array('Home', 'Article', 'Blog', 'Pages', 'About', 'Contact', 'Quick Links', 'Login', 'Logout', 'Dashboard', 'Topics'),
-    'hi' => array('होम', 'आर्टइकल्', 'ब्लोग्', 'पगेस्', 'आबउट', 'कौन्टैकट', 'त्वरित सम्पक', 'लॉग इन करें', 'लॉग आउट', 'डैशबोर्ड', 'विषय'),
+    'en' => array('Home', 'Article', 'Blog', 'Pages', 'About', 'Contact', 'Quick Links', 'Login', 'Logout', 'Dashboard', 'Topics', 'Signup', 'featured post', 'single post'),
+    'hi' => array('होम', 'आर्टइकल्', 'ब्लोग्', 'पगेस्', 'आबउट', 'कौन्टैकट', 'त्वरित सम्पक', 'लॉग इन करें', 'लॉग आउट', 'डैशबोर्ड', 'विषय', 'साइन अप करें', 'प्रमुख पोस्ट', 'एक पोस्ट'),
 );
 $footer_about = array(
     'en' => array('About Us', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur hic odio voluptatem tenetur consequatur.Lorem ipsum dolor sit amet consectetur adipisicing elit.'),
@@ -24,4 +24,9 @@ $footer_health = array(
 $terms = array(
     'en' => array('Leave Comment', 'Read More', "Add Article", "Add / View Banner"),
     'hi' => array('टिप्पणी दें', 'अधिक पढ़ें', 'लेख जोड़ें', 'बैनर जोड़ें / देखें'),
+);
+
+$user_auth = array(
+    'en' => array('Username', 'Password', 'Remember me', 'Forgot Password?', 'Dont have an account?', 'Register here', 'email'),
+    'hi' => array('उपयोगकर्ता नाम', 'पासवर्ड', 'याद रखना', 'पासवर्ड भूल गए?', 'खाता नहीं है?', 'रजिस्टर करें', 'ईमेल'),
 );

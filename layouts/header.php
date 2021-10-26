@@ -160,11 +160,8 @@ if (isset($_COOKIE["lang"]) && $_COOKIE["lang"] === "en" || (!isset($_COOKIE["la
                                         <span class="fa fa-angle-up"></span>
                                     </a>
                                     <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
-                                        <a class="dropdown-item @@error-active" href="error.html">404 Page</a>
                                         <a class="dropdown-item @@login-active" href="/components/login">Login</a>
                                         <a class="dropdown-item @@signup-active" href="/components/register">Signup</a>
-                                        <a class="dropdown-item @@search-active" href="search-results.html">Search Results</a>
                                     </div>
                                 </li>
                                 <li class="nav-item @@about-active">
@@ -342,8 +339,8 @@ if (isset($_COOKIE["lang"]) && $_COOKIE["lang"] === "en" || (!isset($_COOKIE["la
                                         <span class="fa fa-angle-up"></span>
                                     </a>
                                     <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item @@blog-active" href="blog.php">Featured Posts</a>
-                                        <a class="dropdown-item @@blog-single-active" href="blog-single.html">Single post</a>
+                                        <a class="dropdown-item @@blog-active" href="blog.php"><?php echo $header[$language][12]; ?></a>
+                                        <a class="dropdown-item @@blog-single-active" href="blog-single.html"><?php echo $header[$language][13]; ?></a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown @@pages-dropdown-active">
@@ -352,11 +349,8 @@ if (isset($_COOKIE["lang"]) && $_COOKIE["lang"] === "en" || (!isset($_COOKIE["la
                                         <span class="fa fa-angle-up"></span>
                                     </a>
                                     <div class="dropdown-menu dropdown-content" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item @@author-active" href="author.html">Author Page</a>
-                                        <a class="dropdown-item @@error-active" href="error.html">404 Page</a>
-                                        <a class="dropdown-item @@login-active" href="/components/login">Login</a>
-                                        <a class="dropdown-item @@signup-active" href="/components/register">Signup</a>
-                                        <a class="dropdown-item @@search-active" href="search-results.html">Search Results</a>
+                                        <a class="dropdown-item @@login-active" href="/components/login"><?php echo $header[$language][7]; ?></a>
+                                        <a class="dropdown-item @@signup-active" href="/components/register"><?php echo $header[$language][11]; ?></a>
                                     </div>
                                 </li>
                                 <li class="nav-item @@about-active">
