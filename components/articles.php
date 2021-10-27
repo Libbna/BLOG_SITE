@@ -8,93 +8,94 @@ include("../language.php");
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<!-- <html dir="rtl" lang="en"> -->
+<htmtl lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Articles</title>
+        <title>Articles</title>
 
-    <!-- font awesome icon  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- boostrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Main css -->
-    <link rel="stylesheet" href="/assets/sass/utilities/main.css">
+        <!-- font awesome icon  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- boostrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- Main css -->
+        <link rel="stylesheet" href="/assets/sass/utilities/main.css">
 
-</head>
+    </head>
 
-<body>
-    <?php include("../layouts/header.php"); ?>
+    <body>
+        <?php include("../layouts/header.php"); ?>
 
-    <!-- breadcrumb -->
-    <section class="w3l-breadcrumb py-5">
-        <div class="container">
-            <h6 class="sub-title">Sub title</h6>
-            <div class="header-section">
-                <h3><?php echo $header[$language][1] ?></h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime optio nam id quibusdam laborum sunt?</p>
-                <a href="../add-blog-article" class="btn btn-primary theme-button">Add Article</a>
+        <!-- breadcrumb -->
+        <section class="w3l-breadcrumb py-5">
+            <div class="container">
+                <h6 class="sub-title">Sub title</h6>
+                <div class="header-section">
+                    <h3><?php echo $header[$language][1] ?></h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime optio nam id quibusdam laborum sunt?</p>
+                    <a href="../add-blog-article" class="btn btn-primary theme-button">Add Article</a>
+                </div>
             </div>
+        </section>
+        <div style="margin: 8px auto; display: block; text-align:center;">
         </div>
-    </section>
-    <div style="margin: 8px auto; display: block; text-align:center;">
-    </div>
-    <!-- article section -->
-    <section class="w3l-articles">
-        <div class="container py-lg-3">
-            <?php
-            try {
-                $stmt = $db->query("SELECT * FROM article WHERE langCode = '$language' ORDER BY lang_id  DESC");
-                while ($row = $stmt->fetch()) {
-            ?>
-                    <article class="mt-5">
-                        <div class="row align-items-center pt-md-0 pt-4">
-                            <div class="col-md-12">
-                                <div class="slider-info">
-                                    <div class="img-circle">
-                                        <a href="blog-single.html"><img src="<?php echo $row['profileImage']; ?>" class="img-fluid" alt="article image"></a>
-                                    </div>
-                                    <div class="message">
-                                        <ul class="blog-single-author-date d-flex align-items-center">
-                                            <!-- <li><a href="blog-single.html"><?php echo $row['author'] ?></a></li> -->
-                                            <li><span class="fa fa-clock-o" aria-hidden="true"></span> Apr 04, 2020</li>
-                                        </ul>
-                                        <a class="author-book-title" href="blog-single.html"><?php echo $row['langTitle']; ?></a>
-                                        <div class="row">
-                                            <div class="col-md-9 pr-md-5 order-md-1 order-2">
-                                                <p><?php echo $row['langDesc']; ?></p>
-                                                <?php
-                                                ?>
-                                                <?php echo '<a href="../blog-single/' . $row['lang_id'] . '" class="read-button mt-4 d-inline-block">' . $terms[$language][1] . '<span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>'; ?>
+        <!-- article section -->
+        <section class="w3l-articles">
+            <div class="container py-lg-3">
+                <?php
+                try {
+                    $stmt = $db->query("SELECT * FROM article WHERE langCode = '$language' ORDER BY lang_id  DESC");
+                    while ($row = $stmt->fetch()) {
+                ?>
+                        <article class="mt-5">
+                            <div class="row align-items-center pt-md-0 pt-4">
+                                <div class="col-md-12">
+                                    <div class="slider-info">
+                                        <div class="img-circle">
+                                            <a href="blog-single.html"><img src="<?php echo $row['profileImage']; ?>" class="img-fluid" alt="article image"></a>
+                                        </div>
+                                        <div class="message">
+                                            <ul class="blog-single-author-date d-flex align-items-center">
+                                                <!-- <li><a href="blog-single.html"><?php echo $row['author'] ?></a></li> -->
+                                                <li><span class="fa fa-clock-o" aria-hidden="true"></span> Apr 04, 2020</li>
+                                            </ul>
+                                            <a class="author-book-title" href="blog-single.html"><?php echo $row['langTitle']; ?></a>
+                                            <div class="row">
+                                                <div class="col-md-9 pr-md-5 order-md-1 order-2">
+                                                    <p><?php echo $row['langDesc']; ?></p>
+                                                    <?php
+                                                    ?>
+                                                    <?php echo '<a href="../blog-single/' . $row['lang_id'] . '" class="read-button mt-4 d-inline-block">' . $terms[$language][1] . '<span class="fa fa-long-arrow-right" aria-hidden="true"></span></a>'; ?>
 
-                                            </div>
-                                            <div class="col-md-3 article-right order-md-2 order-1 pl-md-0">
-                                                <p><span class="fa fa-clock-o" aria-hidden="true"></span> 4 min read</p>
-                                                <a href="./comment.php">
-                                                    <span class="fa fa-commenting-o" aria-hidden="true"></span>Leave comment
-                                                </a>
+                                                </div>
+                                                <div class="col-md-3 article-right order-md-2 order-1 pl-md-0">
+                                                    <p><span class="fa fa-clock-o" aria-hidden="true"></span> 4 min read</p>
+                                                    <a href="./comment.php">
+                                                        <span class="fa fa-commenting-o" aria-hidden="true"></span>Leave comment
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </article>
-            <?php
+                        </article>
+                <?php
+                    }
+                } catch (PDOException $e) {
+                    echo $e->getMessage();
                 }
-            } catch (PDOException $e) {
-                echo $e->getMessage();
-            }
-            ?>
+                ?>
 
-        </div>
-    </section>
+            </div>
+        </section>
 
 
-    <?php include("../layouts/footer.php"); ?>
-</body>
+        <?php include("../layouts/footer.php"); ?>
+    </body>
 
-</html>
+    </html>
