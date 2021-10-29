@@ -12,6 +12,7 @@
    * Create a database "blogdb"
    * And inside the database create three tables 'users', 'articles', and 'banners'
    * [blogdb (2).zip](https://github.com/Libbna/BLOG_SITE/files/7427956/blogdb.2.zip)
+   * Demo TEst
 
 
 # Contributors
