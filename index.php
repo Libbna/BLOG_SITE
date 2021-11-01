@@ -52,9 +52,9 @@ $stmt = $db->query('SELECT * FROM article ORDER BY lang_id DESC');
     <div style="margin: 8px auto; display: block; text-align:center;"></div>
 
     <?php 
-        $obj = new Database();
-        $result = $obj->demoDisplay();
-        echo $result;
+        // $obj = new Database();
+        // $result = $obj->demoDisplay();
+        // echo $result;
     ?>
 
     <section class="w3l-blog">

@@ -1,12 +1,13 @@
 <?php 
 
-class Database {
+class Database{
 
     private $host = "localhost";
     private $dbName = "blogdb";
     private $username = "root";
     private $password = "root";
 
+    // Constructor
     public function __construct(){
 
         // Using mysqli_connect
@@ -24,9 +25,5 @@ class Database {
             echo "Database not conected";
         } 
     }
-
-    public function demoDisplay(){
-        return "Yay";
-    }
-
 }
+    
