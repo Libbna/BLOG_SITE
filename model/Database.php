@@ -6,6 +6,7 @@ class Database {
     private $dbName = "blogdb";
     private $username = "root";
     private $password = "root";
+    private $db;
 
     public function __construct(){
 
@@ -27,6 +28,15 @@ class Database {
 
     public function demoDisplay(){
         return "Yay";
+    }
+
+    // deleting an article
+    public function deleteArticle($article_id){
+        $sql = $this->db->prepare("DELETE FROM article WHERE lang_id= ?");
+        $sql->bind_param("i", $article_id);
+        $sql->execute();
+        $result = $sql->get_result();
+        return $result;
     }
 
 }
