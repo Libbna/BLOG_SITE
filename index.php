@@ -13,6 +13,7 @@
 // $gameController = new \MyApp\Game\GameController();
 
 include("language.php");
+include "model/Database.php";
 
 require_once("./includes/config.php");
 
@@ -38,7 +39,7 @@ $stmt = $db->query('SELECT * FROM article ORDER BY lang_id DESC');
     <!-- boostrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Main css -->
-    <link rel="stylesheet" href="/assets/sass/utilities/main.css">
+    <link rel="stylesheet" href="assets/sass/utilities/main.css">
 </head>
 
 <body>
@@ -50,10 +51,16 @@ $stmt = $db->query('SELECT * FROM article ORDER BY lang_id DESC');
     <!--Main Slider  -->
     <div style="margin: 8px auto; display: block; text-align:center;"></div>
 
+    <?php 
+        // $obj = new Database();
+        // $result = $obj->demoDisplay();
+        // echo $result;
+    ?>
+
     <section class="w3l-blog">
         <div class="text-element-9">
             <div class="row no-gutters">
-                <a href="blog-single.html" class="col-lg-6 blog-article-posts bg-color-one">
+                <a href="blog-single.php?id=2" class="col-lg-6 blog-article-posts bg-color-one">
                     <div class="blog-post d-flex flex-wrap align-content-between">
                         <div class="post-content">
                             <ul class="author-date mb-4 d-flex align-items-center">
@@ -132,7 +139,6 @@ $stmt = $db->query('SELECT * FROM article ORDER BY lang_id DESC');
     <button onclick="topFunction()" id="topScrollBtn" title="Go to top">
         <i class="fa fa-arrow-up"></i>
     </button>
-
 
     <?php
     include("./layouts/latest-post.php");
