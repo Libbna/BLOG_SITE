@@ -15,7 +15,10 @@ function set_lang() {
     } else if(language == "ur") {
         document.cookie = "lang=ur; path=/";
         window.location.reload();
+        document.body.setAttribute('dir', 'rtl');
+
     } else {
         console.log("Invalid Selection");
     }
 }
+
