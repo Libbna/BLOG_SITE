@@ -44,9 +44,7 @@ if (isset($_POST['submit'])) {
 
     if (!isset($error)) {
         try {
-            // $stmt = $db->query("INSERT INTO article (articleTitle, articleDesc, articleContent, articleAuthor, profile_img) VALUES ('$articleTitle', '$articleDesc', '$articleContent', '$articleAuthor', '$destinationFile')");
             $stmt = $db->query("INSERT INTO article (langCode, langTitle, langDesc, langContent, author, profileImage) VALUES ('$language', '$articleTitle', '$articleDesc', '$articleContent', '$articleAuthor', '$destinationFile')");
-
             header('location:./admin/index.php?action=added');
             exit;
         } catch (PDOException $e) {
