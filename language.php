@@ -2,23 +2,28 @@
 $header = array(
     'en' => array('Home', 'Article', 'Blog', 'Pages', 'About', 'Contact', 'Quick Links', 'Login', 'Logout', 'Dashboard', 'Topics', 'Signup', 'featured post', 'single post'),
     'hi' => array('होम', 'आर्टइकल्', 'ब्लोग्', 'पगेस्', 'आबउट', 'कौन्टैकट', 'त्वरित सम्पक', 'लॉग इन करें', 'लॉग आउट', 'डैशबोर्ड', 'विषय', 'साइन अप करें', 'प्रमुख पोस्ट', 'एक पोस्ट'),
+    'ur' => array('گھر', 'مضمون', 'بلاگ', 'صفحات', 'کے بارے میں', 'رابطہ', 'فوری روابط', 'لاگ ان کریں', 'لاگ آوٹ', 'ڈیش بورڈ',)
 );
 $footer_about = array(
     'en' => array('About Us', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur hic odio voluptatem tenetur consequatur.Lorem ipsum dolor sit amet consectetur adipisicing elit.'),
-    'hi' => array('हमारे बारे में', 'छपाई और अक्षर योजन उद्योग का एक साधारण डमी पाठ है. Lorem Ipsum सन १५०० के बाद से अभी तक इस उद्योग का मानक डमी पाठ मन गया, जब एक अज्ञात मुद्रक ने नमूना लेकर एक नमूना किताब बनाई.')
+    'hi' => array('हमारे बारे में', 'छपाई और अक्षर योजन उद्योग का एक साधारण डमी पाठ है. Lorem Ipsum सन १५०० के बाद से अभी तक इस उद्योग का मानक डमी पाठ मन गया, जब एक अज्ञात मुद्रक ने नमूना लेकर एक नमूना किताब बनाई.'),
+    'ur' => array('ہمارے بارے میں', 'پرنٹنگ اور لیٹرنگ انڈسٹری کا ایک سادہ ڈمی ٹیکسٹ ہے۔ Lorem Ipsum 1500 کی دہائی سے صنعت کا معیاری ڈمی متن بن گیا ہے، جب ایک نامعلوم پرنٹر نے نمونہ لیا اور ایک نمونہ کتاب تخلیق کی۔')
 );
 
 $footer_designing = array(
     'en' => array('Designing', 'Design Patterns', 'Performance', 'Photoshop', 'User Experience', 'Typography'),
     'hi' => array('डिज़ाइन बनाना', 'डिजाइन पैटर्न्स', 'प्रदर्शन', 'फोटोशॉप', 'प्रयोगकर्ता का अनुभव', 'टाइपोग्राफी'),
+    'ur' => array('ڈیزائن', 'ڈیزائن پیٹرن', 'ڈسپلے', 'فوٹوشاپ', 'صارف کا تجربہ', 'نوع ٹائپ')
 );
 $footer_Busi = array(
     'en' => array('Business', 'Investment', 'Politics', 'Markets', 'Stock Exchange', 'Business Stats'),
-    'hi' => array('व्यापार', 'निवेश', 'राजनीति', 'बाजार', 'शेयर बाजार', 'व्यापार आँकड़े'),
+    'hi' => array('व्यापार', 'निवेश', 'राजनीति', 'बाजार', 'शेयर बाजार', 'व्यापार आँकड़े', 'کاروبار کے اعداد و شمار'),
+    'ur' => array('کاروبار', 'سرمایہ کاری', 'سیاست', 'مارکیٹ', 'شیئر مارکیٹ')
 );
 $footer_health = array(
     'en' => array('Health', 'Living Science', 'Child Health', 'Mental Health', 'Medicine Export', 'Heart Health'),
     'hi' => array('स्वास्थ्य', 'लिविंग साइंस', 'बच्चे का स्वास्थ्य', 'मानसिक स्वास्थ्य', 'दवा निर्यात', 'दिल दिमाग'),
+    'ur' => array('صحت', 'زندہ سائنس', 'بچوں کی صحت', 'دماغی صحت', 'دواسازی کی برآمد', 'دل دماغ')
 );
 
 $terms = array(

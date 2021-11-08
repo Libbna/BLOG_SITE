@@ -9,7 +9,11 @@ function set_lang() {
     // if selected langauge is hindi
     } else if(language == "hi") {
         document.cookie = "lang=hi; path=/";
+        window.location.reload();
 
+    // if selected langauge is urdu
+    } else if(language == "ur") {
+        document.cookie = "lang=ur; path=/";
         window.location.reload();
     } else {
         console.log("Invalid Selection");
