@@ -5,10 +5,6 @@ include("language.php");
 // $stmt = $db->prepare('SELECT * FROM article WHERE lang_id = :lang_id');
 // $stmt->execute(array(':lang_id' => $_GET['id']));
 // $row = $stmt->fetch();
-
-$object = new BlogSingle();
-$row = $object->blog_single($_GET['id']);
-
 ?>
 
 <!DOCTYPE html>

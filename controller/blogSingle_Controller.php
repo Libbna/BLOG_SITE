@@ -11,3 +11,7 @@ class BlogSingle{
     }
 
 }
+
+$object = new BlogSingle();
+$row = $object->blog_single($_GET['id']);
+
