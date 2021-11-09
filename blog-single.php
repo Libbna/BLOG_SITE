@@ -1,14 +1,9 @@
 <?php
 require_once('./includes/config.php');
-include "controller/blogSingle_Controller.php";
 include("language.php");
-// $stmt = $db->prepare('SELECT * FROM article WHERE lang_id = :lang_id');
-// $stmt->execute(array(':lang_id' => $_GET['id']));
-// $row = $stmt->fetch();
-
-$object = new BlogSingle();
-$row = $object->blog_single($_GET['id']);
-
+$stmt = $db->prepare('SELECT * FROM article WHERE lang_id = :lang_id');
+$stmt->execute(array(':lang_id' => $_GET['id']));
+$row = $stmt->fetch();
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +19,8 @@ $row = $object->blog_single($_GET['id']);
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
-    <link rel="stylesheet" href="assets/sass/utilities/main.css">
-    <link rel="stylesheet" href="assets/sass/utilities/blog.css">
+    <link rel="stylesheet" href="/assets/sass/utilities/main.css">
+    <link rel="stylesheet" href="/assets/sass/utilities/blog.css">
 
 </head>
 <?php

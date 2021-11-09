@@ -1,7 +1,2 @@
-<?php
-
-class userController {
-    function __construct() {
-        
-    }
-}
+//index page
+<!-- changes made  -->
