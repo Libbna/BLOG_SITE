@@ -5,6 +5,7 @@ $en_select = '';
 $hi_select = '';
 $ur_select = '';
 $language = '';
+$textdir = "ltr";
 if (isset($_COOKIE["lang"]) && $_COOKIE["lang"] === "en" || (!isset($_COOKIE["lang"]))) {
     $en_select = 'selected';
     $language = "en";
@@ -14,11 +15,12 @@ if (isset($_COOKIE["lang"]) && $_COOKIE["lang"] === "en" || (!isset($_COOKIE["la
 } else if (isset($_COOKIE["lang"]) && $_COOKIE["lang"] === "ur" || (!isset($_COOKIE["lang"]))) {
     $ur_select = 'selected';
     $language = "ur";
+    $textdir = "rtl";
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="<?php echo $textdir; ?>">
 
 
 <head>
