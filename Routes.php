@@ -1,5 +1,9 @@
 <?php
 
+Route::set('blog-single', function() {
+    echo "blog single";
+});
+
 // require_once(__DIR__ . "/router.php");
 
 
