@@ -1,8 +1,17 @@
 <?php
 
+include("/controller/blogSingle_Controller.php");
+
 Route::set('blog-single', function() {
     echo "blog single";
 });
+
+Route::get('blog-single', function() {
+    $obj = new BlogSingle();
+    $obj->blog_single();
+         
+});
+
 
 // require_once(__DIR__ . "/router.php");
 
