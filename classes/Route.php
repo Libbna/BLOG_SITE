@@ -10,5 +10,13 @@ class Route {
 
         print_r(self::$validRoutes);
     }
+
+    public static function get($route, $function) {
+        if (in_array($route, self::$validRoutes)){
+            echo "Yay";
+        }
+    }
+    
+
 }
 
