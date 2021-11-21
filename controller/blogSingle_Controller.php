@@ -8,9 +8,12 @@ class BlogSingle{
         $obj = new Database();
         $res = $obj->getArticle($blog_id);
         // return $res;
-        header("Location: index.php");
+        // header("Location: index.php");
     }
 
+    public static function CreateView() {
+        require_once('../blog-single.php');
+    }
 }
 
 $object = new BlogSingle();

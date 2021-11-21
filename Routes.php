@@ -3,7 +3,8 @@
 include("/controller/blogSingle_Controller.php");
 
 Route::set('blog-single', function() {
-    echo "blog single";
+    // echo "blog single";
+    blogsingle::CreateView('blog-single');
 });
 
 Route::get('blog-single', function() {
@@ -11,7 +12,6 @@ Route::get('blog-single', function() {
     $obj->blog_single();
          
 });
-
 
 // require_once(__DIR__ . "/router.php");
 

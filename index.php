@@ -66,7 +66,8 @@ $stmt = $db->query('SELECT * FROM article ORDER BY lang_id DESC');
     <section class="w3l-blog">
         <div class="text-element-9">
             <div class="row no-gutters">
-                <a href="blog-single.php?id=2" class="col-lg-6 blog-article-posts bg-color-one">
+               <!-- <a href="blog-single.php?id=2" class="col-lg-6 blog-article-posts bg-color-one"> -->
+                <a href="" class="col-lg-6 blog-article-posts bg-color-one">
                     <div class="blog-post d-flex flex-wrap align-content-between">
                         <div class="post-content">
                             <ul class="author-date mb-4 d-flex align-items-center">
